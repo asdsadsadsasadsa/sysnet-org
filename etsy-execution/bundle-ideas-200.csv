@@ -1,0 +1,139 @@
+bundle_id,niche,season,items,bundle_name,bundle_price_usd,est_profit_usd,status
+B-0001,Cat Moms,Halloween,Sweatshirt:LB-00001|Mug:LB-00017|Sticker:LB-00325,Halloween Cat Moms Gift Bundle,52.17,10.46,idea
+B-0002,Dental Hygienists,Evergreen,Sweatshirt:LB-00002|T-Shirt:LB-00208|Mug:LB-00222,Evergreen Dental Hygienists Gift Bundle,69.27,13.79,idea
+B-0003,Girl Moms,Graduation,T-Shirt:LB-00003|Sweatshirt:LB-00496|Sticker:LB-00617,Graduation Girl Moms Gift Bundle,59.37,13.37,idea
+B-0004,Grandmas/Nanas,Back to School,Sweatshirt:LB-00004|Sticker:LB-00206|Mug:LB-00763,Back to School Grandmas/Nanas Gift Bundle,52.17,10.46,idea
+B-0005,Therapists,Back to School,Sweatshirt:LB-00005|Mug:LB-00134|Sticker:LB-00257,Back to School Therapists Gift Bundle,52.17,10.46,idea
+B-0006,Real Estate Agents,Fathers Day,T-Shirt:LB-00006|Sweatshirt:LB-00022|Sticker:LB-00587,Fathers Day Real Estate Agents Gift Bundle,59.37,13.37,idea
+B-0007,Moms of 2+,Evergreen,Sticker:LB-00007|Mug:LB-00147|Sweatshirt:LB-00590,Evergreen Moms of 2+ Gift Bundle,52.17,10.46,idea
+B-0008,Moms of 2+,Christmas,Sweatshirt:LB-00008|T-Shirt:LB-00034|Mug:LB-00254,Christmas Moms of 2+ Gift Bundle,69.27,13.79,idea
+B-0009,Dog Moms,Mothers Day,T-Shirt:LB-00009|Sticker:LB-00026|Mug:LB-00167,Mothers Day Dog Moms Gift Bundle,43.17,9.06,idea
+B-0010,Plant Lovers,Christmas,Sticker:LB-00010|Mug:LB-00110|Sweatshirt:LB-00295,Christmas Plant Lovers Gift Bundle,52.17,10.46,idea
+B-0011,Plant Lovers,Mothers Day,Sticker:LB-00011|Sweatshirt:LB-00052|Mug:LB-00616,Mothers Day Plant Lovers Gift Bundle,52.17,10.46,idea
+B-0012,Coffee Lovers,Fathers Day,Sticker:LB-00012|Sweatshirt:LB-00359|T-Shirt:LB-00632,Fathers Day Coffee Lovers Gift Bundle,59.37,13.37,idea
+B-0013,Therapists,Evergreen,Sweatshirt:LB-00013|Mug:LB-00136|Sticker:LB-00370,Evergreen Therapists Gift Bundle,52.17,10.46,idea
+B-0014,Graduation Families,Mothers Day,Sticker:LB-00014|Sweatshirt:LB-00092,Mothers Day Graduation Families Gift Bundle,36.88,8.27,idea
+B-0015,Plant Lovers,Graduation,Sticker:LB-00015|T-Shirt:LB-00181|Sweatshirt:LB-00492,Graduation Plant Lovers Gift Bundle,59.37,13.37,idea
+B-0016,Therapists,Mothers Day,Sticker:LB-00016|Sweatshirt:LB-00469,Mothers Day Therapists Gift Bundle,36.88,8.27,idea
+B-0017,Real Estate Agents,Halloween,Mug:LB-00018|Sweatshirt:LB-00168|Sticker:LB-00628,Halloween Real Estate Agents Gift Bundle,52.17,10.46,idea
+B-0018,Gamers,Halloween,T-Shirt:LB-00019|Sticker:LB-00156|Sweatshirt:LB-00200,Halloween Gamers Gift Bundle,59.37,13.37,idea
+B-0019,Nurses,Christmas,Mug:LB-00020|T-Shirt:LB-00045|Sticker:LB-00155,Christmas Nurses Gift Bundle,43.17,9.06,idea
+B-0020,New Moms,Fathers Day,T-Shirt:LB-00021|Mug:LB-00029|Sweatshirt:LB-00567,Fathers Day New Moms Gift Bundle,69.27,13.79,idea
+B-0021,Girl Moms,Halloween,Sweatshirt:LB-00023|Mug:LB-00629|Sticker:LB-00728,Halloween Girl Moms Gift Bundle,52.17,10.46,idea
+B-0022,Book Lovers,Evergreen,Mug:LB-00024|T-Shirt:LB-00071|Sticker:LB-00084,Evergreen Book Lovers Gift Bundle,43.17,9.06,idea
+B-0023,Graduation Families,Christmas,Mug:LB-00025|T-Shirt:LB-00207|Sticker:LB-00279,Christmas Graduation Families Gift Bundle,43.17,9.06,idea
+B-0024,Fitness Moms,Christmas,Sticker:LB-00027|Mug:LB-00067|Sweatshirt:LB-00433,Christmas Fitness Moms Gift Bundle,52.17,10.46,idea
+B-0025,Teachers,Evergreen,Sweatshirt:LB-00028|Mug:LB-00217|Sticker:LB-00224,Evergreen Teachers Gift Bundle,52.17,10.46,idea
+B-0026,New Dads,Evergreen,Sticker:LB-00030|Sweatshirt:LB-00042|Mug:LB-00345,Evergreen New Dads Gift Bundle,52.17,10.46,idea
+B-0027,Teachers,Back to School,Sticker:LB-00031|T-Shirt:LB-00187|Sweatshirt:LB-00299,Back to School Teachers Gift Bundle,59.37,13.37,idea
+B-0028,Grandmas/Nanas,Mothers Day,T-Shirt:LB-00032|Sweatshirt:LB-00108|Sticker:LB-00712,Mothers Day Grandmas/Nanas Gift Bundle,59.37,13.37,idea
+B-0029,Real Estate Agents,Evergreen,Sweatshirt:LB-00033|Mug:LB-00061|T-Shirt:LB-00184,Evergreen Real Estate Agents Gift Bundle,69.27,13.79,idea
+B-0030,Christian Moms,Evergreen,T-Shirt:LB-00035|Sweatshirt:LB-00610|Mug:LB-00758,Evergreen Christian Moms Gift Bundle,69.27,13.79,idea
+B-0031,Teachers,Fathers Day,Mug:LB-00036|Sticker:LB-00074,Fathers Day Teachers Gift Bundle,20.68,3.96,idea
+B-0032,Christian Moms,Graduation,T-Shirt:LB-00037|Mug:LB-00153|Sweatshirt:LB-00245,Graduation Christian Moms Gift Bundle,69.27,13.79,idea
+B-0033,Boy Moms,Halloween,T-Shirt:LB-00038|Mug:LB-00260|Sticker:LB-00366,Halloween Boy Moms Gift Bundle,43.17,9.06,idea
+B-0034,Dog Moms,Back to School,T-Shirt:LB-00039|Sticker:LB-00527|Mug:LB-00606,Back to School Dog Moms Gift Bundle,43.17,9.06,idea
+B-0035,Cat Moms,Christmas,T-Shirt:LB-00040|Sweatshirt:LB-00076|Mug:LB-00637,Christmas Cat Moms Gift Bundle,69.27,13.79,idea
+B-0036,Cat Moms,Fathers Day,Sweatshirt:LB-00041|Sticker:LB-00104|Mug:LB-00158,Fathers Day Cat Moms Gift Bundle,52.17,10.46,idea
+B-0037,Real Estate Agents,Graduation,Sticker:LB-00043|Mug:LB-00096|T-Shirt:LB-00183,Graduation Real Estate Agents Gift Bundle,43.17,9.06,idea
+B-0038,Gamers,Evergreen,T-Shirt:LB-00044|Sweatshirt:LB-00058|Mug:LB-00360,Evergreen Gamers Gift Bundle,69.27,13.79,idea
+B-0039,Gamers,Graduation,Sticker:LB-00047|T-Shirt:LB-00127|Sweatshirt:LB-00544,Graduation Gamers Gift Bundle,59.37,13.37,idea
+B-0040,Grandmas/Nanas,Graduation,Sweatshirt:LB-00048|Mug:LB-00062|T-Shirt:LB-00256,Graduation Grandmas/Nanas Gift Bundle,69.27,13.79,idea
+B-0041,Moms of 2+,Mothers Day,Sticker:LB-00049|T-Shirt:LB-00116|Sweatshirt:LB-00476,Mothers Day Moms of 2+ Gift Bundle,59.37,13.37,idea
+B-0042,Book Lovers,Fathers Day,Sticker:LB-00050|Sweatshirt:LB-00069|Mug:LB-00215,Fathers Day Book Lovers Gift Bundle,52.17,10.46,idea
+B-0043,Book Lovers,Mothers Day,Sticker:LB-00051|Sweatshirt:LB-00211|T-Shirt:LB-00846,Mothers Day Book Lovers Gift Bundle,59.37,13.37,idea
+B-0044,Girl Moms,Back to School,Sweatshirt:LB-00053|Sticker:LB-00093|Mug:LB-00146,Back to School Girl Moms Gift Bundle,52.17,10.46,idea
+B-0045,Dog Moms,Graduation,Mug:LB-00056|T-Shirt:LB-00145|Sweatshirt:LB-00170,Graduation Dog Moms Gift Bundle,69.27,13.79,idea
+B-0046,Graduation Families,Fathers Day,T-Shirt:LB-00057|Mug:LB-00099|Sticker:LB-00235,Fathers Day Graduation Families Gift Bundle,43.17,9.06,idea
+B-0047,New Moms,Mothers Day,Sticker:LB-00059|Mug:LB-00082|Sweatshirt:LB-00324,Mothers Day New Moms Gift Bundle,52.17,10.46,idea
+B-0048,Moms of 2+,Graduation,Mug:LB-00060|Sticker:LB-00077|Sweatshirt:LB-00177,Graduation Moms of 2+ Gift Bundle,52.17,10.46,idea
+B-0049,Book Lovers,Graduation,T-Shirt:LB-00063|Mug:LB-00468|Sticker:LB-00720,Graduation Book Lovers Gift Bundle,43.17,9.06,idea
+B-0050,Coffee Lovers,Halloween,T-Shirt:LB-00064|Sticker:LB-00081|Mug:LB-00138,Halloween Coffee Lovers Gift Bundle,43.17,9.06,idea
+B-0051,Therapists,Christmas,T-Shirt:LB-00065|Sweatshirt:LB-00083|Sticker:LB-00310,Christmas Therapists Gift Bundle,59.37,13.37,idea
+B-0052,Teachers,Graduation,Sweatshirt:LB-00068|Sticker:LB-00139|T-Shirt:LB-00445,Graduation Teachers Gift Bundle,59.37,13.37,idea
+B-0053,New Moms,Christmas,Mug:LB-00072|T-Shirt:LB-00121|Sweatshirt:LB-00148,Christmas New Moms Gift Bundle,69.27,13.79,idea
+B-0054,Dental Hygienists,Halloween,Sweatshirt:LB-00073|Mug:LB-00133|Sticker:LB-00204,Halloween Dental Hygienists Gift Bundle,52.17,10.46,idea
+B-0055,Book Lovers,Christmas,Sweatshirt:LB-00075|Sticker:LB-00111|Mug:LB-00180,Christmas Book Lovers Gift Bundle,52.17,10.46,idea
+B-0056,Dog Moms,Evergreen,Mug:LB-00078|T-Shirt:LB-00094|Sweatshirt:LB-00188,Evergreen Dog Moms Gift Bundle,69.27,13.79,idea
+B-0057,Therapists,Fathers Day,T-Shirt:LB-00080|Sweatshirt:LB-00303|Mug:LB-00459,Fathers Day Therapists Gift Bundle,69.27,13.79,idea
+B-0058,Cat Moms,Evergreen,Sticker:LB-00087|Mug:LB-00106|T-Shirt:LB-00389,Evergreen Cat Moms Gift Bundle,43.17,9.06,idea
+B-0059,Christian Moms,Mothers Day,Sweatshirt:LB-00088|T-Shirt:LB-00372|Sticker:LB-00430,Mothers Day Christian Moms Gift Bundle,59.37,13.37,idea
+B-0060,Dog Moms,Fathers Day,Sticker:LB-00089|Mug:LB-00117|T-Shirt:LB-00365,Fathers Day Dog Moms Gift Bundle,43.17,9.06,idea
+B-0061,Coffee Lovers,Christmas,Mug:LB-00090|T-Shirt:LB-00258|Sweatshirt:LB-00997,Christmas Coffee Lovers Gift Bundle,69.27,13.79,idea
+B-0062,Christian Moms,Christmas,Sticker:LB-00091|Sweatshirt:LB-00218|Mug:LB-00592,Christmas Christian Moms Gift Bundle,52.17,10.46,idea
+B-0063,Fitness Moms,Fathers Day,T-Shirt:LB-00095|Sticker:LB-00529|Sweatshirt:LB-00589,Fathers Day Fitness Moms Gift Bundle,59.37,13.37,idea
+B-0064,Girl Moms,Fathers Day,Sweatshirt:LB-00097|Sticker:LB-00246|T-Shirt:LB-00247,Fathers Day Girl Moms Gift Bundle,59.37,13.37,idea
+B-0065,Book Lovers,Back to School,Mug:LB-00098|Sticker:LB-00130|Sweatshirt:LB-00490,Back to School Book Lovers Gift Bundle,52.17,10.46,idea
+B-0066,Real Estate Agents,Back to School,Sweatshirt:LB-00100|Sticker:LB-00272,Back to School Real Estate Agents Gift Bundle,36.88,8.27,idea
+B-0067,Boy Moms,Evergreen,Mug:LB-00102|Sticker:LB-00123|T-Shirt:LB-00478,Evergreen Boy Moms Gift Bundle,43.17,9.06,idea
+B-0068,Nurses,Evergreen,Sticker:LB-00103|T-Shirt:LB-00488|Sweatshirt:LB-00591,Evergreen Nurses Gift Bundle,59.37,13.37,idea
+B-0069,Christian Moms,Fathers Day,Sweatshirt:LB-00107|Sticker:LB-00152|Mug:LB-00806,Fathers Day Christian Moms Gift Bundle,52.17,10.46,idea
+B-0070,Nurses,Halloween,Sweatshirt:LB-00114|T-Shirt:LB-00151|Sticker:LB-00452,Halloween Nurses Gift Bundle,59.37,13.37,idea
+B-0071,Gamers,Fathers Day,T-Shirt:LB-00115|Sweatshirt:LB-00239|Sticker:LB-00569,Fathers Day Gamers Gift Bundle,59.37,13.37,idea
+B-0072,Grandmas/Nanas,Halloween,T-Shirt:LB-00118|Sweatshirt:LB-00339|Sticker:LB-00788,Halloween Grandmas/Nanas Gift Bundle,59.37,13.37,idea
+B-0073,New Dads,Fathers Day,Mug:LB-00119|Sticker:LB-00394|Sweatshirt:LB-00875,Fathers Day New Dads Gift Bundle,52.17,10.46,idea
+B-0074,Gamers,Back to School,T-Shirt:LB-00120|Sticker:LB-00164|Sweatshirt:LB-00201,Back to School Gamers Gift Bundle,59.37,13.37,idea
+B-0075,Fitness Moms,Mothers Day,Mug:LB-00124|T-Shirt:LB-00354|Sticker:LB-00945,Mothers Day Fitness Moms Gift Bundle,43.17,9.06,idea
+B-0076,Real Estate Agents,Christmas,Sweatshirt:LB-00126|Mug:LB-00374|T-Shirt:LB-00615,Christmas Real Estate Agents Gift Bundle,69.27,13.79,idea
+B-0077,Moms of 2+,Fathers Day,Sticker:LB-00128|Mug:LB-00259|T-Shirt:LB-00767,Fathers Day Moms of 2+ Gift Bundle,43.17,9.06,idea
+B-0078,Boy Moms,Back to School,Sticker:LB-00129|Mug:LB-00306|T-Shirt:LB-00493,Back to School Boy Moms Gift Bundle,43.17,9.06,idea
+B-0079,New Moms,Evergreen,Mug:LB-00141|Sweatshirt:LB-00308|T-Shirt:LB-00635,Evergreen New Moms Gift Bundle,69.27,13.79,idea
+B-0080,Dental Hygienists,Mothers Day,T-Shirt:LB-00142|Mug:LB-00812,Mothers Day Dental Hygienists Gift Bundle,37.78,7.29,idea
+B-0081,Dog Moms,Halloween,Sweatshirt:LB-00143|Sticker:LB-00348,Halloween Dog Moms Gift Bundle,36.88,8.27,idea
+B-0082,Teachers,Halloween,T-Shirt:LB-00144|Sticker:LB-00685,Halloween Teachers Gift Bundle,27.88,6.88,idea
+B-0083,Boy Moms,Christmas,Mug:LB-00149|Sticker:LB-00237|T-Shirt:LB-00525,Christmas Boy Moms Gift Bundle,43.17,9.06,idea
+B-0084,Graduation Families,Halloween,Sticker:LB-00154|Mug:LB-00352|Sweatshirt:LB-00593,Halloween Graduation Families Gift Bundle,52.17,10.46,idea
+B-0085,Plant Lovers,Evergreen,Sweatshirt:LB-00157|Mug:LB-00179|Sticker:LB-00282,Evergreen Plant Lovers Gift Bundle,52.17,10.46,idea
+B-0086,Gamers,Mothers Day,Sticker:LB-00161|Mug:LB-00361|T-Shirt:LB-00762,Mothers Day Gamers Gift Bundle,43.17,9.06,idea
+B-0087,Nurses,Mothers Day,Sweatshirt:LB-00162|T-Shirt:LB-00283|Mug:LB-00914,Mothers Day Nurses Gift Bundle,69.27,13.79,idea
+B-0088,Fitness Moms,Graduation,T-Shirt:LB-00166|Sticker:LB-00692|Mug:LB-00741,Graduation Fitness Moms Gift Bundle,43.17,9.06,idea
+B-0089,Book Lovers,Halloween,T-Shirt:LB-00169|Sweatshirt:LB-00171|Sticker:LB-00316,Halloween Book Lovers Gift Bundle,59.37,13.37,idea
+B-0090,Teachers,Christmas,Mug:LB-00172|Sweatshirt:LB-00223|Sticker:LB-00301,Christmas Teachers Gift Bundle,52.17,10.46,idea
+B-0091,Plant Lovers,Halloween,Sweatshirt:LB-00173|Sticker:LB-00403|T-Shirt:LB-00876,Halloween Plant Lovers Gift Bundle,59.37,13.37,idea
+B-0092,Grandmas/Nanas,Fathers Day,Sweatshirt:LB-00176|T-Shirt:LB-00460,Fathers Day Grandmas/Nanas Gift Bundle,53.98,11.6,idea
+B-0093,New Dads,Graduation,Sweatshirt:LB-00182|Mug:LB-00249|T-Shirt:LB-00351,Graduation New Dads Gift Bundle,69.27,13.79,idea
+B-0094,Grandmas/Nanas,Christmas,Sticker:LB-00185|T-Shirt:LB-00537,Christmas Grandmas/Nanas Gift Bundle,27.88,6.88,idea
+B-0095,New Moms,Graduation,Mug:LB-00186|Sticker:LB-00582|Sweatshirt:LB-00655,Graduation New Moms Gift Bundle,52.17,10.46,idea
+B-0096,Grandmas/Nanas,Evergreen,Mug:LB-00189|Sweatshirt:LB-00264|T-Shirt:LB-00500,Evergreen Grandmas/Nanas Gift Bundle,69.27,13.79,idea
+B-0097,Cat Moms,Graduation,Sweatshirt:LB-00191|T-Shirt:LB-00202|Sticker:LB-00288,Graduation Cat Moms Gift Bundle,59.37,13.37,idea
+B-0098,Boy Moms,Graduation,T-Shirt:LB-00192|Mug:LB-00357,Graduation Boy Moms Gift Bundle,37.78,7.29,idea
+B-0099,Fitness Moms,Back to School,Sweatshirt:LB-00193|Mug:LB-00436|T-Shirt:LB-00553,Back to School Fitness Moms Gift Bundle,69.27,13.79,idea
+B-0100,Christian Moms,Back to School,T-Shirt:LB-00198|Sticker:LB-00277|Mug:LB-00341,Back to School Christian Moms Gift Bundle,43.17,9.06,idea
+B-0101,Moms of 2+,Halloween,Mug:LB-00199|Sticker:LB-00289|T-Shirt:LB-00811,Halloween Moms of 2+ Gift Bundle,43.17,9.06,idea
+B-0102,New Moms,Halloween,Mug:LB-00203|T-Shirt:LB-00284|Sweatshirt:LB-00522,Halloween New Moms Gift Bundle,69.27,13.79,idea
+B-0103,Fitness Moms,Evergreen,T-Shirt:LB-00209|Mug:LB-00422|Sweatshirt:LB-00513,Evergreen Fitness Moms Gift Bundle,69.27,13.79,idea
+B-0104,New Dads,Mothers Day,Mug:LB-00210|Sweatshirt:LB-00347,Mothers Day New Dads Gift Bundle,46.78,8.69,idea
+B-0105,Therapists,Halloween,Sweatshirt:LB-00212|T-Shirt:LB-00335|Sticker:LB-00342,Halloween Therapists Gift Bundle,59.37,13.37,idea
+B-0106,New Moms,Back to School,Sweatshirt:LB-00214|T-Shirt:LB-00413,Back to School New Moms Gift Bundle,53.98,11.6,idea
+B-0107,Girl Moms,Evergreen,Sticker:LB-00216|Mug:LB-00401,Evergreen Girl Moms Gift Bundle,20.68,3.96,idea
+B-0108,Plant Lovers,Back to School,Sticker:LB-00219|T-Shirt:LB-00273|Mug:LB-00706,Back to School Plant Lovers Gift Bundle,43.17,9.06,idea
+B-0109,Graduation Families,Evergreen,Mug:LB-00221|Sticker:LB-00232|T-Shirt:LB-00317,Evergreen Graduation Families Gift Bundle,43.17,9.06,idea
+B-0110,Nurses,Graduation,Mug:LB-00225|Sweatshirt:LB-00241|T-Shirt:LB-00873,Graduation Nurses Gift Bundle,69.27,13.79,idea
+B-0111,Cat Moms,Back to School,Sticker:LB-00227|Mug:LB-00583|T-Shirt:LB-00980,Back to School Cat Moms Gift Bundle,43.17,9.06,idea
+B-0112,New Dads,Christmas,Mug:LB-00231|Sweatshirt:LB-00630|Sticker:LB-00941,Christmas New Dads Gift Bundle,52.17,10.46,idea
+B-0113,Dental Hygienists,Back to School,Sticker:LB-00238|Sweatshirt:LB-00266|Mug:LB-00570,Back to School Dental Hygienists Gift Bundle,52.17,10.46,idea
+B-0114,Graduation Families,Back to School,Mug:LB-00255|T-Shirt:LB-00269|Sticker:LB-00473,Back to School Graduation Families Gift Bundle,43.17,9.06,idea
+B-0115,Dental Hygienists,Graduation,Sweatshirt:LB-00262|Mug:LB-00756|Sticker:LB-00989,Graduation Dental Hygienists Gift Bundle,52.17,10.46,idea
+B-0116,Fitness Moms,Halloween,Sticker:LB-00268|Sweatshirt:LB-00596|Mug:LB-00995,Halloween Fitness Moms Gift Bundle,52.17,10.46,idea
+B-0117,Moms of 2+,Back to School,Sweatshirt:LB-00270|T-Shirt:LB-00872,Back to School Moms of 2+ Gift Bundle,53.98,11.6,idea
+B-0118,Coffee Lovers,Back to School,Mug:LB-00271|Sticker:LB-00734|T-Shirt:LB-00960,Back to School Coffee Lovers Gift Bundle,43.17,9.06,idea
+B-0119,Christian Moms,Halloween,Sticker:LB-00278|T-Shirt:LB-00456|Sweatshirt:LB-00775,Halloween Christian Moms Gift Bundle,59.37,13.37,idea
+B-0120,Girl Moms,Christmas,Sticker:LB-00280|T-Shirt:LB-00621|Sweatshirt:LB-00701,Christmas Girl Moms Gift Bundle,59.37,13.37,idea
+B-0121,New Dads,Halloween,Sticker:LB-00285|T-Shirt:LB-00783,Halloween New Dads Gift Bundle,27.88,6.88,idea
+B-0122,Real Estate Agents,Mothers Day,T-Shirt:LB-00290|Sticker:LB-00291|Mug:LB-00358,Mothers Day Real Estate Agents Gift Bundle,43.17,9.06,idea
+B-0123,Teachers,Mothers Day,T-Shirt:LB-00300|Mug:LB-00393|Sweatshirt:LB-00454,Mothers Day Teachers Gift Bundle,69.27,13.79,idea
+B-0124,Girl Moms,Mothers Day,Mug:LB-00305|Sweatshirt:LB-00329|T-Shirt:LB-00973,Mothers Day Girl Moms Gift Bundle,69.27,13.79,idea
+B-0125,Nurses,Fathers Day,Sticker:LB-00309|Sweatshirt:LB-00398|T-Shirt:LB-00463,Fathers Day Nurses Gift Bundle,59.37,13.37,idea
+B-0126,Coffee Lovers,Evergreen,T-Shirt:LB-00327|Mug:LB-00690,Evergreen Coffee Lovers Gift Bundle,37.78,7.29,idea
+B-0127,Therapists,Graduation,Mug:LB-00332|Sweatshirt:LB-00474,Graduation Therapists Gift Bundle,46.78,8.69,idea
+B-0128,Cat Moms,Mothers Day,Sweatshirt:LB-00333|Mug:LB-00340|T-Shirt:LB-00516,Mothers Day Cat Moms Gift Bundle,69.27,13.79,idea
+B-0129,Coffee Lovers,Graduation,Sticker:LB-00356|Mug:LB-00518|T-Shirt:LB-00861,Graduation Coffee Lovers Gift Bundle,43.17,9.06,idea
+B-0130,Dog Moms,Christmas,Sticker:LB-00384|Sweatshirt:LB-00563|Mug:LB-00663,Christmas Dog Moms Gift Bundle,52.17,10.46,idea
+B-0131,Boy Moms,Mothers Day,Sweatshirt:LB-00388|Sticker:LB-00526|T-Shirt:LB-00863,Mothers Day Boy Moms Gift Bundle,59.37,13.37,idea
+B-0132,Coffee Lovers,Mothers Day,Mug:LB-00400|Sweatshirt:LB-00489,Mothers Day Coffee Lovers Gift Bundle,46.78,8.69,idea
+B-0133,Gamers,Christmas,Mug:LB-00407|T-Shirt:LB-00736|Sticker:LB-00819,Christmas Gamers Gift Bundle,43.17,9.06,idea
+B-0134,Boy Moms,Fathers Day,Mug:LB-00409|Sweatshirt:LB-00412|T-Shirt:LB-00475,Fathers Day Boy Moms Gift Bundle,69.27,13.79,idea
+B-0135,Dental Hygienists,Christmas,Sticker:LB-00427|Sweatshirt:LB-00484,Christmas Dental Hygienists Gift Bundle,36.88,8.27,idea
+B-0136,Nurses,Back to School,T-Shirt:LB-00428|Sweatshirt:LB-00523|Mug:LB-00597,Back to School Nurses Gift Bundle,69.27,13.79,idea
+B-0137,New Dads,Back to School,Sweatshirt:LB-00532|T-Shirt:LB-00684|Mug:LB-00827,Back to School New Dads Gift Bundle,69.27,13.79,idea
+B-0138,Graduation Families,Graduation,Mug:LB-00866|Sweatshirt:LB-00905,Graduation Graduation Families Gift Bundle,46.78,8.69,idea
