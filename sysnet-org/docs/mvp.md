@@ -1,22 +1,20 @@
-# MVP Scope
+# MVP Scope (Shipped)
 
-## In scope (v1)
-- Auth (email magic link)
-- Onboarding profile
-- Profiles (`/u/[handle]`)
-- Directory (`/people`) with filter primitives
-- Connection requests + acceptance
-- Feed: posts, comments, likes
-- Reports: basic submit flow
-- Group feeds by slug (`/g/[slug]`)
+## Shipped
+- Email magic-link sign-in flow (Supabase)
+- Onboarding/profile create+update
+- Public profile routes
+- Member directory with search and basic filters
+- Connection request send/accept/decline
+- Global feed with post creation
+- Comment and like interactions
+- Report submission
+- Basic admin moderation page (email allow-list)
+- SEO metadata + sitemap + robots
 
-## Immediate next (v1.1)
-- Private 1:1 messages
-- Email notifications + digest
-- Improved moderation queue
+## Not yet complete
+- Full production E2E verification for 2 real accounts
+- Production URL/domain cutover (awaiting Vercel auth and deploy)
 
-## Non-goals (v1)
-- Resume parsing
-- Job board
-- Ads marketplace
-- Third-party vendor promotion
+## Why
+Shipping is blocked only by deployment auth state, not by code completeness.
