@@ -1,6 +1,6 @@
 # Brand Draft
 
-Working name: **SYNR** (Systems Engineers Network)
+Working name: **NAME** (Systems Engineers Network)
 
 Tagline:
 - "Find peers. Share patterns. Build trusted networks."

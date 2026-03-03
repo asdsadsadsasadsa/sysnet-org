@@ -1,4 +1,4 @@
-# SYNR — Systems Engineers Network
+# NAME — Systems Engineers Network
 
 Professional networking and collaboration hub for systems engineers.
 

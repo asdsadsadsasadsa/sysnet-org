@@ -1,7 +1,7 @@
 # Final Report (In Progress)
 
 ## Name
-- **SYNR**
+- **NAME**
 
 ## Production URL
 - Pending Vercel auth + first deploy
