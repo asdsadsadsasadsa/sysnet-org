@@ -3,6 +3,7 @@ export const dynamic = 'force-dynamic';
 
 import { FormEvent, useEffect, useState } from "react";
 import { createClient } from "@/lib/supabase/client";
+import { normalizeHandle, parseCsvList } from "@/lib/profile-utils";
 
 export default function OnboardingPage() {
   const supabase = createClient();
@@ -53,15 +54,20 @@ export default function OnboardingPage() {
   async function saveProfile(e: FormEvent) {
     e.preventDefault();
     if (!userId) return setMsg("Sign in first.");
+    const normalizedHandle = normalizeHandle(handle);
+    if (!normalizedHandle) {
+      return setMsg("Handle is invalid. Use letters, numbers, underscore, and dashes.");
+    }
+
     const payload = {
       id: userId,
-      handle: handle.toLowerCase().trim(),
+      handle: normalizedHandle,
       display_name: displayName.trim(),
       headline: headline.trim(),
       location: location.trim(),
-      domains: domains.split(",").map((s) => s.trim()).filter(Boolean),
-      tags: tags.split(",").map((s) => s.trim()).filter(Boolean),
-      open_to: openTo.split(",").map((s) => s.trim()).filter(Boolean),
+      domains: parseCsvList(domains),
+      tags: parseCsvList(tags),
+      open_to: parseCsvList(openTo, { maxItems: 3, maxLen: 24 }),
       updated_at: new Date().toISOString(),
     };
 
