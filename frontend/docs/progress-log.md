@@ -18,3 +18,9 @@
 
 - Production URL: https://sysnet-org.vercel.app
 - Current phase: hardening + full production smoke testing
+
+## 2026-03-02 (Repo Split)
+- Split workspace into `frontend/` (Next.js app) and `backend/` (Supabase schema/policies).
+- Deployed production from `frontend/` successfully.
+- Production alias verified: https://sysnet-org.vercel.app
+- Attempted `vercel git connect` for auto-deploy; blocked by GitHub integration permission error on current repo.
