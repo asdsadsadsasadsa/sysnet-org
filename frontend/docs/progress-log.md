@@ -24,3 +24,9 @@
 - Deployed production from `frontend/` successfully.
 - Production alias verified: https://sysnet-org.vercel.app
 - Attempted `vercel git connect` for auto-deploy; blocked by GitHub integration permission error on current repo.
+
+## 2026-03-03 (Active hardening)
+- Disabled noisy scheduled update jobs to keep signal high.
+- Ran production route smoke check against https://sysnet-org.vercel.app.
+- Verified 200 responses for: /, /about, /guidelines, /onboarding, /people, /feed, /connect/requests, /robots.txt, /sitemap.xml.
+- Next: complete authenticated 2-user flow verification and fix any failing write-paths.
