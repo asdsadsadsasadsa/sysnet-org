@@ -1,15 +1,15 @@
-# Domain Plan (NAME.org)
+# Domain Plan (abrakadabra.org)
 
-Chosen NAME: **NAME**
+Chosen ABRAKADABRA: **ABRAKADABRA**
 
-## Why NAME
+## Why ABRAKADABRA
 - 4 letters, pronounceable as "sinner/syner"
 - Fits systems engineering theme ("synergy" / "systems")
 - Short, clean brand for a professional network
 
-## Buy and connect `NAME.org`
-1. Buy `NAME.org` on Namecheap (or preferred registrar).
-2. In Vercel Project → Settings → Domains, add `NAME.org` and `www.NAME.org`.
+## Buy and connect `abrakadabra.org`
+1. Buy `abrakadabra.org` on Namecheap (or preferred registrar).
+2. In Vercel Project → Settings → Domains, add `abrakadabra.org` and `www.abrakadabra.org`.
 3. Copy DNS records from Vercel.
 4. In Namecheap DNS, set the records exactly as shown by Vercel.
 5. Wait for propagation, then verify both apex and www resolve.

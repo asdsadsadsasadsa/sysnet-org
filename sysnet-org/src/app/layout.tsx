@@ -14,11 +14,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "NAME — Systems Engineers Network",
+  title: "ABRAKADABRA — Systems Engineers Network",
   description:
     "Professional network for systems engineers: connect by domain, tooling, and MBSE practices.",
   openGraph: {
-    title: "NAME — Systems Engineers Network",
+    title: "ABRAKADABRA — Systems Engineers Network",
     description:
       "Find peers, share systems engineering patterns, and build trusted professional connections.",
     type: "website",
@@ -36,7 +36,7 @@ export default function RootLayout({
         <header className="border-b bg-white">
           <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
             <Link href="/" className="font-semibold tracking-tight">
-              NAME
+              ABRAKADABRA
             </Link>
             <div className="flex gap-4 text-sm text-slate-600">
               <Link href="/people">People</Link>

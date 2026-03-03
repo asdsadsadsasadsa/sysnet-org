@@ -1,4 +1,4 @@
-# NAME — Systems Engineers Network
+# ABRAKADABRA — Systems Engineers Network
 
 Professional networking and collaboration hub for systems engineers.
 

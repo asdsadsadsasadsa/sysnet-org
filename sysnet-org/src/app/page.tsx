@@ -7,7 +7,7 @@ export default function Home() {
         <p className="text-sm font-medium text-slate-500">Professional networking for systems engineers</p>
         <h1 className="mt-2 text-4xl font-bold tracking-tight">Find peers. Share patterns. Build trusted networks.</h1>
         <p className="mt-4 max-w-2xl text-slate-600">
-          NAME helps systems engineers connect by domain and tooling, discuss real implementation problems,
+          ABRAKADABRA helps systems engineers connect by domain and tooling, discuss real implementation problems,
           and find mentorship, consulting, and hiring opportunities.
         </p>
         <div className="mt-6 flex gap-3">
