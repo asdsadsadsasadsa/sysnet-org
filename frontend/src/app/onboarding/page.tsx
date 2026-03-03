@@ -4,6 +4,7 @@ export const dynamic = 'force-dynamic';
 import { FormEvent, useEffect, useState } from "react";
 import { createClient } from "@/lib/supabase/client";
 import { normalizeHandle, parseCsvList } from "@/lib/profile-utils";
+import { sanitizeOpenTo } from "@/lib/open-to";
 
 export default function OnboardingPage() {
   const supabase = createClient();
@@ -67,7 +68,7 @@ export default function OnboardingPage() {
       location: location.trim(),
       domains: parseCsvList(domains),
       tags: parseCsvList(tags),
-      open_to: parseCsvList(openTo, { maxItems: 3, maxLen: 24 }),
+      open_to: sanitizeOpenTo(parseCsvList(openTo, { maxItems: 6, maxLen: 24 })),
       updated_at: new Date().toISOString(),
     };
 
