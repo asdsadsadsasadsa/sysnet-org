@@ -9,6 +9,11 @@ if [ -f .env ]; then
   set +a
 fi
 
+# Backward-compatible env naming: allow VERCEL_TEAM_ID as org id
+if [ -z "${VERCEL_ORG_ID:-}" ] && [ -n "${VERCEL_TEAM_ID:-}" ]; then
+  export VERCEL_ORG_ID="$VERCEL_TEAM_ID"
+fi
+
 required=(VERCEL_TOKEN VERCEL_ORG_ID VERCEL_PROJECT_ID)
 for v in "${required[@]}"; do
   if [ -z "${!v:-}" ]; then
@@ -19,8 +24,8 @@ done
 
 # Ensure we're linked to the expected project/org
 if [ ! -f .vercel/project.json ]; then
-  vercel link --yes --project sysnet-org --token "$VERCEL_TOKEN"
+  npx vercel link --yes --project sysnet-org --token "$VERCEL_TOKEN"
 fi
 
 echo "Deploying to Vercel project with pinned org/project IDs..."
-vercel --prod --yes --token "$VERCEL_TOKEN" --scope "$VERCEL_ORG_ID"
+npx vercel --prod --yes --token "$VERCEL_TOKEN" --scope "$VERCEL_ORG_ID"
