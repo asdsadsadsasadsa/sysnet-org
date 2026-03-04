@@ -45,9 +45,10 @@ export default function OnboardingPage() {
   async function sendMagicLink(e: FormEvent) {
     e.preventDefault();
     setMsg("Sending magic link...");
+    const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || window.location.origin;
     const { error } = await supabase.auth.signInWithOtp({
       email,
-      options: { emailRedirectTo: `${window.location.origin}/onboarding` },
+      options: { emailRedirectTo: `${siteUrl}/onboarding` },
     });
     setMsg(error ? error.message : "Magic link sent. Check your email.");
   }
