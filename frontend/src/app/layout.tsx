@@ -25,6 +25,13 @@ export const metadata: Metadata = {
   },
 };
 
+const nav = [
+  { href: "/people", label: "People" },
+  { href: "/feed", label: "Feed" },
+  { href: "/about", label: "About" },
+  { href: "/guidelines", label: "Guidelines" },
+];
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -32,24 +39,28 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-slate-50 text-slate-900`}>
-        <header className="border-b bg-white">
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <header className="sticky top-0 z-50 border-b border-slate-200/80 bg-white/80 backdrop-blur">
           <nav className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
-            <Link href="/" className="font-semibold tracking-tight">
+            <Link href="/" className="text-sm font-semibold tracking-[0.2em] text-slate-900">
               ABRAKADABRA
             </Link>
-            <div className="flex gap-4 text-sm text-slate-600">
-              <Link href="/people">People</Link>
-              <Link href="/feed">Feed</Link>
-              <Link href="/about">About</Link>
-              <Link href="/guidelines">Guidelines</Link>
-              <Link href="/onboarding" className="rounded-md bg-slate-900 px-3 py-1.5 text-white">
+            <div className="hidden items-center gap-5 text-sm text-slate-600 md:flex">
+              {nav.map((item) => (
+                <Link key={item.href} href={item.href} className="hover:text-slate-900">
+                  {item.label}
+                </Link>
+              ))}
+              <Link
+                href="/onboarding"
+                className="rounded-lg bg-gradient-to-r from-slate-900 to-blue-700 px-3 py-2 font-medium text-white shadow-sm"
+              >
                 Join
               </Link>
             </div>
           </nav>
         </header>
-        <main className="mx-auto max-w-6xl px-4 py-8">{children}</main>
+        <main className="mx-auto max-w-6xl px-4 py-10">{children}</main>
       </body>
     </html>
   );
