@@ -1,38 +1,35 @@
-"use client";
-
 import Link from "next/link";
-import { useEffect } from "react";
-import { useRouter } from "next/navigation";
-import { createClient } from "@/lib/supabase/client";
+import { redirect } from "next/navigation";
+import { createClient } from "@/lib/supabase/server";
 
-export default function Home() {
-  const router = useRouter();
+export const dynamic = "force-dynamic";
 
-  useEffect(() => {
-    const supabase = createClient();
+export default async function Home({
+  searchParams,
+}: {
+  searchParams: Promise<{ code?: string }>;
+}) {
+  const { code } = await searchParams;
+  const supabase = await createClient();
 
-    let cancelled = false;
-    (async () => {
-      const {
-        data: { user },
-      } = await supabase.auth.getUser();
+  // Fallback: if auth provider sends user back to homepage with code,
+  // complete auth here and route deterministically.
+  if (code) {
+    await supabase.auth.exchangeCodeForSession(code);
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
 
-      if (!user || cancelled) return;
+    if (!user) redirect("/onboarding?auth=failed");
 
-      const { data: profile } = await supabase
-        .from("profiles")
-        .select("id")
-        .eq("id", user.id)
-        .maybeSingle();
+    const { data: profile } = await supabase
+      .from("profiles")
+      .select("id")
+      .eq("id", user.id)
+      .maybeSingle();
 
-      if (cancelled) return;
-      router.replace(profile ? "/feed" : "/onboarding?auth=ok");
-    })();
-
-    return () => {
-      cancelled = true;
-    };
-  }, [router]);
+    redirect(profile ? "/feed" : "/onboarding?auth=ok");
+  }
 
   return (
     <div className="space-y-10">
@@ -49,7 +46,7 @@ export default function Home() {
         </p>
         <div className="mt-7 flex flex-wrap gap-3">
           <Link href="/onboarding" className="rounded-lg bg-slate-900 px-5 py-2.5 text-sm font-medium text-white shadow-sm">
-            Create profile
+            Sign in
           </Link>
           <Link href="/people" className="rounded-lg border border-slate-300 bg-white px-5 py-2.5 text-sm font-medium text-slate-700">
             Browse directory
