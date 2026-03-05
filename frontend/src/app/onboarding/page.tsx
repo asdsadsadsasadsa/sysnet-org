@@ -2,6 +2,7 @@
 export const dynamic = 'force-dynamic';
 
 import { FormEvent, useEffect, useState } from "react";
+import Link from "next/link";
 import { createClient } from "@/lib/supabase/client";
 import { normalizeHandle, parseCsvList } from "@/lib/profile-utils";
 import { sanitizeOpenTo } from "@/lib/open-to";
@@ -18,19 +19,30 @@ export default function OnboardingPage() {
   const [domains, setDomains] = useState("Systems");
   const [tags, setTags] = useState("MBSE,SysML");
   const [openTo, setOpenTo] = useState("mentoring");
+  const [hasProfile, setHasProfile] = useState(false);
+  const [authChecked, setAuthChecked] = useState(false);
 
   useEffect(() => {
     supabase.auth.getUser().then(({ data }) => {
       const uid = data.user?.id || "";
       setUserId(uid);
-      if (!uid) return;
+      if (!uid) {
+        setHasProfile(false);
+        setAuthChecked(true);
+        return;
+      }
       supabase
         .from("profiles")
         .select("handle,display_name,headline,location,domains,tags,open_to")
         .eq("id", uid)
         .maybeSingle()
         .then(({ data: p }) => {
-          if (!p) return;
+          if (!p) {
+            setHasProfile(false);
+            setAuthChecked(true);
+            return;
+          }
+          setHasProfile(true);
           setHandle(p.handle || "");
           setDisplayName(p.display_name || "");
           setHeadline(p.headline || "");
@@ -38,6 +50,7 @@ export default function OnboardingPage() {
           setDomains((p.domains || []).join(","));
           setTags((p.tags || []).join(","));
           setOpenTo((p.open_to || []).join(","));
+          setAuthChecked(true);
         });
     });
   }, [supabase]);
@@ -79,23 +92,42 @@ export default function OnboardingPage() {
 
   return (
     <div className="grid gap-6 md:grid-cols-2">
-      <form onSubmit={sendMagicLink} className="rounded-xl border bg-white p-6 space-y-3">
-        <h1 className="text-xl font-semibold">Step 1: Sign in</h1>
-        <input className="w-full rounded border px-3 py-2" placeholder="you@company.com" value={email} onChange={(e) => setEmail(e.target.value)} />
-        <button className="rounded bg-slate-900 px-4 py-2 text-white">Send magic link</button>
-      </form>
+      {!userId && (
+        <form onSubmit={sendMagicLink} className="rounded-xl border bg-white p-6 space-y-3 md:col-span-2">
+          <h1 className="text-xl font-semibold">Step 1: Sign in</h1>
+          <input
+            className="w-full rounded border px-3 py-2"
+            placeholder="you@company.com"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+          <button className="rounded bg-slate-900 px-4 py-2 text-white">Send magic link</button>
+        </form>
+      )}
 
-      <form onSubmit={saveProfile} className="rounded-xl border bg-white p-6 space-y-3">
-        <h2 className="text-xl font-semibold">Step 2: Create profile</h2>
-        <input className="w-full rounded border px-3 py-2" placeholder="handle" value={handle} onChange={(e) => setHandle(e.target.value)} />
-        <input className="w-full rounded border px-3 py-2" placeholder="display name" value={displayName} onChange={(e) => setDisplayName(e.target.value)} />
-        <input className="w-full rounded border px-3 py-2" placeholder="headline" value={headline} onChange={(e) => setHeadline(e.target.value)} />
-        <input className="w-full rounded border px-3 py-2" placeholder="location" value={location} onChange={(e) => setLocation(e.target.value)} />
-        <input className="w-full rounded border px-3 py-2" placeholder="domains csv" value={domains} onChange={(e) => setDomains(e.target.value)} />
-        <input className="w-full rounded border px-3 py-2" placeholder="tags csv" value={tags} onChange={(e) => setTags(e.target.value)} />
-        <input className="w-full rounded border px-3 py-2" placeholder="open_to csv" value={openTo} onChange={(e) => setOpenTo(e.target.value)} />
-        <button className="rounded bg-slate-900 px-4 py-2 text-white">Save profile</button>
-      </form>
+      {userId && authChecked && !hasProfile && (
+        <form onSubmit={saveProfile} className="rounded-xl border bg-white p-6 space-y-3 md:col-span-2">
+          <h2 className="text-xl font-semibold">Create profile</h2>
+          <input className="w-full rounded border px-3 py-2" placeholder="handle" value={handle} onChange={(e) => setHandle(e.target.value)} />
+          <input className="w-full rounded border px-3 py-2" placeholder="display name" value={displayName} onChange={(e) => setDisplayName(e.target.value)} />
+          <input className="w-full rounded border px-3 py-2" placeholder="headline" value={headline} onChange={(e) => setHeadline(e.target.value)} />
+          <input className="w-full rounded border px-3 py-2" placeholder="location" value={location} onChange={(e) => setLocation(e.target.value)} />
+          <input className="w-full rounded border px-3 py-2" placeholder="domains csv" value={domains} onChange={(e) => setDomains(e.target.value)} />
+          <input className="w-full rounded border px-3 py-2" placeholder="tags csv" value={tags} onChange={(e) => setTags(e.target.value)} />
+          <input className="w-full rounded border px-3 py-2" placeholder="open_to csv" value={openTo} onChange={(e) => setOpenTo(e.target.value)} />
+          <button className="rounded bg-slate-900 px-4 py-2 text-white">Save profile</button>
+        </form>
+      )}
+
+      {userId && authChecked && hasProfile && (
+        <div className="rounded-xl border bg-white p-6 space-y-3 md:col-span-2">
+          <h2 className="text-xl font-semibold">You’re signed in</h2>
+          <p className="text-slate-600">Your profile already exists. Continue to the feed.</p>
+          <Link href="/feed" className="inline-block rounded bg-slate-900 px-4 py-2 text-white">
+            Go to feed
+          </Link>
+        </div>
+      )}
 
       {msg && <p className="md:col-span-2 text-sm text-slate-600">{msg}</p>}
     </div>
