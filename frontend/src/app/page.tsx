@@ -1,6 +1,39 @@
+"use client";
+
 import Link from "next/link";
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
+import { createClient } from "@/lib/supabase/client";
 
 export default function Home() {
+  const router = useRouter();
+
+  useEffect(() => {
+    const supabase = createClient();
+
+    let cancelled = false;
+    (async () => {
+      const {
+        data: { user },
+      } = await supabase.auth.getUser();
+
+      if (!user || cancelled) return;
+
+      const { data: profile } = await supabase
+        .from("profiles")
+        .select("id")
+        .eq("id", user.id)
+        .maybeSingle();
+
+      if (cancelled) return;
+      router.replace(profile ? "/feed" : "/onboarding?auth=ok");
+    })();
+
+    return () => {
+      cancelled = true;
+    };
+  }, [router]);
+
   return (
     <div className="space-y-10">
       <section className="shell-card relative overflow-hidden p-10">
