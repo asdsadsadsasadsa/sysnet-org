@@ -9,6 +9,7 @@ import { sanitizeOpenTo } from "@/lib/open-to";
 
 export default function OnboardingPage() {
   const supabase = createClient();
+  const [authState, setAuthState] = useState<string | null>(null);
   const [email, setEmail] = useState("");
   const [msg, setMsg] = useState<string>("");
   const [userId, setUserId] = useState<string>("");
@@ -54,6 +55,12 @@ export default function OnboardingPage() {
         });
     });
   }, [supabase]);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const value = new URLSearchParams(window.location.search).get("auth");
+    setAuthState(value);
+  }, []);
 
   async function sendMagicLink(e: FormEvent) {
     e.preventDefault();
@@ -126,6 +133,19 @@ export default function OnboardingPage() {
           <Link href="/feed" className="inline-block rounded bg-slate-900 px-4 py-2 text-white">
             Go to feed
           </Link>
+        </div>
+      )}
+
+
+      {authState === "failed" && (
+        <div className="md:col-span-2 rounded-lg border border-red-200 bg-red-50 p-3 text-sm text-red-700">
+          Login failed or expired link. Request a fresh magic link and try again.
+        </div>
+      )}
+
+      {authState === "ok" && userId && !hasProfile && (
+        <div className="md:col-span-2 rounded-lg border border-emerald-200 bg-emerald-50 p-3 text-sm text-emerald-700">
+          You are signed in. Complete your profile to continue.
         </div>
       )}
 
