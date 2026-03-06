@@ -12,6 +12,7 @@ export default function OnboardingPage() {
   const [authState, setAuthState] = useState<string | null>(null);
   const [email, setEmail] = useState("");
   const [msg, setMsg] = useState<string>("");
+  const [sending, setSending] = useState(false);
   const [userId, setUserId] = useState<string>("");
   const [handle, setHandle] = useState("");
   const [displayName, setDisplayName] = useState("");
@@ -64,6 +65,8 @@ export default function OnboardingPage() {
 
   async function sendMagicLink(e: FormEvent) {
     e.preventDefault();
+    if (sending) return;
+    setSending(true);
     setMsg("Sending magic link...");
     const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || window.location.origin;
     const { error } = await supabase.auth.signInWithOtp({
@@ -71,6 +74,7 @@ export default function OnboardingPage() {
       options: { emailRedirectTo: `${siteUrl}/auth/callback` },
     });
     setMsg(error ? error.message : "Magic link sent. Check your email.");
+    setSending(false);
   }
 
   async function saveProfile(e: FormEvent) {
@@ -103,12 +107,20 @@ export default function OnboardingPage() {
         <form onSubmit={sendMagicLink} className="rounded-xl border bg-white p-6 space-y-3 md:col-span-2">
           <h1 className="text-xl font-semibold">Step 1: Sign in</h1>
           <input
+            type="email"
+            required
             className="w-full rounded border px-3 py-2"
             placeholder="you@company.com"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
-          <button className="rounded bg-slate-900 px-4 py-2 text-white">Send magic link</button>
+          <button
+            type="submit"
+            disabled={sending}
+            className="w-full rounded bg-slate-900 px-4 py-2 text-white active:scale-[0.99] disabled:opacity-60"
+          >
+            {sending ? "Sending..." : "Send magic link"}
+          </button>
         </form>
       )}
 
