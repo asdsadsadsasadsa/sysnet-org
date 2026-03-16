@@ -11,7 +11,9 @@
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
     "deploy:prod": "bash scripts/deploy.sh",
-    "deploy:preview": "vercel --yes"
+    "deploy:preview": "vercel --yes",
+    "e2e:seed-user": "node scripts/e2e-seed-user.mjs",
+    "e2e:auth": "playwright test tests/auth-password-api.spec.ts --reporter=html"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
