@@ -105,3 +105,13 @@ Build a seed script that accepts:
 - service-role key
 
 And performs the mapping above in one repeatable run.
+
+## SQL scaffold now available
+For a SQL-editor-first apply path, use:
+
+- `backend/supabase/seed-scaffold.sql`
+
+Notes:
+- it stages the current sample pack into temp tables
+- it upserts profiles, then inserts posts/comments by handle/title mapping
+- profile UUID placeholders must be replaced with real `auth.users.id` values before the profile upsert step is safe to run
