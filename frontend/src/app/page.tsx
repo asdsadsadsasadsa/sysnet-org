@@ -52,6 +52,9 @@ export default async function Home({
             Browse directory
           </Link>
         </div>
+        <p className="soft-muted mt-4 text-xs">
+          Tiny deploy check: homepage updated so we can confirm the Vercel pipeline is live.
+        </p>
       </section>
 
       <section className="grid gap-4 md:grid-cols-3">
