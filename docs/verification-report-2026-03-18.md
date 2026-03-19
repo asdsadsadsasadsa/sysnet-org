@@ -24,7 +24,7 @@ Make the site actually useful for a real new user:
 
 ### Auth
 - [x] Password login works in production via Playwright
-- [~] Create-account flow appears flaky / silent in browser-driven manual testing
+- [x] Create-account flow works in production after server-side confirmed-account signup fix
 - [ ] Logout flow verified
 - [ ] Session persistence verified across navigation/reload
 - [ ] Auth redirect behavior verified end-to-end
@@ -63,12 +63,11 @@ Make the site actually useful for a real new user:
 5. Product currently feels sparse because the core data surfaces are under-seeded.
 
 ## Fix Order
-1. Verify and fix signup/create-account behavior.
-2. Verify and fix profile save / onboarding completion.
-3. Verify and fix authenticated feed publish.
-4. Establish robust seed path.
-5. Seed directory + feed + activity with realistic sample data.
-6. Polish UX/error states and remove temporary deploy-check copy.
+1. Verify and fix profile save / onboarding completion.
+2. Verify and fix authenticated feed publish.
+3. Establish robust seed path.
+4. Seed directory + feed + activity with realistic sample data.
+5. Polish UX/error states and remove temporary deploy-check copy.
 
 ## Working Notes
 - Keep commits small and push coherent milestones.
