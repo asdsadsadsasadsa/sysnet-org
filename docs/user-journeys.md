@@ -38,7 +38,7 @@ Status legend:
 
 ### 2.2 Log in as existing user
 - [x] Submit valid credentials
-- [ ] See clear success feedback
+- [x] See clear success feedback
 - [ ] Remain signed in after navigation/reload
 
 ### 2.3 Log out
@@ -50,9 +50,9 @@ Status legend:
 ## 3. New member activation journeys
 
 ### 3.1 Complete onboarding/profile
-- [ ] Reach profile form after signup/login
-- [ ] Fill required profile fields
-- [ ] Save profile successfully
+- [x] Reach profile form after signup/login
+- [~] Fill required profile fields
+- [~] Save profile successfully
 - [ ] Redirect into useful next page
 - [ ] Reload and confirm profile persisted
 

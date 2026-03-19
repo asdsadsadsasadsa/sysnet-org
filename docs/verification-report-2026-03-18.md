@@ -27,10 +27,10 @@ Make the site actually useful for a real new user:
 - [x] Create-account flow works in production after server-side confirmed-account signup fix
 - [ ] Logout flow verified
 - [ ] Session persistence verified across navigation/reload
-- [ ] Auth redirect behavior verified end-to-end
+- [x] Auth redirect behavior verified into onboarding profile form
 
 ### Onboarding / Profile
-- [ ] New signed-in user can save a profile
+- [~] New signed-in user reaches profile form in production, but profile save is still not verified cleanly
 - [ ] Existing user can edit a profile
 - [ ] Saved profile persists and is visible in product surfaces
 
@@ -59,8 +59,9 @@ Make the site actually useful for a real new user:
 1. Deploy path is now real and working.
 2. Earlier Vercel failures were due to missing env vars and Node runtime mismatch.
 3. Live prod password login works in automated Playwright testing.
-4. Manual browser testing suggests some auth/profile UX is too silent or inconsistent.
-5. Product currently feels sparse because the core data surfaces are under-seeded.
+4. Live browser verification now confirms the login flow reaches the onboarding profile form with visible signed-in feedback.
+5. Profile save is still suspect: a live save attempt produced the message `Handle is invalid. Use letters, numbers, underscore, and dashes.` and needs tighter verification/debugging.
+6. Product currently feels sparse because the core data surfaces are under-seeded.
 
 ## Fix Order
 1. Verify and fix profile save / onboarding completion.
