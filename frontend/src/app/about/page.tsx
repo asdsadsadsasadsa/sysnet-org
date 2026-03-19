@@ -1,11 +1,25 @@
 export default function AboutPage() {
   return (
-    <div className="space-y-4 rounded-xl border bg-white p-6">
-      <h1 className="text-2xl font-semibold">About SYNR</h1>
-      <p className="text-slate-700">
-        SYNR is a focused professional community for systems engineers. We prioritize practical knowledge sharing,
-        standards-aware discussion, and trusted peer connections.
+    <div className="shell-card-strong space-y-5 p-6 md:p-8">
+      <p className="eyebrow">About the network</p>
+      <h1 className="section-title">A more serious place for systems engineers.</h1>
+      <p className="max-w-3xl text-base leading-7 soft-muted">
+        ABRAKADABRA is a focused professional community for systems engineers. The point is not to mimic a noisy social
+        platform — it is to create a calmer space for practical knowledge sharing, standards-aware discussion, trusted
+        peer discovery, and durable professional relationships.
       </p>
+      <div className="grid gap-4 md:grid-cols-3">
+        {[
+          ["Practical", "Prioritize implementation lessons, not generic thought leadership."],
+          ["Credible", "Let expertise, domain focus, and helpfulness do the talking."],
+          ["Useful", "Make it easier to find peers, collaborators, mentors, and working groups."],
+        ].map(([title, body]) => (
+          <div key={title} className="rounded-[24px] border border-slate-200/70 bg-white/80 p-5">
+            <h2 className="text-base font-semibold text-slate-900">{title}</h2>
+            <p className="mt-2 text-sm leading-6 soft-muted">{body}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }

@@ -1,5 +1,5 @@
 "use client";
-export const dynamic = 'force-dynamic';
+export const dynamic = "force-dynamic";
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
@@ -30,27 +30,65 @@ export default function PeoplePage() {
   }, [profiles, q, openTo]);
 
   return (
-    <div className="space-y-4">
-      <h1 className="text-2xl font-semibold">Member Directory</h1>
-      <div className="flex flex-wrap gap-2">
-        <input className="rounded border px-3 py-2" placeholder="Search tags, headline, domain" value={q} onChange={(e) => setQ(e.target.value)} />
-        <select className="rounded border px-3 py-2" value={openTo} onChange={(e) => setOpenTo(e.target.value)}>
-          <option value="">All availability</option>
-          <option value="mentoring">Mentoring</option>
-          <option value="consulting">Consulting</option>
-          <option value="hiring">Hiring</option>
-        </select>
-      </div>
-      <div className="grid gap-3 md:grid-cols-2">
-        {filtered.map((p) => (
-          <article key={p.id} className="rounded-xl border bg-white p-4">
-            <Link href={`/u/${p.handle}`} className="font-semibold hover:underline">{p.display_name}</Link>
-            <p className="text-sm text-slate-600">{p.headline || "Systems Engineer"}</p>
-            <div className="mt-2 flex flex-wrap gap-2">
-              {(p.tags || []).slice(0, 6).map((t) => <span key={t} className="rounded bg-slate-100 px-2 py-1 text-xs">{t}</span>)}
-            </div>
-          </article>
-        ))}
+    <div className="space-y-6">
+      <section className="page-grid">
+        <div className="shell-card-strong p-6 md:p-8">
+          <p className="eyebrow">Expert discovery</p>
+          <h1 className="section-title mt-3">Member directory</h1>
+          <p className="mt-3 max-w-2xl text-base leading-7 soft-muted">
+            Search for systems engineers by specialty, tooling, and availability. The goal is to make the network
+            feel like a trusted expert graph, not a random profile cemetery.
+          </p>
+        </div>
+        <div className="shell-card p-6">
+          <p className="eyebrow">Filter the graph</p>
+          <div className="mt-4 space-y-3">
+            <input placeholder="Search tags, headline, domain" value={q} onChange={(e) => setQ(e.target.value)} />
+            <select value={openTo} onChange={(e) => setOpenTo(e.target.value)}>
+              <option value="">All availability</option>
+              <option value="mentoring">Mentoring</option>
+              <option value="consulting">Consulting</option>
+              <option value="hiring">Hiring</option>
+            </select>
+          </div>
+        </div>
+      </section>
+
+      <div className="grid gap-4 md:grid-cols-2">
+        {filtered.length === 0 ? (
+          <div className="shell-card p-8 md:col-span-2">
+            <h2 className="text-lg font-semibold text-slate-900">No matching profiles yet</h2>
+            <p className="mt-2 max-w-xl text-sm leading-6 soft-muted">
+              This is one of the places that still needs realistic seed data so the product feels alive to a first-time visitor.
+            </p>
+          </div>
+        ) : (
+          filtered.map((p) => (
+            <article key={p.id} className="shell-card p-5 md:p-6">
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <Link href={`/u/${p.handle}`} className="text-lg font-semibold tracking-tight text-slate-900 hover:text-blue-700">
+                    {p.display_name}
+                  </Link>
+                  <p className="mt-1 text-sm soft-muted">{p.headline || "Systems engineer"}</p>
+                </div>
+                {(p.open_to || []).slice(0, 1).map((state) => (
+                  <span key={state} className="pill">
+                    {state}
+                  </span>
+                ))}
+              </div>
+              {p.location && <p className="mt-3 text-sm soft-muted">{p.location}</p>}
+              <div className="mt-4 flex flex-wrap gap-2">
+                {(p.tags || []).slice(0, 6).map((t) => (
+                  <span key={t} className="pill">
+                    {t}
+                  </span>
+                ))}
+              </div>
+            </article>
+          ))
+        )}
       </div>
     </div>
   );

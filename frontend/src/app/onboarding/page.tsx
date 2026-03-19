@@ -164,34 +164,52 @@ export default function OnboardingPage() {
   }
 
   return (
-    <div className="grid gap-6 md:grid-cols-2">
+    <div className="space-y-6">
+      <section className="page-grid">
+        <div className="shell-card-strong p-6 md:p-8">
+          <p className="eyebrow">Join the network</p>
+          <h1 className="section-title mt-3">Create an account or continue where you left off.</h1>
+          <p className="mt-3 max-w-2xl text-base leading-7 soft-muted">
+            The goal here is simple: make it easy to get into the network, complete a credible public profile,
+            and move straight into the feed and directory.
+          </p>
+        </div>
+        <div className="shell-card p-6">
+          <p className="eyebrow">What belongs here</p>
+          <div className="mt-4 space-y-3 text-sm leading-6 soft-muted">
+            <p>Use a handle people can recognize.</p>
+            <p>Add a sharp headline, clear domains, and realistic availability.</p>
+            <p>This should feel closer to a professional registry than a throwaway signup form.</p>
+          </div>
+        </div>
+      </section>
+
       {!userId && (
-        <div className="rounded-xl border bg-white p-6 space-y-4 md:col-span-2">
-          <div className="flex gap-2 text-sm">
+        <div className="shell-card p-6 space-y-5 md:p-8">
+          <div className="inline-flex rounded-full border border-slate-200/80 bg-white/80 p-1 text-sm">
             <button
               type="button"
               onClick={() => setMode("login")}
-              className={`rounded-lg px-3 py-2 ${mode === "login" ? "bg-slate-900 text-white" : "border border-slate-300 text-slate-700"}`}
+              className={`rounded-full px-4 py-2 ${mode === "login" ? "bg-slate-900 text-white" : "text-slate-600"}`}
             >
               Login
             </button>
             <button
               type="button"
               onClick={() => setMode("signup")}
-              className={`rounded-lg px-3 py-2 ${mode === "signup" ? "bg-slate-900 text-white" : "border border-slate-300 text-slate-700"}`}
+              className={`rounded-full px-4 py-2 ${mode === "signup" ? "bg-slate-900 text-white" : "text-slate-600"}`}
             >
               Create account
             </button>
           </div>
 
-          <form onSubmit={mode === "login" ? signIn : signUp} className="space-y-3">
-            <h1 className="text-xl font-semibold">
+          <form onSubmit={mode === "login" ? signIn : signUp} className="space-y-4">
+            <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
               {mode === "login" ? "Sign in with email and password" : "Create your account"}
-            </h1>
+            </h2>
             <input
               type="email"
               required
-              className="w-full rounded border px-3 py-2"
               placeholder="you@company.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -199,7 +217,6 @@ export default function OnboardingPage() {
             <input
               type="password"
               required
-              className="w-full rounded border px-3 py-2"
               placeholder="Password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
@@ -208,17 +225,12 @@ export default function OnboardingPage() {
               <input
                 type="password"
                 required
-                className="w-full rounded border px-3 py-2"
                 placeholder="Confirm password"
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
               />
             )}
-            <button
-              type="submit"
-              disabled={sending}
-              className="w-full rounded bg-slate-900 px-4 py-2 text-white active:scale-[0.99] disabled:opacity-60"
-            >
+            <button type="submit" disabled={sending} className="primary-button w-full disabled:opacity-60">
               {sending ? "Working..." : mode === "login" ? "Sign in" : "Create account"}
             </button>
           </form>
@@ -226,45 +238,47 @@ export default function OnboardingPage() {
       )}
 
       {userId && authChecked && !hasProfile && (
-        <form onSubmit={saveProfile} className="rounded-xl border bg-white p-6 space-y-3 md:col-span-2">
+        <form onSubmit={saveProfile} className="shell-card p-6 space-y-4 md:p-8">
           <div className="flex items-start justify-between gap-4">
             <div>
-              <h2 className="text-xl font-semibold">Complete your profile</h2>
-              <p className="mt-1 text-sm text-slate-600">Your login works. Now add the public profile people will see.</p>
+              <h2 className="text-2xl font-semibold tracking-tight text-slate-900">Complete your profile</h2>
+              <p className="mt-1 text-sm soft-muted">Your login works. Now add the public profile people will see.</p>
             </div>
-            <button type="button" onClick={signOut} className="rounded border border-slate-300 px-3 py-2 text-sm text-slate-700">
+            <button type="button" onClick={signOut} className="secondary-button px-4 py-2">
               Sign out
             </button>
           </div>
-          <input className="w-full rounded border px-3 py-2" placeholder="handle" value={handle} onChange={(e) => setHandle(e.target.value)} />
-          <input className="w-full rounded border px-3 py-2" placeholder="display name" value={displayName} onChange={(e) => setDisplayName(e.target.value)} />
-          <input className="w-full rounded border px-3 py-2" placeholder="headline" value={headline} onChange={(e) => setHeadline(e.target.value)} />
-          <input className="w-full rounded border px-3 py-2" placeholder="location" value={location} onChange={(e) => setLocation(e.target.value)} />
-          <input className="w-full rounded border px-3 py-2" placeholder="domains csv" value={domains} onChange={(e) => setDomains(e.target.value)} />
-          <input className="w-full rounded border px-3 py-2" placeholder="tags csv" value={tags} onChange={(e) => setTags(e.target.value)} />
-          <input className="w-full rounded border px-3 py-2" placeholder="open_to csv" value={openTo} onChange={(e) => setOpenTo(e.target.value)} />
-          <button className="rounded bg-slate-900 px-4 py-2 text-white">Save profile</button>
+          <div className="grid gap-4 md:grid-cols-2">
+            <input placeholder="handle" value={handle} onChange={(e) => setHandle(e.target.value)} />
+            <input placeholder="display name" value={displayName} onChange={(e) => setDisplayName(e.target.value)} />
+            <input className="md:col-span-2" placeholder="headline" value={headline} onChange={(e) => setHeadline(e.target.value)} />
+            <input placeholder="location" value={location} onChange={(e) => setLocation(e.target.value)} />
+            <input placeholder="domains csv" value={domains} onChange={(e) => setDomains(e.target.value)} />
+            <input placeholder="tags csv" value={tags} onChange={(e) => setTags(e.target.value)} />
+            <input placeholder="open_to csv" value={openTo} onChange={(e) => setOpenTo(e.target.value)} />
+          </div>
+          <button className="primary-button">Save profile</button>
         </form>
       )}
 
       {userId && authChecked && hasProfile && (
-        <div className="rounded-xl border bg-white p-6 space-y-3 md:col-span-2">
+        <div className="shell-card p-6 space-y-4 md:p-8">
           <div className="flex items-start justify-between gap-4">
             <div>
-              <h2 className="text-xl font-semibold">You’re signed in</h2>
-              <p className="text-slate-600">Your profile exists. Continue to the feed.</p>
+              <h2 className="text-2xl font-semibold tracking-tight text-slate-900">You’re signed in</h2>
+              <p className="soft-muted">Your profile exists. Continue to the feed.</p>
             </div>
-            <button type="button" onClick={signOut} className="rounded border border-slate-300 px-3 py-2 text-sm text-slate-700">
+            <button type="button" onClick={signOut} className="secondary-button px-4 py-2">
               Sign out
             </button>
           </div>
-          <Link href="/feed" className="inline-block rounded bg-slate-900 px-4 py-2 text-white">
+          <Link href="/feed" className="primary-button">
             Go to feed
           </Link>
         </div>
       )}
 
-      {msg && <p className="md:col-span-2 text-sm text-slate-600">{msg}</p>}
+      {msg && <p className="text-sm soft-muted">{msg}</p>}
     </div>
   );
 }
