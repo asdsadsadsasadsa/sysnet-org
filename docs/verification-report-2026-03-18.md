@@ -20,7 +20,7 @@ Make the site actually useful for a real new user:
 - [x] Vercel production deploy works
 - [x] Live site loads at `https://sysnet-org.vercel.app`
 - [x] Required Vercel env vars set
-- [x] Frontend runtime pinned for Vercel builds (`node 22.x`)
+- [x] Frontend runtime pinned for Vercel builds (latest Node major, now `24.x`)
 
 ### Auth
 - [x] Password login works in production via Playwright
@@ -37,7 +37,7 @@ Make the site actually useful for a real new user:
 ### Feed
 - [x] Feed page loads
 - [x] Unauthenticated publish is blocked with visible message
-- [ ] Authenticated publish works end-to-end
+- [>] Authenticated publish repo-side fix prepared + deployed; awaiting DB migration apply and live retest
 - [ ] Feed displays seeded / real posts
 
 ### Directory
@@ -64,7 +64,8 @@ Make the site actually useful for a real new user:
 5. Logout works and returns the user to the onboarding login form with a visible `Signed out.` message.
 6. The feed remains directly viewable after logout, but unauthenticated publish is still blocked with a visible `Sign in first on /onboarding` message.
 7. Profile save is still suspect: a live save attempt produced the message `Handle is invalid. Use letters, numbers, underscore, and dashes.` and needs tighter verification/debugging.
-8. Product currently feels sparse because the core data surfaces are under-seeded.
+8. A concrete DB migration for the publish fix now exists at `backend/supabase/migrations/2026-03-19-fix-can-post-now.sql`.
+9. Product currently feels sparse because the core data surfaces are under-seeded.
 
 ## Fix Order
 1. Verify and fix profile save / onboarding completion.
