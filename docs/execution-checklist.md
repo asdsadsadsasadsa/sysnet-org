@@ -52,7 +52,7 @@ Build a site that feels like **IEEE for systems engineers**: a real person can c
 ## Phase 1 — Make the site feel alive tomorrow
 
 ### 1.1 Seed meaningful sample data
-- [ ] Establish robust seed path (script or admin flow)
+- [x] Establish robust seed path (script or admin flow)
 - [~] Seed 20-200 realistic user profiles
 - [x] Seed different domains/subfields of systems engineering
 - [x] Seed realistic headlines, bios, tags, and locations

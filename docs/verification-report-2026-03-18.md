@@ -47,9 +47,9 @@ Make the site actually useful for a real new user:
 - [ ] Search/filter behavior verified against populated data
 
 ### Sample Data / Product Usefulness
-- [ ] Meaningful sample profiles seeded
-- [ ] Meaningful sample posts/comments/activity seeded
-- [ ] Site feels populated enough for review tomorrow
+- [x] Meaningful sample profiles seeded
+- [x] Meaningful sample posts/comments/activity seeded
+- [~] Site feels more populated, but still needs a larger volume pass for tomorrow's review
 
 ### Test Harness
 - [x] Playwright production login test passes
