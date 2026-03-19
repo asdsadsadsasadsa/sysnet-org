@@ -53,6 +53,7 @@ Make the site actually useful for a real new user:
 
 ### Test Harness
 - [x] Playwright production login test passes
+- [x] Added Playwright coverage for signed-in onboarding/profile save path
 - [~] Vitest currently failing with `ERR_REQUIRE_ESM`
 
 ## Concrete Findings So Far
