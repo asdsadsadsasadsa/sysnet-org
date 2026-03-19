@@ -67,9 +67,9 @@ Status legend:
 ## 4. Discovery journeys
 
 ### 4.1 Browse directory
-- [ ] See populated member list
-- [ ] Inspect member cards/details
-- [ ] Understand why each person is relevant
+- [x] See populated member list
+- [x] Inspect member cards/details
+- [~] Understand why each person is relevant
 
 ### 4.2 Search directory
 - [ ] Search by tag
@@ -88,8 +88,8 @@ Status legend:
 ## 5. Social/feed journeys
 
 ### 5.1 View feed as visitor
-- [ ] See populated feed
-- [ ] Understand what good posts look like
+- [x] See populated feed
+- [x] Understand what good posts look like
 
 ### 5.2 Publish a post as signed-in user
 - [ ] Write title/body

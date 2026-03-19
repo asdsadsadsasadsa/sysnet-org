@@ -43,7 +43,7 @@ Make the site actually useful for a real new user:
 ### Directory
 - [x] People page loads
 - [x] Search/filter controls render
-- [~] Directory currently feels empty / thin
+- [~] Directory is now populated with seeded profiles, but still includes a couple junk legacy profiles that should be cleaned up
 - [ ] Search/filter behavior verified against populated data
 
 ### Sample Data / Product Usefulness
@@ -65,7 +65,8 @@ Make the site actually useful for a real new user:
 6. The feed remains directly viewable after logout, but unauthenticated publish is still blocked with a visible `Sign in first on /onboarding` message.
 7. Profile save is still suspect: a live save attempt produced the message `Handle is invalid. Use letters, numbers, underscore, and dashes.` and needs tighter verification/debugging.
 8. A concrete DB migration for the publish fix now exists at `backend/supabase/migrations/2026-03-19-fix-can-post-now.sql`.
-9. Product currently feels sparse because the core data surfaces are under-seeded.
+9. Seeded profiles now render in the live public directory, so the site no longer feels empty by default.
+10. The directory still contains a couple junk legacy profiles (`/u/gfggggg`, `/u/asdasdsadwd`) that should be cleaned up for credibility.
 
 ## Fix Order
 1. Verify and fix profile save / onboarding completion.
