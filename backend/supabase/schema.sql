@@ -84,6 +84,8 @@ create or replace function public.can_post_now(user_id uuid)
 returns boolean
 language sql
 stable
+security definer
+set search_path = public, auth
 as $$
   select case
     when exists (
@@ -97,6 +99,10 @@ as $$
   end;
 $$;
 
+revoke all on function public.can_post_now(uuid) from public;
+grant execute on function public.can_post_now(uuid) to authenticated;
+grant execute on function public.can_post_now(uuid) to anon;
+
 -- RLS
 alter table public.profiles enable row level security;
 alter table public.connection_requests enable row level security;
@@ -107,49 +113,68 @@ alter table public.likes enable row level security;
 alter table public.reports enable row level security;
 
 -- profiles
-create policy if not exists profiles_read on public.profiles for select using (true);
-create policy if not exists profiles_insert_own on public.profiles for insert with check (auth.uid() = id);
-create policy if not exists profiles_update_own on public.profiles for update using (auth.uid() = id) with check (auth.uid() = id);
+DROP POLICY IF EXISTS profiles_read ON public.profiles;
+create policy profiles_read on public.profiles for select using (true);
+DROP POLICY IF EXISTS profiles_insert_own ON public.profiles;
+create policy profiles_insert_own on public.profiles for insert with check (auth.uid() = id);
+DROP POLICY IF EXISTS profiles_update_own ON public.profiles;
+create policy profiles_update_own on public.profiles for update using (auth.uid() = id) with check (auth.uid() = id);
 
 -- connection requests
-create policy if not exists cr_select_parties on public.connection_requests
+DROP POLICY IF EXISTS cr_select_parties ON public.connection_requests;
+create policy cr_select_parties on public.connection_requests
 for select using (auth.uid() = from_user or auth.uid() = to_user);
-create policy if not exists cr_insert_sender on public.connection_requests
+DROP POLICY IF EXISTS cr_insert_sender ON public.connection_requests;
+create policy cr_insert_sender on public.connection_requests
 for insert with check (auth.uid() = from_user and from_user <> to_user);
-create policy if not exists cr_update_receiver on public.connection_requests
+DROP POLICY IF EXISTS cr_update_receiver ON public.connection_requests;
+create policy cr_update_receiver on public.connection_requests
 for update using (auth.uid() = to_user) with check (to_user = auth.uid());
 
 -- connections
-create policy if not exists connections_select_parties on public.connections
+DROP POLICY IF EXISTS connections_select_parties ON public.connections;
+create policy connections_select_parties on public.connections
 for select using (auth.uid() = user_a or auth.uid() = user_b);
 
 -- posts with first-day anti-spam
-create policy if not exists posts_read on public.posts for select using (true);
-create policy if not exists posts_insert_owner on public.posts
+DROP POLICY IF EXISTS posts_read ON public.posts;
+create policy posts_read on public.posts for select using (true);
+DROP POLICY IF EXISTS posts_insert_owner ON public.posts;
+create policy posts_insert_owner on public.posts
 for insert with check (auth.uid() = author_id and public.can_post_now(auth.uid()));
-create policy if not exists posts_update_owner on public.posts
+DROP POLICY IF EXISTS posts_update_owner ON public.posts;
+create policy posts_update_owner on public.posts
 for update using (auth.uid() = author_id) with check (auth.uid() = author_id);
-create policy if not exists posts_delete_owner on public.posts
+DROP POLICY IF EXISTS posts_delete_owner ON public.posts;
+create policy posts_delete_owner on public.posts
 for delete using (auth.uid() = author_id);
 
 -- comments
-create policy if not exists comments_read on public.comments for select using (true);
-create policy if not exists comments_insert_owner on public.comments
+DROP POLICY IF EXISTS comments_read ON public.comments;
+create policy comments_read on public.comments for select using (true);
+DROP POLICY IF EXISTS comments_insert_owner ON public.comments;
+create policy comments_insert_owner on public.comments
 for insert with check (auth.uid() = author_id);
-create policy if not exists comments_update_owner on public.comments
+DROP POLICY IF EXISTS comments_update_owner ON public.comments;
+create policy comments_update_owner on public.comments
 for update using (auth.uid() = author_id) with check (auth.uid() = author_id);
-create policy if not exists comments_delete_owner on public.comments
+DROP POLICY IF EXISTS comments_delete_owner ON public.comments;
+create policy comments_delete_owner on public.comments
 for delete using (auth.uid() = author_id);
 
 -- likes
-create policy if not exists likes_read on public.likes for select using (true);
-create policy if not exists likes_insert_owner on public.likes
+DROP POLICY IF EXISTS likes_read ON public.likes;
+create policy likes_read on public.likes for select using (true);
+DROP POLICY IF EXISTS likes_insert_owner ON public.likes;
+create policy likes_insert_owner on public.likes
 for insert with check (auth.uid() = user_id);
-create policy if not exists likes_delete_owner on public.likes
+DROP POLICY IF EXISTS likes_delete_owner ON public.likes;
+create policy likes_delete_owner on public.likes
 for delete using (auth.uid() = user_id);
 
 -- reports
-create policy if not exists reports_insert_auth on public.reports
+DROP POLICY IF EXISTS reports_insert_auth ON public.reports;
+create policy reports_insert_auth on public.reports
 for insert with check (auth.uid() = reporter_id);
 
 -- Trigger: when request accepted, add connection row
