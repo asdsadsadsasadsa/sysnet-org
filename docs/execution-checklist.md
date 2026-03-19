@@ -53,14 +53,14 @@ Build a site that feels like **IEEE for systems engineers**: a real person can c
 
 ### 1.1 Seed meaningful sample data
 - [ ] Establish robust seed path (script or admin flow)
-- [ ] Seed 20-200 realistic user profiles
-- [ ] Seed different domains/subfields of systems engineering
-- [ ] Seed realistic headlines, bios, tags, and locations
-- [ ] Seed different availability states (mentoring / consulting / hiring)
-- [ ] Seed posts with practical, credible content
-- [ ] Seed comments and lightweight engagement
+- [~] Seed 20-200 realistic user profiles
+- [x] Seed different domains/subfields of systems engineering
+- [x] Seed realistic headlines, bios, tags, and locations
+- [x] Seed different availability states (mentoring / consulting / hiring)
+- [x] Seed posts with practical, credible content
+- [x] Seed comments and lightweight engagement
 - [ ] Seed connection requests / network activity where visible
-- [ ] Make sure seeded content looks intentional, not random junk
+- [x] Make sure seeded content looks intentional, not random junk
 
 ### 1.2 Product polish for reviewability
 - [x] Remove temporary deploy-check text from homepage

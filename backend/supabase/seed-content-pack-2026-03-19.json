@@ -1,0 +1,132 @@
+{
+  "profiles": [
+    {
+      "handle": "maya-mbse",
+      "display_name": "Maya Chen",
+      "headline": "Principal MBSE lead for safety-critical aerospace programs",
+      "bio": "Leads model-based systems engineering adoption across flight controls and mission-planning teams. Interested in verification rigor, requirements traceability, and making MBSE useful beyond slideware.",
+      "location": "Seattle, WA",
+      "timezone": "America/Los_Angeles",
+      "domains": ["aerospace", "systems engineering", "mbse"],
+      "tags": ["sysml", "cameo", "requirements", "verification"],
+      "open_to": ["mentoring", "consulting"]
+    },
+    {
+      "handle": "omar-embedded-systems",
+      "display_name": "Omar Rahman",
+      "headline": "Embedded systems architect bridging hardware, firmware, and test",
+      "bio": "Works on cross-functional architecture for industrial robotics platforms. Cares about interface clarity, failure analysis, and disciplined system decomposition.",
+      "location": "Austin, TX",
+      "timezone": "America/Chicago",
+      "domains": ["robotics", "embedded systems", "industrial automation"],
+      "tags": ["embedded", "integration", "interfaces", "test"],
+      "open_to": ["hiring"]
+    },
+    {
+      "handle": "lina-medtech",
+      "display_name": "Lina Park",
+      "headline": "Systems engineer for regulated medical device platforms",
+      "bio": "Focuses on requirements, risk controls, and design history discipline for connected medtech products. Likes translating compliance pressure into cleaner engineering systems.",
+      "location": "San Diego, CA",
+      "timezone": "America/Los_Angeles",
+      "domains": ["medical devices", "quality systems", "regulated products"],
+      "tags": ["risk management", "traceability", "verification", "validation"],
+      "open_to": ["mentoring"]
+    },
+    {
+      "handle": "diego-autonomy",
+      "display_name": "Diego Alvarez",
+      "headline": "Autonomy systems engineer working across perception, planning, and ops",
+      "bio": "Helps autonomy teams reason about system boundaries, operational envelopes, and failure containment. Interested in reviewable architecture artifacts and simulation-informed decisions.",
+      "location": "Mountain View, CA",
+      "timezone": "America/Los_Angeles",
+      "domains": ["autonomy", "robotics", "simulation"],
+      "tags": ["planning", "safety", "simulation", "architecture"],
+      "open_to": ["consulting", "hiring"]
+    },
+    {
+      "handle": "rhea-defense-systems",
+      "display_name": "Rhea Banerjee",
+      "headline": "Systems integration manager for large defense programs",
+      "bio": "Coordinates subsystem integration across contractors, test teams, and program management. Particularly interested in configuration drift, interface governance, and review discipline.",
+      "location": "Arlington, VA",
+      "timezone": "America/New_York",
+      "domains": ["defense", "integration", "program execution"],
+      "tags": ["interfaces", "icd", "configuration", "integration"],
+      "open_to": ["mentoring"]
+    },
+    {
+      "handle": "noah-systems-safety",
+      "display_name": "Noah Kim",
+      "headline": "Systems safety engineer focused on hazard analysis and operational resilience",
+      "bio": "Works with platform teams to turn safety cases into design decisions instead of compliance theater. Deeply interested in STPA, fault containment, and testable mitigations.",
+      "location": "Denver, CO",
+      "timezone": "America/Denver",
+      "domains": ["systems safety", "hazard analysis", "resilience"],
+      "tags": ["stpa", "fault analysis", "safety case", "verification"],
+      "open_to": ["consulting"]
+    },
+    {
+      "handle": "irene-rail-systems",
+      "display_name": "Irene Volkov",
+      "headline": "Rail systems engineer coordinating infrastructure and rolling stock interfaces",
+      "bio": "Works on large rail modernization efforts with a focus on interfaces, operational readiness, and test planning across vendors and public stakeholders.",
+      "location": "London, UK",
+      "timezone": "Europe/London",
+      "domains": ["rail", "infrastructure", "transportation"],
+      "tags": ["integration", "operational readiness", "test planning", "interfaces"],
+      "open_to": ["mentoring", "hiring"]
+    },
+    {
+      "handle": "ethan-digital-thread",
+      "display_name": "Ethan Brooks",
+      "headline": "Digital thread strategist for complex product development organizations",
+      "bio": "Helps teams connect requirements, models, verification evidence, and change control into a usable engineering thread. Suspicious of dashboards that do not improve decisions.",
+      "location": "Boston, MA",
+      "timezone": "America/New_York",
+      "domains": ["digital thread", "plm", "systems transformation"],
+      "tags": ["traceability", "plm", "requirements", "governance"],
+      "open_to": ["consulting", "mentoring"]
+    }
+  ],
+  "posts": [
+    {
+      "author_handle": "maya-mbse",
+      "title": "What finally made MBSE reviews useful for our flight-controls team",
+      "body": "The biggest improvement was banning model tours. Reviews got better when every session had one operational question, one boundary condition, and one explicit decision to make. We also forced every diagram to point back to a requirement or verification artifact. The model became less decorative and more argumentative.",
+      "group_slug": null
+    },
+    {
+      "author_handle": "omar-embedded-systems",
+      "title": "A simple interface contract template cut our integration churn hard",
+      "body": "We kept rediscovering the same cross-team failures: assumed timings, undocumented reset behavior, and unclear ownership for degraded modes. A lightweight contract template fixed more than another architecture review ever did. We now require nominal flow, failure behavior, timing assumptions, and test ownership on every subsystem interface.",
+      "group_slug": null
+    },
+    {
+      "author_handle": "lina-medtech",
+      "title": "Traceability gets easier once you stop pretending every requirement is equally important",
+      "body": "We had a messy requirement tree until we started separating safety-critical, regulatory, and convenience requirements much more explicitly. That made reviews sharper and verification planning less chaotic. The lesson: traceability quality comes from better requirement structure, not just more tooling.",
+      "group_slug": null
+    },
+    {
+      "author_handle": "noah-systems-safety",
+      "title": "STPA was most useful for us when we paired it with interface ownership",
+      "body": "Hazard analysis alone did not change much. The big shift happened when every unsafe control action also had a named interface owner, mitigation owner, and test owner. That created accountability and turned safety analysis into engineering work instead of a PDF graveyard.",
+      "group_slug": null
+    }
+  ],
+  "comments": [
+    {
+      "post_author_handle": "maya-mbse",
+      "post_title": "What finally made MBSE reviews useful for our flight-controls team",
+      "author_handle": "ethan-digital-thread",
+      "body": "The requirement/verif link is the key. The moment the model has to support a decision, people stop stuffing it with ornamental detail."
+    },
+    {
+      "post_author_handle": "omar-embedded-systems",
+      "post_title": "A simple interface contract template cut our integration churn hard",
+      "author_handle": "rhea-defense-systems",
+      "body": "We ended up doing something similar on a defense integration effort. The trick was forcing timing and degraded-mode assumptions into the same artifact instead of separate documents."
+    }
+  ]
+}
