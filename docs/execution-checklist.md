@@ -74,18 +74,18 @@ Build a site that feels like **IEEE for systems engineers**: a real person can c
 ## Phase 2 — Competitor/adjacent-org feature inspiration
 
 ### 2.1 Research pass
-- [ ] Review IEEE.org
-- [ ] Review British Computer Society (BCS)
-- [ ] Review INCOSE
-- [ ] Review ACM
-- [ ] Review other relevant professional engineering orgs
+- [x] Review IEEE.org
+- [x] Review British Computer Society (BCS)
+- [x] Review INCOSE
+- [x] Review ACM
+- [x] Review other relevant professional engineering orgs
 
 ### 2.2 Capture learnings in repo
-- [ ] Write feature-scout report
-- [ ] Identify must-have institutional features
-- [ ] Identify nice-to-have trust/credibility features
-- [ ] Identify UX patterns worth copying
-- [ ] Identify bloated/crusty patterns worth avoiding
+- [x] Write feature-scout report
+- [x] Identify must-have institutional features
+- [x] Identify nice-to-have trust/credibility features
+- [x] Identify UX patterns worth copying
+- [x] Identify bloated/crusty patterns worth avoiding
 
 ### 2.3 Convert research into roadmap
 - [ ] Map inspiration into Sysnet feature backlog
