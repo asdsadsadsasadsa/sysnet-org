@@ -63,8 +63,8 @@ Build a site that feels like **IEEE for systems engineers**: a real person can c
 - [ ] Make sure seeded content looks intentional, not random junk
 
 ### 1.2 Product polish for reviewability
-- [ ] Remove temporary deploy-check text from homepage
-- [ ] Improve homepage credibility / first impression
+- [x] Remove temporary deploy-check text from homepage
+- [x] Improve homepage credibility / first impression
 - [ ] Make public pages feel full rather than skeletal
 - [ ] Verify all seeded surfaces are visible in production
 - [ ] Re-test the full first-time-user journey after seeding
