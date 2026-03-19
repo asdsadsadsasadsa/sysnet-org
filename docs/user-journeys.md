@@ -42,8 +42,8 @@ Status legend:
 - [ ] Remain signed in after navigation/reload
 
 ### 2.3 Log out
-- [ ] Sign out successfully
-- [ ] Confirm session is gone
+- [x] Sign out successfully
+- [x] Confirm session is gone
 
 ---
 

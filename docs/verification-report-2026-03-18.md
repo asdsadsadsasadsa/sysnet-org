@@ -25,7 +25,7 @@ Make the site actually useful for a real new user:
 ### Auth
 - [x] Password login works in production via Playwright
 - [x] Create-account flow works in production after server-side confirmed-account signup fix
-- [ ] Logout flow verified
+- [x] Logout flow verified
 - [ ] Session persistence verified across navigation/reload
 - [x] Auth redirect behavior verified into onboarding profile form
 
@@ -61,8 +61,10 @@ Make the site actually useful for a real new user:
 2. Earlier Vercel failures were due to missing env vars and Node runtime mismatch.
 3. Live prod password login works in automated Playwright testing.
 4. Live browser verification now confirms the login flow reaches the onboarding profile form with visible signed-in feedback.
-5. Profile save is still suspect: a live save attempt produced the message `Handle is invalid. Use letters, numbers, underscore, and dashes.` and needs tighter verification/debugging.
-6. Product currently feels sparse because the core data surfaces are under-seeded.
+5. Logout works and returns the user to the onboarding login form with a visible `Signed out.` message.
+6. The feed remains directly viewable after logout, but unauthenticated publish is still blocked with a visible `Sign in first on /onboarding` message.
+7. Profile save is still suspect: a live save attempt produced the message `Handle is invalid. Use letters, numbers, underscore, and dashes.` and needs tighter verification/debugging.
+8. Product currently feels sparse because the core data surfaces are under-seeded.
 
 ## Fix Order
 1. Verify and fix profile save / onboarding completion.
