@@ -1,5 +1,11 @@
 export type ProfileVisibility = "public" | "private";
 
+export type PublicProfileSummary = {
+  id: string;
+  handle: string;
+  display_name: string;
+};
+
 export type Profile = {
   id: string;
   handle: string;

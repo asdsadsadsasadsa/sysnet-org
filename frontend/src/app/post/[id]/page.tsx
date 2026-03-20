@@ -5,12 +5,7 @@ import { FormEvent, useEffect, useState } from "react";
 import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
-
-type ProfileIdentity = {
-  id: string;
-  handle: string;
-  display_name: string;
-};
+import type { PublicProfileSummary } from "@/lib/types";
 
 type CommentRecord = {
   id: string;
@@ -20,7 +15,7 @@ type CommentRecord = {
 };
 
 type Comment = CommentRecord & {
-  author: ProfileIdentity | null;
+  author: PublicProfileSummary | null;
 };
 
 type PostRecord = {
@@ -33,7 +28,7 @@ type PostRecord = {
 };
 
 type PostDetail = PostRecord & {
-  author: ProfileIdentity | null;
+  author: PublicProfileSummary | null;
   likedByViewer: boolean;
   likeCount: number;
 };
@@ -89,10 +84,10 @@ export default function PostPage() {
     const identityIds = [...new Set([postRow.author_id, ...commentRows.map((comment) => comment.author_id)])];
     const { data: identityRows } = identityIds.length
       ? await supabase.from("profile_identities").select("id,handle,display_name").in("id", identityIds)
-      : { data: [] as ProfileIdentity[] };
+      : { data: [] as PublicProfileSummary[] };
 
     const identities = new Map(
-      ((identityRows || []) as ProfileIdentity[]).map((identity) => [identity.id, identity]),
+      ((identityRows || []) as PublicProfileSummary[]).map((identity) => [identity.id, identity]),
     );
     const likes = (likeRows || []) as LikeRow[];
 
@@ -135,7 +130,7 @@ export default function PostPage() {
     if (error) return setMsg(error.message);
 
     setBody("");
-    setMsg("");
+    setMsg("Comment added");
     await load();
   }
 
@@ -165,7 +160,7 @@ export default function PostPage() {
           }
         : currentPost,
     );
-    setMsg("");
+    setMsg(post.likedByViewer ? "Like removed" : "Post liked");
   }
 
   async function savePost(e: FormEvent) {
@@ -271,10 +266,10 @@ export default function PostPage() {
             <button
               type="button"
               onClick={() => void toggleLike()}
-              className="secondary-button px-4 py-2 text-sm"
+              className={`${post.likedByViewer ? "primary-button" : "secondary-button"} px-4 py-2 text-sm`}
               disabled={busy}
             >
-              {post.likedByViewer ? `Liked · ${post.likeCount}` : `Like · ${post.likeCount}`}
+              {busy ? "Working..." : post.likedByViewer ? `Liked · ${post.likeCount}` : `Like · ${post.likeCount}`}
             </button>
             {isOwner && (
               <>

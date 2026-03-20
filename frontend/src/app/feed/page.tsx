@@ -4,24 +4,23 @@ export const dynamic = "force-dynamic";
 import { FormEvent, useEffect, useState } from "react";
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/client";
-import type { Post } from "@/lib/types";
-
-type ProfileIdentity = {
-  id: string;
-  handle: string;
-  display_name: string;
-};
+import type { Post, PublicProfileSummary } from "@/lib/types";
 
 type FeedPost = Post & {
-  author: ProfileIdentity | null;
+  author: PublicProfileSummary | null;
   isOwner: boolean;
   likedByViewer: boolean;
   likeCount: number;
+  commentCount: number;
 };
 
 type LikeRow = {
   post_id: string;
   user_id: string;
+};
+
+type CommentRow = {
+  post_id: string;
 };
 
 export default function FeedPage() {
@@ -53,24 +52,31 @@ export default function FeedPage() {
     const authorIds = [...new Set(postRows.map((post) => post.author_id))];
     const postIds = postRows.map((post) => post.id);
 
-    const [{ data: authorRows }, { data: likeRows }] = await Promise.all([
+    const [{ data: authorRows }, { data: likeRows }, { data: commentRows }] = await Promise.all([
       authorIds.length
         ? supabase.from("profile_identities").select("id,handle,display_name").in("id", authorIds)
-        : Promise.resolve({ data: [] as ProfileIdentity[] }),
+        : Promise.resolve({ data: [] as PublicProfileSummary[] }),
       postIds.length
         ? supabase.from("likes").select("post_id,user_id").in("post_id", postIds)
         : Promise.resolve({ data: [] as LikeRow[] }),
+      postIds.length
+        ? supabase.from("comments").select("post_id").in("post_id", postIds)
+        : Promise.resolve({ data: [] as CommentRow[] }),
     ]);
 
     const authorsById = new Map(
-      ((authorRows || []) as ProfileIdentity[]).map((author) => [author.id, author]),
+      ((authorRows || []) as PublicProfileSummary[]).map((author) => [author.id, author]),
     );
     const likeCountByPostId = new Map<string, number>();
     const likedPostIds = new Set<string>();
+    const commentCountByPostId = new Map<string, number>();
 
     ((likeRows || []) as LikeRow[]).forEach((like) => {
       likeCountByPostId.set(like.post_id, (likeCountByPostId.get(like.post_id) || 0) + 1);
       if (like.user_id === currentViewerId) likedPostIds.add(like.post_id);
+    });
+    ((commentRows || []) as CommentRow[]).forEach((comment) => {
+      commentCountByPostId.set(comment.post_id, (commentCountByPostId.get(comment.post_id) || 0) + 1);
     });
 
     setPosts(
@@ -80,6 +86,7 @@ export default function FeedPage() {
         isOwner: post.author_id === currentViewerId,
         likedByViewer: likedPostIds.has(post.id),
         likeCount: likeCountByPostId.get(post.id) || 0,
+        commentCount: commentCountByPostId.get(post.id) || 0,
       })),
     );
   }
@@ -190,7 +197,7 @@ export default function FeedPage() {
           : post,
       ),
     );
-    setMsg("");
+    setMsg(current.likedByViewer ? "Like removed" : "Post liked");
   }
 
   return (
@@ -302,13 +309,17 @@ export default function FeedPage() {
                       <button
                         type="button"
                         onClick={() => void toggleLike(post.id)}
-                        className="secondary-button px-4 py-2 text-sm"
+                        className={`${post.likedByViewer ? "primary-button" : "secondary-button"} px-4 py-2 text-sm`}
                         disabled={busyPostId === post.id}
                       >
-                        {post.likedByViewer ? `Liked · ${post.likeCount}` : `Like · ${post.likeCount}`}
+                        {busyPostId === post.id
+                          ? "Working..."
+                          : post.likedByViewer
+                            ? `Liked · ${post.likeCount}`
+                            : `Like · ${post.likeCount}`}
                       </button>
                       <Link href={`/post/${post.id}`} className="secondary-button px-4 py-2 text-sm">
-                        Comment
+                        {post.commentCount > 0 ? `Comments · ${post.commentCount}` : "Comment"}
                       </Link>
                       <Link href={`/post/${post.id}#report`} className="secondary-button px-4 py-2 text-sm">
                         Report
