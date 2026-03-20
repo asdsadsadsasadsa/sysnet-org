@@ -37,8 +37,8 @@ Make the site actually useful for a real new user:
 ### Feed
 - [x] Feed page loads
 - [x] Unauthenticated publish is blocked with visible message
-- [>] Authenticated publish repo-side fix prepared + deployed; awaiting DB migration apply and live retest
-- [ ] Feed displays seeded / real posts
+- [~] Authenticated publish still directly fails in production with `permission denied for table users`; deterministic REST probes to both `rpc/can_post_now` and `posts` reproduce it
+- [x] Feed displays seeded / real posts
 
 ### Directory
 - [x] People page loads
@@ -68,13 +68,14 @@ Make the site actually useful for a real new user:
 8. A concrete DB migration for the publish fix now exists at `backend/supabase/migrations/2026-03-19-fix-can-post-now.sql`.
 9. Seeded profiles now render in the live public directory, so the site no longer feels empty by default.
 10. The directory still contains a couple junk legacy profiles (`/u/gfggggg`, `/u/asdasdsadwd`) that should be cleaned up for credibility.
+11. A deterministic direct REST probe with a real seeded user token shows that both `rpc/can_post_now` and `POST /rest/v1/posts` still fail in production with `permission denied for table users`, so the remaining blocker is definitely DB-side and not just a flaky UI symptom.
 
 ## Fix Order
-1. Verify and fix profile save / onboarding completion.
-2. Verify and fix authenticated feed publish.
-3. Establish robust seed path.
-4. Seed directory + feed + activity with realistic sample data.
-5. Polish UX/error states and remove temporary deploy-check copy.
+1. Apply and verify the DB-side authenticated feed publish fix.
+2. Verify session persistence across navigation/reload.
+3. Verify and fix profile save / onboarding completion.
+4. Clean up stray junk profiles in the public directory.
+5. Expand seeded directory + feed + activity with more realistic sample data.
 
 ## Working Notes
 - Keep commits small and push coherent milestones.
