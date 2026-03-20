@@ -8,9 +8,23 @@
       "bio": "Leads model-based systems engineering adoption across flight controls and mission-planning teams. Interested in verification rigor, requirements traceability, and making MBSE useful beyond slideware.",
       "location": "Seattle, WA",
       "timezone": "America/Los_Angeles",
-      "domains": ["aerospace", "systems engineering", "mbse"],
-      "tags": ["sysml", "cameo", "requirements", "verification"],
-      "open_to": ["mentoring", "consulting"]
+      "domains": [
+        "aerospace",
+        "systems engineering",
+        "mbse"
+      ],
+      "tags": [
+        "sysml",
+        "cameo",
+        "requirements",
+        "verification"
+      ],
+      "open_to": [
+        "mentoring",
+        "consulting"
+      ],
+      "organization": "Northwest Flight Systems Institute",
+      "avatar_url": "https://api.dicebear.com/9.x/initials/svg?seed=Maya%20Chen"
     },
     {
       "handle": "omar-embedded-systems",
@@ -20,9 +34,22 @@
       "bio": "Works on cross-functional architecture for industrial robotics platforms. Cares about interface clarity, failure analysis, and disciplined system decomposition.",
       "location": "Austin, TX",
       "timezone": "America/Chicago",
-      "domains": ["robotics", "embedded systems", "industrial automation"],
-      "tags": ["embedded", "integration", "interfaces", "test"],
-      "open_to": ["hiring"]
+      "domains": [
+        "robotics",
+        "embedded systems",
+        "industrial automation"
+      ],
+      "tags": [
+        "embedded",
+        "integration",
+        "interfaces",
+        "test"
+      ],
+      "open_to": [
+        "hiring"
+      ],
+      "organization": "Axis Robotics",
+      "avatar_url": "https://api.dicebear.com/9.x/initials/svg?seed=Omar%20Rahman"
     },
     {
       "handle": "lina-medtech",
@@ -32,9 +59,22 @@
       "bio": "Focuses on requirements, risk controls, and design history discipline for connected medtech products. Likes translating compliance pressure into cleaner engineering systems.",
       "location": "San Diego, CA",
       "timezone": "America/Los_Angeles",
-      "domains": ["medical devices", "quality systems", "regulated products"],
-      "tags": ["risk management", "traceability", "verification", "validation"],
-      "open_to": ["mentoring"]
+      "domains": [
+        "medical devices",
+        "quality systems",
+        "regulated products"
+      ],
+      "tags": [
+        "risk management",
+        "traceability",
+        "verification",
+        "validation"
+      ],
+      "open_to": [
+        "mentoring"
+      ],
+      "organization": "Astera Medical Devices",
+      "avatar_url": "https://api.dicebear.com/9.x/initials/svg?seed=Lina%20Park"
     },
     {
       "handle": "diego-autonomy",
@@ -44,9 +84,23 @@
       "bio": "Helps autonomy teams reason about system boundaries, operational envelopes, and failure containment. Interested in reviewable architecture artifacts and simulation-informed decisions.",
       "location": "Mountain View, CA",
       "timezone": "America/Los_Angeles",
-      "domains": ["autonomy", "robotics", "simulation"],
-      "tags": ["planning", "safety", "simulation", "architecture"],
-      "open_to": ["consulting", "hiring"]
+      "domains": [
+        "autonomy",
+        "robotics",
+        "simulation"
+      ],
+      "tags": [
+        "planning",
+        "safety",
+        "simulation",
+        "architecture"
+      ],
+      "open_to": [
+        "consulting",
+        "hiring"
+      ],
+      "organization": "Helios Autonomy Lab",
+      "avatar_url": "https://api.dicebear.com/9.x/initials/svg?seed=Diego%20Alvarez"
     },
     {
       "handle": "rhea-defense-systems",
@@ -56,9 +110,22 @@
       "bio": "Coordinates subsystem integration across contractors, test teams, and program management. Particularly interested in configuration drift, interface governance, and review discipline.",
       "location": "Arlington, VA",
       "timezone": "America/New_York",
-      "domains": ["defense", "integration", "program execution"],
-      "tags": ["interfaces", "icd", "configuration", "integration"],
-      "open_to": ["mentoring"]
+      "domains": [
+        "defense",
+        "integration",
+        "program execution"
+      ],
+      "tags": [
+        "interfaces",
+        "icd",
+        "configuration",
+        "integration"
+      ],
+      "open_to": [
+        "mentoring"
+      ],
+      "organization": "Aegis Defense Integration Group",
+      "avatar_url": "https://api.dicebear.com/9.x/initials/svg?seed=Rhea%20Banerjee"
     },
     {
       "handle": "noah-systems-safety",
@@ -68,9 +135,22 @@
       "bio": "Works with platform teams to turn safety cases into design decisions instead of compliance theater. Deeply interested in STPA, fault containment, and testable mitigations.",
       "location": "Denver, CO",
       "timezone": "America/Denver",
-      "domains": ["systems safety", "hazard analysis", "resilience"],
-      "tags": ["stpa", "fault analysis", "safety case", "verification"],
-      "open_to": ["consulting"]
+      "domains": [
+        "systems safety",
+        "hazard analysis",
+        "resilience"
+      ],
+      "tags": [
+        "stpa",
+        "fault analysis",
+        "safety case",
+        "verification"
+      ],
+      "open_to": [
+        "consulting"
+      ],
+      "organization": "Summit Resilience Systems",
+      "avatar_url": "https://api.dicebear.com/9.x/initials/svg?seed=Noah%20Kim"
     },
     {
       "handle": "irene-rail-systems",
@@ -80,9 +160,23 @@
       "bio": "Works on large rail modernization efforts with a focus on interfaces, operational readiness, and test planning across vendors and public stakeholders.",
       "location": "London, UK",
       "timezone": "Europe/London",
-      "domains": ["rail", "infrastructure", "transportation"],
-      "tags": ["integration", "operational readiness", "test planning", "interfaces"],
-      "open_to": ["mentoring", "hiring"]
+      "domains": [
+        "rail",
+        "infrastructure",
+        "transportation"
+      ],
+      "tags": [
+        "integration",
+        "operational readiness",
+        "test planning",
+        "interfaces"
+      ],
+      "open_to": [
+        "mentoring",
+        "hiring"
+      ],
+      "organization": "Civic Rail Modernization Office",
+      "avatar_url": "https://api.dicebear.com/9.x/initials/svg?seed=Irene%20Volkov"
     },
     {
       "handle": "ethan-digital-thread",
@@ -92,9 +186,23 @@
       "bio": "Helps teams connect requirements, models, verification evidence, and change control into a usable engineering thread. Suspicious of dashboards that do not improve decisions.",
       "location": "Boston, MA",
       "timezone": "America/New_York",
-      "domains": ["digital thread", "plm", "systems transformation"],
-      "tags": ["traceability", "plm", "requirements", "governance"],
-      "open_to": ["consulting", "mentoring"]
+      "domains": [
+        "digital thread",
+        "plm",
+        "systems transformation"
+      ],
+      "tags": [
+        "traceability",
+        "plm",
+        "requirements",
+        "governance"
+      ],
+      "open_to": [
+        "consulting",
+        "mentoring"
+      ],
+      "organization": "Threadline Engineering Advisory",
+      "avatar_url": "https://api.dicebear.com/9.x/initials/svg?seed=Ethan%20Brooks"
     }
   ],
   "posts": [
