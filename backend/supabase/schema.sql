@@ -6,6 +6,7 @@ create table if not exists public.profiles (
   id uuid primary key references auth.users(id) on delete cascade,
   handle text unique not null,
   display_name text not null,
+  visibility text not null default 'public' check (visibility in ('public', 'private')),
   headline text,
   bio text,
   location text,
@@ -114,7 +115,8 @@ alter table public.reports enable row level security;
 
 -- profiles
 DROP POLICY IF EXISTS profiles_read ON public.profiles;
-create policy profiles_read on public.profiles for select using (true);
+create policy profiles_read on public.profiles
+for select using (visibility = 'public' or auth.uid() = id);
 DROP POLICY IF EXISTS profiles_insert_own ON public.profiles;
 create policy profiles_insert_own on public.profiles for insert with check (auth.uid() = id);
 DROP POLICY IF EXISTS profiles_update_own ON public.profiles;

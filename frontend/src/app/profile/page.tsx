@@ -7,13 +7,14 @@ import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 import { parseCsvList, normalizeHandle } from "@/lib/profile-utils";
 import { sanitizeOpenTo } from "@/lib/open-to";
-import type { Profile } from "@/lib/types";
+import type { Profile, ProfileVisibility } from "@/lib/types";
 
 type MessageTone = "info" | "success" | "error";
 
 const DEFAULT_DOMAINS = "systems engineering";
 const DEFAULT_TAGS = "mbse, sysml";
 const DEFAULT_OPEN_TO = "mentoring";
+const DEFAULT_VISIBILITY: ProfileVisibility = "public";
 
 export default function ProfileManagementPage() {
   const router = useRouter();
@@ -27,6 +28,7 @@ export default function ProfileManagementPage() {
 
   const [handle, setHandle] = useState("");
   const [displayName, setDisplayName] = useState("");
+  const [visibility, setVisibility] = useState<ProfileVisibility>(DEFAULT_VISIBILITY);
   const [headline, setHeadline] = useState("");
   const [bio, setBio] = useState("");
   const [location, setLocation] = useState("");
@@ -42,11 +44,6 @@ export default function ProfileManagementPage() {
     const normalized = normalizeHandle(handle);
     return normalized ? `/u/${normalized}` : null;
   }, [handle]);
-
-  useEffect(() => {
-    void loadProfile();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   async function loadProfile() {
     setLoading(true);
@@ -65,7 +62,7 @@ export default function ProfileManagementPage() {
 
     const { data } = await supabase
       .from("profiles")
-      .select("id,handle,display_name,headline,bio,location,timezone,domains,tags,open_to")
+      .select("id,handle,display_name,visibility,headline,bio,location,timezone,domains,tags,open_to")
       .eq("id", user.id)
       .maybeSingle();
 
@@ -74,6 +71,7 @@ export default function ProfileManagementPage() {
       setProfileExists(true);
       setHandle(profile.handle || "");
       setDisplayName(profile.display_name || "");
+      setVisibility(profile.visibility || DEFAULT_VISIBILITY);
       setHeadline(profile.headline || "");
       setBio(profile.bio || "");
       setLocation(profile.location || "");
@@ -93,6 +91,7 @@ export default function ProfileManagementPage() {
           .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
           .join(" ")
       );
+      setVisibility(DEFAULT_VISIBILITY);
       setHeadline("");
       setBio("");
       setLocation("");
@@ -104,6 +103,10 @@ export default function ProfileManagementPage() {
 
     setLoading(false);
   }
+
+  useEffect(() => {
+    void loadProfile();
+  }, []);
 
   async function saveProfile(e: FormEvent) {
     e.preventDefault();
@@ -134,6 +137,7 @@ export default function ProfileManagementPage() {
       id: userId,
       handle: normalizedHandle,
       display_name: displayName.trim(),
+      visibility,
       headline: headline.trim(),
       bio: bio.trim(),
       location: location.trim(),
@@ -202,7 +206,7 @@ export default function ProfileManagementPage() {
       <section className="page-grid">
         <div className="shell-card-strong p-6 md:p-8">
           <p className="eyebrow">Profile management</p>
-          <h1 className="section-title mt-3">Manage the public profile people will actually see.</h1>
+          <h1 className="section-title mt-3">Manage the member profile people can discover.</h1>
           <p className="mt-3 max-w-2xl text-base leading-7 soft-muted">
             This should function like a professional member record: credible headline, useful expertise tags, clear availability,
             and enough context that another systems engineer can tell why they should care.
@@ -215,7 +219,7 @@ export default function ProfileManagementPage() {
           <div className="mt-4 flex flex-col gap-3">
             {publicProfileHref && (
               <Link href={publicProfileHref} className="secondary-button">
-                View public profile
+                {visibility === "public" ? "View public profile" : "Preview profile route"}
               </Link>
             )}
             <Link href="/feed" className="secondary-button">
@@ -230,6 +234,7 @@ export default function ProfileManagementPage() {
           </div>
           <div className="mt-5 space-y-2 text-sm leading-6 soft-muted">
             <p>Keep the handle stable if other people may already be linking to it.</p>
+            <p>Private profiles stay accessible to you, but disappear from the public directory and direct profile page.</p>
             <p>Use domains for big buckets and tags for specific methods, tools, or topics.</p>
             <p>Availability only accepts: mentoring, consulting, hiring.</p>
           </div>
@@ -242,8 +247,8 @@ export default function ProfileManagementPage() {
             <h2 className="text-xl font-semibold text-slate-900">{profileExists ? "Edit your profile" : "Create your profile"}</h2>
             <p className="mt-1 text-sm soft-muted">
               {profileExists
-                ? "Update your public profile and save changes instantly."
-                : "You’re signed in. Create the public profile that will show up across the network."}
+                ? "Update your profile details and choose whether it is public or private."
+                : "You’re signed in. Create the profile that will show up across the network if you keep it public."}
             </p>
           </div>
           <button disabled={saving} className="primary-button px-4 py-2.5 disabled:opacity-60">
@@ -254,6 +259,14 @@ export default function ProfileManagementPage() {
         <div className="grid gap-4 md:grid-cols-2">
           <input placeholder="handle" value={handle} onChange={(e) => setHandle(e.target.value)} />
           <input placeholder="display name" value={displayName} onChange={(e) => setDisplayName(e.target.value)} />
+          <label className="md:col-span-2 rounded-2xl border border-slate-200/80 bg-white/80 p-4 text-sm text-slate-700">
+            <span className="block text-sm font-semibold text-slate-900">Profile visibility</span>
+            <span className="mt-1 block soft-muted">Public profiles appear in the directory and can be viewed at your handle link.</span>
+            <select className="mt-3" value={visibility} onChange={(e) => setVisibility(e.target.value as ProfileVisibility)}>
+              <option value="public">Public</option>
+              <option value="private">Private</option>
+            </select>
+          </label>
           <input className="md:col-span-2" placeholder="headline" value={headline} onChange={(e) => setHeadline(e.target.value)} />
           <textarea className="md:col-span-2" placeholder="bio" value={bio} onChange={(e) => setBio(e.target.value)} />
           <input placeholder="location" value={location} onChange={(e) => setLocation(e.target.value)} />

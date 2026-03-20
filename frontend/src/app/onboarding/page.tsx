@@ -7,6 +7,9 @@ import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 import { normalizeHandle, parseCsvList } from "@/lib/profile-utils";
 import { sanitizeOpenTo } from "@/lib/open-to";
+import type { ProfileVisibility } from "@/lib/types";
+
+const DEFAULT_VISIBILITY: ProfileVisibility = "public";
 
 export default function OnboardingPage() {
   const router = useRouter();
@@ -21,6 +24,7 @@ export default function OnboardingPage() {
   const [userId, setUserId] = useState<string>("");
   const [handle, setHandle] = useState("");
   const [displayName, setDisplayName] = useState("");
+  const [visibility, setVisibility] = useState<ProfileVisibility>(DEFAULT_VISIBILITY);
   const [headline, setHeadline] = useState("");
   const [location, setLocation] = useState("");
   const [domains, setDomains] = useState("Systems");
@@ -44,7 +48,7 @@ export default function OnboardingPage() {
 
     const { data: p } = await supabase
       .from("profiles")
-      .select("handle,display_name,headline,location,domains,tags,open_to")
+      .select("handle,display_name,visibility,headline,location,domains,tags,open_to")
       .eq("id", uid)
       .maybeSingle();
 
@@ -57,6 +61,7 @@ export default function OnboardingPage() {
     setHasProfile(true);
     setHandle(p.handle || "");
     setDisplayName(p.display_name || "");
+    setVisibility(p.visibility || DEFAULT_VISIBILITY);
     setHeadline(p.headline || "");
     setLocation(p.location || "");
     setDomains((p.domains || []).join(","));
@@ -184,6 +189,7 @@ export default function OnboardingPage() {
       id: userId,
       handle: normalizedHandle,
       display_name: displayName.trim(),
+      visibility,
       headline: headline.trim(),
       location: location.trim(),
       domains: parseCsvList(domains),
@@ -219,7 +225,7 @@ export default function OnboardingPage() {
           <p className="eyebrow">Join the network</p>
           <h1 className="section-title mt-3">Create an account or continue where you left off.</h1>
           <p className="mt-3 max-w-2xl text-base leading-7 soft-muted">
-            The goal here is simple: make it easy to get into the network, complete a credible public profile,
+            The goal here is simple: make it easy to get into the network, complete a credible profile,
             and move straight into the feed and directory.
           </p>
         </div>
@@ -291,7 +297,7 @@ export default function OnboardingPage() {
           <div className="flex items-start justify-between gap-4">
             <div>
               <h2 className="text-2xl font-semibold tracking-tight text-slate-900">Complete your profile</h2>
-              <p className="mt-1 text-sm soft-muted">Your login works. Now add the public profile people will see.</p>
+              <p className="mt-1 text-sm soft-muted">Your login works. Now add the profile people can see if you choose to keep it public.</p>
             </div>
             <button type="button" onClick={signOut} className="secondary-button px-4 py-2">
               Sign out
@@ -300,6 +306,14 @@ export default function OnboardingPage() {
           <div className="grid gap-4 md:grid-cols-2">
             <input placeholder="handle" value={handle} onChange={(e) => setHandle(e.target.value)} />
             <input placeholder="display name" value={displayName} onChange={(e) => setDisplayName(e.target.value)} />
+            <label className="md:col-span-2 rounded-2xl border border-slate-200/80 bg-white/80 p-4 text-sm text-slate-700">
+              <span className="block text-sm font-semibold text-slate-900">Profile visibility</span>
+              <span className="mt-1 block soft-muted">Public profiles appear in the people directory. Private profiles are visible only to you.</span>
+              <select className="mt-3" value={visibility} onChange={(e) => setVisibility(e.target.value as ProfileVisibility)}>
+                <option value="public">Public</option>
+                <option value="private">Private</option>
+              </select>
+            </label>
             <input className="md:col-span-2" placeholder="headline" value={headline} onChange={(e) => setHeadline(e.target.value)} />
             <input placeholder="location" value={location} onChange={(e) => setLocation(e.target.value)} />
             <input placeholder="domains csv" value={domains} onChange={(e) => setDomains(e.target.value)} />
@@ -315,7 +329,7 @@ export default function OnboardingPage() {
           <div className="flex items-start justify-between gap-4">
             <div>
               <h2 className="text-2xl font-semibold tracking-tight text-slate-900">You’re signed in</h2>
-              <p className="soft-muted">Your profile exists. Continue to the feed or manage your public profile.</p>
+              <p className="soft-muted">Your profile exists. Continue to the feed or manage your visibility and profile details.</p>
             </div>
             <button type="button" onClick={signOut} className="secondary-button px-4 py-2">
               Sign out

@@ -15,7 +15,8 @@ export default function PeoplePage() {
   useEffect(() => {
     supabase
       .from("profiles")
-      .select("id,handle,display_name,headline,bio,location,timezone,domains,tags,open_to")
+      .select("id,handle,display_name,visibility,headline,bio,location,timezone,domains,tags,open_to")
+      .eq("visibility", "public")
       .limit(200)
       .then(({ data }) => setProfiles((data || []) as Profile[]));
   }, [supabase]);

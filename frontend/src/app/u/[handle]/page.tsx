@@ -13,13 +13,10 @@ export default function ProfilePage() {
   const [profile, setProfile] = useState<Profile | null>(null);
   const [viewerId, setViewerId] = useState("");
   const [msg, setMsg] = useState("");
-
-  useEffect(() => {
-    void load();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [handle]);
+  const [loading, setLoading] = useState(true);
 
   async function load() {
+    setLoading(true);
     const {
       data: { user },
     } = await supabase.auth.getUser();
@@ -27,12 +24,17 @@ export default function ProfilePage() {
 
     const { data } = await supabase
       .from("profiles")
-      .select("id,handle,display_name,headline,bio,location,timezone,domains,tags,open_to")
+      .select("id,handle,display_name,visibility,headline,bio,location,timezone,domains,tags,open_to")
       .eq("handle", handle)
       .maybeSingle();
 
     setProfile((data as Profile) || null);
+    setLoading(false);
   }
+
+  useEffect(() => {
+    void load();
+  }, [handle]);
 
   async function connect(e: FormEvent) {
     e.preventDefault();
@@ -48,11 +50,19 @@ export default function ProfilePage() {
     setMsg(error ? error.message : "Connection request sent");
   }
 
+  if (loading) {
+    return (
+      <div className="shell-card p-8">
+        <h1 className="text-2xl font-semibold text-slate-900">Loading profile...</h1>
+      </div>
+    );
+  }
+
   if (!profile) {
     return (
       <div className="shell-card p-8">
-        <h1 className="text-2xl font-semibold text-slate-900">Profile not found.</h1>
-        <p className="mt-2 text-sm soft-muted">This member record does not exist yet.</p>
+        <h1 className="text-2xl font-semibold text-slate-900">Profile unavailable.</h1>
+        <p className="mt-2 text-sm soft-muted">This member record does not exist or is private.</p>
       </div>
     );
   }
@@ -65,6 +75,7 @@ export default function ProfilePage() {
         <div className="shell-card-strong p-6 md:p-8">
           <div className="flex flex-wrap items-center gap-3">
             <span className="pill">Member profile</span>
+            {isSelf && profile.visibility === "private" && <span className="pill">private to others</span>}
             {(profile.open_to || []).map((item) => (
               <span key={item} className="pill">
                 open to {item}

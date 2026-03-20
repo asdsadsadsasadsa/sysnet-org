@@ -135,6 +135,7 @@ const profileRows = pack.profiles.map((profile) => ({
   id: handleToUser.get(profile.handle).id,
   handle: profile.handle,
   display_name: profile.display_name,
+  visibility: profile.visibility || 'public',
   headline: profile.headline,
   bio: profile.bio,
   location: profile.location,

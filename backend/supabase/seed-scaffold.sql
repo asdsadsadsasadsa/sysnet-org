@@ -16,6 +16,7 @@ create temp table seed_profiles (
   id uuid,
   handle text,
   display_name text,
+  visibility text,
   headline text,
   bio text,
   location text,
@@ -25,16 +26,16 @@ create temp table seed_profiles (
   open_to text[]
 ) on commit drop;
 
-insert into seed_profiles (id, handle, display_name, headline, bio, location, timezone, domains, tags, open_to)
+insert into seed_profiles (id, handle, display_name, visibility, headline, bio, location, timezone, domains, tags, open_to)
 values
-  ('00000000-0000-0000-0000-000000000001', 'maya-mbse', 'Maya Chen', 'Principal MBSE lead for safety-critical aerospace programs', 'Leads model-based systems engineering adoption across flight controls and mission-planning teams. Interested in verification rigor, requirements traceability, and making MBSE useful beyond slideware.', 'Seattle, WA', 'America/Los_Angeles', array[''aerospace'', ''systems engineering'', ''mbse''], array[''sysml'', ''cameo'', ''requirements'', ''verification''], array[''mentoring'', ''consulting'']),
-  ('00000000-0000-0000-0000-000000000002', 'omar-embedded-systems', 'Omar Rahman', 'Embedded systems architect bridging hardware, firmware, and test', 'Works on cross-functional architecture for industrial robotics platforms. Cares about interface clarity, failure analysis, and disciplined system decomposition.', 'Austin, TX', 'America/Chicago', array[''robotics'', ''embedded systems'', ''industrial automation''], array[''embedded'', ''integration'', ''interfaces'', ''test''], array[''hiring'']),
-  ('00000000-0000-0000-0000-000000000003', 'lina-medtech', 'Lina Park', 'Systems engineer for regulated medical device platforms', 'Focuses on requirements, risk controls, and design history discipline for connected medtech products. Likes translating compliance pressure into cleaner engineering systems.', 'San Diego, CA', 'America/Los_Angeles', array[''medical devices'', ''quality systems'', ''regulated products''], array[''risk management'', ''traceability'', ''verification'', ''validation''], array[''mentoring'']),
-  ('00000000-0000-0000-0000-000000000004', 'diego-autonomy', 'Diego Alvarez', 'Autonomy systems engineer working across perception, planning, and ops', 'Helps autonomy teams reason about system boundaries, operational envelopes, and failure containment. Interested in reviewable architecture artifacts and simulation-informed decisions.', 'Mountain View, CA', 'America/Los_Angeles', array[''autonomy'', ''robotics'', ''simulation''], array[''planning'', ''safety'', ''simulation'', ''architecture''], array[''consulting'', ''hiring'']),
-  ('00000000-0000-0000-0000-000000000005', 'rhea-defense-systems', 'Rhea Banerjee', 'Systems integration manager for large defense programs', 'Coordinates subsystem integration across contractors, test teams, and program management. Particularly interested in configuration drift, interface governance, and review discipline.', 'Arlington, VA', 'America/New_York', array[''defense'', ''integration'', ''program execution''], array[''interfaces'', ''icd'', ''configuration'', ''integration''], array[''mentoring'']),
-  ('00000000-0000-0000-0000-000000000006', 'noah-systems-safety', 'Noah Kim', 'Systems safety engineer focused on hazard analysis and operational resilience', 'Works with platform teams to turn safety cases into design decisions instead of compliance theater. Deeply interested in STPA, fault containment, and testable mitigations.', 'Denver, CO', 'America/Denver', array[''systems safety'', ''hazard analysis'', ''resilience''], array[''stpa'', ''fault analysis'', ''safety case'', ''verification''], array[''consulting'']),
-  ('00000000-0000-0000-0000-000000000007', 'irene-rail-systems', 'Irene Volkov', 'Rail systems engineer coordinating infrastructure and rolling stock interfaces', 'Works on large rail modernization efforts with a focus on interfaces, operational readiness, and test planning across vendors and public stakeholders.', 'London, UK', 'Europe/London', array[''rail'', ''infrastructure'', ''transportation''], array[''integration'', ''operational readiness'', ''test planning'', ''interfaces''], array[''mentoring'', ''hiring'']),
-  ('00000000-0000-0000-0000-000000000008', 'ethan-digital-thread', 'Ethan Brooks', 'Digital thread strategist for complex product development organizations', 'Helps teams connect requirements, models, verification evidence, and change control into a usable engineering thread. Suspicious of dashboards that do not improve decisions.', 'Boston, MA', 'America/New_York', array[''digital thread'', ''plm'', ''systems transformation''], array[''traceability'', ''plm'', ''requirements'', ''governance''], array[''consulting'', ''mentoring'']);
+  ('00000000-0000-0000-0000-000000000001', 'maya-mbse', 'Maya Chen', 'public', 'Principal MBSE lead for safety-critical aerospace programs', 'Leads model-based systems engineering adoption across flight controls and mission-planning teams. Interested in verification rigor, requirements traceability, and making MBSE useful beyond slideware.', 'Seattle, WA', 'America/Los_Angeles', array[''aerospace'', ''systems engineering'', ''mbse''], array[''sysml'', ''cameo'', ''requirements'', ''verification''], array[''mentoring'', ''consulting'']),
+  ('00000000-0000-0000-0000-000000000002', 'omar-embedded-systems', 'Omar Rahman', 'public', 'Embedded systems architect bridging hardware, firmware, and test', 'Works on cross-functional architecture for industrial robotics platforms. Cares about interface clarity, failure analysis, and disciplined system decomposition.', 'Austin, TX', 'America/Chicago', array[''robotics'', ''embedded systems'', ''industrial automation''], array[''embedded'', ''integration'', ''interfaces'', ''test''], array[''hiring'']),
+  ('00000000-0000-0000-0000-000000000003', 'lina-medtech', 'Lina Park', 'public', 'Systems engineer for regulated medical device platforms', 'Focuses on requirements, risk controls, and design history discipline for connected medtech products. Likes translating compliance pressure into cleaner engineering systems.', 'San Diego, CA', 'America/Los_Angeles', array[''medical devices'', ''quality systems'', ''regulated products''], array[''risk management'', ''traceability'', ''verification'', ''validation''], array[''mentoring'']),
+  ('00000000-0000-0000-0000-000000000004', 'diego-autonomy', 'Diego Alvarez', 'public', 'Autonomy systems engineer working across perception, planning, and ops', 'Helps autonomy teams reason about system boundaries, operational envelopes, and failure containment. Interested in reviewable architecture artifacts and simulation-informed decisions.', 'Mountain View, CA', 'America/Los_Angeles', array[''autonomy'', ''robotics'', ''simulation''], array[''planning'', ''safety'', ''simulation'', ''architecture''], array[''consulting'', ''hiring'']),
+  ('00000000-0000-0000-0000-000000000005', 'rhea-defense-systems', 'Rhea Banerjee', 'public', 'Systems integration manager for large defense programs', 'Coordinates subsystem integration across contractors, test teams, and program management. Particularly interested in configuration drift, interface governance, and review discipline.', 'Arlington, VA', 'America/New_York', array[''defense'', ''integration'', ''program execution''], array[''interfaces'', ''icd'', ''configuration'', ''integration''], array[''mentoring'']),
+  ('00000000-0000-0000-0000-000000000006', 'noah-systems-safety', 'Noah Kim', 'public', 'Systems safety engineer focused on hazard analysis and operational resilience', 'Works with platform teams to turn safety cases into design decisions instead of compliance theater. Deeply interested in STPA, fault containment, and testable mitigations.', 'Denver, CO', 'America/Denver', array[''systems safety'', ''hazard analysis'', ''resilience''], array[''stpa'', ''fault analysis'', ''safety case'', ''verification''], array[''consulting'']),
+  ('00000000-0000-0000-0000-000000000007', 'irene-rail-systems', 'Irene Volkov', 'public', 'Rail systems engineer coordinating infrastructure and rolling stock interfaces', 'Works on large rail modernization efforts with a focus on interfaces, operational readiness, and test planning across vendors and public stakeholders.', 'London, UK', 'Europe/London', array[''rail'', ''infrastructure'', ''transportation''], array[''integration'', ''operational readiness'', ''test planning'', ''interfaces''], array[''mentoring'', ''hiring'']),
+  ('00000000-0000-0000-0000-000000000008', 'ethan-digital-thread', 'Ethan Brooks', 'public', 'Digital thread strategist for complex product development organizations', 'Helps teams connect requirements, models, verification evidence, and change control into a usable engineering thread. Suspicious of dashboards that do not improve decisions.', 'Boston, MA', 'America/New_York', array[''digital thread'', ''plm'', ''systems transformation''], array[''traceability'', ''plm'', ''requirements'', ''governance''], array[''consulting'', ''mentoring'']);
 
 -- Safety check: all IDs must exist in auth.users before profile upsert.
 -- Uncomment to validate once placeholder UUIDs are replaced.
@@ -42,12 +43,13 @@ values
 -- left join auth.users u on u.id = sp.id
 -- where u.id is null;
 
-insert into public.profiles (id, handle, display_name, headline, bio, location, timezone, domains, tags, open_to, updated_at)
-select id, handle, display_name, headline, bio, location, timezone, domains, tags, open_to, now()
+insert into public.profiles (id, handle, display_name, visibility, headline, bio, location, timezone, domains, tags, open_to, updated_at)
+select id, handle, display_name, visibility, headline, bio, location, timezone, domains, tags, open_to, now()
 from seed_profiles
 on conflict (id) do update set
   handle = excluded.handle,
   display_name = excluded.display_name,
+  visibility = excluded.visibility,
   headline = excluded.headline,
   bio = excluded.bio,
   location = excluded.location,

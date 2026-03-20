@@ -3,6 +3,7 @@
     {
       "handle": "maya-mbse",
       "display_name": "Maya Chen",
+      "visibility": "public",
       "headline": "Principal MBSE lead for safety-critical aerospace programs",
       "bio": "Leads model-based systems engineering adoption across flight controls and mission-planning teams. Interested in verification rigor, requirements traceability, and making MBSE useful beyond slideware.",
       "location": "Seattle, WA",
@@ -14,6 +15,7 @@
     {
       "handle": "omar-embedded-systems",
       "display_name": "Omar Rahman",
+      "visibility": "public",
       "headline": "Embedded systems architect bridging hardware, firmware, and test",
       "bio": "Works on cross-functional architecture for industrial robotics platforms. Cares about interface clarity, failure analysis, and disciplined system decomposition.",
       "location": "Austin, TX",
@@ -25,6 +27,7 @@
     {
       "handle": "lina-medtech",
       "display_name": "Lina Park",
+      "visibility": "public",
       "headline": "Systems engineer for regulated medical device platforms",
       "bio": "Focuses on requirements, risk controls, and design history discipline for connected medtech products. Likes translating compliance pressure into cleaner engineering systems.",
       "location": "San Diego, CA",
@@ -36,6 +39,7 @@
     {
       "handle": "diego-autonomy",
       "display_name": "Diego Alvarez",
+      "visibility": "public",
       "headline": "Autonomy systems engineer working across perception, planning, and ops",
       "bio": "Helps autonomy teams reason about system boundaries, operational envelopes, and failure containment. Interested in reviewable architecture artifacts and simulation-informed decisions.",
       "location": "Mountain View, CA",
@@ -47,6 +51,7 @@
     {
       "handle": "rhea-defense-systems",
       "display_name": "Rhea Banerjee",
+      "visibility": "public",
       "headline": "Systems integration manager for large defense programs",
       "bio": "Coordinates subsystem integration across contractors, test teams, and program management. Particularly interested in configuration drift, interface governance, and review discipline.",
       "location": "Arlington, VA",
@@ -58,6 +63,7 @@
     {
       "handle": "noah-systems-safety",
       "display_name": "Noah Kim",
+      "visibility": "public",
       "headline": "Systems safety engineer focused on hazard analysis and operational resilience",
       "bio": "Works with platform teams to turn safety cases into design decisions instead of compliance theater. Deeply interested in STPA, fault containment, and testable mitigations.",
       "location": "Denver, CO",
@@ -69,6 +75,7 @@
     {
       "handle": "irene-rail-systems",
       "display_name": "Irene Volkov",
+      "visibility": "public",
       "headline": "Rail systems engineer coordinating infrastructure and rolling stock interfaces",
       "bio": "Works on large rail modernization efforts with a focus on interfaces, operational readiness, and test planning across vendors and public stakeholders.",
       "location": "London, UK",
@@ -80,6 +87,7 @@
     {
       "handle": "ethan-digital-thread",
       "display_name": "Ethan Brooks",
+      "visibility": "public",
       "headline": "Digital thread strategist for complex product development organizations",
       "bio": "Helps teams connect requirements, models, verification evidence, and change control into a usable engineering thread. Suspicious of dashboards that do not improve decisions.",
       "location": "Boston, MA",
