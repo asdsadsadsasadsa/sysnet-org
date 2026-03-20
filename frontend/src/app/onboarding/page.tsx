@@ -84,8 +84,6 @@ export default function OnboardingPage() {
       return;
     }
 
-    await refreshUser();
-
     const {
       data: { user },
     } = await supabase.auth.getUser();
@@ -97,20 +95,26 @@ export default function OnboardingPage() {
       return;
     }
 
+    setUserId(user.id);
+    setAuthChecked(true);
+
     const { data: profile } = await supabase
       .from("profiles")
       .select("id")
       .eq("id", user.id)
       .maybeSingle();
 
+    setHasProfile(!!profile);
     setMsgTone("success");
     setMsg(profile ? "Signed in. Redirecting to feed..." : "Signed in. Complete your profile to continue.");
     setSending(false);
 
     if (profile) {
-      router.push("/feed");
+      window.location.assign("/feed");
+      return;
     }
-    router.refresh();
+
+    window.location.assign("/onboarding?login=ok");
   }
 
   async function signUp(e: FormEvent) {
