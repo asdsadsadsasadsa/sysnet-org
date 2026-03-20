@@ -315,15 +315,20 @@ export default function OnboardingPage() {
           <div className="flex items-start justify-between gap-4">
             <div>
               <h2 className="text-2xl font-semibold tracking-tight text-slate-900">You’re signed in</h2>
-              <p className="soft-muted">Your profile exists. Continue to the feed.</p>
+              <p className="soft-muted">Your profile exists. Continue to the feed or manage your public profile.</p>
             </div>
             <button type="button" onClick={signOut} className="secondary-button px-4 py-2">
               Sign out
             </button>
           </div>
-          <Link href="/feed" className="primary-button">
-            Go to feed
-          </Link>
+          <div className="flex flex-wrap gap-3">
+            <Link href="/feed" className="primary-button">
+              Go to feed
+            </Link>
+            <Link href="/profile" className="secondary-button">
+              Manage profile
+            </Link>
+          </div>
         </div>
       )}
 

@@ -1,11 +1,12 @@
 import { test, expect } from '@playwright/test';
+import type { APIRequestContext } from '@playwright/test';
 
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL || '';
 const ANON = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || '';
 const TEST_EMAIL = process.env.E2E_TEST_EMAIL || 'e2e.auth.user@nmbli.com';
 const TEST_PASSWORD = process.env.E2E_TEST_PASSWORD || 'TestAuth#12345';
 
-async function passwordLogin(request: Parameters<typeof test>[0]['request']) {
+async function passwordLogin(request: APIRequestContext) {
   const res = await request.post(`${SUPABASE_URL}/auth/v1/token?grant_type=password`, {
     headers: {
       apikey: ANON,

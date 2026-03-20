@@ -67,6 +67,14 @@ export default function FeedPage() {
             <p>Good posts usually include context, method, failure mode, and what changed.</p>
             <p>If publishing fails, the message below should tell us exactly where the backend is unhappy.</p>
           </div>
+          <div className="mt-5 flex flex-wrap gap-3">
+            <Link href="/profile" className="secondary-button px-4 py-2 text-sm">
+              Manage profile
+            </Link>
+            <Link href="/people" className="secondary-button px-4 py-2 text-sm">
+              Browse directory
+            </Link>
+          </div>
         </aside>
       </section>
 
