@@ -258,13 +258,13 @@ export default function ProfileManagementPage() {
 
         <div className="grid gap-4 md:grid-cols-2">
           <input placeholder="handle" value={handle} onChange={(e) => setHandle(e.target.value)} />
-          <input placeholder="display name" value={displayName} onChange={(e) => setDisplayName(e.target.value)} />
+          <input placeholder="public name" value={displayName} onChange={(e) => setDisplayName(e.target.value)} />
           <label className="md:col-span-2 rounded-2xl border border-slate-200/80 bg-white/80 p-4 text-sm text-slate-700">
-            <span className="block text-sm font-semibold text-slate-900">Profile visibility</span>
-            <span className="mt-1 block soft-muted">Public profiles appear in the directory and can be viewed at your handle link.</span>
+            <span className="block text-sm font-semibold text-slate-900">Directory visibility</span>
+            <span className="mt-1 block soft-muted">Listed profiles appear in the member directory and can be viewed at your handle link.</span>
             <select className="mt-3" value={visibility} onChange={(e) => setVisibility(e.target.value as ProfileVisibility)}>
-              <option value="public">Public</option>
-              <option value="private">Private</option>
+              <option value="public">Listed in member directory</option>
+              <option value="private">Only visible to you</option>
             </select>
           </label>
           <input className="md:col-span-2" placeholder="headline" value={headline} onChange={(e) => setHeadline(e.target.value)} />

@@ -62,7 +62,7 @@ export default function ProfilePage() {
     return (
       <div className="shell-card p-8">
         <h1 className="text-2xl font-semibold text-slate-900">Profile unavailable.</h1>
-        <p className="mt-2 text-sm soft-muted">This member record does not exist or is private.</p>
+        <p className="mt-2 text-sm soft-muted">This member record does not exist or is not currently listed in the member directory.</p>
       </div>
     );
   }

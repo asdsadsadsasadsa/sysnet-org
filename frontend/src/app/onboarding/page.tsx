@@ -305,7 +305,7 @@ export default function OnboardingPage() {
           </div>
           <div className="grid gap-4 md:grid-cols-2">
             <input placeholder="handle" value={handle} onChange={(e) => setHandle(e.target.value)} />
-            <input placeholder="display name" value={displayName} onChange={(e) => setDisplayName(e.target.value)} />
+            <input placeholder="public name" value={displayName} onChange={(e) => setDisplayName(e.target.value)} />
             <label className="md:col-span-2 rounded-2xl border border-slate-200/80 bg-white/80 p-4 text-sm text-slate-700">
               <span className="block text-sm font-semibold text-slate-900">Profile visibility</span>
               <span className="mt-1 block soft-muted">Public profiles appear in the people directory. Private profiles are visible only to you.</span>
