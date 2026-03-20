@@ -37,7 +37,7 @@ Make the site actually useful for a real new user:
 ### Feed
 - [x] Feed page loads
 - [x] Unauthenticated publish is blocked with visible message
-- [~] Authenticated publish still directly fails in production with `permission denied for table users`; deterministic REST probes to both `rpc/can_post_now` and `posts` reproduce it
+- [x] Authenticated publish now works in production after the live DB-side `can_post_now` fix; deterministic REST probe and Playwright UI publish both pass
 - [x] Feed displays seeded / real posts
 
 ### Directory
@@ -68,14 +68,15 @@ Make the site actually useful for a real new user:
 8. A concrete DB migration for the publish fix now exists at `backend/supabase/migrations/2026-03-19-fix-can-post-now.sql`.
 9. Seeded profiles now render in the live public directory, so the site no longer feels empty by default.
 10. The directory still contains a couple junk legacy profiles (`/u/gfggggg`, `/u/asdasdsadwd`) that should be cleaned up for credibility.
-11. A deterministic direct REST probe with a real seeded user token shows that both `rpc/can_post_now` and `POST /rest/v1/posts` still fail in production with `permission denied for table users`, so the remaining blocker is definitely DB-side and not just a flaky UI symptom.
+11. A deterministic direct REST probe with a real seeded user token originally showed that both `rpc/can_post_now` and `POST /rest/v1/posts` failed in production with `permission denied for table users`, which correctly isolated the blocker to the live DB function/policy layer.
+12. The live `public.can_post_now(uuid)` function was updated directly in production to the `security definer` version, and authenticated publishing now passes in both deterministic REST probing and Playwright UI testing.
 
 ## Fix Order
-1. Apply and verify the DB-side authenticated feed publish fix.
-2. Verify session persistence across navigation/reload.
-3. Verify and fix profile save / onboarding completion.
-4. Clean up stray junk profiles in the public directory.
-5. Expand seeded directory + feed + activity with more realistic sample data.
+1. Verify session persistence across navigation/reload.
+2. Verify and fix profile save / onboarding completion.
+3. Clean up stray junk profiles in the public directory.
+4. Expand seeded directory + feed + activity with more realistic sample data.
+5. Verify the rest of signed-in interaction flows (likes/comments/reporting).
 
 ## Working Notes
 - Keep commits small and push coherent milestones.

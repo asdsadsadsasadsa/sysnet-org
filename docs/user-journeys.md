@@ -92,9 +92,9 @@ Status legend:
 - [x] Understand what good posts look like
 
 ### 5.2 Publish a post as signed-in user
-- [ ] Write title/body
-- [ ] Publish successfully
-- [ ] See post appear in feed
+- [x] Write title/body
+- [x] Publish successfully
+- [x] See post appear in feed
 - [ ] Reload and confirm persistence
 
 ### 5.3 Like a post
