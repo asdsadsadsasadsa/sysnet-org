@@ -26,7 +26,7 @@ Make the site actually useful for a real new user:
 - [x] Password login works in production via Playwright
 - [x] Create-account flow works in production after server-side confirmed-account signup fix
 - [x] Logout flow verified
-- [ ] Session persistence verified across navigation/reload
+- [x] Session persistence verified across navigation/reload
 - [x] Auth redirect behavior verified into onboarding profile form
 
 ### Onboarding / Profile
@@ -70,13 +70,14 @@ Make the site actually useful for a real new user:
 10. The directory still contains a couple junk legacy profiles (`/u/gfggggg`, `/u/asdasdsadwd`) that should be cleaned up for credibility.
 11. A deterministic direct REST probe with a real seeded user token originally showed that both `rpc/can_post_now` and `POST /rest/v1/posts` failed in production with `permission denied for table users`, which correctly isolated the blocker to the live DB function/policy layer.
 12. The live `public.can_post_now(uuid)` function was updated directly in production to the `security definer` version, and authenticated publishing now passes in both deterministic REST probing and Playwright UI testing.
+13. Session persistence is now verified in production: a signed-in user stayed authenticated across reload on `/profile` and remained authenticated when navigating back to `/feed`.
 
 ## Fix Order
-1. Verify session persistence across navigation/reload.
-2. Verify and fix profile save / onboarding completion.
-3. Clean up stray junk profiles in the public directory.
-4. Expand seeded directory + feed + activity with more realistic sample data.
-5. Verify the rest of signed-in interaction flows (likes/comments/reporting).
+1. Verify and fix profile save / onboarding completion.
+2. Clean up stray junk profiles in the public directory.
+3. Expand seeded directory + feed + activity with more realistic sample data.
+4. Verify the rest of signed-in interaction flows (likes/comments/reporting).
+5. Strengthen profile identity and copy so the site feels more credible.
 
 ## Working Notes
 - Keep commits small and push coherent milestones.
