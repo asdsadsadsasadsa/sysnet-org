@@ -39,7 +39,7 @@ Status legend:
 ### 2.2 Log in as existing user
 - [x] Submit valid credentials
 - [x] See clear success feedback
-- [ ] Remain signed in after navigation/reload
+- [~] Remain signed in after navigation/reload
 
 ### 2.3 Log out
 - [x] Sign out successfully

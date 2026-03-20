@@ -60,6 +60,7 @@ Make the site actually useful for a real new user:
 1. Deploy path is now real and working.
 2. Earlier Vercel failures were due to missing env vars and Node runtime mismatch.
 3. Live prod password login works in automated Playwright testing.
+3a. A deterministic Playwright run against production with a seeded user also passed, which suggests the recent browser-tool login failures were misleading/flaky rather than a clean credentials failure.
 4. Live browser verification now confirms the login flow reaches the onboarding profile form with visible signed-in feedback.
 5. Logout works and returns the user to the onboarding login form with a visible `Signed out.` message.
 6. The feed remains directly viewable after logout, but unauthenticated publish is still blocked with a visible `Sign in first on /onboarding` message.
