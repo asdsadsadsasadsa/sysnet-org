@@ -18,6 +18,14 @@ create table if not exists public.profiles (
   updated_at timestamptz not null default now()
 );
 
+-- Minimal public identity surface for posts/comments.
+create or replace view public.profile_identities as
+select id, handle, display_name
+from public.profiles;
+
+grant select on public.profile_identities to anon;
+grant select on public.profile_identities to authenticated;
+
 -- Connection requests
 create table if not exists public.connection_requests (
   id uuid primary key default gen_random_uuid(),
