@@ -16,6 +16,7 @@ export default function OnboardingPage() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [msg, setMsg] = useState<string>("");
+  const [msgTone, setMsgTone] = useState<"info" | "success" | "error">("info");
   const [sending, setSending] = useState(false);
   const [userId, setUserId] = useState<string>("");
   const [handle, setHandle] = useState("");
@@ -72,25 +73,59 @@ export default function OnboardingPage() {
     e.preventDefault();
     if (sending) return;
     setSending(true);
+    setMsgTone("info");
     setMsg("Signing in...");
+
     const { error } = await supabase.auth.signInWithPassword({ email, password });
     if (error) {
-      setMsg(error.message);
+      setMsgTone("error");
+      setMsg(error.message || "Unable to sign in.");
       setSending(false);
       return;
     }
+
     await refreshUser();
-    setMsg("Signed in.");
+
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+
+    if (!user) {
+      setMsgTone("error");
+      setMsg("Sign-in did not complete cleanly. Try again.");
+      setSending(false);
+      return;
+    }
+
+    const { data: profile } = await supabase
+      .from("profiles")
+      .select("id")
+      .eq("id", user.id)
+      .maybeSingle();
+
+    setMsgTone("success");
+    setMsg(profile ? "Signed in. Redirecting to feed..." : "Signed in. Complete your profile to continue.");
     setSending(false);
+
+    if (profile) {
+      router.push("/feed");
+    }
     router.refresh();
   }
 
   async function signUp(e: FormEvent) {
     e.preventDefault();
     if (sending) return;
-    if (password.length < 8) return setMsg("Use a password with at least 8 characters.");
-    if (password !== confirmPassword) return setMsg("Passwords do not match.");
+    if (password.length < 8) {
+      setMsgTone("error");
+      return setMsg("Use a password with at least 8 characters.");
+    }
+    if (password !== confirmPassword) {
+      setMsgTone("error");
+      return setMsg("Passwords do not match.");
+    }
     setSending(true);
+    setMsgTone("info");
     setMsg("Creating account...");
 
     try {
@@ -102,6 +137,7 @@ export default function OnboardingPage() {
 
       const body = (await res.json().catch(() => ({}))) as { error?: string };
       if (!res.ok) {
+        setMsgTone("error");
         setMsg(body.error || "Unable to create account.");
         setSending(false);
         return;
@@ -109,17 +145,20 @@ export default function OnboardingPage() {
 
       const loginResult = await supabase.auth.signInWithPassword({ email, password });
       if (loginResult.error) {
+        setMsgTone("error");
         setMsg(`Account created, but login failed: ${loginResult.error.message}`);
         setSending(false);
         return;
       }
 
       await refreshUser();
+      setMsgTone("success");
       setMsg("Account created. Complete your profile.");
       setMode("login");
       setSending(false);
       router.refresh();
     } catch {
+      setMsgTone("error");
       setMsg("Unexpected network error while creating the account.");
       setSending(false);
     }
@@ -127,9 +166,13 @@ export default function OnboardingPage() {
 
   async function saveProfile(e: FormEvent) {
     e.preventDefault();
-    if (!userId) return setMsg("Sign in first.");
+    if (!userId) {
+      setMsgTone("error");
+      return setMsg("Sign in first.");
+    }
     const normalizedHandle = normalizeHandle(handle);
     if (!normalizedHandle) {
+      setMsgTone("error");
       return setMsg("Handle is invalid. Use letters, numbers, underscore, and dashes.");
     }
 
@@ -146,7 +189,8 @@ export default function OnboardingPage() {
     };
 
     const { error } = await supabase.from("profiles").upsert(payload);
-    setMsg(error ? error.message : "Profile saved.");
+    setMsgTone(error ? "error" : "success");
+    setMsg(error ? error.message : "Profile saved. Redirecting to feed...");
     if (!error) {
       setHasProfile(true);
       router.push("/feed");
@@ -159,6 +203,7 @@ export default function OnboardingPage() {
     setUserId("");
     setHasProfile(false);
     setAuthChecked(true);
+    setMsgTone("success");
     setMsg("Signed out.");
     router.refresh();
   }
@@ -278,7 +323,19 @@ export default function OnboardingPage() {
         </div>
       )}
 
-      {msg && <p className="text-sm soft-muted">{msg}</p>}
+      {msg && (
+        <div
+          className={`rounded-2xl border px-4 py-3 text-sm ${
+            msgTone === "error"
+              ? "border-rose-200 bg-rose-50 text-rose-700"
+              : msgTone === "success"
+                ? "border-emerald-200 bg-emerald-50 text-emerald-700"
+                : "border-blue-200 bg-blue-50 text-blue-700"
+          }`}
+        >
+          {msg}
+        </div>
+      )}
     </div>
   );
 }
