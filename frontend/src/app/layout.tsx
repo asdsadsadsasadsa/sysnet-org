@@ -26,11 +26,10 @@ export const metadata: Metadata = {
 };
 
 const nav = [
-  { href: "/people", label: "People" },
+  { href: "/people", label: "Directory" },
+  { href: "/mentors", label: "Mentors" },
   { href: "/feed", label: "Feed" },
   { href: "/profile", label: "Profile" },
-  { href: "/about", label: "About" },
-  { href: "/guidelines", label: "Guidelines" },
 ];
 
 export default function RootLayout({
