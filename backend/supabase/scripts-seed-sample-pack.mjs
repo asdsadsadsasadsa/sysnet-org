@@ -19,6 +19,18 @@ async function readPack() {
 async function adminCreateOrFetchUser(profile) {
   const email = `${profile.handle}@${EMAIL_DOMAIN}`;
 
+  // First, check if profile exists to get the ID without fetching all auth users
+  const existingProfile = await fetch(`${SUPABASE_URL}/rest/v1/profiles?handle=eq.${profile.handle}`, {
+    headers: {
+      apikey: SERVICE,
+      Authorization: `Bearer ${SERVICE}`,
+    },
+  }).then(res => res.json());
+
+  if (existingProfile && existingProfile.length > 0) {
+    return { id: existingProfile[0].id, email, created: false };
+  }
+
   const createRes = await fetch(`${SUPABASE_URL}/auth/v1/admin/users`, {
     method: 'POST',
     headers: {
