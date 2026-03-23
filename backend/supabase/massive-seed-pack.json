@@ -1,0 +1,4018 @@
+{
+  "profiles": [
+    {
+      "handle": "maya-mbse",
+      "display_name": "Maya Chen",
+      "visibility": "public",
+      "headline": "Principal MBSE lead for safety-critical aerospace programs",
+      "bio": "Leads model-based systems engineering adoption across flight controls and mission-planning teams. Interested in verification rigor, requirements traceability, and making MBSE useful beyond slideware.",
+      "location": "Seattle, WA",
+      "timezone": "America/Los_Angeles",
+      "domains": [
+        "aerospace",
+        "systems engineering",
+        "mbse"
+      ],
+      "tags": [
+        "sysml",
+        "cameo",
+        "requirements",
+        "verification"
+      ],
+      "open_to": [
+        "mentoring",
+        "consulting"
+      ],
+      "organization": "Northwest Flight Systems Institute",
+      "avatar_url": "https://api.dicebear.com/9.x/initials/svg?seed=Maya%20Chen"
+    },
+    {
+      "handle": "omar-embedded-systems",
+      "display_name": "Omar Rahman",
+      "visibility": "public",
+      "headline": "Embedded systems architect bridging hardware, firmware, and test",
+      "bio": "Works on cross-functional architecture for industrial robotics platforms. Cares about interface clarity, failure analysis, and disciplined system decomposition.",
+      "location": "Austin, TX",
+      "timezone": "America/Chicago",
+      "domains": [
+        "robotics",
+        "embedded systems",
+        "industrial automation"
+      ],
+      "tags": [
+        "embedded",
+        "integration",
+        "interfaces",
+        "test"
+      ],
+      "open_to": [
+        "hiring"
+      ],
+      "organization": "Axis Robotics",
+      "avatar_url": "https://api.dicebear.com/9.x/initials/svg?seed=Omar%20Rahman"
+    },
+    {
+      "handle": "lina-medtech",
+      "display_name": "Lina Park",
+      "visibility": "public",
+      "headline": "Systems engineer for regulated medical device platforms",
+      "bio": "Focuses on requirements, risk controls, and design history discipline for connected medtech products. Likes translating compliance pressure into cleaner engineering systems.",
+      "location": "San Diego, CA",
+      "timezone": "America/Los_Angeles",
+      "domains": [
+        "medical devices",
+        "quality systems",
+        "regulated products"
+      ],
+      "tags": [
+        "risk management",
+        "traceability",
+        "verification",
+        "validation"
+      ],
+      "open_to": [
+        "mentoring"
+      ],
+      "organization": "Astera Medical Devices",
+      "avatar_url": "https://api.dicebear.com/9.x/initials/svg?seed=Lina%20Park"
+    },
+    {
+      "handle": "diego-autonomy",
+      "display_name": "Diego Alvarez",
+      "visibility": "public",
+      "headline": "Autonomy systems engineer working across perception, planning, and ops",
+      "bio": "Helps autonomy teams reason about system boundaries, operational envelopes, and failure containment. Interested in reviewable architecture artifacts and simulation-informed decisions.",
+      "location": "Mountain View, CA",
+      "timezone": "America/Los_Angeles",
+      "domains": [
+        "autonomy",
+        "robotics",
+        "simulation"
+      ],
+      "tags": [
+        "planning",
+        "safety",
+        "simulation",
+        "architecture"
+      ],
+      "open_to": [
+        "consulting",
+        "hiring"
+      ],
+      "organization": "Helios Autonomy Lab",
+      "avatar_url": "https://api.dicebear.com/9.x/initials/svg?seed=Diego%20Alvarez"
+    },
+    {
+      "handle": "rhea-defense-systems",
+      "display_name": "Rhea Banerjee",
+      "visibility": "public",
+      "headline": "Systems integration manager for large defense programs",
+      "bio": "Coordinates subsystem integration across contractors, test teams, and program management. Particularly interested in configuration drift, interface governance, and review discipline.",
+      "location": "Arlington, VA",
+      "timezone": "America/New_York",
+      "domains": [
+        "defense",
+        "integration",
+        "program execution"
+      ],
+      "tags": [
+        "interfaces",
+        "icd",
+        "configuration",
+        "integration"
+      ],
+      "open_to": [
+        "mentoring"
+      ],
+      "organization": "Aegis Defense Integration Group",
+      "avatar_url": "https://api.dicebear.com/9.x/initials/svg?seed=Rhea%20Banerjee"
+    },
+    {
+      "handle": "noah-systems-safety",
+      "display_name": "Noah Kim",
+      "visibility": "public",
+      "headline": "Systems safety engineer focused on hazard analysis and operational resilience",
+      "bio": "Works with platform teams to turn safety cases into design decisions instead of compliance theater. Deeply interested in STPA, fault containment, and testable mitigations.",
+      "location": "Denver, CO",
+      "timezone": "America/Denver",
+      "domains": [
+        "systems safety",
+        "hazard analysis",
+        "resilience"
+      ],
+      "tags": [
+        "stpa",
+        "fault analysis",
+        "safety case",
+        "verification"
+      ],
+      "open_to": [
+        "consulting"
+      ],
+      "organization": "Summit Resilience Systems",
+      "avatar_url": "https://api.dicebear.com/9.x/initials/svg?seed=Noah%20Kim"
+    },
+    {
+      "handle": "irene-rail-systems",
+      "display_name": "Irene Volkov",
+      "visibility": "public",
+      "headline": "Rail systems engineer coordinating infrastructure and rolling stock interfaces",
+      "bio": "Works on large rail modernization efforts with a focus on interfaces, operational readiness, and test planning across vendors and public stakeholders.",
+      "location": "London, UK",
+      "timezone": "Europe/London",
+      "domains": [
+        "rail",
+        "infrastructure",
+        "transportation"
+      ],
+      "tags": [
+        "integration",
+        "operational readiness",
+        "test planning",
+        "interfaces"
+      ],
+      "open_to": [
+        "mentoring",
+        "hiring"
+      ],
+      "organization": "Civic Rail Modernization Office",
+      "avatar_url": "https://api.dicebear.com/9.x/initials/svg?seed=Irene%20Volkov"
+    },
+    {
+      "handle": "ethan-digital-thread",
+      "display_name": "Ethan Brooks",
+      "visibility": "public",
+      "headline": "Digital thread strategist for complex product development organizations",
+      "bio": "Helps teams connect requirements, models, verification evidence, and change control into a usable engineering thread. Suspicious of dashboards that do not improve decisions.",
+      "location": "Boston, MA",
+      "timezone": "America/New_York",
+      "domains": [
+        "digital thread",
+        "plm",
+        "systems transformation"
+      ],
+      "tags": [
+        "traceability",
+        "plm",
+        "requirements",
+        "governance"
+      ],
+      "open_to": [
+        "consulting",
+        "mentoring"
+      ],
+      "organization": "Threadline Engineering Advisory",
+      "avatar_url": "https://api.dicebear.com/9.x/initials/svg?seed=Ethan%20Brooks"
+    },
+    {
+      "handle": "robert-gonzalez-0",
+      "display_name": "Robert Gonzalez",
+      "visibility": "public",
+      "headline": "Systems Engineer working in automotive",
+      "bio": "Passionate about building complex systems. Focus on architecture, integration, and testing.",
+      "location": "Seattle, WA",
+      "timezone": "America/Los_Angeles",
+      "domains": [
+        "automotive"
+      ],
+      "tags": [
+        "systems engineering",
+        "architecture",
+        "integration"
+      ],
+      "open_to": [
+        "networking"
+      ],
+      "organization": "Gonzalez Engineering Corp",
+      "avatar_url": "https://api.dicebear.com/9.x/initials/svg?seed=Robert%20Gonzalez"
+    },
+    {
+      "handle": "charles-garcia-1",
+      "display_name": "Charles Garcia",
+      "visibility": "public",
+      "headline": "Systems Engineer working in automotive",
+      "bio": "Passionate about building complex systems. Focus on architecture, integration, and testing.",
+      "location": "Austin, TX",
+      "timezone": "America/Los_Angeles",
+      "domains": [
+        "automotive"
+      ],
+      "tags": [
+        "systems engineering",
+        "architecture",
+        "integration"
+      ],
+      "open_to": [
+        "networking"
+      ],
+      "organization": "Garcia Engineering Corp",
+      "avatar_url": "https://api.dicebear.com/9.x/initials/svg?seed=Charles%20Garcia"
+    },
+    {
+      "handle": "mary-thompson-2",
+      "display_name": "Mary Thompson",
+      "visibility": "public",
+      "headline": "Systems Engineer working in aerospace",
+      "bio": "Passionate about building complex systems. Focus on architecture, integration, and testing.",
+      "location": "San Francisco, CA",
+      "timezone": "America/Los_Angeles",
+      "domains": [
+        "aerospace"
+      ],
+      "tags": [
+        "systems engineering",
+        "architecture",
+        "integration"
+      ],
+      "open_to": [
+        "networking"
+      ],
+      "organization": "Thompson Engineering Corp",
+      "avatar_url": "https://api.dicebear.com/9.x/initials/svg?seed=Mary%20Thompson"
+    },
+    {
+      "handle": "mary-thomas-3",
+      "display_name": "Mary Thomas",
+      "visibility": "public",
+      "headline": "Systems Engineer working in aerospace",
+      "bio": "Passionate about building complex systems. Focus on architecture, integration, and testing.",
+      "location": "Seattle, WA",
+      "timezone": "America/Los_Angeles",
+      "domains": [
+        "aerospace"
+      ],
+      "tags": [
+        "systems engineering",
+        "architecture",
+        "integration"
+      ],
+      "open_to": [
+        "networking"
+      ],
+      "organization": "Thomas Engineering Corp",
+      "avatar_url": "https://api.dicebear.com/9.x/initials/svg?seed=Mary%20Thomas"
+    },
+    {
+      "handle": "andrew-anderson-4",
+      "display_name": "Andrew Anderson",
+      "visibility": "public",
+      "headline": "Systems Engineer working in medical devices",
+      "bio": "Passionate about building complex systems. Focus on architecture, integration, and testing.",
+      "location": "San Francisco, CA",
+      "timezone": "America/Los_Angeles",
+      "domains": [
+        "medical devices"
+      ],
+      "tags": [
+        "systems engineering",
+        "architecture",
+        "integration"
+      ],
+      "open_to": [
+        "networking"
+      ],
+      "organization": "Anderson Engineering Corp",
+      "avatar_url": "https://api.dicebear.com/9.x/initials/svg?seed=Andrew%20Anderson"
+    },
+    {
+      "handle": "kimberly-thompson-5",
+      "display_name": "Kimberly Thompson",
+      "visibility": "public",
+      "headline": "Systems Engineer working in automotive",
+      "bio": "Passionate about building complex systems. Focus on architecture, integration, and testing.",
+      "location": "Boston, MA",
+      "timezone": "America/Los_Angeles",
+      "domains": [
+        "automotive"
+      ],
+      "tags": [
+        "systems engineering",
+        "architecture",
+        "integration"
+      ],
+      "open_to": [
+        "networking"
+      ],
+      "organization": "Thompson Engineering Corp",
+      "avatar_url": "https://api.dicebear.com/9.x/initials/svg?seed=Kimberly%20Thompson"
+    },
+    {
+      "handle": "michelle-sanchez-6",
+      "display_name": "Michelle Sanchez",
+      "visibility": "public",
+      "headline": "Systems Engineer working in automotive",
+      "bio": "Passionate about building complex systems. Focus on architecture, integration, and testing.",
+      "location": "Remote",
+      "timezone": "America/Los_Angeles",
+      "domains": [
+        "automotive"
+      ],
+      "tags": [
+        "systems engineering",
+        "architecture",
+        "integration"
+      ],
+      "open_to": [
+        "networking"
+      ],
+      "organization": "Sanchez Engineering Corp",
+      "avatar_url": "https://api.dicebear.com/9.x/initials/svg?seed=Michelle%20Sanchez"
+    },
+    {
+      "handle": "ashley-smith-7",
+      "display_name": "Ashley Smith",
+      "visibility": "public",
+      "headline": "Systems Engineer working in consumer electronics",
+      "bio": "Passionate about building complex systems. Focus on architecture, integration, and testing.",
+      "location": "Austin, TX",
+      "timezone": "America/Los_Angeles",
+      "domains": [
+        "consumer electronics"
+      ],
+      "tags": [
+        "systems engineering",
+        "architecture",
+        "integration"
+      ],
+      "open_to": [
+        "networking"
+      ],
+      "organization": "Smith Engineering Corp",
+      "avatar_url": "https://api.dicebear.com/9.x/initials/svg?seed=Ashley%20Smith"
+    },
+    {
+      "handle": "kimberly-taylor-8",
+      "display_name": "Kimberly Taylor",
+      "visibility": "public",
+      "headline": "Systems Engineer working in automotive",
+      "bio": "Passionate about building complex systems. Focus on architecture, integration, and testing.",
+      "location": "Austin, TX",
+      "timezone": "America/Los_Angeles",
+      "domains": [
+        "automotive"
+      ],
+      "tags": [
+        "systems engineering",
+        "architecture",
+        "integration"
+      ],
+      "open_to": [
+        "networking"
+      ],
+      "organization": "Taylor Engineering Corp",
+      "avatar_url": "https://api.dicebear.com/9.x/initials/svg?seed=Kimberly%20Taylor"
+    },
+    {
+      "handle": "barbara-white-9",
+      "display_name": "Barbara White",
+      "visibility": "public",
+      "headline": "Systems Engineer working in automotive",
+      "bio": "Passionate about building complex systems. Focus on architecture, integration, and testing.",
+      "location": "Remote",
+      "timezone": "America/Los_Angeles",
+      "domains": [
+        "automotive"
+      ],
+      "tags": [
+        "systems engineering",
+        "architecture",
+        "integration"
+      ],
+      "open_to": [
+        "networking"
+      ],
+      "organization": "White Engineering Corp",
+      "avatar_url": "https://api.dicebear.com/9.x/initials/svg?seed=Barbara%20White"
+    },
+    {
+      "handle": "anthony-jackson-10",
+      "display_name": "Anthony Jackson",
+      "visibility": "public",
+      "headline": "Systems Engineer working in consumer electronics",
+      "bio": "Passionate about building complex systems. Focus on architecture, integration, and testing.",
+      "location": "Boston, MA",
+      "timezone": "America/Los_Angeles",
+      "domains": [
+        "consumer electronics"
+      ],
+      "tags": [
+        "systems engineering",
+        "architecture",
+        "integration"
+      ],
+      "open_to": [
+        "networking"
+      ],
+      "organization": "Jackson Engineering Corp",
+      "avatar_url": "https://api.dicebear.com/9.x/initials/svg?seed=Anthony%20Jackson"
+    },
+    {
+      "handle": "mary-gonzalez-11",
+      "display_name": "Mary Gonzalez",
+      "visibility": "public",
+      "headline": "Systems Engineer working in robotics",
+      "bio": "Passionate about building complex systems. Focus on architecture, integration, and testing.",
+      "location": "Seattle, WA",
+      "timezone": "America/Los_Angeles",
+      "domains": [
+        "robotics"
+      ],
+      "tags": [
+        "systems engineering",
+        "architecture",
+        "integration"
+      ],
+      "open_to": [
+        "networking"
+      ],
+      "organization": "Gonzalez Engineering Corp",
+      "avatar_url": "https://api.dicebear.com/9.x/initials/svg?seed=Mary%20Gonzalez"
+    },
+    {
+      "handle": "jessica-brown-12",
+      "display_name": "Jessica Brown",
+      "visibility": "public",
+      "headline": "Systems Engineer working in medical devices",
+      "bio": "Passionate about building complex systems. Focus on architecture, integration, and testing.",
+      "location": "Boston, MA",
+      "timezone": "America/Los_Angeles",
+      "domains": [
+        "medical devices"
+      ],
+      "tags": [
+        "systems engineering",
+        "architecture",
+        "integration"
+      ],
+      "open_to": [
+        "networking"
+      ],
+      "organization": "Brown Engineering Corp",
+      "avatar_url": "https://api.dicebear.com/9.x/initials/svg?seed=Jessica%20Brown"
+    },
+    {
+      "handle": "mary-ramirez-13",
+      "display_name": "Mary Ramirez",
+      "visibility": "public",
+      "headline": "Systems Engineer working in aerospace",
+      "bio": "Passionate about building complex systems. Focus on architecture, integration, and testing.",
+      "location": "Austin, TX",
+      "timezone": "America/Los_Angeles",
+      "domains": [
+        "aerospace"
+      ],
+      "tags": [
+        "systems engineering",
+        "architecture",
+        "integration"
+      ],
+      "open_to": [
+        "networking"
+      ],
+      "organization": "Ramirez Engineering Corp",
+      "avatar_url": "https://api.dicebear.com/9.x/initials/svg?seed=Mary%20Ramirez"
+    },
+    {
+      "handle": "david-gonzalez-14",
+      "display_name": "David Gonzalez",
+      "visibility": "public",
+      "headline": "Systems Engineer working in robotics",
+      "bio": "Passionate about building complex systems. Focus on architecture, integration, and testing.",
+      "location": "San Francisco, CA",
+      "timezone": "America/Los_Angeles",
+      "domains": [
+        "robotics"
+      ],
+      "tags": [
+        "systems engineering",
+        "architecture",
+        "integration"
+      ],
+      "open_to": [
+        "networking"
+      ],
+      "organization": "Gonzalez Engineering Corp",
+      "avatar_url": "https://api.dicebear.com/9.x/initials/svg?seed=David%20Gonzalez"
+    },
+    {
+      "handle": "jennifer-williams-15",
+      "display_name": "Jennifer Williams",
+      "visibility": "public",
+      "headline": "Systems Engineer working in robotics",
+      "bio": "Passionate about building complex systems. Focus on architecture, integration, and testing.",
+      "location": "Austin, TX",
+      "timezone": "America/Los_Angeles",
+      "domains": [
+        "robotics"
+      ],
+      "tags": [
+        "systems engineering",
+        "architecture",
+        "integration"
+      ],
+      "open_to": [
+        "networking"
+      ],
+      "organization": "Williams Engineering Corp",
+      "avatar_url": "https://api.dicebear.com/9.x/initials/svg?seed=Jennifer%20Williams"
+    },
+    {
+      "handle": "daniel-lee-16",
+      "display_name": "Daniel Lee",
+      "visibility": "public",
+      "headline": "Systems Engineer working in consumer electronics",
+      "bio": "Passionate about building complex systems. Focus on architecture, integration, and testing.",
+      "location": "San Francisco, CA",
+      "timezone": "America/Los_Angeles",
+      "domains": [
+        "consumer electronics"
+      ],
+      "tags": [
+        "systems engineering",
+        "architecture",
+        "integration"
+      ],
+      "open_to": [
+        "networking"
+      ],
+      "organization": "Lee Engineering Corp",
+      "avatar_url": "https://api.dicebear.com/9.x/initials/svg?seed=Daniel%20Lee"
+    },
+    {
+      "handle": "james-white-17",
+      "display_name": "James White",
+      "visibility": "public",
+      "headline": "Systems Engineer working in aerospace",
+      "bio": "Passionate about building complex systems. Focus on architecture, integration, and testing.",
+      "location": "Seattle, WA",
+      "timezone": "America/Los_Angeles",
+      "domains": [
+        "aerospace"
+      ],
+      "tags": [
+        "systems engineering",
+        "architecture",
+        "integration"
+      ],
+      "open_to": [
+        "networking"
+      ],
+      "organization": "White Engineering Corp",
+      "avatar_url": "https://api.dicebear.com/9.x/initials/svg?seed=James%20White"
+    },
+    {
+      "handle": "joshua-brown-18",
+      "display_name": "Joshua Brown",
+      "visibility": "public",
+      "headline": "Systems Engineer working in robotics",
+      "bio": "Passionate about building complex systems. Focus on architecture, integration, and testing.",
+      "location": "Boston, MA",
+      "timezone": "America/Los_Angeles",
+      "domains": [
+        "robotics"
+      ],
+      "tags": [
+        "systems engineering",
+        "architecture",
+        "integration"
+      ],
+      "open_to": [
+        "networking"
+      ],
+      "organization": "Brown Engineering Corp",
+      "avatar_url": "https://api.dicebear.com/9.x/initials/svg?seed=Joshua%20Brown"
+    },
+    {
+      "handle": "ashley-jackson-19",
+      "display_name": "Ashley Jackson",
+      "visibility": "public",
+      "headline": "Systems Engineer working in aerospace",
+      "bio": "Passionate about building complex systems. Focus on architecture, integration, and testing.",
+      "location": "Remote",
+      "timezone": "America/Los_Angeles",
+      "domains": [
+        "aerospace"
+      ],
+      "tags": [
+        "systems engineering",
+        "architecture",
+        "integration"
+      ],
+      "open_to": [
+        "networking"
+      ],
+      "organization": "Jackson Engineering Corp",
+      "avatar_url": "https://api.dicebear.com/9.x/initials/svg?seed=Ashley%20Jackson"
+    },
+    {
+      "handle": "sarah-anderson-20",
+      "display_name": "Sarah Anderson",
+      "visibility": "public",
+      "headline": "Systems Engineer working in consumer electronics",
+      "bio": "Passionate about building complex systems. Focus on architecture, integration, and testing.",
+      "location": "Denver, CO",
+      "timezone": "America/Los_Angeles",
+      "domains": [
+        "consumer electronics"
+      ],
+      "tags": [
+        "systems engineering",
+        "architecture",
+        "integration"
+      ],
+      "open_to": [
+        "networking"
+      ],
+      "organization": "Anderson Engineering Corp",
+      "avatar_url": "https://api.dicebear.com/9.x/initials/svg?seed=Sarah%20Anderson"
+    },
+    {
+      "handle": "elizabeth-taylor-21",
+      "display_name": "Elizabeth Taylor",
+      "visibility": "public",
+      "headline": "Systems Engineer working in automotive",
+      "bio": "Passionate about building complex systems. Focus on architecture, integration, and testing.",
+      "location": "Seattle, WA",
+      "timezone": "America/Los_Angeles",
+      "domains": [
+        "automotive"
+      ],
+      "tags": [
+        "systems engineering",
+        "architecture",
+        "integration"
+      ],
+      "open_to": [
+        "networking"
+      ],
+      "organization": "Taylor Engineering Corp",
+      "avatar_url": "https://api.dicebear.com/9.x/initials/svg?seed=Elizabeth%20Taylor"
+    },
+    {
+      "handle": "barbara-johnson-22",
+      "display_name": "Barbara Johnson",
+      "visibility": "public",
+      "headline": "Systems Engineer working in medical devices",
+      "bio": "Passionate about building complex systems. Focus on architecture, integration, and testing.",
+      "location": "Austin, TX",
+      "timezone": "America/Los_Angeles",
+      "domains": [
+        "medical devices"
+      ],
+      "tags": [
+        "systems engineering",
+        "architecture",
+        "integration"
+      ],
+      "open_to": [
+        "networking"
+      ],
+      "organization": "Johnson Engineering Corp",
+      "avatar_url": "https://api.dicebear.com/9.x/initials/svg?seed=Barbara%20Johnson"
+    },
+    {
+      "handle": "jennifer-perez-23",
+      "display_name": "Jennifer Perez",
+      "visibility": "public",
+      "headline": "Systems Engineer working in aerospace",
+      "bio": "Passionate about building complex systems. Focus on architecture, integration, and testing.",
+      "location": "Austin, TX",
+      "timezone": "America/Los_Angeles",
+      "domains": [
+        "aerospace"
+      ],
+      "tags": [
+        "systems engineering",
+        "architecture",
+        "integration"
+      ],
+      "open_to": [
+        "networking"
+      ],
+      "organization": "Perez Engineering Corp",
+      "avatar_url": "https://api.dicebear.com/9.x/initials/svg?seed=Jennifer%20Perez"
+    },
+    {
+      "handle": "john-gonzalez-24",
+      "display_name": "John Gonzalez",
+      "visibility": "public",
+      "headline": "Systems Engineer working in automotive",
+      "bio": "Passionate about building complex systems. Focus on architecture, integration, and testing.",
+      "location": "Remote",
+      "timezone": "America/Los_Angeles",
+      "domains": [
+        "automotive"
+      ],
+      "tags": [
+        "systems engineering",
+        "architecture",
+        "integration"
+      ],
+      "open_to": [
+        "networking"
+      ],
+      "organization": "Gonzalez Engineering Corp",
+      "avatar_url": "https://api.dicebear.com/9.x/initials/svg?seed=John%20Gonzalez"
+    },
+    {
+      "handle": "paul-miller-25",
+      "display_name": "Paul Miller",
+      "visibility": "public",
+      "headline": "Systems Engineer working in automotive",
+      "bio": "Passionate about building complex systems. Focus on architecture, integration, and testing.",
+      "location": "Remote",
+      "timezone": "America/Los_Angeles",
+      "domains": [
+        "automotive"
+      ],
+      "tags": [
+        "systems engineering",
+        "architecture",
+        "integration"
+      ],
+      "open_to": [
+        "networking"
+      ],
+      "organization": "Miller Engineering Corp",
+      "avatar_url": "https://api.dicebear.com/9.x/initials/svg?seed=Paul%20Miller"
+    },
+    {
+      "handle": "mary-robinson-26",
+      "display_name": "Mary Robinson",
+      "visibility": "public",
+      "headline": "Systems Engineer working in robotics",
+      "bio": "Passionate about building complex systems. Focus on architecture, integration, and testing.",
+      "location": "Seattle, WA",
+      "timezone": "America/Los_Angeles",
+      "domains": [
+        "robotics"
+      ],
+      "tags": [
+        "systems engineering",
+        "architecture",
+        "integration"
+      ],
+      "open_to": [
+        "networking"
+      ],
+      "organization": "Robinson Engineering Corp",
+      "avatar_url": "https://api.dicebear.com/9.x/initials/svg?seed=Mary%20Robinson"
+    },
+    {
+      "handle": "patricia-harris-27",
+      "display_name": "Patricia Harris",
+      "visibility": "public",
+      "headline": "Systems Engineer working in aerospace",
+      "bio": "Passionate about building complex systems. Focus on architecture, integration, and testing.",
+      "location": "Boston, MA",
+      "timezone": "America/Los_Angeles",
+      "domains": [
+        "aerospace"
+      ],
+      "tags": [
+        "systems engineering",
+        "architecture",
+        "integration"
+      ],
+      "open_to": [
+        "networking"
+      ],
+      "organization": "Harris Engineering Corp",
+      "avatar_url": "https://api.dicebear.com/9.x/initials/svg?seed=Patricia%20Harris"
+    },
+    {
+      "handle": "susan-harris-28",
+      "display_name": "Susan Harris",
+      "visibility": "public",
+      "headline": "Systems Engineer working in consumer electronics",
+      "bio": "Passionate about building complex systems. Focus on architecture, integration, and testing.",
+      "location": "Denver, CO",
+      "timezone": "America/Los_Angeles",
+      "domains": [
+        "consumer electronics"
+      ],
+      "tags": [
+        "systems engineering",
+        "architecture",
+        "integration"
+      ],
+      "open_to": [
+        "networking"
+      ],
+      "organization": "Harris Engineering Corp",
+      "avatar_url": "https://api.dicebear.com/9.x/initials/svg?seed=Susan%20Harris"
+    },
+    {
+      "handle": "joshua-smith-29",
+      "display_name": "Joshua Smith",
+      "visibility": "public",
+      "headline": "Systems Engineer working in consumer electronics",
+      "bio": "Passionate about building complex systems. Focus on architecture, integration, and testing.",
+      "location": "Boston, MA",
+      "timezone": "America/Los_Angeles",
+      "domains": [
+        "consumer electronics"
+      ],
+      "tags": [
+        "systems engineering",
+        "architecture",
+        "integration"
+      ],
+      "open_to": [
+        "networking"
+      ],
+      "organization": "Smith Engineering Corp",
+      "avatar_url": "https://api.dicebear.com/9.x/initials/svg?seed=Joshua%20Smith"
+    },
+    {
+      "handle": "joshua-rodriguez-30",
+      "display_name": "Joshua Rodriguez",
+      "visibility": "public",
+      "headline": "Systems Engineer working in medical devices",
+      "bio": "Passionate about building complex systems. Focus on architecture, integration, and testing.",
+      "location": "Seattle, WA",
+      "timezone": "America/Los_Angeles",
+      "domains": [
+        "medical devices"
+      ],
+      "tags": [
+        "systems engineering",
+        "architecture",
+        "integration"
+      ],
+      "open_to": [
+        "networking"
+      ],
+      "organization": "Rodriguez Engineering Corp",
+      "avatar_url": "https://api.dicebear.com/9.x/initials/svg?seed=Joshua%20Rodriguez"
+    },
+    {
+      "handle": "mary-lopez-31",
+      "display_name": "Mary Lopez",
+      "visibility": "public",
+      "headline": "Systems Engineer working in medical devices",
+      "bio": "Passionate about building complex systems. Focus on architecture, integration, and testing.",
+      "location": "Remote",
+      "timezone": "America/Los_Angeles",
+      "domains": [
+        "medical devices"
+      ],
+      "tags": [
+        "systems engineering",
+        "architecture",
+        "integration"
+      ],
+      "open_to": [
+        "networking"
+      ],
+      "organization": "Lopez Engineering Corp",
+      "avatar_url": "https://api.dicebear.com/9.x/initials/svg?seed=Mary%20Lopez"
+    },
+    {
+      "handle": "james-martinez-32",
+      "display_name": "James Martinez",
+      "visibility": "public",
+      "headline": "Systems Engineer working in robotics",
+      "bio": "Passionate about building complex systems. Focus on architecture, integration, and testing.",
+      "location": "Remote",
+      "timezone": "America/Los_Angeles",
+      "domains": [
+        "robotics"
+      ],
+      "tags": [
+        "systems engineering",
+        "architecture",
+        "integration"
+      ],
+      "open_to": [
+        "networking"
+      ],
+      "organization": "Martinez Engineering Corp",
+      "avatar_url": "https://api.dicebear.com/9.x/initials/svg?seed=James%20Martinez"
+    },
+    {
+      "handle": "susan-hernandez-33",
+      "display_name": "Susan Hernandez",
+      "visibility": "public",
+      "headline": "Systems Engineer working in aerospace",
+      "bio": "Passionate about building complex systems. Focus on architecture, integration, and testing.",
+      "location": "Denver, CO",
+      "timezone": "America/Los_Angeles",
+      "domains": [
+        "aerospace"
+      ],
+      "tags": [
+        "systems engineering",
+        "architecture",
+        "integration"
+      ],
+      "open_to": [
+        "networking"
+      ],
+      "organization": "Hernandez Engineering Corp",
+      "avatar_url": "https://api.dicebear.com/9.x/initials/svg?seed=Susan%20Hernandez"
+    },
+    {
+      "handle": "susan-smith-34",
+      "display_name": "Susan Smith",
+      "visibility": "public",
+      "headline": "Systems Engineer working in medical devices",
+      "bio": "Passionate about building complex systems. Focus on architecture, integration, and testing.",
+      "location": "Remote",
+      "timezone": "America/Los_Angeles",
+      "domains": [
+        "medical devices"
+      ],
+      "tags": [
+        "systems engineering",
+        "architecture",
+        "integration"
+      ],
+      "open_to": [
+        "networking"
+      ],
+      "organization": "Smith Engineering Corp",
+      "avatar_url": "https://api.dicebear.com/9.x/initials/svg?seed=Susan%20Smith"
+    },
+    {
+      "handle": "matthew-lopez-35",
+      "display_name": "Matthew Lopez",
+      "visibility": "public",
+      "headline": "Systems Engineer working in automotive",
+      "bio": "Passionate about building complex systems. Focus on architecture, integration, and testing.",
+      "location": "Austin, TX",
+      "timezone": "America/Los_Angeles",
+      "domains": [
+        "automotive"
+      ],
+      "tags": [
+        "systems engineering",
+        "architecture",
+        "integration"
+      ],
+      "open_to": [
+        "networking"
+      ],
+      "organization": "Lopez Engineering Corp",
+      "avatar_url": "https://api.dicebear.com/9.x/initials/svg?seed=Matthew%20Lopez"
+    },
+    {
+      "handle": "william-perez-36",
+      "display_name": "William Perez",
+      "visibility": "public",
+      "headline": "Systems Engineer working in automotive",
+      "bio": "Passionate about building complex systems. Focus on architecture, integration, and testing.",
+      "location": "San Francisco, CA",
+      "timezone": "America/Los_Angeles",
+      "domains": [
+        "automotive"
+      ],
+      "tags": [
+        "systems engineering",
+        "architecture",
+        "integration"
+      ],
+      "open_to": [
+        "networking"
+      ],
+      "organization": "Perez Engineering Corp",
+      "avatar_url": "https://api.dicebear.com/9.x/initials/svg?seed=William%20Perez"
+    },
+    {
+      "handle": "lisa-thomas-37",
+      "display_name": "Lisa Thomas",
+      "visibility": "public",
+      "headline": "Systems Engineer working in consumer electronics",
+      "bio": "Passionate about building complex systems. Focus on architecture, integration, and testing.",
+      "location": "Seattle, WA",
+      "timezone": "America/Los_Angeles",
+      "domains": [
+        "consumer electronics"
+      ],
+      "tags": [
+        "systems engineering",
+        "architecture",
+        "integration"
+      ],
+      "open_to": [
+        "networking"
+      ],
+      "organization": "Thomas Engineering Corp",
+      "avatar_url": "https://api.dicebear.com/9.x/initials/svg?seed=Lisa%20Thomas"
+    },
+    {
+      "handle": "emily-jackson-38",
+      "display_name": "Emily Jackson",
+      "visibility": "public",
+      "headline": "Systems Engineer working in consumer electronics",
+      "bio": "Passionate about building complex systems. Focus on architecture, integration, and testing.",
+      "location": "Denver, CO",
+      "timezone": "America/Los_Angeles",
+      "domains": [
+        "consumer electronics"
+      ],
+      "tags": [
+        "systems engineering",
+        "architecture",
+        "integration"
+      ],
+      "open_to": [
+        "networking"
+      ],
+      "organization": "Jackson Engineering Corp",
+      "avatar_url": "https://api.dicebear.com/9.x/initials/svg?seed=Emily%20Jackson"
+    },
+    {
+      "handle": "mark-miller-39",
+      "display_name": "Mark Miller",
+      "visibility": "public",
+      "headline": "Systems Engineer working in robotics",
+      "bio": "Passionate about building complex systems. Focus on architecture, integration, and testing.",
+      "location": "Boston, MA",
+      "timezone": "America/Los_Angeles",
+      "domains": [
+        "robotics"
+      ],
+      "tags": [
+        "systems engineering",
+        "architecture",
+        "integration"
+      ],
+      "open_to": [
+        "networking"
+      ],
+      "organization": "Miller Engineering Corp",
+      "avatar_url": "https://api.dicebear.com/9.x/initials/svg?seed=Mark%20Miller"
+    },
+    {
+      "handle": "joseph-robinson-40",
+      "display_name": "Joseph Robinson",
+      "visibility": "public",
+      "headline": "Systems Engineer working in consumer electronics",
+      "bio": "Passionate about building complex systems. Focus on architecture, integration, and testing.",
+      "location": "Austin, TX",
+      "timezone": "America/Los_Angeles",
+      "domains": [
+        "consumer electronics"
+      ],
+      "tags": [
+        "systems engineering",
+        "architecture",
+        "integration"
+      ],
+      "open_to": [
+        "networking"
+      ],
+      "organization": "Robinson Engineering Corp",
+      "avatar_url": "https://api.dicebear.com/9.x/initials/svg?seed=Joseph%20Robinson"
+    },
+    {
+      "handle": "robert-gonzalez-41",
+      "display_name": "Robert Gonzalez",
+      "visibility": "public",
+      "headline": "Systems Engineer working in aerospace",
+      "bio": "Passionate about building complex systems. Focus on architecture, integration, and testing.",
+      "location": "Boston, MA",
+      "timezone": "America/Los_Angeles",
+      "domains": [
+        "aerospace"
+      ],
+      "tags": [
+        "systems engineering",
+        "architecture",
+        "integration"
+      ],
+      "open_to": [
+        "networking"
+      ],
+      "organization": "Gonzalez Engineering Corp",
+      "avatar_url": "https://api.dicebear.com/9.x/initials/svg?seed=Robert%20Gonzalez"
+    },
+    {
+      "handle": "elizabeth-garcia-42",
+      "display_name": "Elizabeth Garcia",
+      "visibility": "public",
+      "headline": "Systems Engineer working in aerospace",
+      "bio": "Passionate about building complex systems. Focus on architecture, integration, and testing.",
+      "location": "Remote",
+      "timezone": "America/Los_Angeles",
+      "domains": [
+        "aerospace"
+      ],
+      "tags": [
+        "systems engineering",
+        "architecture",
+        "integration"
+      ],
+      "open_to": [
+        "networking"
+      ],
+      "organization": "Garcia Engineering Corp",
+      "avatar_url": "https://api.dicebear.com/9.x/initials/svg?seed=Elizabeth%20Garcia"
+    },
+    {
+      "handle": "matthew-ramirez-43",
+      "display_name": "Matthew Ramirez",
+      "visibility": "public",
+      "headline": "Systems Engineer working in aerospace",
+      "bio": "Passionate about building complex systems. Focus on architecture, integration, and testing.",
+      "location": "Boston, MA",
+      "timezone": "America/Los_Angeles",
+      "domains": [
+        "aerospace"
+      ],
+      "tags": [
+        "systems engineering",
+        "architecture",
+        "integration"
+      ],
+      "open_to": [
+        "networking"
+      ],
+      "organization": "Ramirez Engineering Corp",
+      "avatar_url": "https://api.dicebear.com/9.x/initials/svg?seed=Matthew%20Ramirez"
+    },
+    {
+      "handle": "michelle-sanchez-44",
+      "display_name": "Michelle Sanchez",
+      "visibility": "public",
+      "headline": "Systems Engineer working in consumer electronics",
+      "bio": "Passionate about building complex systems. Focus on architecture, integration, and testing.",
+      "location": "Remote",
+      "timezone": "America/Los_Angeles",
+      "domains": [
+        "consumer electronics"
+      ],
+      "tags": [
+        "systems engineering",
+        "architecture",
+        "integration"
+      ],
+      "open_to": [
+        "networking"
+      ],
+      "organization": "Sanchez Engineering Corp",
+      "avatar_url": "https://api.dicebear.com/9.x/initials/svg?seed=Michelle%20Sanchez"
+    },
+    {
+      "handle": "steven-miller-45",
+      "display_name": "Steven Miller",
+      "visibility": "public",
+      "headline": "Systems Engineer working in aerospace",
+      "bio": "Passionate about building complex systems. Focus on architecture, integration, and testing.",
+      "location": "Boston, MA",
+      "timezone": "America/Los_Angeles",
+      "domains": [
+        "aerospace"
+      ],
+      "tags": [
+        "systems engineering",
+        "architecture",
+        "integration"
+      ],
+      "open_to": [
+        "networking"
+      ],
+      "organization": "Miller Engineering Corp",
+      "avatar_url": "https://api.dicebear.com/9.x/initials/svg?seed=Steven%20Miller"
+    },
+    {
+      "handle": "linda-johnson-46",
+      "display_name": "Linda Johnson",
+      "visibility": "public",
+      "headline": "Systems Engineer working in medical devices",
+      "bio": "Passionate about building complex systems. Focus on architecture, integration, and testing.",
+      "location": "Denver, CO",
+      "timezone": "America/Los_Angeles",
+      "domains": [
+        "medical devices"
+      ],
+      "tags": [
+        "systems engineering",
+        "architecture",
+        "integration"
+      ],
+      "open_to": [
+        "networking"
+      ],
+      "organization": "Johnson Engineering Corp",
+      "avatar_url": "https://api.dicebear.com/9.x/initials/svg?seed=Linda%20Johnson"
+    },
+    {
+      "handle": "sandra-perez-47",
+      "display_name": "Sandra Perez",
+      "visibility": "public",
+      "headline": "Systems Engineer working in robotics",
+      "bio": "Passionate about building complex systems. Focus on architecture, integration, and testing.",
+      "location": "Denver, CO",
+      "timezone": "America/Los_Angeles",
+      "domains": [
+        "robotics"
+      ],
+      "tags": [
+        "systems engineering",
+        "architecture",
+        "integration"
+      ],
+      "open_to": [
+        "networking"
+      ],
+      "organization": "Perez Engineering Corp",
+      "avatar_url": "https://api.dicebear.com/9.x/initials/svg?seed=Sandra%20Perez"
+    },
+    {
+      "handle": "james-davis-48",
+      "display_name": "James Davis",
+      "visibility": "public",
+      "headline": "Systems Engineer working in robotics",
+      "bio": "Passionate about building complex systems. Focus on architecture, integration, and testing.",
+      "location": "Austin, TX",
+      "timezone": "America/Los_Angeles",
+      "domains": [
+        "robotics"
+      ],
+      "tags": [
+        "systems engineering",
+        "architecture",
+        "integration"
+      ],
+      "open_to": [
+        "networking"
+      ],
+      "organization": "Davis Engineering Corp",
+      "avatar_url": "https://api.dicebear.com/9.x/initials/svg?seed=James%20Davis"
+    },
+    {
+      "handle": "charles-taylor-49",
+      "display_name": "Charles Taylor",
+      "visibility": "public",
+      "headline": "Systems Engineer working in medical devices",
+      "bio": "Passionate about building complex systems. Focus on architecture, integration, and testing.",
+      "location": "Remote",
+      "timezone": "America/Los_Angeles",
+      "domains": [
+        "medical devices"
+      ],
+      "tags": [
+        "systems engineering",
+        "architecture",
+        "integration"
+      ],
+      "open_to": [
+        "networking"
+      ],
+      "organization": "Taylor Engineering Corp",
+      "avatar_url": "https://api.dicebear.com/9.x/initials/svg?seed=Charles%20Taylor"
+    }
+  ],
+  "posts": [
+    {
+      "author_handle": "maya-mbse",
+      "title": "What finally made MBSE reviews useful for our flight-controls team",
+      "body": "The biggest improvement was banning model tours. Reviews got better when every session had one operational question, one boundary condition, and one explicit decision to make. We also forced every diagram to point back to a requirement or verification artifact. The model became less decorative and more argumentative.",
+      "group_slug": null
+    },
+    {
+      "author_handle": "omar-embedded-systems",
+      "title": "A simple interface contract template cut our integration churn hard",
+      "body": "We kept rediscovering the same cross-team failures: assumed timings, undocumented reset behavior, and unclear ownership for degraded modes. A lightweight contract template fixed more than another architecture review ever did. We now require nominal flow, failure behavior, timing assumptions, and test ownership on every subsystem interface.",
+      "group_slug": null
+    },
+    {
+      "author_handle": "lina-medtech",
+      "title": "Traceability gets easier once you stop pretending every requirement is equally important",
+      "body": "We had a messy requirement tree until we started separating safety-critical, regulatory, and convenience requirements much more explicitly. That made reviews sharper and verification planning less chaotic. The lesson: traceability quality comes from better requirement structure, not just more tooling.",
+      "group_slug": null
+    },
+    {
+      "author_handle": "noah-systems-safety",
+      "title": "STPA was most useful for us when we paired it with interface ownership",
+      "body": "Hazard analysis alone did not change much. The big shift happened when every unsafe control action also had a named interface owner, mitigation owner, and test owner. That created accountability and turned safety analysis into engineering work instead of a PDF graveyard.",
+      "group_slug": null
+    },
+    {
+      "author_handle": "paul-miller-25",
+      "group_slug": null,
+      "title": "Requirements traceability: When is it too much? (Case Study #0)",
+      "body": "We chased 100% bidirectional traceability on a commercial product and ground development to a halt. Not every software unit test needs to trace back to a user need. Learn to define your criticality boundaries and trace accordingly."
+    },
+    {
+      "author_handle": "joshua-brown-18",
+      "group_slug": null,
+      "title": "Defining clean system boundaries (Case Study #1)",
+      "body": "If you have three teams working on a robot, you will get a robot with three main subsystems, regardless of whether that's the optimal physical architecture. You have to design the organization to match the desired system architecture."
+    },
+    {
+      "author_handle": "mary-lopez-31",
+      "group_slug": null,
+      "title": "MBSE: The difference between a model and a diagram (Case Study #2)",
+      "body": "The biggest hurdle we faced was convincing senior engineers that the model *is* the source of truth, not a byproduct of the design process. We had to literally ban Word documents for interface definitions before people took it seriously."
+    },
+    {
+      "author_handle": "anthony-jackson-10",
+      "group_slug": null,
+      "title": "Modularity: The good, the bad, and the over-engineered (Case Study #3)",
+      "body": "If you have three teams working on a robot, you will get a robot with three main subsystems, regardless of whether that's the optimal physical architecture. You have to design the organization to match the desired system architecture."
+    },
+    {
+      "author_handle": "lina-medtech",
+      "group_slug": null,
+      "title": "The anatomy of a good interface requirement (Case Study #4)",
+      "body": "I see this constantly: 'The system shall be robust.' How do you test 'robust'? If a requirement doesn't have a corresponding verification method (Test, Analysis, Demonstration, Inspection) written at the exact same time, throw it out."
+    },
+    {
+      "author_handle": "james-davis-48",
+      "group_slug": null,
+      "title": "Agile requirements in hardware: Not an oxymoron (Case Study #5)",
+      "body": "A good interface requirement specifies the physical connector, the protocol, the data rate, and the failure state. If you leave any of those four out, you are guaranteeing an integration failure later down the line."
+    },
+    {
+      "author_handle": "joshua-brown-18",
+      "group_slug": null,
+      "title": "Test like you fly, fly like you test: A post-mortem (Case Study #6)",
+      "body": "You can perfectly verify that a system meets all its requirements, and still build a product that the user hates. Verification proves the math works. Validation proves the concept works. You need both, and they require completely different mindsets."
+    },
+    {
+      "author_handle": "robert-gonzalez-0",
+      "group_slug": null,
+      "title": "Trade studies: How to actually make decisions (Case Study #7)",
+      "body": "A good trade study isn't just a weighted matrix in Excel. It's a formalized argument for why we are accepting specific technical debt in exchange for a specific capability. If the loser of the trade study isn't slightly angry, you didn't evaluate hard enough."
+    },
+    {
+      "author_handle": "mary-ramirez-13",
+      "group_slug": null,
+      "title": "Defining clean system boundaries (Case Study #8)",
+      "body": "A good trade study isn't just a weighted matrix in Excel. It's a formalized argument for why we are accepting specific technical debt in exchange for a specific capability. If the loser of the trade study isn't slightly angry, you didn't evaluate hard enough."
+    },
+    {
+      "author_handle": "mary-robinson-26",
+      "group_slug": null,
+      "title": "Automated HIL testing saved our launch schedule (Case Study #9)",
+      "body": "Moving to automated Hardware-in-the-Loop (HIL) testing allowed us to run 10,000 edge-case scenarios every night. We caught three race conditions in the motor controller firmware that would have been impossible to find via manual bench testing."
+    },
+    {
+      "author_handle": "jessica-brown-12",
+      "group_slug": null,
+      "title": "Defining clean system boundaries (Case Study #10)",
+      "body": "A system boundary is an interface. Every time data, power, or physical force crosses a boundary, you need an ICD (Interface Control Document). If you have too many boundaries, the ICD overhead will kill you."
+    },
+    {
+      "author_handle": "joshua-rodriguez-30",
+      "group_slug": null,
+      "title": "SysML vs Capella: Practical differences in aerospace workflows (Case Study #11)",
+      "body": "The biggest hurdle we faced was convincing senior engineers that the model *is* the source of truth, not a byproduct of the design process. We had to literally ban Word documents for interface definitions before people took it seriously."
+    },
+    {
+      "author_handle": "james-white-17",
+      "group_slug": null,
+      "title": "Software safety in critical systems (DO-178C lessons) (Case Study #12)",
+      "body": "Adding a redundant component often adds a common-mode failure point (like a shared power bus or voting logic) that is less reliable than the original component. Sometimes, making one component incredibly robust is better than having two mediocre ones."
+    },
+    {
+      "author_handle": "daniel-lee-16",
+      "group_slug": null,
+      "title": "Trade studies: How to actually make decisions (Case Study #13)",
+      "body": "A good trade study isn't just a weighted matrix in Excel. It's a formalized argument for why we are accepting specific technical debt in exchange for a specific capability. If the loser of the trade study isn't slightly angry, you didn't evaluate hard enough."
+    },
+    {
+      "author_handle": "paul-miller-25",
+      "group_slug": null,
+      "title": "Test like you fly, fly like you test: A post-mortem (Case Study #14)",
+      "body": "You can perfectly verify that a system meets all its requirements, and still build a product that the user hates. Verification proves the math works. Validation proves the concept works. You need both, and they require completely different mindsets."
+    },
+    {
+      "author_handle": "joseph-robinson-40",
+      "group_slug": null,
+      "title": "How to avoid building a 'shelfware' architecture model (Case Study #15)",
+      "body": "The biggest hurdle we faced was convincing senior engineers that the model *is* the source of truth, not a byproduct of the design process. We had to literally ban Word documents for interface definitions before people took it seriously."
+    },
+    {
+      "author_handle": "barbara-white-9",
+      "group_slug": null,
+      "title": "SysML vs Capella: Practical differences in aerospace workflows (Case Study #16)",
+      "body": "The biggest hurdle we faced was convincing senior engineers that the model *is* the source of truth, not a byproduct of the design process. We had to literally ban Word documents for interface definitions before people took it seriously."
+    },
+    {
+      "author_handle": "michelle-sanchez-44",
+      "group_slug": null,
+      "title": "Automated HIL testing saved our launch schedule (Case Study #17)",
+      "body": "Moving to automated Hardware-in-the-Loop (HIL) testing allowed us to run 10,000 edge-case scenarios every night. We caught three race conditions in the motor controller firmware that would have been impossible to find via manual bench testing."
+    },
+    {
+      "author_handle": "mary-thompson-2",
+      "group_slug": null,
+      "title": "Automated HIL testing saved our launch schedule (Case Study #18)",
+      "body": "You can perfectly verify that a system meets all its requirements, and still build a product that the user hates. Verification proves the math works. Validation proves the concept works. You need both, and they require completely different mindsets."
+    },
+    {
+      "author_handle": "joseph-robinson-40",
+      "group_slug": null,
+      "title": "Verification is building it right. Validation is building the right thing. (Case Study #19)",
+      "body": "Simulations are only as good as their assumptions. We modeled thermal dissipation perfectly, but forgot to account for the physical wiring harness blocking airflow. The physical test failed instantly. Always anchor your models with empirical data."
+    },
+    {
+      "author_handle": "noah-systems-safety",
+      "group_slug": null,
+      "title": "How to avoid building a 'shelfware' architecture model (Case Study #20)",
+      "body": "We spent 6 months building a beautiful SysML model, only to realize the hardware team was still using their own disconnected Excel sheets. The lesson? MBSE is 10% tool, 90% cultural change management. If you don't mandate model-in-the-loop design reviews, the model just becomes an expensive drawing board."
+    },
+    {
+      "author_handle": "mary-gonzalez-11",
+      "group_slug": null,
+      "title": "The anatomy of a good interface requirement (Case Study #21)",
+      "body": "A good interface requirement specifies the physical connector, the protocol, the data rate, and the failure state. If you leave any of those four out, you are guaranteeing an integration failure later down the line."
+    },
+    {
+      "author_handle": "mary-lopez-31",
+      "group_slug": null,
+      "title": "How to avoid building a 'shelfware' architecture model (Case Study #22)",
+      "body": "A diagram is just a picture. A model is a database of relationships. If I can't query your 'architecture' to tell me exactly which requirements fail when component X loses power, you don't have a model. You have Visio with extra steps."
+    },
+    {
+      "author_handle": "anthony-jackson-10",
+      "group_slug": null,
+      "title": "Verification is building it right. Validation is building the right thing. (Case Study #23)",
+      "body": "Moving to automated Hardware-in-the-Loop (HIL) testing allowed us to run 10,000 edge-case scenarios every night. We caught three race conditions in the motor controller firmware that would have been impossible to find via manual bench testing."
+    },
+    {
+      "author_handle": "william-perez-36",
+      "group_slug": null,
+      "title": "Conway's Law in hardware design (Case Study #24)",
+      "body": "A system boundary is an interface. Every time data, power, or physical force crosses a boundary, you need an ICD (Interface Control Document). If you have too many boundaries, the ICD overhead will kill you."
+    },
+    {
+      "author_handle": "kimberly-thompson-5",
+      "group_slug": null,
+      "title": "The hidden cost of poorly structured MBSE ontologies (Case Study #25)",
+      "body": "The biggest hurdle we faced was convincing senior engineers that the model *is* the source of truth, not a byproduct of the design process. We had to literally ban Word documents for interface definitions before people took it seriously."
+    },
+    {
+      "author_handle": "patricia-harris-27",
+      "group_slug": null,
+      "title": "Trade studies: How to actually make decisions (Case Study #26)",
+      "body": "A system boundary is an interface. Every time data, power, or physical force crosses a boundary, you need an ICD (Interface Control Document). If you have too many boundaries, the ICD overhead will kill you."
+    },
+    {
+      "author_handle": "andrew-anderson-4",
+      "group_slug": null,
+      "title": "Agile requirements in hardware: Not an oxymoron (Case Study #27)",
+      "body": "A good interface requirement specifies the physical connector, the protocol, the data rate, and the failure state. If you leave any of those four out, you are guaranteeing an integration failure later down the line."
+    },
+    {
+      "author_handle": "patricia-harris-27",
+      "group_slug": null,
+      "title": "SysML vs Capella: Practical differences in aerospace workflows (Case Study #28)",
+      "body": "We spent 6 months building a beautiful SysML model, only to realize the hardware team was still using their own disconnected Excel sheets. The lesson? MBSE is 10% tool, 90% cultural change management. If you don't mandate model-in-the-loop design reviews, the model just becomes an expensive drawing board."
+    },
+    {
+      "author_handle": "kimberly-taylor-8",
+      "group_slug": null,
+      "title": "The anatomy of a good interface requirement (Case Study #29)",
+      "body": "I see this constantly: 'The system shall be robust.' How do you test 'robust'? If a requirement doesn't have a corresponding verification method (Test, Analysis, Demonstration, Inspection) written at the exact same time, throw it out."
+    },
+    {
+      "author_handle": "irene-rail-systems",
+      "group_slug": null,
+      "title": "When analysis isn't enough: The limits of simulation (Case Study #30)",
+      "body": "Simulations are only as good as their assumptions. We modeled thermal dissipation perfectly, but forgot to account for the physical wiring harness blocking airflow. The physical test failed instantly. Always anchor your models with empirical data."
+    },
+    {
+      "author_handle": "mary-robinson-26",
+      "group_slug": null,
+      "title": "Why SysML v2 won't fix your broken organizational culture (Case Study #31)",
+      "body": "The biggest hurdle we faced was convincing senior engineers that the model *is* the source of truth, not a byproduct of the design process. We had to literally ban Word documents for interface definitions before people took it seriously."
+    },
+    {
+      "author_handle": "robert-gonzalez-41",
+      "group_slug": null,
+      "title": "SysML vs Capella: Practical differences in aerospace workflows (Case Study #32)",
+      "body": "We spent 6 months building a beautiful SysML model, only to realize the hardware team was still using their own disconnected Excel sheets. The lesson? MBSE is 10% tool, 90% cultural change management. If you don't mandate model-in-the-loop design reviews, the model just becomes an expensive drawing board."
+    },
+    {
+      "author_handle": "susan-hernandez-33",
+      "group_slug": null,
+      "title": "The role of the Systems Architect in 2026 (Case Study #33)",
+      "body": "A good trade study isn't just a weighted matrix in Excel. It's a formalized argument for why we are accepting specific technical debt in exchange for a specific capability. If the loser of the trade study isn't slightly angry, you didn't evaluate hard enough."
+    },
+    {
+      "author_handle": "david-gonzalez-14",
+      "group_slug": null,
+      "title": "Writing test plans that don't make engineers want to quit (Case Study #34)",
+      "body": "You can perfectly verify that a system meets all its requirements, and still build a product that the user hates. Verification proves the math works. Validation proves the concept works. You need both, and they require completely different mindsets."
+    },
+    {
+      "author_handle": "mary-lopez-31",
+      "group_slug": null,
+      "title": "Software safety in critical systems (DO-178C lessons) (Case Study #35)",
+      "body": "Adding a redundant component often adds a common-mode failure point (like a shared power bus or voting logic) that is less reliable than the original component. Sometimes, making one component incredibly robust is better than having two mediocre ones."
+    },
+    {
+      "author_handle": "joshua-brown-18",
+      "group_slug": null,
+      "title": "Agile requirements in hardware: Not an oxymoron (Case Study #36)",
+      "body": "A good interface requirement specifies the physical connector, the protocol, the data rate, and the failure state. If you leave any of those four out, you are guaranteeing an integration failure later down the line."
+    },
+    {
+      "author_handle": "omar-embedded-systems",
+      "group_slug": null,
+      "title": "Test like you fly, fly like you test: A post-mortem (Case Study #37)",
+      "body": "You can perfectly verify that a system meets all its requirements, and still build a product that the user hates. Verification proves the math works. Validation proves the concept works. You need both, and they require completely different mindsets."
+    },
+    {
+      "author_handle": "maya-mbse",
+      "group_slug": null,
+      "title": "SysML vs Capella: Practical differences in aerospace workflows (Case Study #38)",
+      "body": "We spent 6 months building a beautiful SysML model, only to realize the hardware team was still using their own disconnected Excel sheets. The lesson? MBSE is 10% tool, 90% cultural change management. If you don't mandate model-in-the-loop design reviews, the model just becomes an expensive drawing board."
+    },
+    {
+      "author_handle": "james-white-17",
+      "group_slug": null,
+      "title": "Defining clean system boundaries (Case Study #39)",
+      "body": "A good trade study isn't just a weighted matrix in Excel. It's a formalized argument for why we are accepting specific technical debt in exchange for a specific capability. If the loser of the trade study isn't slightly angry, you didn't evaluate hard enough."
+    },
+    {
+      "author_handle": "joshua-rodriguez-30",
+      "group_slug": null,
+      "title": "Modularity: The good, the bad, and the over-engineered (Case Study #40)",
+      "body": "A system boundary is an interface. Every time data, power, or physical force crosses a boundary, you need an ICD (Interface Control Document). If you have too many boundaries, the ICD overhead will kill you."
+    },
+    {
+      "author_handle": "sandra-perez-47",
+      "group_slug": null,
+      "title": "Modularity: The good, the bad, and the over-engineered (Case Study #41)",
+      "body": "A good trade study isn't just a weighted matrix in Excel. It's a formalized argument for why we are accepting specific technical debt in exchange for a specific capability. If the loser of the trade study isn't slightly angry, you didn't evaluate hard enough."
+    },
+    {
+      "author_handle": "omar-embedded-systems",
+      "group_slug": null,
+      "title": "Test like you fly, fly like you test: A post-mortem (Case Study #42)",
+      "body": "Simulations are only as good as their assumptions. We modeled thermal dissipation perfectly, but forgot to account for the physical wiring harness blocking airflow. The physical test failed instantly. Always anchor your models with empirical data."
+    },
+    {
+      "author_handle": "matthew-ramirez-43",
+      "group_slug": null,
+      "title": "The myth of the 'single point of failure' (Case Study #43)",
+      "body": "Adding a redundant component often adds a common-mode failure point (like a shared power bus or voting logic) that is less reliable than the original component. Sometimes, making one component incredibly robust is better than having two mediocre ones."
+    },
+    {
+      "author_handle": "mary-gonzalez-11",
+      "group_slug": null,
+      "title": "Redundancy isn't always the answer (Case Study #44)",
+      "body": "When the primary sensor fails, the system shouldn't just crash. It should fall back to a less accurate sensor, alert the operator, and restrict its operational envelope. Graceful degradation is a core principle of robust systems."
+    },
+    {
+      "author_handle": "paul-miller-25",
+      "group_slug": null,
+      "title": "The myth of the 'single point of failure' (Case Study #45)",
+      "body": "When the primary sensor fails, the system shouldn't just crash. It should fall back to a less accurate sensor, alert the operator, and restrict its operational envelope. Graceful degradation is a core principle of robust systems."
+    },
+    {
+      "author_handle": "john-gonzalez-24",
+      "group_slug": null,
+      "title": "Redundancy isn't always the answer (Case Study #46)",
+      "body": "When the primary sensor fails, the system shouldn't just crash. It should fall back to a less accurate sensor, alert the operator, and restrict its operational envelope. Graceful degradation is a core principle of robust systems."
+    },
+    {
+      "author_handle": "lina-medtech",
+      "group_slug": null,
+      "title": "Software safety in critical systems (DO-178C lessons) (Case Study #47)",
+      "body": "When the primary sensor fails, the system shouldn't just crash. It should fall back to a less accurate sensor, alert the operator, and restrict its operational envelope. Graceful degradation is a core principle of robust systems."
+    },
+    {
+      "author_handle": "ethan-digital-thread",
+      "group_slug": null,
+      "title": "Stop writing 'shall' statements for things you can't verify (Case Study #48)",
+      "body": "A good interface requirement specifies the physical connector, the protocol, the data rate, and the failure state. If you leave any of those four out, you are guaranteeing an integration failure later down the line."
+    },
+    {
+      "author_handle": "mary-ramirez-13",
+      "group_slug": null,
+      "title": "Software safety in critical systems (DO-178C lessons) (Case Study #49)",
+      "body": "When the primary sensor fails, the system shouldn't just crash. It should fall back to a less accurate sensor, alert the operator, and restrict its operational envelope. Graceful degradation is a core principle of robust systems."
+    },
+    {
+      "author_handle": "joseph-robinson-40",
+      "group_slug": null,
+      "title": "FMEA vs FTA: Which one should you use? (Case Study #50)",
+      "body": "Failure Mode and Effects Analysis (FMEA) is bottom-up (what happens if this part breaks?). Fault Tree Analysis (FTA) is top-down (the system exploded, how could that happen?). You need FMEA for component selection and FTA for system architecture."
+    },
+    {
+      "author_handle": "ashley-smith-7",
+      "group_slug": null,
+      "title": "How to avoid building a 'shelfware' architecture model (Case Study #51)",
+      "body": "We spent 6 months building a beautiful SysML model, only to realize the hardware team was still using their own disconnected Excel sheets. The lesson? MBSE is 10% tool, 90% cultural change management. If you don't mandate model-in-the-loop design reviews, the model just becomes an expensive drawing board."
+    },
+    {
+      "author_handle": "james-davis-48",
+      "group_slug": null,
+      "title": "Transitioning from documents to models: A 12-month retrospective (Case Study #52)",
+      "body": "We spent 6 months building a beautiful SysML model, only to realize the hardware team was still using their own disconnected Excel sheets. The lesson? MBSE is 10% tool, 90% cultural change management. If you don't mandate model-in-the-loop design reviews, the model just becomes an expensive drawing board."
+    },
+    {
+      "author_handle": "daniel-lee-16",
+      "group_slug": null,
+      "title": "Requirements traceability: When is it too much? (Case Study #53)",
+      "body": "A good interface requirement specifies the physical connector, the protocol, the data rate, and the failure state. If you leave any of those four out, you are guaranteeing an integration failure later down the line."
+    },
+    {
+      "author_handle": "noah-systems-safety",
+      "group_slug": null,
+      "title": "Test like you fly, fly like you test: A post-mortem (Case Study #54)",
+      "body": "You can perfectly verify that a system meets all its requirements, and still build a product that the user hates. Verification proves the math works. Validation proves the concept works. You need both, and they require completely different mindsets."
+    },
+    {
+      "author_handle": "rhea-defense-systems",
+      "group_slug": null,
+      "title": "Test like you fly, fly like you test: A post-mortem (Case Study #55)",
+      "body": "You can perfectly verify that a system meets all its requirements, and still build a product that the user hates. Verification proves the math works. Validation proves the concept works. You need both, and they require completely different mindsets."
+    },
+    {
+      "author_handle": "andrew-anderson-4",
+      "group_slug": null,
+      "title": "FMEA vs FTA: Which one should you use? (Case Study #56)",
+      "body": "Failure Mode and Effects Analysis (FMEA) is bottom-up (what happens if this part breaks?). Fault Tree Analysis (FTA) is top-down (the system exploded, how could that happen?). You need FMEA for component selection and FTA for system architecture."
+    },
+    {
+      "author_handle": "susan-hernandez-33",
+      "group_slug": null,
+      "title": "Conway's Law in hardware design (Case Study #57)",
+      "body": "If you have three teams working on a robot, you will get a robot with three main subsystems, regardless of whether that's the optimal physical architecture. You have to design the organization to match the desired system architecture."
+    },
+    {
+      "author_handle": "andrew-anderson-4",
+      "group_slug": null,
+      "title": "When analysis isn't enough: The limits of simulation (Case Study #58)",
+      "body": "You can perfectly verify that a system meets all its requirements, and still build a product that the user hates. Verification proves the math works. Validation proves the concept works. You need both, and they require completely different mindsets."
+    },
+    {
+      "author_handle": "joseph-robinson-40",
+      "group_slug": null,
+      "title": "FMEA vs FTA: Which one should you use? (Case Study #59)",
+      "body": "Failure Mode and Effects Analysis (FMEA) is bottom-up (what happens if this part breaks?). Fault Tree Analysis (FTA) is top-down (the system exploded, how could that happen?). You need FMEA for component selection and FTA for system architecture."
+    },
+    {
+      "author_handle": "susan-hernandez-33",
+      "group_slug": null,
+      "title": "The role of the Systems Architect in 2026 (Case Study #60)",
+      "body": "A system boundary is an interface. Every time data, power, or physical force crosses a boundary, you need an ICD (Interface Control Document). If you have too many boundaries, the ICD overhead will kill you."
+    },
+    {
+      "author_handle": "paul-miller-25",
+      "group_slug": null,
+      "title": "MBSE: The difference between a model and a diagram (Case Study #61)",
+      "body": "A diagram is just a picture. A model is a database of relationships. If I can't query your 'architecture' to tell me exactly which requirements fail when component X loses power, you don't have a model. You have Visio with extra steps."
+    },
+    {
+      "author_handle": "mary-robinson-26",
+      "group_slug": null,
+      "title": "How to avoid building a 'shelfware' architecture model (Case Study #62)",
+      "body": "The biggest hurdle we faced was convincing senior engineers that the model *is* the source of truth, not a byproduct of the design process. We had to literally ban Word documents for interface definitions before people took it seriously."
+    },
+    {
+      "author_handle": "joshua-brown-18",
+      "group_slug": null,
+      "title": "Defining clean system boundaries (Case Study #63)",
+      "body": "A system boundary is an interface. Every time data, power, or physical force crosses a boundary, you need an ICD (Interface Control Document). If you have too many boundaries, the ICD overhead will kill you."
+    },
+    {
+      "author_handle": "elizabeth-taylor-21",
+      "group_slug": null,
+      "title": "Transitioning from documents to models: A 12-month retrospective (Case Study #64)",
+      "body": "A diagram is just a picture. A model is a database of relationships. If I can't query your 'architecture' to tell me exactly which requirements fail when component X loses power, you don't have a model. You have Visio with extra steps."
+    },
+    {
+      "author_handle": "sandra-perez-47",
+      "group_slug": null,
+      "title": "FMEA vs FTA: Which one should you use? (Case Study #65)",
+      "body": "Failure Mode and Effects Analysis (FMEA) is bottom-up (what happens if this part breaks?). Fault Tree Analysis (FTA) is top-down (the system exploded, how could that happen?). You need FMEA for component selection and FTA for system architecture."
+    },
+    {
+      "author_handle": "rhea-defense-systems",
+      "group_slug": null,
+      "title": "Why DOORS is still alive (and why that's okay) (Case Study #66)",
+      "body": "We chased 100% bidirectional traceability on a commercial product and ground development to a halt. Not every software unit test needs to trace back to a user need. Learn to define your criticality boundaries and trace accordingly."
+    },
+    {
+      "author_handle": "charles-garcia-1",
+      "group_slug": null,
+      "title": "The anatomy of a good interface requirement (Case Study #67)",
+      "body": "We chased 100% bidirectional traceability on a commercial product and ground development to a halt. Not every software unit test needs to trace back to a user need. Learn to define your criticality boundaries and trace accordingly."
+    },
+    {
+      "author_handle": "barbara-johnson-22",
+      "group_slug": null,
+      "title": "The myth of the 'single point of failure' (Case Study #68)",
+      "body": "Adding a redundant component often adds a common-mode failure point (like a shared power bus or voting logic) that is less reliable than the original component. Sometimes, making one component incredibly robust is better than having two mediocre ones."
+    },
+    {
+      "author_handle": "susan-smith-34",
+      "group_slug": null,
+      "title": "The hidden cost of poorly structured MBSE ontologies (Case Study #69)",
+      "body": "The biggest hurdle we faced was convincing senior engineers that the model *is* the source of truth, not a byproduct of the design process. We had to literally ban Word documents for interface definitions before people took it seriously."
+    },
+    {
+      "author_handle": "john-gonzalez-24",
+      "group_slug": null,
+      "title": "Requirements traceability: When is it too much? (Case Study #70)",
+      "body": "We chased 100% bidirectional traceability on a commercial product and ground development to a halt. Not every software unit test needs to trace back to a user need. Learn to define your criticality boundaries and trace accordingly."
+    },
+    {
+      "author_handle": "barbara-white-9",
+      "group_slug": null,
+      "title": "FMEA vs FTA: Which one should you use? (Case Study #71)",
+      "body": "When the primary sensor fails, the system shouldn't just crash. It should fall back to a less accurate sensor, alert the operator, and restrict its operational envelope. Graceful degradation is a core principle of robust systems."
+    },
+    {
+      "author_handle": "patricia-harris-27",
+      "group_slug": null,
+      "title": "When analysis isn't enough: The limits of simulation (Case Study #72)",
+      "body": "Simulations are only as good as their assumptions. We modeled thermal dissipation perfectly, but forgot to account for the physical wiring harness blocking airflow. The physical test failed instantly. Always anchor your models with empirical data."
+    },
+    {
+      "author_handle": "kimberly-thompson-5",
+      "group_slug": null,
+      "title": "Agile requirements in hardware: Not an oxymoron (Case Study #73)",
+      "body": "We chased 100% bidirectional traceability on a commercial product and ground development to a halt. Not every software unit test needs to trace back to a user need. Learn to define your criticality boundaries and trace accordingly."
+    },
+    {
+      "author_handle": "anthony-jackson-10",
+      "group_slug": null,
+      "title": "Redundancy isn't always the answer (Case Study #74)",
+      "body": "Failure Mode and Effects Analysis (FMEA) is bottom-up (what happens if this part breaks?). Fault Tree Analysis (FTA) is top-down (the system exploded, how could that happen?). You need FMEA for component selection and FTA for system architecture."
+    },
+    {
+      "author_handle": "elizabeth-garcia-42",
+      "group_slug": null,
+      "title": "Designing for graceful degradation (Case Study #75)",
+      "body": "When the primary sensor fails, the system shouldn't just crash. It should fall back to a less accurate sensor, alert the operator, and restrict its operational envelope. Graceful degradation is a core principle of robust systems."
+    },
+    {
+      "author_handle": "charles-taylor-49",
+      "group_slug": null,
+      "title": "Software safety in critical systems (DO-178C lessons) (Case Study #76)",
+      "body": "Failure Mode and Effects Analysis (FMEA) is bottom-up (what happens if this part breaks?). Fault Tree Analysis (FTA) is top-down (the system exploded, how could that happen?). You need FMEA for component selection and FTA for system architecture."
+    },
+    {
+      "author_handle": "rhea-defense-systems",
+      "group_slug": null,
+      "title": "Designing for graceful degradation (Case Study #77)",
+      "body": "When the primary sensor fails, the system shouldn't just crash. It should fall back to a less accurate sensor, alert the operator, and restrict its operational envelope. Graceful degradation is a core principle of robust systems."
+    },
+    {
+      "author_handle": "emily-jackson-38",
+      "group_slug": null,
+      "title": "The anatomy of a good interface requirement (Case Study #78)",
+      "body": "We chased 100% bidirectional traceability on a commercial product and ground development to a halt. Not every software unit test needs to trace back to a user need. Learn to define your criticality boundaries and trace accordingly."
+    },
+    {
+      "author_handle": "elizabeth-garcia-42",
+      "group_slug": null,
+      "title": "Stop writing 'shall' statements for things you can't verify (Case Study #79)",
+      "body": "We chased 100% bidirectional traceability on a commercial product and ground development to a halt. Not every software unit test needs to trace back to a user need. Learn to define your criticality boundaries and trace accordingly."
+    },
+    {
+      "author_handle": "matthew-lopez-35",
+      "group_slug": null,
+      "title": "Requirements traceability: When is it too much? (Case Study #80)",
+      "body": "I see this constantly: 'The system shall be robust.' How do you test 'robust'? If a requirement doesn't have a corresponding verification method (Test, Analysis, Demonstration, Inspection) written at the exact same time, throw it out."
+    },
+    {
+      "author_handle": "matthew-ramirez-43",
+      "group_slug": null,
+      "title": "Verification is building it right. Validation is building the right thing. (Case Study #81)",
+      "body": "Moving to automated Hardware-in-the-Loop (HIL) testing allowed us to run 10,000 edge-case scenarios every night. We caught three race conditions in the motor controller firmware that would have been impossible to find via manual bench testing."
+    },
+    {
+      "author_handle": "daniel-lee-16",
+      "group_slug": null,
+      "title": "How to avoid building a 'shelfware' architecture model (Case Study #82)",
+      "body": "The biggest hurdle we faced was convincing senior engineers that the model *is* the source of truth, not a byproduct of the design process. We had to literally ban Word documents for interface definitions before people took it seriously."
+    },
+    {
+      "author_handle": "mary-robinson-26",
+      "group_slug": null,
+      "title": "Transitioning from documents to models: A 12-month retrospective (Case Study #83)",
+      "body": "We spent 6 months building a beautiful SysML model, only to realize the hardware team was still using their own disconnected Excel sheets. The lesson? MBSE is 10% tool, 90% cultural change management. If you don't mandate model-in-the-loop design reviews, the model just becomes an expensive drawing board."
+    },
+    {
+      "author_handle": "anthony-jackson-10",
+      "group_slug": null,
+      "title": "Test like you fly, fly like you test: A post-mortem (Case Study #84)",
+      "body": "You can perfectly verify that a system meets all its requirements, and still build a product that the user hates. Verification proves the math works. Validation proves the concept works. You need both, and they require completely different mindsets."
+    },
+    {
+      "author_handle": "joshua-brown-18",
+      "group_slug": null,
+      "title": "FMEA vs FTA: Which one should you use? (Case Study #85)",
+      "body": "Adding a redundant component often adds a common-mode failure point (like a shared power bus or voting logic) that is less reliable than the original component. Sometimes, making one component incredibly robust is better than having two mediocre ones."
+    },
+    {
+      "author_handle": "michelle-sanchez-44",
+      "group_slug": null,
+      "title": "Trade studies: How to actually make decisions (Case Study #86)",
+      "body": "A system boundary is an interface. Every time data, power, or physical force crosses a boundary, you need an ICD (Interface Control Document). If you have too many boundaries, the ICD overhead will kill you."
+    },
+    {
+      "author_handle": "andrew-anderson-4",
+      "group_slug": null,
+      "title": "SysML vs Capella: Practical differences in aerospace workflows (Case Study #87)",
+      "body": "A diagram is just a picture. A model is a database of relationships. If I can't query your 'architecture' to tell me exactly which requirements fail when component X loses power, you don't have a model. You have Visio with extra steps."
+    },
+    {
+      "author_handle": "joseph-robinson-40",
+      "group_slug": null,
+      "title": "Defining clean system boundaries (Case Study #88)",
+      "body": "A good trade study isn't just a weighted matrix in Excel. It's a formalized argument for why we are accepting specific technical debt in exchange for a specific capability. If the loser of the trade study isn't slightly angry, you didn't evaluate hard enough."
+    },
+    {
+      "author_handle": "elizabeth-taylor-21",
+      "group_slug": null,
+      "title": "The hidden cost of poorly structured MBSE ontologies (Case Study #89)",
+      "body": "The biggest hurdle we faced was convincing senior engineers that the model *is* the source of truth, not a byproduct of the design process. We had to literally ban Word documents for interface definitions before people took it seriously."
+    },
+    {
+      "author_handle": "daniel-lee-16",
+      "group_slug": null,
+      "title": "Conway's Law in hardware design (Case Study #90)",
+      "body": "A system boundary is an interface. Every time data, power, or physical force crosses a boundary, you need an ICD (Interface Control Document). If you have too many boundaries, the ICD overhead will kill you."
+    },
+    {
+      "author_handle": "daniel-lee-16",
+      "group_slug": null,
+      "title": "MBSE: The difference between a model and a diagram (Case Study #91)",
+      "body": "A diagram is just a picture. A model is a database of relationships. If I can't query your 'architecture' to tell me exactly which requirements fail when component X loses power, you don't have a model. You have Visio with extra steps."
+    },
+    {
+      "author_handle": "robert-gonzalez-41",
+      "group_slug": null,
+      "title": "How to avoid building a 'shelfware' architecture model (Case Study #92)",
+      "body": "We spent 6 months building a beautiful SysML model, only to realize the hardware team was still using their own disconnected Excel sheets. The lesson? MBSE is 10% tool, 90% cultural change management. If you don't mandate model-in-the-loop design reviews, the model just becomes an expensive drawing board."
+    },
+    {
+      "author_handle": "lisa-thomas-37",
+      "group_slug": null,
+      "title": "Writing test plans that don't make engineers want to quit (Case Study #93)",
+      "body": "Moving to automated Hardware-in-the-Loop (HIL) testing allowed us to run 10,000 edge-case scenarios every night. We caught three race conditions in the motor controller firmware that would have been impossible to find via manual bench testing."
+    },
+    {
+      "author_handle": "rhea-defense-systems",
+      "group_slug": null,
+      "title": "When analysis isn't enough: The limits of simulation (Case Study #94)",
+      "body": "Simulations are only as good as their assumptions. We modeled thermal dissipation perfectly, but forgot to account for the physical wiring harness blocking airflow. The physical test failed instantly. Always anchor your models with empirical data."
+    },
+    {
+      "author_handle": "maya-mbse",
+      "group_slug": null,
+      "title": "FMEA vs FTA: Which one should you use? (Case Study #95)",
+      "body": "Adding a redundant component often adds a common-mode failure point (like a shared power bus or voting logic) that is less reliable than the original component. Sometimes, making one component incredibly robust is better than having two mediocre ones."
+    },
+    {
+      "author_handle": "joshua-rodriguez-30",
+      "group_slug": null,
+      "title": "MBSE: The difference between a model and a diagram (Case Study #96)",
+      "body": "The biggest hurdle we faced was convincing senior engineers that the model *is* the source of truth, not a byproduct of the design process. We had to literally ban Word documents for interface definitions before people took it seriously."
+    },
+    {
+      "author_handle": "charles-taylor-49",
+      "group_slug": null,
+      "title": "The hidden cost of poorly structured MBSE ontologies (Case Study #97)",
+      "body": "The biggest hurdle we faced was convincing senior engineers that the model *is* the source of truth, not a byproduct of the design process. We had to literally ban Word documents for interface definitions before people took it seriously."
+    },
+    {
+      "author_handle": "mary-thomas-3",
+      "group_slug": null,
+      "title": "Test like you fly, fly like you test: A post-mortem (Case Study #98)",
+      "body": "You can perfectly verify that a system meets all its requirements, and still build a product that the user hates. Verification proves the math works. Validation proves the concept works. You need both, and they require completely different mindsets."
+    },
+    {
+      "author_handle": "emily-jackson-38",
+      "group_slug": null,
+      "title": "FMEA vs FTA: Which one should you use? (Case Study #99)",
+      "body": "When the primary sensor fails, the system shouldn't just crash. It should fall back to a less accurate sensor, alert the operator, and restrict its operational envelope. Graceful degradation is a core principle of robust systems."
+    },
+    {
+      "author_handle": "mary-lopez-31",
+      "group_slug": null,
+      "title": "Trade studies: How to actually make decisions (Case Study #100)",
+      "body": "A good trade study isn't just a weighted matrix in Excel. It's a formalized argument for why we are accepting specific technical debt in exchange for a specific capability. If the loser of the trade study isn't slightly angry, you didn't evaluate hard enough."
+    },
+    {
+      "author_handle": "elizabeth-taylor-21",
+      "group_slug": null,
+      "title": "MBSE: The difference between a model and a diagram (Case Study #101)",
+      "body": "The biggest hurdle we faced was convincing senior engineers that the model *is* the source of truth, not a byproduct of the design process. We had to literally ban Word documents for interface definitions before people took it seriously."
+    },
+    {
+      "author_handle": "matthew-ramirez-43",
+      "group_slug": null,
+      "title": "How to avoid building a 'shelfware' architecture model (Case Study #102)",
+      "body": "A diagram is just a picture. A model is a database of relationships. If I can't query your 'architecture' to tell me exactly which requirements fail when component X loses power, you don't have a model. You have Visio with extra steps."
+    },
+    {
+      "author_handle": "patricia-harris-27",
+      "group_slug": null,
+      "title": "Why DOORS is still alive (and why that's okay) (Case Study #103)",
+      "body": "A good interface requirement specifies the physical connector, the protocol, the data rate, and the failure state. If you leave any of those four out, you are guaranteeing an integration failure later down the line."
+    },
+    {
+      "author_handle": "jessica-brown-12",
+      "group_slug": null,
+      "title": "When analysis isn't enough: The limits of simulation (Case Study #104)",
+      "body": "Moving to automated Hardware-in-the-Loop (HIL) testing allowed us to run 10,000 edge-case scenarios every night. We caught three race conditions in the motor controller firmware that would have been impossible to find via manual bench testing."
+    },
+    {
+      "author_handle": "daniel-lee-16",
+      "group_slug": null,
+      "title": "Software safety in critical systems (DO-178C lessons) (Case Study #105)",
+      "body": "Failure Mode and Effects Analysis (FMEA) is bottom-up (what happens if this part breaks?). Fault Tree Analysis (FTA) is top-down (the system exploded, how could that happen?). You need FMEA for component selection and FTA for system architecture."
+    },
+    {
+      "author_handle": "joshua-brown-18",
+      "group_slug": null,
+      "title": "Writing test plans that don't make engineers want to quit (Case Study #106)",
+      "body": "Moving to automated Hardware-in-the-Loop (HIL) testing allowed us to run 10,000 edge-case scenarios every night. We caught three race conditions in the motor controller firmware that would have been impossible to find via manual bench testing."
+    },
+    {
+      "author_handle": "barbara-johnson-22",
+      "group_slug": null,
+      "title": "Redundancy isn't always the answer (Case Study #107)",
+      "body": "Failure Mode and Effects Analysis (FMEA) is bottom-up (what happens if this part breaks?). Fault Tree Analysis (FTA) is top-down (the system exploded, how could that happen?). You need FMEA for component selection and FTA for system architecture."
+    },
+    {
+      "author_handle": "paul-miller-25",
+      "group_slug": null,
+      "title": "The myth of the 'single point of failure' (Case Study #108)",
+      "body": "When the primary sensor fails, the system shouldn't just crash. It should fall back to a less accurate sensor, alert the operator, and restrict its operational envelope. Graceful degradation is a core principle of robust systems."
+    },
+    {
+      "author_handle": "michelle-sanchez-6",
+      "group_slug": null,
+      "title": "Agile requirements in hardware: Not an oxymoron (Case Study #109)",
+      "body": "We chased 100% bidirectional traceability on a commercial product and ground development to a halt. Not every software unit test needs to trace back to a user need. Learn to define your criticality boundaries and trace accordingly."
+    },
+    {
+      "author_handle": "jessica-brown-12",
+      "group_slug": null,
+      "title": "SysML vs Capella: Practical differences in aerospace workflows (Case Study #110)",
+      "body": "We spent 6 months building a beautiful SysML model, only to realize the hardware team was still using their own disconnected Excel sheets. The lesson? MBSE is 10% tool, 90% cultural change management. If you don't mandate model-in-the-loop design reviews, the model just becomes an expensive drawing board."
+    },
+    {
+      "author_handle": "maya-mbse",
+      "group_slug": null,
+      "title": "FMEA vs FTA: Which one should you use? (Case Study #111)",
+      "body": "Adding a redundant component often adds a common-mode failure point (like a shared power bus or voting logic) that is less reliable than the original component. Sometimes, making one component incredibly robust is better than having two mediocre ones."
+    },
+    {
+      "author_handle": "susan-smith-34",
+      "group_slug": null,
+      "title": "Verification is building it right. Validation is building the right thing. (Case Study #112)",
+      "body": "You can perfectly verify that a system meets all its requirements, and still build a product that the user hates. Verification proves the math works. Validation proves the concept works. You need both, and they require completely different mindsets."
+    },
+    {
+      "author_handle": "joshua-smith-29",
+      "group_slug": null,
+      "title": "The role of the Systems Architect in 2026 (Case Study #113)",
+      "body": "A good trade study isn't just a weighted matrix in Excel. It's a formalized argument for why we are accepting specific technical debt in exchange for a specific capability. If the loser of the trade study isn't slightly angry, you didn't evaluate hard enough."
+    },
+    {
+      "author_handle": "patricia-harris-27",
+      "group_slug": null,
+      "title": "The myth of the 'single point of failure' (Case Study #114)",
+      "body": "When the primary sensor fails, the system shouldn't just crash. It should fall back to a less accurate sensor, alert the operator, and restrict its operational envelope. Graceful degradation is a core principle of robust systems."
+    },
+    {
+      "author_handle": "elizabeth-taylor-21",
+      "group_slug": null,
+      "title": "Requirements traceability: When is it too much? (Case Study #115)",
+      "body": "A good interface requirement specifies the physical connector, the protocol, the data rate, and the failure state. If you leave any of those four out, you are guaranteeing an integration failure later down the line."
+    },
+    {
+      "author_handle": "susan-smith-34",
+      "group_slug": null,
+      "title": "The role of the Systems Architect in 2026 (Case Study #116)",
+      "body": "If you have three teams working on a robot, you will get a robot with three main subsystems, regardless of whether that's the optimal physical architecture. You have to design the organization to match the desired system architecture."
+    },
+    {
+      "author_handle": "elizabeth-taylor-21",
+      "group_slug": null,
+      "title": "Requirements traceability: When is it too much? (Case Study #117)",
+      "body": "We chased 100% bidirectional traceability on a commercial product and ground development to a halt. Not every software unit test needs to trace back to a user need. Learn to define your criticality boundaries and trace accordingly."
+    },
+    {
+      "author_handle": "barbara-johnson-22",
+      "group_slug": null,
+      "title": "Software safety in critical systems (DO-178C lessons) (Case Study #118)",
+      "body": "When the primary sensor fails, the system shouldn't just crash. It should fall back to a less accurate sensor, alert the operator, and restrict its operational envelope. Graceful degradation is a core principle of robust systems."
+    },
+    {
+      "author_handle": "diego-autonomy",
+      "group_slug": null,
+      "title": "Designing for graceful degradation (Case Study #119)",
+      "body": "Adding a redundant component often adds a common-mode failure point (like a shared power bus or voting logic) that is less reliable than the original component. Sometimes, making one component incredibly robust is better than having two mediocre ones."
+    },
+    {
+      "author_handle": "jennifer-williams-15",
+      "group_slug": null,
+      "title": "Test like you fly, fly like you test: A post-mortem (Case Study #120)",
+      "body": "Moving to automated Hardware-in-the-Loop (HIL) testing allowed us to run 10,000 edge-case scenarios every night. We caught three race conditions in the motor controller firmware that would have been impossible to find via manual bench testing."
+    },
+    {
+      "author_handle": "sandra-perez-47",
+      "group_slug": null,
+      "title": "FMEA vs FTA: Which one should you use? (Case Study #121)",
+      "body": "Adding a redundant component often adds a common-mode failure point (like a shared power bus or voting logic) that is less reliable than the original component. Sometimes, making one component incredibly robust is better than having two mediocre ones."
+    },
+    {
+      "author_handle": "linda-johnson-46",
+      "group_slug": null,
+      "title": "Agile requirements in hardware: Not an oxymoron (Case Study #122)",
+      "body": "I see this constantly: 'The system shall be robust.' How do you test 'robust'? If a requirement doesn't have a corresponding verification method (Test, Analysis, Demonstration, Inspection) written at the exact same time, throw it out."
+    },
+    {
+      "author_handle": "james-white-17",
+      "group_slug": null,
+      "title": "Trade studies: How to actually make decisions (Case Study #123)",
+      "body": "A good trade study isn't just a weighted matrix in Excel. It's a formalized argument for why we are accepting specific technical debt in exchange for a specific capability. If the loser of the trade study isn't slightly angry, you didn't evaluate hard enough."
+    },
+    {
+      "author_handle": "charles-taylor-49",
+      "group_slug": null,
+      "title": "When analysis isn't enough: The limits of simulation (Case Study #124)",
+      "body": "Simulations are only as good as their assumptions. We modeled thermal dissipation perfectly, but forgot to account for the physical wiring harness blocking airflow. The physical test failed instantly. Always anchor your models with empirical data."
+    },
+    {
+      "author_handle": "diego-autonomy",
+      "group_slug": null,
+      "title": "Test like you fly, fly like you test: A post-mortem (Case Study #125)",
+      "body": "You can perfectly verify that a system meets all its requirements, and still build a product that the user hates. Verification proves the math works. Validation proves the concept works. You need both, and they require completely different mindsets."
+    },
+    {
+      "author_handle": "ethan-digital-thread",
+      "group_slug": null,
+      "title": "Modularity: The good, the bad, and the over-engineered (Case Study #126)",
+      "body": "A good trade study isn't just a weighted matrix in Excel. It's a formalized argument for why we are accepting specific technical debt in exchange for a specific capability. If the loser of the trade study isn't slightly angry, you didn't evaluate hard enough."
+    },
+    {
+      "author_handle": "david-gonzalez-14",
+      "group_slug": null,
+      "title": "Conway's Law in hardware design (Case Study #127)",
+      "body": "A system boundary is an interface. Every time data, power, or physical force crosses a boundary, you need an ICD (Interface Control Document). If you have too many boundaries, the ICD overhead will kill you."
+    },
+    {
+      "author_handle": "robert-gonzalez-41",
+      "group_slug": null,
+      "title": "MBSE: The difference between a model and a diagram (Case Study #128)",
+      "body": "We spent 6 months building a beautiful SysML model, only to realize the hardware team was still using their own disconnected Excel sheets. The lesson? MBSE is 10% tool, 90% cultural change management. If you don't mandate model-in-the-loop design reviews, the model just becomes an expensive drawing board."
+    },
+    {
+      "author_handle": "michelle-sanchez-44",
+      "group_slug": null,
+      "title": "Agile requirements in hardware: Not an oxymoron (Case Study #129)",
+      "body": "We chased 100% bidirectional traceability on a commercial product and ground development to a halt. Not every software unit test needs to trace back to a user need. Learn to define your criticality boundaries and trace accordingly."
+    },
+    {
+      "author_handle": "omar-embedded-systems",
+      "group_slug": null,
+      "title": "When analysis isn't enough: The limits of simulation (Case Study #130)",
+      "body": "Moving to automated Hardware-in-the-Loop (HIL) testing allowed us to run 10,000 edge-case scenarios every night. We caught three race conditions in the motor controller firmware that would have been impossible to find via manual bench testing."
+    },
+    {
+      "author_handle": "jessica-brown-12",
+      "group_slug": null,
+      "title": "How to avoid building a 'shelfware' architecture model (Case Study #131)",
+      "body": "The biggest hurdle we faced was convincing senior engineers that the model *is* the source of truth, not a byproduct of the design process. We had to literally ban Word documents for interface definitions before people took it seriously."
+    },
+    {
+      "author_handle": "james-white-17",
+      "group_slug": null,
+      "title": "The anatomy of a good interface requirement (Case Study #132)",
+      "body": "A good interface requirement specifies the physical connector, the protocol, the data rate, and the failure state. If you leave any of those four out, you are guaranteeing an integration failure later down the line."
+    },
+    {
+      "author_handle": "james-martinez-32",
+      "group_slug": null,
+      "title": "Modularity: The good, the bad, and the over-engineered (Case Study #133)",
+      "body": "A system boundary is an interface. Every time data, power, or physical force crosses a boundary, you need an ICD (Interface Control Document). If you have too many boundaries, the ICD overhead will kill you."
+    },
+    {
+      "author_handle": "kimberly-taylor-8",
+      "group_slug": null,
+      "title": "Trade studies: How to actually make decisions (Case Study #134)",
+      "body": "A good trade study isn't just a weighted matrix in Excel. It's a formalized argument for why we are accepting specific technical debt in exchange for a specific capability. If the loser of the trade study isn't slightly angry, you didn't evaluate hard enough."
+    },
+    {
+      "author_handle": "mary-thomas-3",
+      "group_slug": null,
+      "title": "Why DOORS is still alive (and why that's okay) (Case Study #135)",
+      "body": "We chased 100% bidirectional traceability on a commercial product and ground development to a halt. Not every software unit test needs to trace back to a user need. Learn to define your criticality boundaries and trace accordingly."
+    },
+    {
+      "author_handle": "steven-miller-45",
+      "group_slug": null,
+      "title": "The hidden cost of poorly structured MBSE ontologies (Case Study #136)",
+      "body": "The biggest hurdle we faced was convincing senior engineers that the model *is* the source of truth, not a byproduct of the design process. We had to literally ban Word documents for interface definitions before people took it seriously."
+    },
+    {
+      "author_handle": "matthew-lopez-35",
+      "group_slug": null,
+      "title": "Software safety in critical systems (DO-178C lessons) (Case Study #137)",
+      "body": "Adding a redundant component often adds a common-mode failure point (like a shared power bus or voting logic) that is less reliable than the original component. Sometimes, making one component incredibly robust is better than having two mediocre ones."
+    },
+    {
+      "author_handle": "paul-miller-25",
+      "group_slug": null,
+      "title": "Redundancy isn't always the answer (Case Study #138)",
+      "body": "Failure Mode and Effects Analysis (FMEA) is bottom-up (what happens if this part breaks?). Fault Tree Analysis (FTA) is top-down (the system exploded, how could that happen?). You need FMEA for component selection and FTA for system architecture."
+    },
+    {
+      "author_handle": "andrew-anderson-4",
+      "group_slug": null,
+      "title": "How to avoid building a 'shelfware' architecture model (Case Study #139)",
+      "body": "We spent 6 months building a beautiful SysML model, only to realize the hardware team was still using their own disconnected Excel sheets. The lesson? MBSE is 10% tool, 90% cultural change management. If you don't mandate model-in-the-loop design reviews, the model just becomes an expensive drawing board."
+    },
+    {
+      "author_handle": "ashley-smith-7",
+      "group_slug": null,
+      "title": "Defining clean system boundaries (Case Study #140)",
+      "body": "A system boundary is an interface. Every time data, power, or physical force crosses a boundary, you need an ICD (Interface Control Document). If you have too many boundaries, the ICD overhead will kill you."
+    },
+    {
+      "author_handle": "lina-medtech",
+      "group_slug": null,
+      "title": "The role of the Systems Architect in 2026 (Case Study #141)",
+      "body": "If you have three teams working on a robot, you will get a robot with three main subsystems, regardless of whether that's the optimal physical architecture. You have to design the organization to match the desired system architecture."
+    },
+    {
+      "author_handle": "matthew-ramirez-43",
+      "group_slug": null,
+      "title": "Agile requirements in hardware: Not an oxymoron (Case Study #142)",
+      "body": "We chased 100% bidirectional traceability on a commercial product and ground development to a halt. Not every software unit test needs to trace back to a user need. Learn to define your criticality boundaries and trace accordingly."
+    },
+    {
+      "author_handle": "emily-jackson-38",
+      "group_slug": null,
+      "title": "The myth of the 'single point of failure' (Case Study #143)",
+      "body": "Adding a redundant component often adds a common-mode failure point (like a shared power bus or voting logic) that is less reliable than the original component. Sometimes, making one component incredibly robust is better than having two mediocre ones."
+    },
+    {
+      "author_handle": "mary-thomas-3",
+      "group_slug": null,
+      "title": "Modularity: The good, the bad, and the over-engineered (Case Study #144)",
+      "body": "A system boundary is an interface. Every time data, power, or physical force crosses a boundary, you need an ICD (Interface Control Document). If you have too many boundaries, the ICD overhead will kill you."
+    },
+    {
+      "author_handle": "kimberly-thompson-5",
+      "group_slug": null,
+      "title": "How to avoid building a 'shelfware' architecture model (Case Study #145)",
+      "body": "We spent 6 months building a beautiful SysML model, only to realize the hardware team was still using their own disconnected Excel sheets. The lesson? MBSE is 10% tool, 90% cultural change management. If you don't mandate model-in-the-loop design reviews, the model just becomes an expensive drawing board."
+    },
+    {
+      "author_handle": "jennifer-perez-23",
+      "group_slug": null,
+      "title": "Writing test plans that don't make engineers want to quit (Case Study #146)",
+      "body": "Moving to automated Hardware-in-the-Loop (HIL) testing allowed us to run 10,000 edge-case scenarios every night. We caught three race conditions in the motor controller firmware that would have been impossible to find via manual bench testing."
+    },
+    {
+      "author_handle": "paul-miller-25",
+      "group_slug": null,
+      "title": "Why SysML v2 won't fix your broken organizational culture (Case Study #147)",
+      "body": "The biggest hurdle we faced was convincing senior engineers that the model *is* the source of truth, not a byproduct of the design process. We had to literally ban Word documents for interface definitions before people took it seriously."
+    },
+    {
+      "author_handle": "mary-thomas-3",
+      "group_slug": null,
+      "title": "Software safety in critical systems (DO-178C lessons) (Case Study #148)",
+      "body": "When the primary sensor fails, the system shouldn't just crash. It should fall back to a less accurate sensor, alert the operator, and restrict its operational envelope. Graceful degradation is a core principle of robust systems."
+    },
+    {
+      "author_handle": "linda-johnson-46",
+      "group_slug": null,
+      "title": "The anatomy of a good interface requirement (Case Study #149)",
+      "body": "We chased 100% bidirectional traceability on a commercial product and ground development to a halt. Not every software unit test needs to trace back to a user need. Learn to define your criticality boundaries and trace accordingly."
+    }
+  ],
+  "comments": [
+    {
+      "post_author_handle": "maya-mbse",
+      "post_title": "What finally made MBSE reviews useful for our flight-controls team",
+      "author_handle": "ethan-digital-thread",
+      "body": "The requirement/verif link is the key. The moment the model has to support a decision, people stop stuffing it with ornamental detail."
+    },
+    {
+      "post_author_handle": "omar-embedded-systems",
+      "post_title": "A simple interface contract template cut our integration churn hard",
+      "author_handle": "rhea-defense-systems",
+      "body": "We ended up doing something similar on a defense integration effort. The trick was forcing timing and degraded-mode assumptions into the same artifact instead of separate documents."
+    },
+    {
+      "post_author_handle": "mary-robinson-26",
+      "post_title": "Why SysML v2 won't fix your broken organizational culture (Case Study #31)",
+      "author_handle": "mary-gonzalez-11",
+      "body": "We tried this approach but had issues getting buy-in from the electrical team."
+    },
+    {
+      "post_author_handle": "mary-lopez-31",
+      "post_title": "How to avoid building a 'shelfware' architecture model (Case Study #22)",
+      "author_handle": "charles-garcia-1",
+      "body": "This is why I always mandate an architecture review board before PDR."
+    },
+    {
+      "post_author_handle": "jennifer-perez-23",
+      "post_title": "Writing test plans that don't make engineers want to quit (Case Study #146)",
+      "author_handle": "susan-hernandez-33",
+      "body": "I disagree slightly - I think the tool matters just as much as the culture."
+    },
+    {
+      "post_author_handle": "mary-robinson-26",
+      "post_title": "How to avoid building a 'shelfware' architecture model (Case Study #62)",
+      "author_handle": "barbara-white-9",
+      "body": "Could you elaborate more on the specific metrics you tracked?"
+    },
+    {
+      "post_author_handle": "paul-miller-25",
+      "post_title": "The myth of the 'single point of failure' (Case Study #108)",
+      "author_handle": "michelle-sanchez-6",
+      "body": "I disagree slightly - I think the tool matters just as much as the culture."
+    },
+    {
+      "post_author_handle": "joshua-brown-18",
+      "post_title": "Defining clean system boundaries (Case Study #63)",
+      "author_handle": "elizabeth-taylor-21",
+      "body": "Could you elaborate more on the specific metrics you tracked?"
+    },
+    {
+      "post_author_handle": "joshua-brown-18",
+      "post_title": "Test like you fly, fly like you test: A post-mortem (Case Study #6)",
+      "author_handle": "lina-medtech",
+      "body": "Spot on. It's amazing how many organizations still struggle with this."
+    },
+    {
+      "post_author_handle": "mary-lopez-31",
+      "post_title": "MBSE: The difference between a model and a diagram (Case Study #2)",
+      "author_handle": "ethan-digital-thread",
+      "body": "This is why I always mandate an architecture review board before PDR."
+    },
+    {
+      "post_author_handle": "emily-jackson-38",
+      "post_title": "The myth of the 'single point of failure' (Case Study #143)",
+      "author_handle": "david-gonzalez-14",
+      "body": "I disagree slightly - I think the tool matters just as much as the culture."
+    },
+    {
+      "post_author_handle": "paul-miller-25",
+      "post_title": "The myth of the 'single point of failure' (Case Study #108)",
+      "author_handle": "robert-gonzalez-41",
+      "body": "Could you elaborate more on the specific metrics you tracked?"
+    },
+    {
+      "post_author_handle": "mary-thomas-3",
+      "post_title": "Software safety in critical systems (DO-178C lessons) (Case Study #148)",
+      "author_handle": "mary-gonzalez-11",
+      "body": "I'd love to see a deeper dive into the specific interface definitions."
+    },
+    {
+      "post_author_handle": "paul-miller-25",
+      "post_title": "The myth of the 'single point of failure' (Case Study #108)",
+      "author_handle": "jennifer-perez-23",
+      "body": "We tried this approach but had issues getting buy-in from the electrical team."
+    },
+    {
+      "post_author_handle": "matthew-ramirez-43",
+      "post_title": "The myth of the 'single point of failure' (Case Study #43)",
+      "author_handle": "ethan-digital-thread",
+      "body": "This is why I always mandate an architecture review board before PDR."
+    },
+    {
+      "post_author_handle": "joshua-smith-29",
+      "post_title": "The role of the Systems Architect in 2026 (Case Study #113)",
+      "author_handle": "steven-miller-45",
+      "body": "I'd love to see a deeper dive into the specific interface definitions."
+    },
+    {
+      "post_author_handle": "rhea-defense-systems",
+      "post_title": "Why DOORS is still alive (and why that's okay) (Case Study #66)",
+      "author_handle": "charles-taylor-49",
+      "body": "I disagree slightly - I think the tool matters just as much as the culture."
+    },
+    {
+      "post_author_handle": "james-martinez-32",
+      "post_title": "Modularity: The good, the bad, and the over-engineered (Case Study #133)",
+      "author_handle": "omar-embedded-systems",
+      "body": "This is exactly what we experienced on our last project. Great writeup."
+    },
+    {
+      "post_author_handle": "susan-hernandez-33",
+      "post_title": "The role of the Systems Architect in 2026 (Case Study #33)",
+      "author_handle": "sandra-perez-47",
+      "body": "We tried this approach but had issues getting buy-in from the electrical team."
+    },
+    {
+      "post_author_handle": "andrew-anderson-4",
+      "post_title": "SysML vs Capella: Practical differences in aerospace workflows (Case Study #87)",
+      "author_handle": "patricia-harris-27",
+      "body": "This is why I always mandate an architecture review board before PDR."
+    },
+    {
+      "post_author_handle": "barbara-white-9",
+      "post_title": "FMEA vs FTA: Which one should you use? (Case Study #71)",
+      "author_handle": "mary-thompson-2",
+      "body": "Thanks for sharing. This is a very pragmatic view."
+    },
+    {
+      "post_author_handle": "mary-robinson-26",
+      "post_title": "Automated HIL testing saved our launch schedule (Case Study #9)",
+      "author_handle": "susan-smith-34",
+      "body": "This is why I always mandate an architecture review board before PDR."
+    },
+    {
+      "post_author_handle": "elizabeth-garcia-42",
+      "post_title": "Stop writing 'shall' statements for things you can't verify (Case Study #79)",
+      "author_handle": "linda-johnson-46",
+      "body": "Could you elaborate more on the specific metrics you tracked?"
+    },
+    {
+      "post_author_handle": "linda-johnson-46",
+      "post_title": "Agile requirements in hardware: Not an oxymoron (Case Study #122)",
+      "author_handle": "rhea-defense-systems",
+      "body": "This is exactly what we experienced on our last project. Great writeup."
+    },
+    {
+      "post_author_handle": "jennifer-perez-23",
+      "post_title": "Writing test plans that don't make engineers want to quit (Case Study #146)",
+      "author_handle": "steven-miller-45",
+      "body": "Thanks for sharing. This is a very pragmatic view."
+    },
+    {
+      "post_author_handle": "barbara-johnson-22",
+      "post_title": "The myth of the 'single point of failure' (Case Study #68)",
+      "author_handle": "sandra-perez-47",
+      "body": "How did you handle the documentation overhead?"
+    },
+    {
+      "post_author_handle": "mary-gonzalez-11",
+      "post_title": "Redundancy isn't always the answer (Case Study #44)",
+      "author_handle": "jennifer-perez-23",
+      "body": "How did you handle the documentation overhead?"
+    },
+    {
+      "post_author_handle": "joshua-brown-18",
+      "post_title": "Defining clean system boundaries (Case Study #1)",
+      "author_handle": "barbara-white-9",
+      "body": "This is exactly what we experienced on our last project. Great writeup."
+    },
+    {
+      "post_author_handle": "patricia-harris-27",
+      "post_title": "SysML vs Capella: Practical differences in aerospace workflows (Case Study #28)",
+      "author_handle": "rhea-defense-systems",
+      "body": "Thanks for sharing. This is a very pragmatic view."
+    },
+    {
+      "post_author_handle": "mary-thomas-3",
+      "post_title": "Test like you fly, fly like you test: A post-mortem (Case Study #98)",
+      "author_handle": "jessica-brown-12",
+      "body": "We tried this approach but had issues getting buy-in from the electrical team."
+    },
+    {
+      "post_author_handle": "susan-hernandez-33",
+      "post_title": "The role of the Systems Architect in 2026 (Case Study #33)",
+      "author_handle": "anthony-jackson-10",
+      "body": "I'd love to see a deeper dive into the specific interface definitions."
+    },
+    {
+      "post_author_handle": "patricia-harris-27",
+      "post_title": "SysML vs Capella: Practical differences in aerospace workflows (Case Study #28)",
+      "author_handle": "mark-miller-39",
+      "body": "This is why I always mandate an architecture review board before PDR."
+    },
+    {
+      "post_author_handle": "matthew-lopez-35",
+      "post_title": "Software safety in critical systems (DO-178C lessons) (Case Study #137)",
+      "author_handle": "paul-miller-25",
+      "body": "This is exactly what we experienced on our last project. Great writeup."
+    },
+    {
+      "post_author_handle": "james-martinez-32",
+      "post_title": "Modularity: The good, the bad, and the over-engineered (Case Study #133)",
+      "author_handle": "jennifer-perez-23",
+      "body": "We tried this approach but had issues getting buy-in from the electrical team."
+    },
+    {
+      "post_author_handle": "michelle-sanchez-44",
+      "post_title": "Automated HIL testing saved our launch schedule (Case Study #17)",
+      "author_handle": "paul-miller-25",
+      "body": "Spot on. It's amazing how many organizations still struggle with this."
+    },
+    {
+      "post_author_handle": "robert-gonzalez-41",
+      "post_title": "How to avoid building a 'shelfware' architecture model (Case Study #92)",
+      "author_handle": "william-perez-36",
+      "body": "Spot on. It's amazing how many organizations still struggle with this."
+    },
+    {
+      "post_author_handle": "ashley-smith-7",
+      "post_title": "How to avoid building a 'shelfware' architecture model (Case Study #51)",
+      "author_handle": "mary-thompson-2",
+      "body": "This is exactly what we experienced on our last project. Great writeup."
+    },
+    {
+      "post_author_handle": "paul-miller-25",
+      "post_title": "Requirements traceability: When is it too much? (Case Study #0)",
+      "author_handle": "elizabeth-taylor-21",
+      "body": "I'd love to see a deeper dive into the specific interface definitions."
+    },
+    {
+      "post_author_handle": "rhea-defense-systems",
+      "post_title": "When analysis isn't enough: The limits of simulation (Case Study #94)",
+      "author_handle": "john-gonzalez-24",
+      "body": "I disagree slightly - I think the tool matters just as much as the culture."
+    },
+    {
+      "post_author_handle": "joseph-robinson-40",
+      "post_title": "Defining clean system boundaries (Case Study #88)",
+      "author_handle": "mary-gonzalez-11",
+      "body": "How did you handle the documentation overhead?"
+    },
+    {
+      "post_author_handle": "charles-taylor-49",
+      "post_title": "The hidden cost of poorly structured MBSE ontologies (Case Study #97)",
+      "author_handle": "mary-ramirez-13",
+      "body": "We tried this approach but had issues getting buy-in from the electrical team."
+    },
+    {
+      "post_author_handle": "mary-gonzalez-11",
+      "post_title": "Redundancy isn't always the answer (Case Study #44)",
+      "author_handle": "susan-smith-34",
+      "body": "Spot on. It's amazing how many organizations still struggle with this."
+    },
+    {
+      "post_author_handle": "sandra-perez-47",
+      "post_title": "Modularity: The good, the bad, and the over-engineered (Case Study #41)",
+      "author_handle": "susan-harris-28",
+      "body": "I disagree slightly - I think the tool matters just as much as the culture."
+    },
+    {
+      "post_author_handle": "daniel-lee-16",
+      "post_title": "Requirements traceability: When is it too much? (Case Study #53)",
+      "author_handle": "sandra-perez-47",
+      "body": "Spot on. It's amazing how many organizations still struggle with this."
+    },
+    {
+      "post_author_handle": "sandra-perez-47",
+      "post_title": "FMEA vs FTA: Which one should you use? (Case Study #65)",
+      "author_handle": "susan-harris-28",
+      "body": "Could you elaborate more on the specific metrics you tracked?"
+    },
+    {
+      "post_author_handle": "elizabeth-garcia-42",
+      "post_title": "Designing for graceful degradation (Case Study #75)",
+      "author_handle": "charles-taylor-49",
+      "body": "This is exactly what we experienced on our last project. Great writeup."
+    },
+    {
+      "post_author_handle": "mary-ramirez-13",
+      "post_title": "Defining clean system boundaries (Case Study #8)",
+      "author_handle": "joshua-rodriguez-30",
+      "body": "This is exactly what we experienced on our last project. Great writeup."
+    },
+    {
+      "post_author_handle": "robert-gonzalez-41",
+      "post_title": "MBSE: The difference between a model and a diagram (Case Study #128)",
+      "author_handle": "lina-medtech",
+      "body": "I disagree slightly - I think the tool matters just as much as the culture."
+    },
+    {
+      "post_author_handle": "elizabeth-taylor-21",
+      "post_title": "Requirements traceability: When is it too much? (Case Study #117)",
+      "author_handle": "mary-thompson-2",
+      "body": "This is exactly what we experienced on our last project. Great writeup."
+    },
+    {
+      "post_author_handle": "noah-systems-safety",
+      "post_title": "How to avoid building a 'shelfware' architecture model (Case Study #20)",
+      "author_handle": "irene-rail-systems",
+      "body": "I'd love to see a deeper dive into the specific interface definitions."
+    },
+    {
+      "post_author_handle": "joshua-brown-18",
+      "post_title": "Writing test plans that don't make engineers want to quit (Case Study #106)",
+      "author_handle": "jennifer-perez-23",
+      "body": "I disagree slightly - I think the tool matters just as much as the culture."
+    },
+    {
+      "post_author_handle": "matthew-ramirez-43",
+      "post_title": "The myth of the 'single point of failure' (Case Study #43)",
+      "author_handle": "noah-systems-safety",
+      "body": "We tried this approach but had issues getting buy-in from the electrical team."
+    },
+    {
+      "post_author_handle": "sandra-perez-47",
+      "post_title": "FMEA vs FTA: Which one should you use? (Case Study #65)",
+      "author_handle": "kimberly-taylor-8",
+      "body": "Spot on. It's amazing how many organizations still struggle with this."
+    },
+    {
+      "post_author_handle": "mary-lopez-31",
+      "post_title": "How to avoid building a 'shelfware' architecture model (Case Study #22)",
+      "author_handle": "jennifer-perez-23",
+      "body": "This is exactly what we experienced on our last project. Great writeup."
+    },
+    {
+      "post_author_handle": "john-gonzalez-24",
+      "post_title": "Requirements traceability: When is it too much? (Case Study #70)",
+      "author_handle": "jennifer-williams-15",
+      "body": "How did you handle the documentation overhead?"
+    },
+    {
+      "post_author_handle": "andrew-anderson-4",
+      "post_title": "FMEA vs FTA: Which one should you use? (Case Study #56)",
+      "author_handle": "maya-mbse",
+      "body": "Thanks for sharing. This is a very pragmatic view."
+    },
+    {
+      "post_author_handle": "andrew-anderson-4",
+      "post_title": "Agile requirements in hardware: Not an oxymoron (Case Study #27)",
+      "author_handle": "irene-rail-systems",
+      "body": "How did you handle the documentation overhead?"
+    },
+    {
+      "post_author_handle": "barbara-johnson-22",
+      "post_title": "Software safety in critical systems (DO-178C lessons) (Case Study #118)",
+      "author_handle": "kimberly-taylor-8",
+      "body": "How did you handle the documentation overhead?"
+    },
+    {
+      "post_author_handle": "sandra-perez-47",
+      "post_title": "Modularity: The good, the bad, and the over-engineered (Case Study #41)",
+      "author_handle": "james-martinez-32",
+      "body": "This is why I always mandate an architecture review board before PDR."
+    },
+    {
+      "post_author_handle": "lisa-thomas-37",
+      "post_title": "Writing test plans that don't make engineers want to quit (Case Study #93)",
+      "author_handle": "joshua-rodriguez-30",
+      "body": "I'd love to see a deeper dive into the specific interface definitions."
+    },
+    {
+      "post_author_handle": "steven-miller-45",
+      "post_title": "The hidden cost of poorly structured MBSE ontologies (Case Study #136)",
+      "author_handle": "mary-gonzalez-11",
+      "body": "Spot on. It's amazing how many organizations still struggle with this."
+    },
+    {
+      "post_author_handle": "mary-thomas-3",
+      "post_title": "Software safety in critical systems (DO-178C lessons) (Case Study #148)",
+      "author_handle": "maya-mbse",
+      "body": "Spot on. It's amazing how many organizations still struggle with this."
+    },
+    {
+      "post_author_handle": "kimberly-thompson-5",
+      "post_title": "How to avoid building a 'shelfware' architecture model (Case Study #145)",
+      "author_handle": "james-white-17",
+      "body": "This is why I always mandate an architecture review board before PDR."
+    },
+    {
+      "post_author_handle": "lisa-thomas-37",
+      "post_title": "Writing test plans that don't make engineers want to quit (Case Study #93)",
+      "author_handle": "jennifer-perez-23",
+      "body": "Could you elaborate more on the specific metrics you tracked?"
+    },
+    {
+      "post_author_handle": "ethan-digital-thread",
+      "post_title": "Modularity: The good, the bad, and the over-engineered (Case Study #126)",
+      "author_handle": "patricia-harris-27",
+      "body": "Spot on. It's amazing how many organizations still struggle with this."
+    },
+    {
+      "post_author_handle": "andrew-anderson-4",
+      "post_title": "SysML vs Capella: Practical differences in aerospace workflows (Case Study #87)",
+      "author_handle": "barbara-johnson-22",
+      "body": "Spot on. It's amazing how many organizations still struggle with this."
+    },
+    {
+      "post_author_handle": "paul-miller-25",
+      "post_title": "The myth of the 'single point of failure' (Case Study #108)",
+      "author_handle": "patricia-harris-27",
+      "body": "How did you handle the documentation overhead?"
+    },
+    {
+      "post_author_handle": "rhea-defense-systems",
+      "post_title": "Why DOORS is still alive (and why that's okay) (Case Study #66)",
+      "author_handle": "jennifer-williams-15",
+      "body": "I disagree slightly - I think the tool matters just as much as the culture."
+    },
+    {
+      "post_author_handle": "maya-mbse",
+      "post_title": "FMEA vs FTA: Which one should you use? (Case Study #95)",
+      "author_handle": "kimberly-thompson-5",
+      "body": "This is exactly what we experienced on our last project. Great writeup."
+    },
+    {
+      "post_author_handle": "noah-systems-safety",
+      "post_title": "Test like you fly, fly like you test: A post-mortem (Case Study #54)",
+      "author_handle": "mary-ramirez-13",
+      "body": "This is why I always mandate an architecture review board before PDR."
+    },
+    {
+      "post_author_handle": "patricia-harris-27",
+      "post_title": "Why DOORS is still alive (and why that's okay) (Case Study #103)",
+      "author_handle": "david-gonzalez-14",
+      "body": "This is why I always mandate an architecture review board before PDR."
+    },
+    {
+      "post_author_handle": "joshua-brown-18",
+      "post_title": "FMEA vs FTA: Which one should you use? (Case Study #85)",
+      "author_handle": "emily-jackson-38",
+      "body": "Could you elaborate more on the specific metrics you tracked?"
+    },
+    {
+      "post_author_handle": "lisa-thomas-37",
+      "post_title": "Writing test plans that don't make engineers want to quit (Case Study #93)",
+      "author_handle": "steven-miller-45",
+      "body": "This is exactly what we experienced on our last project. Great writeup."
+    },
+    {
+      "post_author_handle": "mary-thomas-3",
+      "post_title": "Modularity: The good, the bad, and the over-engineered (Case Study #144)",
+      "author_handle": "mary-robinson-26",
+      "body": "I disagree slightly - I think the tool matters just as much as the culture."
+    },
+    {
+      "post_author_handle": "paul-miller-25",
+      "post_title": "Redundancy isn't always the answer (Case Study #138)",
+      "author_handle": "joseph-robinson-40",
+      "body": "Could you elaborate more on the specific metrics you tracked?"
+    },
+    {
+      "post_author_handle": "daniel-lee-16",
+      "post_title": "Requirements traceability: When is it too much? (Case Study #53)",
+      "author_handle": "mary-gonzalez-11",
+      "body": "This is exactly what we experienced on our last project. Great writeup."
+    },
+    {
+      "post_author_handle": "michelle-sanchez-44",
+      "post_title": "Agile requirements in hardware: Not an oxymoron (Case Study #129)",
+      "author_handle": "mark-miller-39",
+      "body": "Thanks for sharing. This is a very pragmatic view."
+    },
+    {
+      "post_author_handle": "james-white-17",
+      "post_title": "Trade studies: How to actually make decisions (Case Study #123)",
+      "author_handle": "linda-johnson-46",
+      "body": "Thanks for sharing. This is a very pragmatic view."
+    },
+    {
+      "post_author_handle": "joseph-robinson-40",
+      "post_title": "Defining clean system boundaries (Case Study #88)",
+      "author_handle": "anthony-jackson-10",
+      "body": "This is why I always mandate an architecture review board before PDR."
+    },
+    {
+      "post_author_handle": "paul-miller-25",
+      "post_title": "The myth of the 'single point of failure' (Case Study #108)",
+      "author_handle": "kimberly-thompson-5",
+      "body": "This is exactly what we experienced on our last project. Great writeup."
+    },
+    {
+      "post_author_handle": "robert-gonzalez-41",
+      "post_title": "How to avoid building a 'shelfware' architecture model (Case Study #92)",
+      "author_handle": "james-martinez-32",
+      "body": "How did you handle the documentation overhead?"
+    },
+    {
+      "post_author_handle": "mary-thomas-3",
+      "post_title": "Why DOORS is still alive (and why that's okay) (Case Study #135)",
+      "author_handle": "mary-thompson-2",
+      "body": "Spot on. It's amazing how many organizations still struggle with this."
+    },
+    {
+      "post_author_handle": "james-white-17",
+      "post_title": "Trade studies: How to actually make decisions (Case Study #123)",
+      "author_handle": "elizabeth-taylor-21",
+      "body": "Could you elaborate more on the specific metrics you tracked?"
+    },
+    {
+      "post_author_handle": "emily-jackson-38",
+      "post_title": "The anatomy of a good interface requirement (Case Study #78)",
+      "author_handle": "andrew-anderson-4",
+      "body": "How did you handle the documentation overhead?"
+    },
+    {
+      "post_author_handle": "joshua-brown-18",
+      "post_title": "Agile requirements in hardware: Not an oxymoron (Case Study #36)",
+      "author_handle": "matthew-ramirez-43",
+      "body": "This is exactly what we experienced on our last project. Great writeup."
+    },
+    {
+      "post_author_handle": "sandra-perez-47",
+      "post_title": "Modularity: The good, the bad, and the over-engineered (Case Study #41)",
+      "author_handle": "paul-miller-25",
+      "body": "Spot on. It's amazing how many organizations still struggle with this."
+    },
+    {
+      "post_author_handle": "robert-gonzalez-0",
+      "post_title": "Trade studies: How to actually make decisions (Case Study #7)",
+      "author_handle": "susan-hernandez-33",
+      "body": "This is exactly what we experienced on our last project. Great writeup."
+    },
+    {
+      "post_author_handle": "sandra-perez-47",
+      "post_title": "FMEA vs FTA: Which one should you use? (Case Study #65)",
+      "author_handle": "william-perez-36",
+      "body": "We tried this approach but had issues getting buy-in from the electrical team."
+    },
+    {
+      "post_author_handle": "matthew-lopez-35",
+      "post_title": "Software safety in critical systems (DO-178C lessons) (Case Study #137)",
+      "author_handle": "susan-hernandez-33",
+      "body": "Spot on. It's amazing how many organizations still struggle with this."
+    },
+    {
+      "post_author_handle": "barbara-johnson-22",
+      "post_title": "The myth of the 'single point of failure' (Case Study #68)",
+      "author_handle": "noah-systems-safety",
+      "body": "I disagree slightly - I think the tool matters just as much as the culture."
+    },
+    {
+      "post_author_handle": "charles-taylor-49",
+      "post_title": "When analysis isn't enough: The limits of simulation (Case Study #124)",
+      "author_handle": "joshua-brown-18",
+      "body": "This is why I always mandate an architecture review board before PDR."
+    },
+    {
+      "post_author_handle": "ashley-smith-7",
+      "post_title": "Defining clean system boundaries (Case Study #140)",
+      "author_handle": "linda-johnson-46",
+      "body": "I'd love to see a deeper dive into the specific interface definitions."
+    },
+    {
+      "post_author_handle": "lisa-thomas-37",
+      "post_title": "Writing test plans that don't make engineers want to quit (Case Study #93)",
+      "author_handle": "jennifer-williams-15",
+      "body": "How did you handle the documentation overhead?"
+    },
+    {
+      "post_author_handle": "joshua-brown-18",
+      "post_title": "Defining clean system boundaries (Case Study #1)",
+      "author_handle": "barbara-johnson-22",
+      "body": "I disagree slightly - I think the tool matters just as much as the culture."
+    },
+    {
+      "post_author_handle": "mary-robinson-26",
+      "post_title": "Why SysML v2 won't fix your broken organizational culture (Case Study #31)",
+      "author_handle": "lina-medtech",
+      "body": "How did you handle the documentation overhead?"
+    },
+    {
+      "post_author_handle": "emily-jackson-38",
+      "post_title": "The anatomy of a good interface requirement (Case Study #78)",
+      "author_handle": "robert-gonzalez-0",
+      "body": "I'd love to see a deeper dive into the specific interface definitions."
+    },
+    {
+      "post_author_handle": "joseph-robinson-40",
+      "post_title": "FMEA vs FTA: Which one should you use? (Case Study #59)",
+      "author_handle": "jennifer-williams-15",
+      "body": "This is exactly what we experienced on our last project. Great writeup."
+    },
+    {
+      "post_author_handle": "mary-lopez-31",
+      "post_title": "How to avoid building a 'shelfware' architecture model (Case Study #22)",
+      "author_handle": "elizabeth-taylor-21",
+      "body": "Spot on. It's amazing how many organizations still struggle with this."
+    },
+    {
+      "post_author_handle": "maya-mbse",
+      "post_title": "SysML vs Capella: Practical differences in aerospace workflows (Case Study #38)",
+      "author_handle": "ashley-jackson-19",
+      "body": "I disagree slightly - I think the tool matters just as much as the culture."
+    },
+    {
+      "post_author_handle": "jessica-brown-12",
+      "post_title": "Defining clean system boundaries (Case Study #10)",
+      "author_handle": "charles-taylor-49",
+      "body": "This is why I always mandate an architecture review board before PDR."
+    },
+    {
+      "post_author_handle": "jessica-brown-12",
+      "post_title": "SysML vs Capella: Practical differences in aerospace workflows (Case Study #110)",
+      "author_handle": "michelle-sanchez-44",
+      "body": "Could you elaborate more on the specific metrics you tracked?"
+    },
+    {
+      "post_author_handle": "paul-miller-25",
+      "post_title": "Why SysML v2 won't fix your broken organizational culture (Case Study #147)",
+      "author_handle": "noah-systems-safety",
+      "body": "Could you elaborate more on the specific metrics you tracked?"
+    },
+    {
+      "post_author_handle": "barbara-white-9",
+      "post_title": "SysML vs Capella: Practical differences in aerospace workflows (Case Study #16)",
+      "author_handle": "jessica-brown-12",
+      "body": "I disagree slightly - I think the tool matters just as much as the culture."
+    },
+    {
+      "post_author_handle": "matthew-ramirez-43",
+      "post_title": "Verification is building it right. Validation is building the right thing. (Case Study #81)",
+      "author_handle": "michelle-sanchez-6",
+      "body": "Thanks for sharing. This is a very pragmatic view."
+    },
+    {
+      "post_author_handle": "susan-hernandez-33",
+      "post_title": "Conway's Law in hardware design (Case Study #57)",
+      "author_handle": "charles-garcia-1",
+      "body": "Thanks for sharing. This is a very pragmatic view."
+    },
+    {
+      "post_author_handle": "barbara-johnson-22",
+      "post_title": "Software safety in critical systems (DO-178C lessons) (Case Study #118)",
+      "author_handle": "elizabeth-taylor-21",
+      "body": "This is exactly what we experienced on our last project. Great writeup."
+    },
+    {
+      "post_author_handle": "jessica-brown-12",
+      "post_title": "SysML vs Capella: Practical differences in aerospace workflows (Case Study #110)",
+      "author_handle": "maya-mbse",
+      "body": "Could you elaborate more on the specific metrics you tracked?"
+    },
+    {
+      "post_author_handle": "joshua-rodriguez-30",
+      "post_title": "SysML vs Capella: Practical differences in aerospace workflows (Case Study #11)",
+      "author_handle": "david-gonzalez-14",
+      "body": "Could you elaborate more on the specific metrics you tracked?"
+    },
+    {
+      "post_author_handle": "susan-hernandez-33",
+      "post_title": "The role of the Systems Architect in 2026 (Case Study #60)",
+      "author_handle": "steven-miller-45",
+      "body": "This is exactly what we experienced on our last project. Great writeup."
+    },
+    {
+      "post_author_handle": "ashley-smith-7",
+      "post_title": "Defining clean system boundaries (Case Study #140)",
+      "author_handle": "barbara-white-9",
+      "body": "We tried this approach but had issues getting buy-in from the electrical team."
+    },
+    {
+      "post_author_handle": "mary-lopez-31",
+      "post_title": "MBSE: The difference between a model and a diagram (Case Study #2)",
+      "author_handle": "susan-harris-28",
+      "body": "I'd love to see a deeper dive into the specific interface definitions."
+    },
+    {
+      "post_author_handle": "lisa-thomas-37",
+      "post_title": "Writing test plans that don't make engineers want to quit (Case Study #93)",
+      "author_handle": "noah-systems-safety",
+      "body": "Spot on. It's amazing how many organizations still struggle with this."
+    },
+    {
+      "post_author_handle": "susan-smith-34",
+      "post_title": "Verification is building it right. Validation is building the right thing. (Case Study #112)",
+      "author_handle": "robert-gonzalez-41",
+      "body": "This is why I always mandate an architecture review board before PDR."
+    },
+    {
+      "post_author_handle": "michelle-sanchez-6",
+      "post_title": "Agile requirements in hardware: Not an oxymoron (Case Study #109)",
+      "author_handle": "susan-hernandez-33",
+      "body": "This is why I always mandate an architecture review board before PDR."
+    },
+    {
+      "post_author_handle": "anthony-jackson-10",
+      "post_title": "Modularity: The good, the bad, and the over-engineered (Case Study #3)",
+      "author_handle": "jessica-brown-12",
+      "body": "This is why I always mandate an architecture review board before PDR."
+    },
+    {
+      "post_author_handle": "charles-taylor-49",
+      "post_title": "When analysis isn't enough: The limits of simulation (Case Study #124)",
+      "author_handle": "sandra-perez-47",
+      "body": "Spot on. It's amazing how many organizations still struggle with this."
+    },
+    {
+      "post_author_handle": "elizabeth-taylor-21",
+      "post_title": "The hidden cost of poorly structured MBSE ontologies (Case Study #89)",
+      "author_handle": "robert-gonzalez-41",
+      "body": "Thanks for sharing. This is a very pragmatic view."
+    },
+    {
+      "post_author_handle": "mary-ramirez-13",
+      "post_title": "Defining clean system boundaries (Case Study #8)",
+      "author_handle": "ashley-smith-7",
+      "body": "Spot on. It's amazing how many organizations still struggle with this."
+    },
+    {
+      "post_author_handle": "james-white-17",
+      "post_title": "Software safety in critical systems (DO-178C lessons) (Case Study #12)",
+      "author_handle": "michelle-sanchez-44",
+      "body": "We tried this approach but had issues getting buy-in from the electrical team."
+    },
+    {
+      "post_author_handle": "charles-taylor-49",
+      "post_title": "Software safety in critical systems (DO-178C lessons) (Case Study #76)",
+      "author_handle": "lisa-thomas-37",
+      "body": "Spot on. It's amazing how many organizations still struggle with this."
+    },
+    {
+      "post_author_handle": "jessica-brown-12",
+      "post_title": "SysML vs Capella: Practical differences in aerospace workflows (Case Study #110)",
+      "author_handle": "omar-embedded-systems",
+      "body": "How did you handle the documentation overhead?"
+    },
+    {
+      "post_author_handle": "michelle-sanchez-44",
+      "post_title": "Automated HIL testing saved our launch schedule (Case Study #17)",
+      "author_handle": "elizabeth-taylor-21",
+      "body": "We tried this approach but had issues getting buy-in from the electrical team."
+    },
+    {
+      "post_author_handle": "kimberly-thompson-5",
+      "post_title": "Agile requirements in hardware: Not an oxymoron (Case Study #73)",
+      "author_handle": "jennifer-perez-23",
+      "body": "Could you elaborate more on the specific metrics you tracked?"
+    },
+    {
+      "post_author_handle": "elizabeth-taylor-21",
+      "post_title": "Requirements traceability: When is it too much? (Case Study #115)",
+      "author_handle": "mary-thompson-2",
+      "body": "We tried this approach but had issues getting buy-in from the electrical team."
+    },
+    {
+      "post_author_handle": "matthew-ramirez-43",
+      "post_title": "The myth of the 'single point of failure' (Case Study #43)",
+      "author_handle": "steven-miller-45",
+      "body": "This is exactly what we experienced on our last project. Great writeup."
+    },
+    {
+      "post_author_handle": "joseph-robinson-40",
+      "post_title": "Verification is building it right. Validation is building the right thing. (Case Study #19)",
+      "author_handle": "jennifer-perez-23",
+      "body": "Spot on. It's amazing how many organizations still struggle with this."
+    },
+    {
+      "post_author_handle": "charles-taylor-49",
+      "post_title": "Software safety in critical systems (DO-178C lessons) (Case Study #76)",
+      "author_handle": "steven-miller-45",
+      "body": "This is exactly what we experienced on our last project. Great writeup."
+    },
+    {
+      "post_author_handle": "lisa-thomas-37",
+      "post_title": "Writing test plans that don't make engineers want to quit (Case Study #93)",
+      "author_handle": "anthony-jackson-10",
+      "body": "Spot on. It's amazing how many organizations still struggle with this."
+    },
+    {
+      "post_author_handle": "barbara-johnson-22",
+      "post_title": "Software safety in critical systems (DO-178C lessons) (Case Study #118)",
+      "author_handle": "mary-thomas-3",
+      "body": "We tried this approach but had issues getting buy-in from the electrical team."
+    },
+    {
+      "post_author_handle": "elizabeth-garcia-42",
+      "post_title": "Designing for graceful degradation (Case Study #75)",
+      "author_handle": "william-perez-36",
+      "body": "This is why I always mandate an architecture review board before PDR."
+    },
+    {
+      "post_author_handle": "paul-miller-25",
+      "post_title": "The myth of the 'single point of failure' (Case Study #45)",
+      "author_handle": "anthony-jackson-10",
+      "body": "I disagree slightly - I think the tool matters just as much as the culture."
+    },
+    {
+      "post_author_handle": "mary-thompson-2",
+      "post_title": "Automated HIL testing saved our launch schedule (Case Study #18)",
+      "author_handle": "elizabeth-taylor-21",
+      "body": "I disagree slightly - I think the tool matters just as much as the culture."
+    },
+    {
+      "post_author_handle": "mary-robinson-26",
+      "post_title": "Automated HIL testing saved our launch schedule (Case Study #9)",
+      "author_handle": "charles-garcia-1",
+      "body": "We tried this approach but had issues getting buy-in from the electrical team."
+    },
+    {
+      "post_author_handle": "matthew-ramirez-43",
+      "post_title": "Agile requirements in hardware: Not an oxymoron (Case Study #142)",
+      "author_handle": "susan-harris-28",
+      "body": "Spot on. It's amazing how many organizations still struggle with this."
+    },
+    {
+      "post_author_handle": "mary-lopez-31",
+      "post_title": "MBSE: The difference between a model and a diagram (Case Study #2)",
+      "author_handle": "joshua-smith-29",
+      "body": "I'd love to see a deeper dive into the specific interface definitions."
+    },
+    {
+      "post_author_handle": "jessica-brown-12",
+      "post_title": "How to avoid building a 'shelfware' architecture model (Case Study #131)",
+      "author_handle": "jennifer-perez-23",
+      "body": "Spot on. It's amazing how many organizations still struggle with this."
+    },
+    {
+      "post_author_handle": "robert-gonzalez-41",
+      "post_title": "How to avoid building a 'shelfware' architecture model (Case Study #92)",
+      "author_handle": "james-davis-48",
+      "body": "Thanks for sharing. This is a very pragmatic view."
+    },
+    {
+      "post_author_handle": "paul-miller-25",
+      "post_title": "Why SysML v2 won't fix your broken organizational culture (Case Study #147)",
+      "author_handle": "linda-johnson-46",
+      "body": "Thanks for sharing. This is a very pragmatic view."
+    },
+    {
+      "post_author_handle": "joshua-smith-29",
+      "post_title": "The role of the Systems Architect in 2026 (Case Study #113)",
+      "author_handle": "diego-autonomy",
+      "body": "I disagree slightly - I think the tool matters just as much as the culture."
+    },
+    {
+      "post_author_handle": "kimberly-taylor-8",
+      "post_title": "The anatomy of a good interface requirement (Case Study #29)",
+      "author_handle": "ethan-digital-thread",
+      "body": "I'd love to see a deeper dive into the specific interface definitions."
+    },
+    {
+      "post_author_handle": "joshua-rodriguez-30",
+      "post_title": "Modularity: The good, the bad, and the over-engineered (Case Study #40)",
+      "author_handle": "mary-gonzalez-11",
+      "body": "Spot on. It's amazing how many organizations still struggle with this."
+    },
+    {
+      "post_author_handle": "barbara-white-9",
+      "post_title": "SysML vs Capella: Practical differences in aerospace workflows (Case Study #16)",
+      "author_handle": "andrew-anderson-4",
+      "body": "Could you elaborate more on the specific metrics you tracked?"
+    },
+    {
+      "post_author_handle": "susan-hernandez-33",
+      "post_title": "The role of the Systems Architect in 2026 (Case Study #33)",
+      "author_handle": "paul-miller-25",
+      "body": "I'd love to see a deeper dive into the specific interface definitions."
+    },
+    {
+      "post_author_handle": "mary-lopez-31",
+      "post_title": "Software safety in critical systems (DO-178C lessons) (Case Study #35)",
+      "author_handle": "lina-medtech",
+      "body": "How did you handle the documentation overhead?"
+    },
+    {
+      "post_author_handle": "paul-miller-25",
+      "post_title": "MBSE: The difference between a model and a diagram (Case Study #61)",
+      "author_handle": "steven-miller-45",
+      "body": "Spot on. It's amazing how many organizations still struggle with this."
+    },
+    {
+      "post_author_handle": "william-perez-36",
+      "post_title": "Conway's Law in hardware design (Case Study #24)",
+      "author_handle": "rhea-defense-systems",
+      "body": "Could you elaborate more on the specific metrics you tracked?"
+    },
+    {
+      "post_author_handle": "maya-mbse",
+      "post_title": "SysML vs Capella: Practical differences in aerospace workflows (Case Study #38)",
+      "author_handle": "paul-miller-25",
+      "body": "We tried this approach but had issues getting buy-in from the electrical team."
+    },
+    {
+      "post_author_handle": "andrew-anderson-4",
+      "post_title": "FMEA vs FTA: Which one should you use? (Case Study #56)",
+      "author_handle": "maya-mbse",
+      "body": "This is exactly what we experienced on our last project. Great writeup."
+    },
+    {
+      "post_author_handle": "susan-hernandez-33",
+      "post_title": "The role of the Systems Architect in 2026 (Case Study #33)",
+      "author_handle": "matthew-lopez-35",
+      "body": "How did you handle the documentation overhead?"
+    },
+    {
+      "post_author_handle": "elizabeth-taylor-21",
+      "post_title": "The hidden cost of poorly structured MBSE ontologies (Case Study #89)",
+      "author_handle": "linda-johnson-46",
+      "body": "I'd love to see a deeper dive into the specific interface definitions."
+    },
+    {
+      "post_author_handle": "rhea-defense-systems",
+      "post_title": "When analysis isn't enough: The limits of simulation (Case Study #94)",
+      "author_handle": "james-martinez-32",
+      "body": "This is why I always mandate an architecture review board before PDR."
+    },
+    {
+      "post_author_handle": "emily-jackson-38",
+      "post_title": "The myth of the 'single point of failure' (Case Study #143)",
+      "author_handle": "susan-smith-34",
+      "body": "This is exactly what we experienced on our last project. Great writeup."
+    },
+    {
+      "post_author_handle": "joshua-brown-18",
+      "post_title": "Writing test plans that don't make engineers want to quit (Case Study #106)",
+      "author_handle": "david-gonzalez-14",
+      "body": "How did you handle the documentation overhead?"
+    },
+    {
+      "post_author_handle": "joshua-brown-18",
+      "post_title": "Defining clean system boundaries (Case Study #1)",
+      "author_handle": "david-gonzalez-14",
+      "body": "This is why I always mandate an architecture review board before PDR."
+    },
+    {
+      "post_author_handle": "robert-gonzalez-41",
+      "post_title": "How to avoid building a 'shelfware' architecture model (Case Study #92)",
+      "author_handle": "barbara-white-9",
+      "body": "How did you handle the documentation overhead?"
+    },
+    {
+      "post_author_handle": "elizabeth-garcia-42",
+      "post_title": "Designing for graceful degradation (Case Study #75)",
+      "author_handle": "mary-thomas-3",
+      "body": "This is exactly what we experienced on our last project. Great writeup."
+    },
+    {
+      "post_author_handle": "paul-miller-25",
+      "post_title": "Redundancy isn't always the answer (Case Study #138)",
+      "author_handle": "rhea-defense-systems",
+      "body": "Thanks for sharing. This is a very pragmatic view."
+    },
+    {
+      "post_author_handle": "mary-robinson-26",
+      "post_title": "Automated HIL testing saved our launch schedule (Case Study #9)",
+      "author_handle": "diego-autonomy",
+      "body": "Could you elaborate more on the specific metrics you tracked?"
+    },
+    {
+      "post_author_handle": "william-perez-36",
+      "post_title": "Conway's Law in hardware design (Case Study #24)",
+      "author_handle": "sarah-anderson-20",
+      "body": "I'd love to see a deeper dive into the specific interface definitions."
+    },
+    {
+      "post_author_handle": "james-davis-48",
+      "post_title": "Agile requirements in hardware: Not an oxymoron (Case Study #5)",
+      "author_handle": "noah-systems-safety",
+      "body": "Could you elaborate more on the specific metrics you tracked?"
+    },
+    {
+      "post_author_handle": "michelle-sanchez-6",
+      "post_title": "Agile requirements in hardware: Not an oxymoron (Case Study #109)",
+      "author_handle": "steven-miller-45",
+      "body": "How did you handle the documentation overhead?"
+    },
+    {
+      "post_author_handle": "joseph-robinson-40",
+      "post_title": "Verification is building it right. Validation is building the right thing. (Case Study #19)",
+      "author_handle": "barbara-white-9",
+      "body": "We tried this approach but had issues getting buy-in from the electrical team."
+    },
+    {
+      "post_author_handle": "patricia-harris-27",
+      "post_title": "When analysis isn't enough: The limits of simulation (Case Study #72)",
+      "author_handle": "kimberly-taylor-8",
+      "body": "I disagree slightly - I think the tool matters just as much as the culture."
+    },
+    {
+      "post_author_handle": "linda-johnson-46",
+      "post_title": "Agile requirements in hardware: Not an oxymoron (Case Study #122)",
+      "author_handle": "matthew-ramirez-43",
+      "body": "I disagree slightly - I think the tool matters just as much as the culture."
+    },
+    {
+      "post_author_handle": "michelle-sanchez-44",
+      "post_title": "Automated HIL testing saved our launch schedule (Case Study #17)",
+      "author_handle": "mary-thompson-2",
+      "body": "Thanks for sharing. This is a very pragmatic view."
+    },
+    {
+      "post_author_handle": "ethan-digital-thread",
+      "post_title": "Stop writing 'shall' statements for things you can't verify (Case Study #48)",
+      "author_handle": "robert-gonzalez-0",
+      "body": "Spot on. It's amazing how many organizations still struggle with this."
+    },
+    {
+      "post_author_handle": "charles-taylor-49",
+      "post_title": "Software safety in critical systems (DO-178C lessons) (Case Study #76)",
+      "author_handle": "mary-thomas-3",
+      "body": "I'd love to see a deeper dive into the specific interface definitions."
+    },
+    {
+      "post_author_handle": "jessica-brown-12",
+      "post_title": "Defining clean system boundaries (Case Study #10)",
+      "author_handle": "joshua-smith-29",
+      "body": "Spot on. It's amazing how many organizations still struggle with this."
+    },
+    {
+      "post_author_handle": "barbara-white-9",
+      "post_title": "SysML vs Capella: Practical differences in aerospace workflows (Case Study #16)",
+      "author_handle": "james-davis-48",
+      "body": "Spot on. It's amazing how many organizations still struggle with this."
+    },
+    {
+      "post_author_handle": "robert-gonzalez-41",
+      "post_title": "SysML vs Capella: Practical differences in aerospace workflows (Case Study #32)",
+      "author_handle": "charles-taylor-49",
+      "body": "I disagree slightly - I think the tool matters just as much as the culture."
+    },
+    {
+      "post_author_handle": "jessica-brown-12",
+      "post_title": "How to avoid building a 'shelfware' architecture model (Case Study #131)",
+      "author_handle": "patricia-harris-27",
+      "body": "I'd love to see a deeper dive into the specific interface definitions."
+    },
+    {
+      "post_author_handle": "elizabeth-taylor-21",
+      "post_title": "Transitioning from documents to models: A 12-month retrospective (Case Study #64)",
+      "author_handle": "lina-medtech",
+      "body": "Thanks for sharing. This is a very pragmatic view."
+    },
+    {
+      "post_author_handle": "john-gonzalez-24",
+      "post_title": "Requirements traceability: When is it too much? (Case Study #70)",
+      "author_handle": "steven-miller-45",
+      "body": "This is why I always mandate an architecture review board before PDR."
+    },
+    {
+      "post_author_handle": "joseph-robinson-40",
+      "post_title": "Defining clean system boundaries (Case Study #88)",
+      "author_handle": "sandra-perez-47",
+      "body": "Spot on. It's amazing how many organizations still struggle with this."
+    },
+    {
+      "post_author_handle": "andrew-anderson-4",
+      "post_title": "SysML vs Capella: Practical differences in aerospace workflows (Case Study #87)",
+      "author_handle": "barbara-white-9",
+      "body": "I disagree slightly - I think the tool matters just as much as the culture."
+    },
+    {
+      "post_author_handle": "kimberly-thompson-5",
+      "post_title": "The hidden cost of poorly structured MBSE ontologies (Case Study #25)",
+      "author_handle": "joshua-brown-18",
+      "body": "This is exactly what we experienced on our last project. Great writeup."
+    },
+    {
+      "post_author_handle": "daniel-lee-16",
+      "post_title": "How to avoid building a 'shelfware' architecture model (Case Study #82)",
+      "author_handle": "matthew-ramirez-43",
+      "body": "This is exactly what we experienced on our last project. Great writeup."
+    },
+    {
+      "post_author_handle": "barbara-johnson-22",
+      "post_title": "Software safety in critical systems (DO-178C lessons) (Case Study #118)",
+      "author_handle": "charles-taylor-49",
+      "body": "We tried this approach but had issues getting buy-in from the electrical team."
+    },
+    {
+      "post_author_handle": "ashley-smith-7",
+      "post_title": "How to avoid building a 'shelfware' architecture model (Case Study #51)",
+      "author_handle": "lisa-thomas-37",
+      "body": "Spot on. It's amazing how many organizations still struggle with this."
+    },
+    {
+      "post_author_handle": "matthew-ramirez-43",
+      "post_title": "How to avoid building a 'shelfware' architecture model (Case Study #102)",
+      "author_handle": "anthony-jackson-10",
+      "body": "This is exactly what we experienced on our last project. Great writeup."
+    },
+    {
+      "post_author_handle": "noah-systems-safety",
+      "post_title": "Test like you fly, fly like you test: A post-mortem (Case Study #54)",
+      "author_handle": "mary-thompson-2",
+      "body": "We tried this approach but had issues getting buy-in from the electrical team."
+    },
+    {
+      "post_author_handle": "james-white-17",
+      "post_title": "The anatomy of a good interface requirement (Case Study #132)",
+      "author_handle": "william-perez-36",
+      "body": "How did you handle the documentation overhead?"
+    },
+    {
+      "post_author_handle": "joshua-smith-29",
+      "post_title": "The role of the Systems Architect in 2026 (Case Study #113)",
+      "author_handle": "noah-systems-safety",
+      "body": "Spot on. It's amazing how many organizations still struggle with this."
+    },
+    {
+      "post_author_handle": "lina-medtech",
+      "post_title": "The role of the Systems Architect in 2026 (Case Study #141)",
+      "author_handle": "rhea-defense-systems",
+      "body": "This is why I always mandate an architecture review board before PDR."
+    },
+    {
+      "post_author_handle": "james-white-17",
+      "post_title": "Software safety in critical systems (DO-178C lessons) (Case Study #12)",
+      "author_handle": "ashley-smith-7",
+      "body": "How did you handle the documentation overhead?"
+    },
+    {
+      "post_author_handle": "mary-lopez-31",
+      "post_title": "How to avoid building a 'shelfware' architecture model (Case Study #22)",
+      "author_handle": "matthew-ramirez-43",
+      "body": "This is exactly what we experienced on our last project. Great writeup."
+    },
+    {
+      "post_author_handle": "jessica-brown-12",
+      "post_title": "How to avoid building a 'shelfware' architecture model (Case Study #131)",
+      "author_handle": "steven-miller-45",
+      "body": "This is why I always mandate an architecture review board before PDR."
+    },
+    {
+      "post_author_handle": "daniel-lee-16",
+      "post_title": "Trade studies: How to actually make decisions (Case Study #13)",
+      "author_handle": "michelle-sanchez-44",
+      "body": "Could you elaborate more on the specific metrics you tracked?"
+    },
+    {
+      "post_author_handle": "charles-taylor-49",
+      "post_title": "The hidden cost of poorly structured MBSE ontologies (Case Study #97)",
+      "author_handle": "robert-gonzalez-0",
+      "body": "How did you handle the documentation overhead?"
+    },
+    {
+      "post_author_handle": "irene-rail-systems",
+      "post_title": "When analysis isn't enough: The limits of simulation (Case Study #30)",
+      "author_handle": "ashley-jackson-19",
+      "body": "Spot on. It's amazing how many organizations still struggle with this."
+    },
+    {
+      "post_author_handle": "daniel-lee-16",
+      "post_title": "Conway's Law in hardware design (Case Study #90)",
+      "author_handle": "william-perez-36",
+      "body": "This is exactly what we experienced on our last project. Great writeup."
+    },
+    {
+      "post_author_handle": "joshua-brown-18",
+      "post_title": "Writing test plans that don't make engineers want to quit (Case Study #106)",
+      "author_handle": "omar-embedded-systems",
+      "body": "This is why I always mandate an architecture review board before PDR."
+    },
+    {
+      "post_author_handle": "ethan-digital-thread",
+      "post_title": "Modularity: The good, the bad, and the over-engineered (Case Study #126)",
+      "author_handle": "elizabeth-garcia-42",
+      "body": "How did you handle the documentation overhead?"
+    },
+    {
+      "post_author_handle": "david-gonzalez-14",
+      "post_title": "Conway's Law in hardware design (Case Study #127)",
+      "author_handle": "jessica-brown-12",
+      "body": "We tried this approach but had issues getting buy-in from the electrical team."
+    },
+    {
+      "post_author_handle": "james-white-17",
+      "post_title": "Software safety in critical systems (DO-178C lessons) (Case Study #12)",
+      "author_handle": "mary-thomas-3",
+      "body": "Thanks for sharing. This is a very pragmatic view."
+    },
+    {
+      "post_author_handle": "irene-rail-systems",
+      "post_title": "When analysis isn't enough: The limits of simulation (Case Study #30)",
+      "author_handle": "jennifer-perez-23",
+      "body": "Thanks for sharing. This is a very pragmatic view."
+    },
+    {
+      "post_author_handle": "mary-thomas-3",
+      "post_title": "Why DOORS is still alive (and why that's okay) (Case Study #135)",
+      "author_handle": "daniel-lee-16",
+      "body": "Could you elaborate more on the specific metrics you tracked?"
+    },
+    {
+      "post_author_handle": "rhea-defense-systems",
+      "post_title": "Test like you fly, fly like you test: A post-mortem (Case Study #55)",
+      "author_handle": "irene-rail-systems",
+      "body": "Spot on. It's amazing how many organizations still struggle with this."
+    },
+    {
+      "post_author_handle": "robert-gonzalez-0",
+      "post_title": "Trade studies: How to actually make decisions (Case Study #7)",
+      "author_handle": "elizabeth-taylor-21",
+      "body": "How did you handle the documentation overhead?"
+    },
+    {
+      "post_author_handle": "joseph-robinson-40",
+      "post_title": "How to avoid building a 'shelfware' architecture model (Case Study #15)",
+      "author_handle": "kimberly-taylor-8",
+      "body": "Thanks for sharing. This is a very pragmatic view."
+    },
+    {
+      "post_author_handle": "joseph-robinson-40",
+      "post_title": "How to avoid building a 'shelfware' architecture model (Case Study #15)",
+      "author_handle": "steven-miller-45",
+      "body": "This is why I always mandate an architecture review board before PDR."
+    },
+    {
+      "post_author_handle": "jessica-brown-12",
+      "post_title": "Defining clean system boundaries (Case Study #10)",
+      "author_handle": "joshua-rodriguez-30",
+      "body": "This is exactly what we experienced on our last project. Great writeup."
+    },
+    {
+      "post_author_handle": "rhea-defense-systems",
+      "post_title": "When analysis isn't enough: The limits of simulation (Case Study #94)",
+      "author_handle": "david-gonzalez-14",
+      "body": "How did you handle the documentation overhead?"
+    },
+    {
+      "post_author_handle": "joseph-robinson-40",
+      "post_title": "FMEA vs FTA: Which one should you use? (Case Study #59)",
+      "author_handle": "andrew-anderson-4",
+      "body": "I disagree slightly - I think the tool matters just as much as the culture."
+    },
+    {
+      "post_author_handle": "robert-gonzalez-0",
+      "post_title": "Trade studies: How to actually make decisions (Case Study #7)",
+      "author_handle": "anthony-jackson-10",
+      "body": "Could you elaborate more on the specific metrics you tracked?"
+    },
+    {
+      "post_author_handle": "michelle-sanchez-44",
+      "post_title": "Automated HIL testing saved our launch schedule (Case Study #17)",
+      "author_handle": "ashley-jackson-19",
+      "body": "How did you handle the documentation overhead?"
+    },
+    {
+      "post_author_handle": "lisa-thomas-37",
+      "post_title": "Writing test plans that don't make engineers want to quit (Case Study #93)",
+      "author_handle": "andrew-anderson-4",
+      "body": "I disagree slightly - I think the tool matters just as much as the culture."
+    },
+    {
+      "post_author_handle": "joshua-rodriguez-30",
+      "post_title": "SysML vs Capella: Practical differences in aerospace workflows (Case Study #11)",
+      "author_handle": "lina-medtech",
+      "body": "We tried this approach but had issues getting buy-in from the electrical team."
+    },
+    {
+      "post_author_handle": "irene-rail-systems",
+      "post_title": "When analysis isn't enough: The limits of simulation (Case Study #30)",
+      "author_handle": "ashley-jackson-19",
+      "body": "I'd love to see a deeper dive into the specific interface definitions."
+    },
+    {
+      "post_author_handle": "joshua-rodriguez-30",
+      "post_title": "Modularity: The good, the bad, and the over-engineered (Case Study #40)",
+      "author_handle": "elizabeth-garcia-42",
+      "body": "Spot on. It's amazing how many organizations still struggle with this."
+    },
+    {
+      "post_author_handle": "matthew-ramirez-43",
+      "post_title": "The myth of the 'single point of failure' (Case Study #43)",
+      "author_handle": "jessica-brown-12",
+      "body": "Spot on. It's amazing how many organizations still struggle with this."
+    },
+    {
+      "post_author_handle": "rhea-defense-systems",
+      "post_title": "Test like you fly, fly like you test: A post-mortem (Case Study #55)",
+      "author_handle": "irene-rail-systems",
+      "body": "I'd love to see a deeper dive into the specific interface definitions."
+    },
+    {
+      "post_author_handle": "maya-mbse",
+      "post_title": "FMEA vs FTA: Which one should you use? (Case Study #95)",
+      "author_handle": "andrew-anderson-4",
+      "body": "This is why I always mandate an architecture review board before PDR."
+    },
+    {
+      "post_author_handle": "patricia-harris-27",
+      "post_title": "The myth of the 'single point of failure' (Case Study #114)",
+      "author_handle": "mark-miller-39",
+      "body": "Spot on. It's amazing how many organizations still struggle with this."
+    },
+    {
+      "post_author_handle": "michelle-sanchez-44",
+      "post_title": "Agile requirements in hardware: Not an oxymoron (Case Study #129)",
+      "author_handle": "joshua-smith-29",
+      "body": "Thanks for sharing. This is a very pragmatic view."
+    },
+    {
+      "post_author_handle": "matthew-lopez-35",
+      "post_title": "Requirements traceability: When is it too much? (Case Study #80)",
+      "author_handle": "robert-gonzalez-41",
+      "body": "How did you handle the documentation overhead?"
+    },
+    {
+      "post_author_handle": "mary-gonzalez-11",
+      "post_title": "Redundancy isn't always the answer (Case Study #44)",
+      "author_handle": "joshua-brown-18",
+      "body": "This is why I always mandate an architecture review board before PDR."
+    },
+    {
+      "post_author_handle": "daniel-lee-16",
+      "post_title": "MBSE: The difference between a model and a diagram (Case Study #91)",
+      "author_handle": "emily-jackson-38",
+      "body": "Spot on. It's amazing how many organizations still struggle with this."
+    },
+    {
+      "post_author_handle": "james-white-17",
+      "post_title": "Software safety in critical systems (DO-178C lessons) (Case Study #12)",
+      "author_handle": "james-martinez-32",
+      "body": "We tried this approach but had issues getting buy-in from the electrical team."
+    },
+    {
+      "post_author_handle": "kimberly-thompson-5",
+      "post_title": "The hidden cost of poorly structured MBSE ontologies (Case Study #25)",
+      "author_handle": "andrew-anderson-4",
+      "body": "This is why I always mandate an architecture review board before PDR."
+    },
+    {
+      "post_author_handle": "charles-taylor-49",
+      "post_title": "Software safety in critical systems (DO-178C lessons) (Case Study #76)",
+      "author_handle": "susan-harris-28",
+      "body": "This is why I always mandate an architecture review board before PDR."
+    },
+    {
+      "post_author_handle": "james-white-17",
+      "post_title": "Software safety in critical systems (DO-178C lessons) (Case Study #12)",
+      "author_handle": "maya-mbse",
+      "body": "I'd love to see a deeper dive into the specific interface definitions."
+    },
+    {
+      "post_author_handle": "mary-ramirez-13",
+      "post_title": "Software safety in critical systems (DO-178C lessons) (Case Study #49)",
+      "author_handle": "matthew-ramirez-43",
+      "body": "We tried this approach but had issues getting buy-in from the electrical team."
+    },
+    {
+      "post_author_handle": "david-gonzalez-14",
+      "post_title": "Writing test plans that don't make engineers want to quit (Case Study #34)",
+      "author_handle": "kimberly-thompson-5",
+      "body": "How did you handle the documentation overhead?"
+    },
+    {
+      "post_author_handle": "mary-lopez-31",
+      "post_title": "MBSE: The difference between a model and a diagram (Case Study #2)",
+      "author_handle": "michelle-sanchez-44",
+      "body": "Thanks for sharing. This is a very pragmatic view."
+    },
+    {
+      "post_author_handle": "ethan-digital-thread",
+      "post_title": "Stop writing 'shall' statements for things you can't verify (Case Study #48)",
+      "author_handle": "mary-lopez-31",
+      "body": "This is exactly what we experienced on our last project. Great writeup."
+    },
+    {
+      "post_author_handle": "andrew-anderson-4",
+      "post_title": "How to avoid building a 'shelfware' architecture model (Case Study #139)",
+      "author_handle": "joseph-robinson-40",
+      "body": "Thanks for sharing. This is a very pragmatic view."
+    },
+    {
+      "post_author_handle": "mary-robinson-26",
+      "post_title": "How to avoid building a 'shelfware' architecture model (Case Study #62)",
+      "author_handle": "linda-johnson-46",
+      "body": "How did you handle the documentation overhead?"
+    },
+    {
+      "post_author_handle": "rhea-defense-systems",
+      "post_title": "Test like you fly, fly like you test: A post-mortem (Case Study #55)",
+      "author_handle": "william-perez-36",
+      "body": "How did you handle the documentation overhead?"
+    },
+    {
+      "post_author_handle": "robert-gonzalez-41",
+      "post_title": "SysML vs Capella: Practical differences in aerospace workflows (Case Study #32)",
+      "author_handle": "susan-smith-34",
+      "body": "This is why I always mandate an architecture review board before PDR."
+    },
+    {
+      "post_author_handle": "mary-robinson-26",
+      "post_title": "Why SysML v2 won't fix your broken organizational culture (Case Study #31)",
+      "author_handle": "mary-thomas-3",
+      "body": "Could you elaborate more on the specific metrics you tracked?"
+    },
+    {
+      "post_author_handle": "david-gonzalez-14",
+      "post_title": "Conway's Law in hardware design (Case Study #127)",
+      "author_handle": "emily-jackson-38",
+      "body": "I disagree slightly - I think the tool matters just as much as the culture."
+    },
+    {
+      "post_author_handle": "joseph-robinson-40",
+      "post_title": "Defining clean system boundaries (Case Study #88)",
+      "author_handle": "sandra-perez-47",
+      "body": "Could you elaborate more on the specific metrics you tracked?"
+    },
+    {
+      "post_author_handle": "mary-thomas-3",
+      "post_title": "Modularity: The good, the bad, and the over-engineered (Case Study #144)",
+      "author_handle": "michelle-sanchez-44",
+      "body": "Could you elaborate more on the specific metrics you tracked?"
+    },
+    {
+      "post_author_handle": "barbara-johnson-22",
+      "post_title": "Software safety in critical systems (DO-178C lessons) (Case Study #118)",
+      "author_handle": "rhea-defense-systems",
+      "body": "Thanks for sharing. This is a very pragmatic view."
+    },
+    {
+      "post_author_handle": "daniel-lee-16",
+      "post_title": "Conway's Law in hardware design (Case Study #90)",
+      "author_handle": "matthew-lopez-35",
+      "body": "We tried this approach but had issues getting buy-in from the electrical team."
+    },
+    {
+      "post_author_handle": "ethan-digital-thread",
+      "post_title": "Stop writing 'shall' statements for things you can't verify (Case Study #48)",
+      "author_handle": "james-martinez-32",
+      "body": "Thanks for sharing. This is a very pragmatic view."
+    },
+    {
+      "post_author_handle": "elizabeth-taylor-21",
+      "post_title": "Requirements traceability: When is it too much? (Case Study #117)",
+      "author_handle": "omar-embedded-systems",
+      "body": "We tried this approach but had issues getting buy-in from the electrical team."
+    },
+    {
+      "post_author_handle": "james-martinez-32",
+      "post_title": "Modularity: The good, the bad, and the over-engineered (Case Study #133)",
+      "author_handle": "james-davis-48",
+      "body": "I disagree slightly - I think the tool matters just as much as the culture."
+    },
+    {
+      "post_author_handle": "robert-gonzalez-41",
+      "post_title": "MBSE: The difference between a model and a diagram (Case Study #128)",
+      "author_handle": "sandra-perez-47",
+      "body": "I disagree slightly - I think the tool matters just as much as the culture."
+    },
+    {
+      "post_author_handle": "ethan-digital-thread",
+      "post_title": "Stop writing 'shall' statements for things you can't verify (Case Study #48)",
+      "author_handle": "joshua-brown-18",
+      "body": "Could you elaborate more on the specific metrics you tracked?"
+    },
+    {
+      "post_author_handle": "matthew-ramirez-43",
+      "post_title": "Agile requirements in hardware: Not an oxymoron (Case Study #142)",
+      "author_handle": "mary-thomas-3",
+      "body": "How did you handle the documentation overhead?"
+    },
+    {
+      "post_author_handle": "maya-mbse",
+      "post_title": "FMEA vs FTA: Which one should you use? (Case Study #95)",
+      "author_handle": "michelle-sanchez-6",
+      "body": "We tried this approach but had issues getting buy-in from the electrical team."
+    },
+    {
+      "post_author_handle": "noah-systems-safety",
+      "post_title": "How to avoid building a 'shelfware' architecture model (Case Study #20)",
+      "author_handle": "steven-miller-45",
+      "body": "We tried this approach but had issues getting buy-in from the electrical team."
+    },
+    {
+      "post_author_handle": "paul-miller-25",
+      "post_title": "Requirements traceability: When is it too much? (Case Study #0)",
+      "author_handle": "mark-miller-39",
+      "body": "This is why I always mandate an architecture review board before PDR."
+    },
+    {
+      "post_author_handle": "james-white-17",
+      "post_title": "Defining clean system boundaries (Case Study #39)",
+      "author_handle": "mary-robinson-26",
+      "body": "This is why I always mandate an architecture review board before PDR."
+    },
+    {
+      "post_author_handle": "john-gonzalez-24",
+      "post_title": "Requirements traceability: When is it too much? (Case Study #70)",
+      "author_handle": "anthony-jackson-10",
+      "body": "How did you handle the documentation overhead?"
+    },
+    {
+      "post_author_handle": "maya-mbse",
+      "post_title": "FMEA vs FTA: Which one should you use? (Case Study #111)",
+      "author_handle": "lisa-thomas-37",
+      "body": "I'd love to see a deeper dive into the specific interface definitions."
+    },
+    {
+      "post_author_handle": "anthony-jackson-10",
+      "post_title": "Modularity: The good, the bad, and the over-engineered (Case Study #3)",
+      "author_handle": "david-gonzalez-14",
+      "body": "I'd love to see a deeper dive into the specific interface definitions."
+    },
+    {
+      "post_author_handle": "matthew-lopez-35",
+      "post_title": "Requirements traceability: When is it too much? (Case Study #80)",
+      "author_handle": "jessica-brown-12",
+      "body": "I'd love to see a deeper dive into the specific interface definitions."
+    },
+    {
+      "post_author_handle": "joshua-brown-18",
+      "post_title": "Writing test plans that don't make engineers want to quit (Case Study #106)",
+      "author_handle": "charles-garcia-1",
+      "body": "Thanks for sharing. This is a very pragmatic view."
+    },
+    {
+      "post_author_handle": "joseph-robinson-40",
+      "post_title": "Verification is building it right. Validation is building the right thing. (Case Study #19)",
+      "author_handle": "linda-johnson-46",
+      "body": "I'd love to see a deeper dive into the specific interface definitions."
+    },
+    {
+      "post_author_handle": "james-davis-48",
+      "post_title": "Agile requirements in hardware: Not an oxymoron (Case Study #5)",
+      "author_handle": "barbara-white-9",
+      "body": "This is exactly what we experienced on our last project. Great writeup."
+    },
+    {
+      "post_author_handle": "daniel-lee-16",
+      "post_title": "How to avoid building a 'shelfware' architecture model (Case Study #82)",
+      "author_handle": "joshua-rodriguez-30",
+      "body": "I disagree slightly - I think the tool matters just as much as the culture."
+    },
+    {
+      "post_author_handle": "mary-gonzalez-11",
+      "post_title": "The anatomy of a good interface requirement (Case Study #21)",
+      "author_handle": "matthew-ramirez-43",
+      "body": "This is exactly what we experienced on our last project. Great writeup."
+    },
+    {
+      "post_author_handle": "matthew-ramirez-43",
+      "post_title": "Verification is building it right. Validation is building the right thing. (Case Study #81)",
+      "author_handle": "james-davis-48",
+      "body": "I disagree slightly - I think the tool matters just as much as the culture."
+    },
+    {
+      "post_author_handle": "john-gonzalez-24",
+      "post_title": "Redundancy isn't always the answer (Case Study #46)",
+      "author_handle": "james-white-17",
+      "body": "We tried this approach but had issues getting buy-in from the electrical team."
+    },
+    {
+      "post_author_handle": "omar-embedded-systems",
+      "post_title": "Test like you fly, fly like you test: A post-mortem (Case Study #37)",
+      "author_handle": "andrew-anderson-4",
+      "body": "This is exactly what we experienced on our last project. Great writeup."
+    },
+    {
+      "post_author_handle": "joshua-rodriguez-30",
+      "post_title": "Modularity: The good, the bad, and the over-engineered (Case Study #40)",
+      "author_handle": "omar-embedded-systems",
+      "body": "I disagree slightly - I think the tool matters just as much as the culture."
+    },
+    {
+      "post_author_handle": "omar-embedded-systems",
+      "post_title": "Test like you fly, fly like you test: A post-mortem (Case Study #37)",
+      "author_handle": "mary-robinson-26",
+      "body": "Thanks for sharing. This is a very pragmatic view."
+    },
+    {
+      "post_author_handle": "paul-miller-25",
+      "post_title": "Why SysML v2 won't fix your broken organizational culture (Case Study #147)",
+      "author_handle": "james-martinez-32",
+      "body": "How did you handle the documentation overhead?"
+    },
+    {
+      "post_author_handle": "mary-robinson-26",
+      "post_title": "Why SysML v2 won't fix your broken organizational culture (Case Study #31)",
+      "author_handle": "david-gonzalez-14",
+      "body": "How did you handle the documentation overhead?"
+    },
+    {
+      "post_author_handle": "andrew-anderson-4",
+      "post_title": "When analysis isn't enough: The limits of simulation (Case Study #58)",
+      "author_handle": "susan-smith-34",
+      "body": "I'd love to see a deeper dive into the specific interface definitions."
+    },
+    {
+      "post_author_handle": "mary-ramirez-13",
+      "post_title": "Defining clean system boundaries (Case Study #8)",
+      "author_handle": "susan-hernandez-33",
+      "body": "We tried this approach but had issues getting buy-in from the electrical team."
+    },
+    {
+      "post_author_handle": "omar-embedded-systems",
+      "post_title": "Test like you fly, fly like you test: A post-mortem (Case Study #37)",
+      "author_handle": "patricia-harris-27",
+      "body": "This is why I always mandate an architecture review board before PDR."
+    },
+    {
+      "post_author_handle": "mary-thomas-3",
+      "post_title": "Software safety in critical systems (DO-178C lessons) (Case Study #148)",
+      "author_handle": "kimberly-thompson-5",
+      "body": "Thanks for sharing. This is a very pragmatic view."
+    },
+    {
+      "post_author_handle": "barbara-johnson-22",
+      "post_title": "The myth of the 'single point of failure' (Case Study #68)",
+      "author_handle": "matthew-lopez-35",
+      "body": "I disagree slightly - I think the tool matters just as much as the culture."
+    },
+    {
+      "post_author_handle": "robert-gonzalez-41",
+      "post_title": "How to avoid building a 'shelfware' architecture model (Case Study #92)",
+      "author_handle": "susan-harris-28",
+      "body": "I'd love to see a deeper dive into the specific interface definitions."
+    },
+    {
+      "post_author_handle": "patricia-harris-27",
+      "post_title": "When analysis isn't enough: The limits of simulation (Case Study #72)",
+      "author_handle": "james-white-17",
+      "body": "We tried this approach but had issues getting buy-in from the electrical team."
+    },
+    {
+      "post_author_handle": "lina-medtech",
+      "post_title": "The anatomy of a good interface requirement (Case Study #4)",
+      "author_handle": "daniel-lee-16",
+      "body": "How did you handle the documentation overhead?"
+    },
+    {
+      "post_author_handle": "ethan-digital-thread",
+      "post_title": "Modularity: The good, the bad, and the over-engineered (Case Study #126)",
+      "author_handle": "sarah-anderson-20",
+      "body": "This is why I always mandate an architecture review board before PDR."
+    },
+    {
+      "post_author_handle": "anthony-jackson-10",
+      "post_title": "Verification is building it right. Validation is building the right thing. (Case Study #23)",
+      "author_handle": "omar-embedded-systems",
+      "body": "I'd love to see a deeper dive into the specific interface definitions."
+    },
+    {
+      "post_author_handle": "mary-gonzalez-11",
+      "post_title": "Redundancy isn't always the answer (Case Study #44)",
+      "author_handle": "ashley-smith-7",
+      "body": "Thanks for sharing. This is a very pragmatic view."
+    },
+    {
+      "post_author_handle": "maya-mbse",
+      "post_title": "FMEA vs FTA: Which one should you use? (Case Study #95)",
+      "author_handle": "robert-gonzalez-41",
+      "body": "Thanks for sharing. This is a very pragmatic view."
+    },
+    {
+      "post_author_handle": "andrew-anderson-4",
+      "post_title": "SysML vs Capella: Practical differences in aerospace workflows (Case Study #87)",
+      "author_handle": "joseph-robinson-40",
+      "body": "How did you handle the documentation overhead?"
+    },
+    {
+      "post_author_handle": "sandra-perez-47",
+      "post_title": "FMEA vs FTA: Which one should you use? (Case Study #121)",
+      "author_handle": "elizabeth-garcia-42",
+      "body": "Spot on. It's amazing how many organizations still struggle with this."
+    },
+    {
+      "post_author_handle": "mary-robinson-26",
+      "post_title": "Transitioning from documents to models: A 12-month retrospective (Case Study #83)",
+      "author_handle": "robert-gonzalez-41",
+      "body": "Spot on. It's amazing how many organizations still struggle with this."
+    },
+    {
+      "post_author_handle": "mary-lopez-31",
+      "post_title": "MBSE: The difference between a model and a diagram (Case Study #2)",
+      "author_handle": "daniel-lee-16",
+      "body": "We tried this approach but had issues getting buy-in from the electrical team."
+    },
+    {
+      "post_author_handle": "joseph-robinson-40",
+      "post_title": "FMEA vs FTA: Which one should you use? (Case Study #50)",
+      "author_handle": "james-davis-48",
+      "body": "Thanks for sharing. This is a very pragmatic view."
+    },
+    {
+      "post_author_handle": "mary-robinson-26",
+      "post_title": "Automated HIL testing saved our launch schedule (Case Study #9)",
+      "author_handle": "kimberly-taylor-8",
+      "body": "This is exactly what we experienced on our last project. Great writeup."
+    },
+    {
+      "post_author_handle": "michelle-sanchez-44",
+      "post_title": "Trade studies: How to actually make decisions (Case Study #86)",
+      "author_handle": "john-gonzalez-24",
+      "body": "How did you handle the documentation overhead?"
+    },
+    {
+      "post_author_handle": "david-gonzalez-14",
+      "post_title": "Writing test plans that don't make engineers want to quit (Case Study #34)",
+      "author_handle": "matthew-lopez-35",
+      "body": "We tried this approach but had issues getting buy-in from the electrical team."
+    },
+    {
+      "post_author_handle": "james-white-17",
+      "post_title": "Defining clean system boundaries (Case Study #39)",
+      "author_handle": "ashley-jackson-19",
+      "body": "Could you elaborate more on the specific metrics you tracked?"
+    },
+    {
+      "post_author_handle": "paul-miller-25",
+      "post_title": "The myth of the 'single point of failure' (Case Study #108)",
+      "author_handle": "mary-lopez-31",
+      "body": "Could you elaborate more on the specific metrics you tracked?"
+    },
+    {
+      "post_author_handle": "mary-lopez-31",
+      "post_title": "How to avoid building a 'shelfware' architecture model (Case Study #22)",
+      "author_handle": "jessica-brown-12",
+      "body": "This is why I always mandate an architecture review board before PDR."
+    },
+    {
+      "post_author_handle": "matthew-ramirez-43",
+      "post_title": "The myth of the 'single point of failure' (Case Study #43)",
+      "author_handle": "mary-ramirez-13",
+      "body": "Spot on. It's amazing how many organizations still struggle with this."
+    },
+    {
+      "post_author_handle": "kimberly-thompson-5",
+      "post_title": "How to avoid building a 'shelfware' architecture model (Case Study #145)",
+      "author_handle": "robert-gonzalez-41",
+      "body": "How did you handle the documentation overhead?"
+    },
+    {
+      "post_author_handle": "charles-garcia-1",
+      "post_title": "The anatomy of a good interface requirement (Case Study #67)",
+      "author_handle": "joseph-robinson-40",
+      "body": "Thanks for sharing. This is a very pragmatic view."
+    },
+    {
+      "post_author_handle": "omar-embedded-systems",
+      "post_title": "When analysis isn't enough: The limits of simulation (Case Study #130)",
+      "author_handle": "noah-systems-safety",
+      "body": "This is exactly what we experienced on our last project. Great writeup."
+    },
+    {
+      "post_author_handle": "emily-jackson-38",
+      "post_title": "The anatomy of a good interface requirement (Case Study #78)",
+      "author_handle": "john-gonzalez-24",
+      "body": "Thanks for sharing. This is a very pragmatic view."
+    },
+    {
+      "post_author_handle": "mary-thomas-3",
+      "post_title": "Software safety in critical systems (DO-178C lessons) (Case Study #148)",
+      "author_handle": "rhea-defense-systems",
+      "body": "I disagree slightly - I think the tool matters just as much as the culture."
+    },
+    {
+      "post_author_handle": "sandra-perez-47",
+      "post_title": "FMEA vs FTA: Which one should you use? (Case Study #65)",
+      "author_handle": "charles-taylor-49",
+      "body": "I disagree slightly - I think the tool matters just as much as the culture."
+    },
+    {
+      "post_author_handle": "andrew-anderson-4",
+      "post_title": "When analysis isn't enough: The limits of simulation (Case Study #58)",
+      "author_handle": "elizabeth-garcia-42",
+      "body": "This is exactly what we experienced on our last project. Great writeup."
+    },
+    {
+      "post_author_handle": "elizabeth-taylor-21",
+      "post_title": "MBSE: The difference between a model and a diagram (Case Study #101)",
+      "author_handle": "susan-smith-34",
+      "body": "This is exactly what we experienced on our last project. Great writeup."
+    },
+    {
+      "post_author_handle": "james-white-17",
+      "post_title": "Defining clean system boundaries (Case Study #39)",
+      "author_handle": "joseph-robinson-40",
+      "body": "We tried this approach but had issues getting buy-in from the electrical team."
+    },
+    {
+      "post_author_handle": "jessica-brown-12",
+      "post_title": "How to avoid building a 'shelfware' architecture model (Case Study #131)",
+      "author_handle": "paul-miller-25",
+      "body": "Spot on. It's amazing how many organizations still struggle with this."
+    },
+    {
+      "post_author_handle": "andrew-anderson-4",
+      "post_title": "Agile requirements in hardware: Not an oxymoron (Case Study #27)",
+      "author_handle": "charles-garcia-1",
+      "body": "I disagree slightly - I think the tool matters just as much as the culture."
+    }
+  ]
+}

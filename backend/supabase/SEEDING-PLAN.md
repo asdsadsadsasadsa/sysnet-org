@@ -98,13 +98,29 @@ A robust seed script/admin flow should eventually:
 - insert comments
 - print a summary of inserted rows and any conflicts
 
-## Next best implementation target
-Build a seed script that accepts:
-- path to JSON pack
-- Supabase URL
-- service-role key
+## Repeatable seed script now available
+Use:
 
-And performs the mapping above in one repeatable run.
+- `backend/supabase/scripts-seed-sample-pack.mjs`
+
+It can:
+- create or resolve auth users for the sample personas
+- upsert matching `public.profiles`
+- insert posts
+- insert comments
+
+Expected env:
+- `NEXT_PUBLIC_SUPABASE_URL`
+- `SUPABASE_SERVICE_ROLE_KEY`
+
+Optional env:
+- `SEED_PACK_PATH`
+- `SEED_EMAIL_DOMAIN`
+- `SEED_DEFAULT_PASSWORD`
+
+Default sample login pattern:
+- email: `<handle>@seed.sysnet.org`
+- password: `SeedUser#2026!`
 
 ## SQL scaffold now available
 For a SQL-editor-first apply path, use:
