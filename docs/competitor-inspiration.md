@@ -1,47 +1,27 @@
-# Competitor & Adjacent Org Inspiration
+# Competitor & Adjacent Org Feature Inspiration
 
-We reviewed the member portals and feature sets of traditional engineering organizations (IEEE, INCOSE, ACM, BCS) to capture inspiration for `sysnet-org` and understand what we should do differently.
-
-## IEEE (Institute of Electrical and Electronics Engineers)
-**What they do well:**
-- **Societies:** Hyper-specific sub-groups (e.g., IEEE Computer Society, IEEE Aerospace). 
-- **Standards Development:** Formal spaces for drafting and debating standards.
-- **Xplore Digital Library:** The gold standard for academic paper archiving.
-
-**Inspiration for sysnet-org:**
-- Instead of "Societies", we can lean into our `domains` and `tags` (e.g., `#systems-engineering`, `#aerospace`) to auto-curate feeds.
-- Instead of a paywalled digital library, our `/feed` and `/post/[id]` pages should act as a living, open-access pattern library of practical case studies, completely avoiding the academic paywall model.
+This document captures feature inspiration from legacy and adjacent professional organizations (INCOSE, IEEE, ACM, BCS) to inform the product roadmap for sysnet-org.
 
 ## INCOSE (International Council on Systems Engineering)
-**What they do well:**
-- **Working Groups (WGs):** Focused on specific problems (e.g., MBSE, Agile Systems Engineering).
-- **Certification:** SEP (Systems Engineering Professional) hierarchy (ASEP, CSEP, ESEP).
-- **Chapter Events:** Localized networking.
+- **Working Groups (WGs):** Highly specialized domain groups (e.g., Agile Systems, MBSE, Space Systems). Sysnet needs a robust WG directory where members can apply to join or publicly view WG outputs.
+- **Certification Registry:** A public directory of certified professionals (CSEP, ASEP, ESEP). Sysnet could introduce verified badges for proven expertise or completed rigorous training.
+- **Resource Library / Systems Engineering Body of Knowledge (SEBoK):** Centralized knowledge repositories. Sysnet should have a curated "Patterns & Artifacts" section separate from the transient social feed.
 
-**Inspiration for sysnet-org:**
-- Modernize the "Working Group" concept into async, ongoing discussion spaces (like our `group_slug` on posts, which we can expand into a full `/g/[slug]` community feature).
-- Instead of exam-based certifications, we could build a "Portfolio" or "Verified Case Studies" section on user profiles where engineers prove competence through actual write-ups rather than multiple-choice tests.
+## IEEE (Institute of Electrical and Electronics Engineers)
+- **Societies and Technical Councils:** Specialized sub-communities with their own governance, events, and publications. Sysnet's "Working Groups" should function similarly, offering focused discussions.
+- **Conferences and Call for Papers:** A massive driver of engagement. Sysnet could implement a lightweight event board and call-for-speakers feature to surface relevant gatherings.
+- **Digital Library (Xplore):** Academic paper repository. While Sysnet isn't a publisher, allowing users to attach or link robust case studies to their profiles mimics this value in a modern way.
 
 ## ACM (Association for Computing Machinery)
-**What they do well:**
-- **SIGs (Special Interest Groups):** Very active and highly specialized.
-- **Conferences:** Massive global events.
-
-**Inspiration for sysnet-org:**
-- We could add a "Conferences/Events" board where users can tag which events they are attending, making real-world networking easier. 
+- **Special Interest Groups (SIGs):** Very active specialized communities. ACM SIGs often host their own portals. Sysnet's groups should feel like mini-communities with their own feeds and resource wikis.
+- **Distinguished Speakers Program:** A roster of experts available for talks. Sysnet could build a "Speaker Directory" tag for users open to giving talks or seminars.
 
 ## BCS (British Computer Society)
-**What they do well:**
-- **Chartered Status (CITP):** Formal recognition of professional standing.
-- **CPD (Continuous Professional Development):** Tools for tracking ongoing learning.
-- **Mentorship Network:** Connecting junior and senior practitioners.
+- **Mentoring Network:** Structured matching for career development. Sysnet's "Mentors" feature (already underway) is directly inspired by this need, but we should ensure the matching flow is seamless and based on specific domain tags.
+- **CPD (Continuing Professional Development) Tracking:** Tools to log learning hours. Sysnet could allow users to log "learning artifacts" or project completions to show active growth.
 
-**Inspiration for sysnet-org:**
-- **Mentorship:** We already have `open_to: ['mentoring']` in the database! We should build a dedicated `/mentors` UI that filters the people directory for senior engineers willing to mentor, making the match-making process seamless.
-- **CPD Tracking:** A lightweight version could be allowing users to "bookmark" or "save" posts/patterns they've learned from.
-
-## Summary of Actionable Features for sysnet-org:
-1. **Mentorship Matcher:** A dedicated view in the Directory filtering for `open_to: mentoring`.
-2. **Event Roll-call:** Let users flag which industry events they are attending.
-3. **Working Groups (Spaces):** Build out the `/g/[slug]` routes into proper sub-communities.
-4. **Portfolio/Case Studies Tab:** On the profile page, highlight long-form practical write-ups as a modern alternative to traditional certs.
+## Actionable Takeaways for Sysnet-Org
+1. **Elevate Working Groups:** Make them first-class citizens alongside the main feed. Give them dedicated resource tabs, not just discussion threads.
+2. **Artifact Driven:** Move beyond social posts to "Artifacts" (templates, diagrams, case studies) that live permanently on user profiles and in group libraries.
+3. **Structured Mentorship:** Enhance the `/mentors` page with specific "Open To" tags (e.g., resume review, technical advising, career transition).
+4. **Verified Credentials:** Introduce a system for verifying specific competencies or professional certifications to increase trust in the directory.
