@@ -4,9 +4,8 @@ export default function AboutPage() {
       <p className="eyebrow">About the network</p>
       <h1 className="section-title">A more serious place for systems engineers.</h1>
       <p className="max-w-3xl text-base leading-7 soft-muted">
-        ABRAKADABRA is a focused professional community for systems engineers. The point is not to mimic a noisy social
-        platform — it is to create a calmer space for practical knowledge sharing, standards-aware discussion, trusted
-        peer discovery, and durable professional relationships.
+        Sysnet is a professional community for systems engineers. The goal is practical knowledge sharing,
+        standards-aware discussion, and trusted peer discovery — not another noisy social feed.
       </p>
       <div className="grid gap-4 md:grid-cols-3">
         {[

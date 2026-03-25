@@ -6,7 +6,7 @@ export const dynamic = "force-dynamic";
 
 const proofPoints = [
   ["Find credible peers", "Search by domain, tooling, and availability to connect with engineers who actually work in your space."],
-  ["Trade practical knowledge", "Share implementation notes, patterns, and field-tested lessons instead of shouting into a generic social app."],
+  ["Trade practical knowledge", "Share implementation notes, field-tested patterns, and hard-won lessons with engineers who care about the same problems."],
   ["Build professional trust", "Make it easier to discover mentors, consultants, collaborators, and hiring leads inside a systems-focused network."],
 ];
 
@@ -61,8 +61,8 @@ export default async function Home({
         <div className="absolute inset-y-0 right-0 hidden w-[42%] bg-[radial-gradient(circle_at_top,rgba(96,165,250,0.28),transparent_55%),radial-gradient(circle_at_bottom,rgba(99,102,241,0.2),transparent_50%)] lg:block" />
         <div className="relative max-w-3xl space-y-6">
           <div className="flex flex-wrap gap-2">
-            <span className="pill">Professional network for systems engineers</span>
-            <span className="pill">MBSE • Systems thinking • Trusted peers</span>
+            <span className="pill">Systems engineering network</span>
+            <span className="pill">MBSE · SysML · Safety · Aerospace · Defense · Automotive</span>
           </div>
           <div className="space-y-4">
             <h1 className="grad-title text-4xl font-semibold tracking-tight md:text-6xl">

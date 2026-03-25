@@ -232,11 +232,11 @@ export default function OnboardingPage() {
           </p>
         </div>
         <div className="shell-card p-6">
-          <p className="eyebrow">What belongs here</p>
+          <p className="eyebrow">What to include</p>
           <div className="mt-4 space-y-3 text-sm leading-6 soft-muted">
-            <p>Use a handle people can recognize.</p>
-            <p>Add a sharp headline, clear domains, and realistic availability.</p>
-            <p>This should feel closer to a professional registry than a throwaway signup form.</p>
+            <p>Pick a handle you use professionally.</p>
+            <p>Add a headline that describes what you actually do — domains, tools, industry.</p>
+            <p>Set your availability so others know if you are open to mentoring, consulting, or connecting.</p>
           </div>
         </div>
       </section>
@@ -312,21 +312,21 @@ export default function OnboardingPage() {
             </button>
           </div>
           <div className="grid gap-4 md:grid-cols-2">
-            <input placeholder="handle" value={handle} onChange={(e) => setHandle(e.target.value)} />
-            <input placeholder="public name" value={displayName} onChange={(e) => setDisplayName(e.target.value)} />
+            <input placeholder="Handle (e.g. jsmith)" value={handle} onChange={(e) => setHandle(e.target.value)} />
+            <input placeholder="Full name" value={displayName} onChange={(e) => setDisplayName(e.target.value)} />
             <label className="md:col-span-2 rounded-2xl border border-slate-200/80 bg-white/80 p-4 text-sm text-slate-700">
               <span className="block text-sm font-semibold text-slate-900">Profile visibility</span>
-              <span className="mt-1 block soft-muted">Public profiles appear in the people directory. Private profiles are visible only to you.</span>
+              <span className="mt-1 block soft-muted">Public profiles appear in the member directory. Private profiles are visible only to you.</span>
               <select className="mt-3" value={visibility} onChange={(e) => setVisibility(e.target.value as ProfileVisibility)}>
                 <option value="public">Public</option>
                 <option value="private">Private</option>
               </select>
             </label>
-            <input className="md:col-span-2" placeholder="headline" value={headline} onChange={(e) => setHeadline(e.target.value)} />
-            <input placeholder="location" value={location} onChange={(e) => setLocation(e.target.value)} />
-            <input placeholder="domains csv" value={domains} onChange={(e) => setDomains(e.target.value)} />
-            <input placeholder="tags csv" value={tags} onChange={(e) => setTags(e.target.value)} />
-            <input placeholder="open_to csv" value={openTo} onChange={(e) => setOpenTo(e.target.value)} />
+            <input className="md:col-span-2" placeholder="Headline (e.g. Systems architect, aerospace & defense)" value={headline} onChange={(e) => setHeadline(e.target.value)} />
+            <input placeholder="Location (e.g. Seattle, WA)" value={location} onChange={(e) => setLocation(e.target.value)} />
+            <input placeholder="Domains, comma-separated (e.g. MBSE, safety, embedded)" value={domains} onChange={(e) => setDomains(e.target.value)} />
+            <input placeholder="Tags, comma-separated (e.g. SysML, DOORS, Cameo)" value={tags} onChange={(e) => setTags(e.target.value)} />
+            <input placeholder="Open to (e.g. mentoring, consulting, hiring)" value={openTo} onChange={(e) => setOpenTo(e.target.value)} />
           </div>
           <div className="flex flex-wrap gap-3">
             <button className="primary-button">{hasProfile ? "Save changes" : "Save profile"}</button>

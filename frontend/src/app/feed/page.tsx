@@ -252,9 +252,7 @@ export default function FeedPage() {
         <aside className="shell-card p-6">
           <p className="eyebrow">Posting intent</p>
           <div className="mt-4 space-y-3 text-sm leading-6 soft-muted">
-            <p>Share practical lessons, not vague thought leadership.</p>
-            <p>Good posts usually include context, method, failure mode, and what changed.</p>
-            <p>If publishing fails, the message below should tell us exactly where the backend is unhappy.</p>
+            <p>Share what you have learned in practice — implementation notes, failure modes, methods that worked.</p>
           </div>
           <div className="mt-5 flex flex-wrap gap-3">
             <Link href="/profile" className="secondary-button px-4 py-2 text-sm">
@@ -268,7 +266,7 @@ export default function FeedPage() {
       </section>
 
       <div className="rounded-2xl border border-blue-200 bg-blue-50 px-5 py-4 text-sm text-blue-800 flex items-center justify-between gap-4">
-        <p>New to the network? Check out the latest announcements and platform updates.</p>
+        <p>New here? See what is happening in systems engineering — <a href="/news" className="text-blue-700 hover:underline">read the latest news</a>.</p>
         <Link href="/news" className="shrink-0 font-medium underline underline-offset-2 hover:text-blue-900">
           Visit News
         </Link>

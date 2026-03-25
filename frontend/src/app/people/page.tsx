@@ -37,12 +37,11 @@ export default function PeoplePage() {
           <p className="eyebrow">Expert discovery</p>
           <h1 className="section-title mt-3">Member directory</h1>
           <p className="mt-3 max-w-2xl text-base leading-7 soft-muted">
-            Search for systems engineers by specialty, tooling, and availability. The goal is to make the network
-            feel like a trusted expert graph, not a random profile cemetery.
+            Search by domain, tooling, and availability to find engineers working in your area of practice.
           </p>
         </div>
         <div className="shell-card p-6">
-          <p className="eyebrow">Filter the graph</p>
+          <p className="eyebrow">Filter</p>
           <div className="mt-4 space-y-3">
             <input placeholder="Search tags, headline, domain" value={q} onChange={(e) => setQ(e.target.value)} />
             <select value={openTo} onChange={(e) => setOpenTo(e.target.value)}>

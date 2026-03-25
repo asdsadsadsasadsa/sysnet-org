@@ -90,8 +90,8 @@ export default function ProfilePage() {
             <span className="pill">Member profile</span>
             {isSelf && profile.visibility === "private" && <span className="pill">private to others</span>}
             {(profile.open_to || []).map((item) => (
-              <span key={item} className="pill">
-                open to {item}
+              <span key={item} className="pill capitalize">
+                {item}
               </span>
             ))}
           </div>
@@ -142,7 +142,7 @@ export default function ProfilePage() {
           </article>
           
           <article className="shell-card p-6 md:p-8">
-            <p className="eyebrow">Case Studies & Field Notes</p>
+            <p className="eyebrow">Posts & field notes</p>
             <div className="mt-4 space-y-6">
               {posts.length > 0 ? (
                 posts.map(post => (
@@ -155,7 +155,7 @@ export default function ProfilePage() {
                   </div>
                 ))
               ) : (
-                <p className="text-[15px] leading-7 soft-muted">No case studies or posts published yet.</p>
+                <p className="text-[15px] leading-7 soft-muted">No posts yet.</p>
               )}
             </div>
           </article>
