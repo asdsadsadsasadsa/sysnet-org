@@ -12,7 +12,7 @@ const proofPoints = [
 
 const pillars = [
   ["Directory by expertise", "Filter by aerospace, automotive, medical, defense, MBSE, SysML, DOORS, Cameo, verification, and more."],
-  ["Signal over noise", "Built for serious professional collaboration, not resume spam, ragebait, or vendor blast copy."],
+  ["Signal over noise", "Focused on genuine professional exchange — not resume spam, vendor pitches, or algorithm-bait."],
   ["Institutional feel", "Designed to grow toward events, resources, working groups, and a durable systems-engineering knowledge base."],
 ];
 
@@ -65,13 +65,12 @@ export default async function Home({
             <span className="pill">MBSE • Systems thinking • Trusted peers</span>
           </div>
           <div className="space-y-4">
-            <p className="eyebrow">Built for engineers, not feed addicts</p>
             <h1 className="grad-title text-4xl font-semibold tracking-tight md:text-6xl">
-              A calmer, sharper home for systems engineering.
+              A professional home for systems engineering.
             </h1>
             <p className="max-w-2xl text-lg leading-8 soft-muted md:text-xl">
-              ABRAKADABRA helps systems engineers find serious peers, compare methods, swap practical lessons,
-              and build the kind of professional trust that generic social networks never manage.
+              Sysnet helps systems engineers find serious peers, share practical knowledge,
+              and build professional trust — without the noise of generic social networks.
             </p>
           </div>
           <div className="flex flex-wrap gap-3">
@@ -107,8 +106,8 @@ export default async function Home({
 
       <section className="page-grid">
         <article className="shell-card p-6 md:p-8">
-          <p className="eyebrow">Why this should exist</p>
-          <h2 className="section-title mt-3">Why members would actually come back</h2>
+          <p className="eyebrow">What you get out of it</p>
+          <h2 className="section-title mt-3">Built for how systems engineers actually work</h2>
           <div className="mt-6 grid gap-4 md:grid-cols-2">
             {reasonsToJoin.map(([title, body]) => (
               <div key={title} className="rounded-[24px] border border-slate-200/70 bg-white/80 p-5">
