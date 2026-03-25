@@ -84,6 +84,12 @@ export default async function Home({
               Explore feed
             </Link>
           </div>
+          <div className="flex flex-wrap gap-2 pt-1">
+            <Link href="/g" className="pill hover:bg-blue-100 transition-colors">Groups</Link>
+            <Link href="/events" className="pill hover:bg-blue-100 transition-colors">Events</Link>
+            <Link href="/submissions" className="pill hover:bg-blue-100 transition-colors">Papers</Link>
+            <Link href="/library" className="pill hover:bg-blue-100 transition-colors">Library</Link>
+          </div>
           <div className="grid gap-3 pt-2 md:grid-cols-3">
             {proofPoints.map(([title, body]) => (
               <div key={title} className="rounded-[24px] border border-white/60 bg-white/72 p-4 shadow-sm backdrop-blur-xl">
