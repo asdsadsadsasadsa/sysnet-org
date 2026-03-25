@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 const nav = [
   { href: "/people", label: "Directory" },
   { href: "/g", label: "Groups" },
-  { href: "/artifacts", label: "Artifacts" },
+  { href: "/library", label: "Library" },
   { href: "/mentors", label: "Mentors" },
   { href: "/feed", label: "Feed" },
   { href: "/news", label: "News" },

@@ -1,314 +1,387 @@
+export type ArtifactType = "template" | "pattern" | "case-study" | "standard-ref" | "tool-guide";
+
 export interface Artifact {
   id: string;
   title: string;
-  abstract: string;
-  artifact_type: 'paper' | 'spec' | 'standards-summary' | 'reference-design' | 'case-study';
-  group_slug: string;
+  description: string;
+  type: ArtifactType;
+  domain: string;
+  author: string;
+  publishedAt: string;
+  downloadUrl: string;
   tags: string[];
-  author_handle: string;
-  published_year: number;
-  external_url?: string;
 }
 
 export const ARTIFACTS: Artifact[] = [
   {
-    id: "art-001",
-    title: "Formal Verification of Distributed Consensus in Embedded Systems",
-    abstract: "This paper presents a rigorous formal verification approach for distributed consensus algorithms operating under strict timing constraints in embedded environments. We utilize TLA+ to model-check safety and liveness properties, specifically focusing on the Raft protocol implementation in low-power microcontrollers.",
-    artifact_type: "paper",
-    group_slug: "embedded",
-    tags: ["Formal Methods", "TLA+", "Consensus"],
-    author_handle: "j_systems",
-    published_year: 2025
+    id: "mbse-sysml-context-template",
+    title: "SysML System Context Diagram Template",
+    description: "A ready-to-use SysML BDD template for capturing system context, actors, and external interfaces. Includes annotated example with actor stereotypes and flow ports.",
+    type: "template",
+    domain: "MBSE",
+    author: "Maya Chen",
+    publishedAt: "2025-11-12",
+    downloadUrl: "#",
+    tags: ["SysML", "BDD", "Context Diagram", "Capella"]
   },
   {
-    id: "art-002",
-    title: "SysML v2 Language Profile Reference for Aerospace Avionics",
-    abstract: "A comprehensive reference guide for applying SysML v2 to aerospace avionics architecture. This specification defines standard stereotypes, value types, and modeling patterns optimized for ARINC 653 partitioned environments.",
-    artifact_type: "spec",
-    group_slug: "aerospace",
-    tags: ["SysML v2", "Avionics", "ARINC 653"],
-    author_handle: "orbit_admin",
-    published_year: 2026
+    id: "mbse-requirements-traceability-matrix",
+    title: "Requirements Traceability Matrix (RTM) Template",
+    description: "Spreadsheet template for bidirectional requirements traceability from stakeholder needs through system, subsystem, and component requirements to verification events.",
+    type: "template",
+    domain: "MBSE",
+    author: "Ethan Brooks",
+    publishedAt: "2025-09-04",
+    downloadUrl: "#",
+    tags: ["Requirements", "Traceability", "RTM", "DOORS"]
   },
   {
-    id: "art-003",
-    title: "ISO 26262:2018 Functional Safety Summary for Software Engineers",
-    abstract: "An executive summary of the ISO 26262:2018 standard, specifically Part 6: Product development at the software level. This document highlights key requirements for ASIL-D software components and verification methods.",
-    artifact_type: "standards-summary",
-    group_slug: "automotive",
-    tags: ["ISO 26262", "ASIL", "Functional Safety"],
-    author_handle: "safe_drive",
-    published_year: 2024
+    id: "fmea-template-automotive",
+    title: "Design FMEA Template (ISO 26262 aligned)",
+    description: "DFMEA worksheet with severity, occurrence, and detection ratings for the automotive domain. Includes action priority (AP) column per the AIAG/VDA 2019 harmonised format.",
+    type: "template",
+    domain: "Automotive",
+    author: "Noah Kim",
+    publishedAt: "2025-10-21",
+    downloadUrl: "#",
+    tags: ["FMEA", "ISO 26262", "Risk Analysis", "Automotive"]
   },
   {
-    id: "art-004",
-    title: "Reference Design: High-Availability Edge Gateway for Industrial IoT",
-    abstract: "A detailed reference architecture for an industrial edge gateway capable of 99.999% availability. Includes block diagrams, hardware selection criteria, and software stack recommendations for redundancy management.",
-    artifact_type: "reference-design",
-    group_slug: "robotics",
-    tags: ["IIoT", "High Availability", "Edge Computing"],
-    author_handle: "factory_auto",
-    published_year: 2025
+    id: "adr-template",
+    title: "Architecture Decision Record (ADR) Template",
+    description: "Lightweight Markdown ADR template capturing context, decision drivers, considered options, outcome, and consequences. Includes a worked example from a satellite on-board software project.",
+    type: "template",
+    domain: "Architecture",
+    author: "Rhea Banerjee",
+    publishedAt: "2025-08-17",
+    downloadUrl: "#",
+    tags: ["ADR", "Architecture", "Decision Records", "Documentation"]
   },
   {
-    id: "art-005",
-    title: "Case Study: Transitioning to MBSE in a Legacy Medical Device Firm",
-    abstract: "A deep dive into the 2-year journey of a Tier-1 medical device manufacturer as they moved from document-centric requirements management to a full MBSE approach using Capella. Lessons learned in culture shift and tool integration.",
-    artifact_type: "case-study",
-    group_slug: "medical",
-    tags: ["MBSE", "Transformation", "Capella"],
-    author_handle: "med_dev_lead",
-    published_year: 2025
+    id: "vv-test-plan-template",
+    title: "V&V Test Plan Template (IEEE 829)",
+    description: "Systems-level test plan skeleton following IEEE 829 structure: test objectives, scope, approach, entry/exit criteria, schedule, and pass/fail criteria.",
+    type: "template",
+    domain: "Verification",
+    author: "Irene Volkov",
+    publishedAt: "2025-07-30",
+    downloadUrl: "#",
+    tags: ["V&V", "Test Plan", "IEEE 829", "Verification"]
   },
   {
-    id: "art-006",
-    title: "Microservices Decomposition Patterns for Highly Regulated Systems",
-    abstract: "This paper explores architectural patterns for decomposing monolithic systems in highly regulated domains. We propose a 'Regulatory-First' boundary definition that isolates safety-critical logic from non-critical services.",
-    artifact_type: "paper",
-    group_slug: "software-architecture",
-    tags: ["Microservices", "Regulated Systems", "Decomposition"],
-    author_handle: "arch_guru",
-    published_year: 2026
+    id: "hazard-log-template",
+    title: "Hazard Log Template (IEC 61508 / EN 50128)",
+    description: "Structured hazard log spreadsheet for tracking identified hazards, causation chains, risk classification, mitigation measures, and residual risk acceptance rationale.",
+    type: "template",
+    domain: "Safety",
+    author: "Noah Kim",
+    publishedAt: "2025-12-03",
+    downloadUrl: "#",
+    tags: ["Hazard Log", "IEC 61508", "Safety", "FMEA"]
   },
   {
-    id: "art-007",
-    title: "FMEA Workbench: A Standardized Template for Reliability Analysis",
-    abstract: "A standardized template and workflow for conducting Failure Mode and Effects Analysis (FMEA) in complex systems. Includes Risk Priority Number (RPN) calculation models and mitigation tracking schemas.",
-    artifact_type: "spec",
-    group_slug: "reliability",
-    tags: ["FMEA", "Reliability", "Risk"],
-    author_handle: "uptime_expert",
-    published_year: 2025
+    id: "conops-template",
+    title: "Concept of Operations (ConOps) Template",
+    description: "User-oriented document template describing the operational concept, operational environment, stakeholder needs, and system-level use cases. Based on IEEE 1362.",
+    type: "template",
+    domain: "Systems Engineering",
+    author: "Diego Alvarez",
+    publishedAt: "2025-06-14",
+    downloadUrl: "#",
+    tags: ["ConOps", "IEEE 1362", "Use Cases", "Stakeholders"]
   },
   {
-    id: "art-008",
-    title: "Digital Twin Synchronization Protocols: A Comparative Analysis",
-    abstract: "This study compares different protocols for synchronizing physical asset data with its digital twin. We evaluate MQTT, OPC UA, and DDS in terms of latency, bandwidth efficiency, and state consistency.",
-    artifact_type: "paper",
-    group_slug: "digital-twin",
-    tags: ["Digital Twin", "MQTT", "OPC UA"],
-    author_handle: "sim_master",
-    published_year: 2026
+    id: "interface-control-document-template",
+    title: "Interface Control Document (ICD) Template",
+    description: "ICD template for hardware/software interfaces: interface definitions, signal descriptions, electrical characteristics, timing diagram placeholders, and change log.",
+    type: "template",
+    domain: "Systems Engineering",
+    author: "Omar Rahman",
+    publishedAt: "2025-05-28",
+    downloadUrl: "#",
+    tags: ["ICD", "Interfaces", "Hardware/Software", "Aerospace"]
   },
   {
-    id: "art-009",
-    title: "ISO/IEC 42010 Architecture Description Framework Implementation",
-    abstract: "A guide to implementing the ISO/IEC 42010 standard within a corporate architecture practice. Defines the structure of Architecture Descriptions, Viewpoints, and Stakeholder mapping.",
-    artifact_type: "standards-summary",
-    group_slug: "standards",
-    tags: ["ISO 42010", "Architecture", "Framework"],
-    author_handle: "standard_bear",
-    published_year: 2024
+    id: "trade-study-template",
+    title: "Trade Study Template with Weighted Criteria Matrix",
+    description: "Structured trade study template with normalised scoring, sensitivity analysis, and decision rationale capture. Includes a worked example for a spacecraft pointing mechanism actuator selection.",
+    type: "template",
+    domain: "Architecture",
+    author: "Rhea Banerjee",
+    publishedAt: "2025-12-10",
+    downloadUrl: "#",
+    tags: ["Trade Study", "Decision Analysis", "Architecture", "Weighted Criteria"]
   },
   {
-    id: "art-010",
-    title: "Scalable Sensor Fusion Architecture for Level 4 Autonomous Vehicles",
-    abstract: "A reference design for a modular sensor fusion engine supporting Lidar, Radar, and Camera inputs. Focuses on late-fusion strategies and uncertainty estimation in dynamic environments.",
-    artifact_type: "reference-design",
-    group_slug: "automotive",
-    tags: ["Sensor Fusion", "Autonomous", "Lidar"],
-    author_handle: "auto_pilot",
-    published_year: 2025
+    id: "digital-twin-architecture-template",
+    title: "Digital Twin Architecture Reference Template",
+    description: "Architecture reference document covering physical asset layer, communication, data ingestion, twin model, and analytics tiers. Completed example: a pumping station digital twin.",
+    type: "template",
+    domain: "Digital Twin",
+    author: "Ethan Brooks",
+    publishedAt: "2025-03-27",
+    downloadUrl: "#",
+    tags: ["Digital Twin", "Architecture", "IoT", "Reference Architecture"]
   },
   {
-    id: "art-011",
-    title: "Probabilistic Risk Assessment in Space Mission Planning",
-    abstract: "Explores the application of Bayesian networks to quantify risk in complex space missions. Includes a case study on orbital insertion maneuvers for deep-space probes.",
-    artifact_type: "paper",
-    group_slug: "aerospace",
-    tags: ["Risk Assessment", "Bayesian", "Space"],
-    author_handle: "mars_rover",
-    published_year: 2025
+    id: "sysml-ibd-pattern",
+    title: "SysML Internal Block Diagram Composition Pattern",
+    description: "Reusable IBD pattern for hierarchical system decomposition with typed ports and connectors. Demonstrates flow port directionality and proxy port usage in Cameo Systems Modeler.",
+    type: "pattern",
+    domain: "MBSE",
+    author: "Maya Chen",
+    publishedAt: "2025-10-08",
+    downloadUrl: "#",
+    tags: ["SysML", "IBD", "Composition", "Cameo"]
   },
   {
-    id: "art-012",
-    title: "MBSE Pattern Catalog v1.4: Common System Interactions",
-    abstract: "A curated catalog of 25 MBSE patterns for modeling common system interactions, such as master-slave synchronization, heartbeat monitors, and circuit breakers.",
-    artifact_type: "spec",
-    group_slug: "mbse",
-    tags: ["Patterns", "MBSE", "Modeling"],
-    author_handle: "model_pro",
-    published_year: 2026
+    id: "observer-pattern-embedded",
+    title: "Observer Pattern for Embedded Event Systems",
+    description: "C implementation of a static observer pattern for resource-constrained embedded systems with no dynamic allocation. Includes an interrupt-safe variant using message queues.",
+    type: "pattern",
+    domain: "Embedded",
+    author: "Omar Rahman",
+    publishedAt: "2025-09-19",
+    downloadUrl: "#",
+    tags: ["Embedded", "C", "Design Patterns", "RTOS"]
   },
   {
-    id: "art-013",
-    title: "IEC 62304 Compliance Guide for Agile Software Teams",
-    abstract: "Practical strategies for maintaining IEC 62304 compliance while using Agile and DevOps methodologies. Focuses on automated documentation and continuous verification.",
-    artifact_type: "standards-summary",
-    group_slug: "medical",
-    tags: ["IEC 62304", "Agile", "DevOps"],
-    author_handle: "agile_med",
-    published_year: 2025
+    id: "state-machine-pattern-safety",
+    title: "Hierarchical State Machine Pattern for Safety-Critical Systems",
+    description: "C++ implementation skeleton for HSMs with entry/exit/transition guards, targeting IEC 61508 SIL 2 contexts. Includes unit test harness and coding guideline notes.",
+    type: "pattern",
+    domain: "Safety",
+    author: "Irene Volkov",
+    publishedAt: "2025-11-25",
+    downloadUrl: "#",
+    tags: ["State Machine", "HSM", "Safety-Critical", "C++"]
   },
   {
-    id: "art-014",
-    title: "Real-Time Scheduling for Multicore Embedded Systems",
-    abstract: "Technical paper discussing partitioning and scheduling strategies for RTOS on multicore SoCs. Addresses the challenges of shared resource contention and cache interference.",
-    artifact_type: "paper",
-    group_slug: "embedded",
-    tags: ["RTOS", "Multicore", "Scheduling"],
-    author_handle: "kern_dev",
-    published_year: 2026
+    id: "digital-twin-sync-pattern",
+    title: "Digital Twin State Synchronisation Pattern",
+    description: "Pattern for maintaining consistency between a physical asset and its twin, covering event-driven updates, conflict resolution on reconnection, and shadow model design.",
+    type: "pattern",
+    domain: "Digital Twin",
+    author: "Ethan Brooks",
+    publishedAt: "2025-08-05",
+    downloadUrl: "#",
+    tags: ["Digital Twin", "State Sync", "IoT", "Architecture"]
   },
   {
-    id: "art-015",
-    title: "Reference Design: Modular Cobot Controller Architecture",
-    abstract: "Architecture blueprint for a collaborative robot (cobot) controller focusing on safety-rated monitored stop (SMS) and power/force limiting (PFL) functions.",
-    artifact_type: "reference-design",
-    group_slug: "robotics",
-    tags: ["Cobots", "Safety", "Control"],
-    author_handle: "robot_safety",
-    published_year: 2025
+    id: "operational-concept-pattern",
+    title: "Operational Concept Decomposition Pattern",
+    description: "Pattern for structuring operational scenarios from mission objectives down to operator tasks and system responses. Includes SysML activity diagram template.",
+    type: "pattern",
+    domain: "Systems Engineering",
+    author: "Diego Alvarez",
+    publishedAt: "2025-04-03",
+    downloadUrl: "#",
+    tags: ["ConOps", "Operational Analysis", "SysML", "Activity Diagrams"]
   },
   {
-    id: "art-016",
-    title: "AUTOSAR Adaptive Platform Architecture Overview",
-    abstract: "An introduction to the AUTOSAR Adaptive Platform for high-performance computing in vehicles. Covers service-oriented communication (SOME/IP) and POSIX-based operating systems.",
-    artifact_type: "standards-summary",
-    group_slug: "automotive",
-    tags: ["AUTOSAR", "Adaptive", "SOME/IP"],
-    author_handle: "sdv_dev",
-    published_year: 2025
+    id: "iso26262-implementation-case-study",
+    title: "ISO 26262 Part 6 Implementation — AUTOSAR Classic Case Study",
+    description: "Full ASIL-B software development lifecycle on AUTOSAR Classic: safety analysis, design, coding guidelines, unit tests, and integration testing evidence package.",
+    type: "case-study",
+    domain: "Automotive",
+    author: "Noah Kim",
+    publishedAt: "2025-07-11",
+    downloadUrl: "#",
+    tags: ["ISO 26262", "AUTOSAR", "ASIL-B", "Case Study"]
   },
   {
-    id: "art-017",
-    title: "Evaluating FMI 3.0 for Cross-Domain Co-Simulation",
-    abstract: "A performance study evaluating the Functional Mock-up Interface (FMI) 3.0 standard for large-scale co-simulation between thermal, mechanical, and control models.",
-    artifact_type: "paper",
-    group_slug: "digital-twin",
-    tags: ["FMI", "Co-simulation", "Modelica"],
-    author_handle: "sim_scientist",
-    published_year: 2026
+    id: "cubesat-se-case-study",
+    title: "3U CubeSat Systems Engineering Case Study",
+    description: "End-to-end systems engineering for a 3U CubeSat mission: mission analysis, requirements decomposition, interface definition, V&V planning, and launch lessons.",
+    type: "case-study",
+    domain: "Space",
+    author: "Rhea Banerjee",
+    publishedAt: "2025-04-22",
+    downloadUrl: "#",
+    tags: ["CubeSat", "Space", "Mission Design", "V&V"]
   },
   {
-    id: "art-018",
-    title: "Architecture Decision Records (ADR) Standard for Large Projects",
-    abstract: "This specification defines a standardized format and governance process for recording architecture decisions in projects with over 50 engineers.",
-    artifact_type: "spec",
-    group_slug: "software-architecture",
-    tags: ["ADRs", "Governance", "Architecture"],
-    author_handle: "cto_office",
-    published_year: 2024
+    id: "medical-device-risk-management-case-study",
+    title: "ISO 14971 Risk Management — Class IIa Infusion Pump",
+    description: "Worked ISO 14971:2019 risk management example for a software-controlled infusion pump: risk management plan, risk assessment, control measures, and residual risk rationale.",
+    type: "case-study",
+    domain: "Medical",
+    author: "Lina Park",
+    publishedAt: "2025-06-30",
+    downloadUrl: "#",
+    tags: ["ISO 14971", "Medical Devices", "Risk Management", "IEC 62304"]
   },
   {
-    id: "art-019",
-    title: "FTA in Practice: Analyzing Common Mode Failures in Avionics",
-    abstract: "A case study on using Fault Tree Analysis (FTA) to identify and mitigate common mode failures in redundant avionics systems.",
-    artifact_type: "case-study",
-    group_slug: "reliability",
-    tags: ["FTA", "Avionics", "Redundancy"],
-    author_handle: "safe_sky",
-    published_year: 2025
+    id: "mbse-transition-case-study",
+    title: "MBSE Transition Case Study — Legacy Avionics Programme",
+    description: "Two-year programme-level case study moving a legacy avionics programme from Word/Excel to SysML in Cameo. Covers toolchain integration, model governance, and quality improvements.",
+    type: "case-study",
+    domain: "MBSE",
+    author: "Maya Chen",
+    publishedAt: "2025-02-14",
+    downloadUrl: "#",
+    tags: ["MBSE", "Transition", "Avionics", "Cameo"]
   },
   {
-    id: "art-020",
-    title: "INCOSE Systems Engineering Handbook v5 Summary",
-    abstract: "A condensed version of the latest INCOSE handbook, focusing on the new lifecycle processes and the integration of Agile Systems Engineering.",
-    artifact_type: "standards-summary",
-    group_slug: "standards",
-    tags: ["INCOSE", "Lifecycle", "Handbook"],
-    author_handle: "systems_thinker",
-    published_year: 2024
+    id: "do178c-reference",
+    title: "DO-178C Objectives Quick Reference Card",
+    description: "Summary of all 71 DO-178C objectives by software level (A-D), with applicable activities, independence requirements, and typical evidence artefacts per objective.",
+    type: "standard-ref",
+    domain: "Aerospace",
+    author: "Rhea Banerjee",
+    publishedAt: "2025-03-15",
+    downloadUrl: "#",
+    tags: ["DO-178C", "Aerospace", "Aviation", "Software Levels"]
   },
   {
-    id: "art-021",
-    title: "Deep Reinforcement Learning for Dynamic Path Planning",
-    abstract: "Research paper on using DRL for autonomous navigation in unpredictable environments. Proposes a new reward function that prioritizes safety over speed.",
-    artifact_type: "paper",
-    group_slug: "robotics",
-    tags: ["DRL", "Path Planning", "AI"],
-    author_handle: "ai_bot",
-    published_year: 2026
+    id: "iso26262-asil-decomposition-ref",
+    title: "ISO 26262 ASIL Decomposition Reference",
+    description: "Reference sheet covering ASIL decomposition rules, dependent failure analysis requirements, and hardware/software ASIL allocation. Includes a worked ASIL-D to ASIL-B + ASIL-B example.",
+    type: "standard-ref",
+    domain: "Automotive",
+    author: "Noah Kim",
+    publishedAt: "2025-02-18",
+    downloadUrl: "#",
+    tags: ["ISO 26262", "ASIL", "Decomposition", "Functional Safety"]
   },
   {
-    id: "art-022",
-    title: "Reference Design: Low-Power LoRaWAN Sensor Node",
-    abstract: "Hardware and software reference design for a LoRaWAN node capable of 5+ years of battery life. Includes PCB layout and energy-aware firmware patterns.",
-    artifact_type: "reference-design",
-    group_slug: "embedded",
-    tags: ["LoRaWAN", "Low Power", "IoT"],
-    author_handle: "iot_pioneer",
-    published_year: 2025
+    id: "incose-se-handbook-summary",
+    title: "INCOSE SE Handbook v5 — Process Summary Reference",
+    description: "Condensed reference of INCOSE SE Handbook v5 technical processes: inputs, outputs, and key activities from stakeholder needs through operations and maintenance.",
+    type: "standard-ref",
+    domain: "Systems Engineering",
+    author: "Diego Alvarez",
+    publishedAt: "2025-01-09",
+    downloadUrl: "#",
+    tags: ["INCOSE", "SE Handbook", "Processes", "ISO/IEC 15288"]
   },
   {
-    id: "art-023",
-    title: "DO-178C Tool Qualification Strategy for Modern Compilers",
-    abstract: "A comprehensive strategy for qualifying modern LLVM-based compilers for use in DAL-A aerospace software development.",
-    artifact_type: "spec",
-    group_slug: "aerospace",
-    tags: ["DO-178C", "LLVM", "Qualification"],
-    author_handle: "aero_coder",
-    published_year: 2026
+    id: "iec61508-sil-determination-ref",
+    title: "IEC 61508 SIL Determination Reference",
+    description: "Reference card for SIL determination via risk graph, LOPA, and consequence/likelihood matrix. Includes mapping between SIL and probability of failure on demand (PFD).",
+    type: "standard-ref",
+    domain: "Safety",
+    author: "Irene Volkov",
+    publishedAt: "2025-05-07",
+    downloadUrl: "#",
+    tags: ["IEC 61508", "SIL", "LOPA", "Risk Graph"]
   },
   {
-    id: "art-024",
-    title: "Predictive Maintenance using LSTM Networks in Railway Systems",
-    abstract: "Case study on deploying Long Short-Term Memory (LSTM) networks to predict wheelset failures in high-speed rail networks.",
-    artifact_type: "case-study",
-    group_slug: "reliability",
-    tags: ["LSTM", "Predictive Maintenance", "Rail"],
-    author_handle: "train_brain",
-    published_year: 2025
+    id: "ecss-space-standards-ref",
+    title: "ECSS Space Engineering Standards Overview",
+    description: "Reference guide to ECSS engineering standards: document hierarchy, applicable standards by mission phase, and mapping to NASA NPR equivalents.",
+    type: "standard-ref",
+    domain: "Space",
+    author: "Rhea Banerjee",
+    publishedAt: "2025-09-30",
+    downloadUrl: "#",
+    tags: ["ECSS", "Space", "Standards", "ESA"]
   },
   {
-    id: "art-025",
-    title: "System Decomposition for Cybersecurity: A Zero-Trust Approach",
-    abstract: "Explores how to decompose complex systems into 'Security Domains' to implement Zero-Trust principles at the architecture level.",
-    artifact_type: "paper",
-    group_slug: "software-architecture",
-    tags: ["Cybersecurity", "Zero Trust", "Decomposition"],
-    author_handle: "secure_arch",
-    published_year: 2026
+    id: "capella-getting-started-guide",
+    title: "Capella Workbench Getting Started Guide",
+    description: "Practical guide to Eclipse Capella: installation, workspace setup, Operational Analysis layer, System Analysis, and first model walkthrough.",
+    type: "tool-guide",
+    domain: "MBSE",
+    author: "Maya Chen",
+    publishedAt: "2025-10-01",
+    downloadUrl: "#",
+    tags: ["Capella", "MBSE", "Tutorial", "Eclipse"]
   },
   {
-    id: "art-026",
-    title: "Physics-Based Modeling of Battery Degradation for Digital Twins",
-    abstract: "A technical specification for modeling Li-ion battery chemistry within a vehicle's digital twin to predict State-of-Health (SoH).",
-    artifact_type: "spec",
-    group_slug: "digital-twin",
-    tags: ["Battery", "Physics Modeling", "SoH"],
-    author_handle: "energy_sim",
-    published_year: 2025
+    id: "ros2-systems-engineering-guide",
+    title: "ROS 2 for Systems Engineers — Architecture Guide",
+    description: "ROS 2 from a systems engineering perspective: node decomposition, interface definition via IDL, QoS policies, lifecycle management, and integration testing with ros2_launch.",
+    type: "tool-guide",
+    domain: "Robotics",
+    author: "Diego Alvarez",
+    publishedAt: "2025-08-29",
+    downloadUrl: "#",
+    tags: ["ROS 2", "Robotics", "Architecture", "DDS"]
   },
   {
-    id: "art-027",
-    title: "IEEE 829 Software Test Documentation Summary",
-    abstract: "A quick-reference guide to the IEEE 829 standard for software test documentation, covering Test Plans, Designs, and Summary Reports.",
-    artifact_type: "standards-summary",
-    group_slug: "standards",
-    tags: ["IEEE 829", "Testing", "Documentation"],
-    author_handle: "test_lead",
-    published_year: 2024
+    id: "doors-next-requirements-guide",
+    title: "DOORS Next — Requirements Authoring Best Practices",
+    description: "Practical guide to structured requirements authoring in IBM DOORS Next: module configuration, link types, baseline management, view definitions, and export.",
+    type: "tool-guide",
+    domain: "MBSE",
+    author: "Ethan Brooks",
+    publishedAt: "2025-07-03",
+    downloadUrl: "#",
+    tags: ["DOORS", "Requirements", "IBM", "MBSE"]
   },
   {
-    id: "art-028",
-    title: "Model-Based Safety Analysis (MBSA) with SysML and AltaRica",
-    abstract: "This paper proposes an integrated workflow for performing safety analysis directly on SysML models using the AltaRica language.",
-    artifact_type: "paper",
-    group_slug: "mbse",
-    tags: ["MBSA", "SysML", "AltaRica"],
-    author_handle: "safety_first",
-    published_year: 2026
+    id: "matlab-simulink-hil-guide",
+    title: "Simulink Hardware-in-the-Loop Testing Guide",
+    description: "Step-by-step guide to HiL testing with MATLAB/Simulink and dSPACE SCALEXIO: model preparation, I/O mapping, test automation with EXAM, and coverage measurement.",
+    type: "tool-guide",
+    domain: "Embedded",
+    author: "Omar Rahman",
+    publishedAt: "2025-09-12",
+    downloadUrl: "#",
+    tags: ["Simulink", "HiL", "dSPACE", "Embedded Testing"]
   },
   {
-    id: "art-029",
-    title: "Reference Design: Wearable Vital Sign Monitor",
-    abstract: "Design for a Class II medical wearable. Includes sensor selection (ECG, SpO2), Bluetooth LE stack, and ISO 14971 risk file snippets.",
-    artifact_type: "reference-design",
-    group_slug: "medical",
-    tags: ["Wearable", "ECG", "ISO 14971"],
-    author_handle: "health_tech",
-    published_year: 2025
+    id: "enterprise-architect-sysml-guide",
+    title: "Enterprise Architect SysML Profile Setup Guide",
+    description: "Configuration guide for SysML modelling in Sparx EA: profile import, diagram toolbox customisation, MDG technologies, and generating reports from SysML models.",
+    type: "tool-guide",
+    domain: "MBSE",
+    author: "Maya Chen",
+    publishedAt: "2025-06-22",
+    downloadUrl: "#",
+    tags: ["Enterprise Architect", "SysML", "Sparx", "MBSE"]
   },
   {
-    id: "art-030",
-    title: "Scaling Systems Engineering in Startups: A Lean Case Study",
-    abstract: "Observations on how to apply 'Just-Enough' Systems Engineering in fast-growing technology startups without stifling innovation.",
-    artifact_type: "case-study",
-    group_slug: "standards",
-    tags: ["Lean", "Startup", "Scaling"],
-    author_handle: "lean_lead",
-    published_year: 2026
+    id: "vv-coverage-analysis-guide",
+    title: "Requirements Coverage Analysis — Tools and Techniques",
+    description: "Guide to measuring and improving requirements coverage: mapping to test cases, identifying gaps, and reporting metrics for a DO-178C DAL-B project.",
+    type: "tool-guide",
+    domain: "Verification",
+    author: "Irene Volkov",
+    publishedAt: "2025-11-08",
+    downloadUrl: "#",
+    tags: ["Coverage", "V&V", "Requirements", "DO-178C"]
   }
 ];
+
+export const ARTIFACT_TYPES: { value: ArtifactType | ""; label: string }[] = [
+  { value: "", label: "All types" },
+  { value: "template", label: "Template" },
+  { value: "pattern", label: "Pattern" },
+  { value: "case-study", label: "Case Study" },
+  { value: "standard-ref", label: "Standard Reference" },
+  { value: "tool-guide", label: "Tool Guide" },
+];
+
+export const ARTIFACT_DOMAINS = [
+  "",
+  "MBSE",
+  "Systems Engineering",
+  "Architecture",
+  "Safety",
+  "Verification",
+  "Automotive",
+  "Aerospace",
+  "Embedded",
+  "Medical",
+  "Robotics",
+  "Digital Twin",
+  "Space",
+];
+
+export const TYPE_LABELS: Record<ArtifactType, string> = {
+  template: "Template",
+  pattern: "Pattern",
+  "case-study": "Case Study",
+  "standard-ref": "Standard Ref",
+  "tool-guide": "Tool Guide",
+};
+
+export const TYPE_COLORS: Record<ArtifactType, string> = {
+  template: "bg-blue-50 text-blue-700 border-blue-200",
+  pattern: "bg-violet-50 text-violet-700 border-violet-200",
+  "case-study": "bg-amber-50 text-amber-700 border-amber-200",
+  "standard-ref": "bg-emerald-50 text-emerald-700 border-emerald-200",
+  "tool-guide": "bg-slate-100 text-slate-700 border-slate-200",
+};
