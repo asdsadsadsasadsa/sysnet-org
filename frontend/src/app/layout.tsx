@@ -29,6 +29,8 @@ const nav = [
   { href: "/people", label: "Directory" },
   { href: "/g", label: "Groups" },
   { href: "/library", label: "Library" },
+  { href: "/events", label: "Events" },
+  { href: "/submissions", label: "Papers" },
   { href: "/mentors", label: "Mentors" },
   { href: "/feed", label: "Feed" },
   { href: "/news", label: "News" },
