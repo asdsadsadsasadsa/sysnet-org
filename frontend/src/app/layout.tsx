@@ -28,12 +28,10 @@ export const metadata: Metadata = {
 const nav = [
   { href: "/people", label: "Directory" },
   { href: "/g", label: "Groups" },
-  { href: "/library", label: "Library" },
-  { href: "/events", label: "Events" },
   { href: "/submissions", label: "Papers" },
-  { href: "/mentors", label: "Mentors" },
+  { href: "/events", label: "Events" },
+  { href: "/library", label: "Library" },
   { href: "/feed", label: "Feed" },
-  { href: "/news", label: "News" },
   { href: "/profile", label: "Profile" },
 ];
 
