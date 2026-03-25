@@ -24,6 +24,7 @@ const reasonsToJoin = [
 ];
 
 const futureSlices = [
+  ["Mentorship & growth", "A dedicated matcher for junior and senior practitioners to connect on career growth and technical skill-building."],
   ["Events & meetups", "A place to surface webinars, chapter events, and conferences relevant to systems engineers."],
   ["Resources & patterns", "Shared templates, references, and practical artifacts that make the network useful between conversations."],
   ["Working groups", "Smaller communities around domains, methods, and tools — not one giant undifferentiated feed."],

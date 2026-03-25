@@ -34,6 +34,7 @@ export default function FeedPage() {
   const [editBody, setEditBody] = useState("");
   const [busyPostId, setBusyPostId] = useState("");
   const [msg, setMsg] = useState("");
+  const [msgTone, setMsgTone] = useState<"info" | "success" | "error">("info");
 
   async function load() {
     const {
@@ -42,11 +43,17 @@ export default function FeedPage() {
     const currentViewerId = user?.id || "";
     setViewerId(currentViewerId);
 
-    const { data } = await supabase
+    const { data, error: loadError } = await supabase
       .from("posts")
       .select("id,author_id,group_slug,title,body,created_at,updated_at")
       .order("created_at", { ascending: false })
       .limit(50);
+
+    if (loadError) {
+      setMsg(loadError.message);
+      setMsgTone("error");
+      return;
+    }
 
     const postRows = (data || []) as Post[];
     const authorIds = [...new Set(postRows.map((post) => post.author_id))];
@@ -100,14 +107,29 @@ export default function FeedPage() {
     const {
       data: { user },
     } = await supabase.auth.getUser();
-    if (!user) return setMsg("Sign in first on /onboarding");
+    if (!user) {
+      setMsgTone("error");
+      return setMsg("Sign in first on /onboarding to start a discussion.");
+    }
 
+    if (!title.trim() || !body.trim()) {
+      setMsgTone("error");
+      return setMsg("Title and body are required to publish.");
+    }
+
+    setBusyPostId("new");
     const { error } = await supabase.from("posts").insert({ author_id: user.id, title, body });
-    if (error) return setMsg(error.message);
+    setBusyPostId("");
+
+    if (error) {
+      setMsgTone("error");
+      return setMsg(error.message);
+    }
 
     setTitle("");
     setBody("");
-    setMsg("Posted");
+    setMsgTone("success");
+    setMsg("Insight published to the global feed.");
     await load();
   }
 
@@ -128,6 +150,7 @@ export default function FeedPage() {
     const trimmedTitle = editTitle.trim();
     const trimmedBody = editBody.trim();
     if (!trimmedTitle || !trimmedBody) {
+      setMsgTone("error");
       setMsg("Title and body are required.");
       return;
     }
@@ -139,9 +162,13 @@ export default function FeedPage() {
       .eq("id", postId);
     setBusyPostId("");
 
-    if (error) return setMsg(error.message);
+    if (error) {
+      setMsgTone("error");
+      return setMsg(error.message);
+    }
 
     cancelEdit();
+    setMsgTone("success");
     setMsg("Post updated");
     await load();
   }
@@ -152,9 +179,13 @@ export default function FeedPage() {
     setBusyPostId(postId);
     const { error } = await supabase.from("posts").delete().eq("id", postId);
     setBusyPostId("");
-    if (error) return setMsg(error.message);
+    if (error) {
+      setMsgTone("error");
+      return setMsg(error.message);
+    }
 
     if (editingPostId === postId) cancelEdit();
+    setMsgTone("success");
     setMsg("Post deleted");
     await load();
   }
@@ -172,7 +203,10 @@ export default function FeedPage() {
       setViewerId(currentViewerId);
     }
 
-    if (!currentViewerId) return setMsg("Sign in first");
+    if (!currentViewerId) {
+      setMsgTone("error");
+      return setMsg("Sign in first to like posts.");
+    }
 
     setBusyPostId(postId);
     const { error } = current.likedByViewer
@@ -180,7 +214,10 @@ export default function FeedPage() {
       : await supabase.from("likes").insert({ post_id: postId, user_id: currentViewerId });
     setBusyPostId("");
 
-    if (error && !error.message.toLowerCase().includes("duplicate")) return setMsg(error.message);
+    if (error && !error.message.toLowerCase().includes("duplicate")) {
+      setMsgTone("error");
+      return setMsg(error.message);
+    }
     if (error) {
       await load();
       return;
@@ -197,6 +234,7 @@ export default function FeedPage() {
           : post,
       ),
     );
+    setMsgTone("success");
     setMsg(current.likedByViewer ? "Like removed" : "Post liked");
   }
 
@@ -235,7 +273,9 @@ export default function FeedPage() {
             <h2 className="text-lg font-semibold text-slate-900">Start a discussion</h2>
             <p className="mt-1 text-sm soft-muted">Post a concrete systems engineering insight, question, or pattern.</p>
           </div>
-          <button className="primary-button px-4 py-2.5">Publish</button>
+          <button disabled={busyPostId === "new"} className="primary-button px-4 py-2.5 disabled:opacity-60">
+            {busyPostId === "new" ? "Publishing..." : "Publish"}
+          </button>
         </div>
         <input placeholder="Post title" value={title} onChange={(e) => setTitle(e.target.value)} />
         <textarea
@@ -245,15 +285,33 @@ export default function FeedPage() {
         />
       </form>
 
-      {msg && <p className="text-sm soft-muted">{msg}</p>}
+      {msg && (
+        <div
+          className={`rounded-2xl border px-4 py-3 text-sm ${
+            msgTone === "error"
+              ? "border-rose-200 bg-rose-50 text-rose-700"
+              : msgTone === "success"
+                ? "border-emerald-200 bg-emerald-50 text-emerald-700"
+                : "border-blue-200 bg-blue-50 text-blue-700"
+          }`}
+        >
+          {msg}
+        </div>
+      )}
 
       <section className="space-y-4">
         {posts.length === 0 ? (
-          <div className="shell-card p-8 text-center">
-            <h2 className="text-lg font-semibold text-slate-900">No posts yet</h2>
-            <p className="mx-auto mt-2 max-w-xl text-sm leading-6 soft-muted">
-              The feed still needs seeded content so it feels alive. Right now it’s structurally ready, but socially empty.
+          <div className="shell-card p-12 text-center">
+            <h2 className="text-xl font-semibold text-slate-900">The feed is waiting for your signal.</h2>
+            <p className="mx-auto mt-3 max-w-xl text-base leading-7 soft-muted">
+              Systems engineers value concrete lessons and patterns over generic status updates. 
+              Be the first to share an implementation note, a verification lesson, or a tradeoff analysis.
             </p>
+            <div className="mt-6">
+              <Link href="/onboarding" className="primary-button">
+                Complete your profile to post
+              </Link>
+            </div>
           </div>
         ) : (
           posts.map((post) => {

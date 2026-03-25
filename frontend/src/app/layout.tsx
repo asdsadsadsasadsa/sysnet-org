@@ -29,6 +29,7 @@ const nav = [
   { href: "/people", label: "Directory" },
   { href: "/mentors", label: "Mentors" },
   { href: "/feed", label: "Feed" },
+  { href: "/news", label: "News" },
   { href: "/profile", label: "Profile" },
 ];
 
