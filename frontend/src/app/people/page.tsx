@@ -58,10 +58,17 @@ export default function PeoplePage() {
       <div className="grid gap-4 md:grid-cols-2">
         {filtered.length === 0 ? (
           <div className="shell-card p-8 md:col-span-2">
-            <h2 className="text-lg font-semibold text-slate-900">No matching profiles yet</h2>
+            <h2 className="text-lg font-semibold text-slate-900">No matching profiles</h2>
             <p className="mt-2 max-w-xl text-sm leading-6 soft-muted">
-              This is one of the places that still needs realistic seed data so the product feels alive to a first-time visitor.
+              {q || openTo
+                ? "No profiles match your current filters. Try adjusting your search or clearing the availability filter."
+                : "No public profiles yet. Be the first to add yours — complete your profile on the onboarding page."}
             </p>
+            {!q && !openTo && (
+              <div className="mt-4 flex flex-wrap gap-3">
+                <a href="/onboarding" className="secondary-button px-4 py-2 text-sm">Complete your profile</a>
+              </div>
+            )}
           </div>
         ) : (
           filtered.map((p) => (

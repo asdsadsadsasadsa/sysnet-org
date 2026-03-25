@@ -267,6 +267,13 @@ export default function FeedPage() {
         </aside>
       </section>
 
+      <div className="rounded-2xl border border-blue-200 bg-blue-50 px-5 py-4 text-sm text-blue-800 flex items-center justify-between gap-4">
+        <p>New to the network? Check out the latest announcements and platform updates.</p>
+        <Link href="/news" className="shrink-0 font-medium underline underline-offset-2 hover:text-blue-900">
+          Visit News
+        </Link>
+      </div>
+
       <form onSubmit={createPost} className="shell-card space-y-4 p-5 md:p-6">
         <div className="flex items-center justify-between gap-4">
           <div>

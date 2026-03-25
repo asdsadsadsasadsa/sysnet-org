@@ -200,10 +200,12 @@ export default function OnboardingPage() {
 
     const { error } = await supabase.from("profiles").upsert(payload);
     setMsgTone(error ? "error" : "success");
-    setMsg(error ? error.message : "Profile saved. Redirecting to feed...");
+    setMsg(error ? error.message : hasProfile ? "Profile updated." : "Profile saved. Redirecting to feed...");
     if (!error) {
       setHasProfile(true);
-      router.push("/feed");
+      if (!hasProfile) {
+        router.push("/feed");
+      }
       router.refresh();
     }
   }
@@ -292,12 +294,18 @@ export default function OnboardingPage() {
         </div>
       )}
 
-      {userId && authChecked && !hasProfile && (
+      {userId && authChecked && (
         <form onSubmit={saveProfile} className="shell-card p-6 space-y-4 md:p-8">
           <div className="flex items-start justify-between gap-4">
             <div>
-              <h2 className="text-2xl font-semibold tracking-tight text-slate-900">Complete your profile</h2>
-              <p className="mt-1 text-sm soft-muted">Your login works. Now add the profile people can see if you choose to keep it public.</p>
+              <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
+                {hasProfile ? "Your profile" : "Complete your profile"}
+              </h2>
+              <p className="mt-1 text-sm soft-muted">
+                {hasProfile
+                  ? "Your existing profile details are loaded below. Update them or continue to the feed."
+                  : "Your login works. Now add the profile people can see if you choose to keep it public."}
+              </p>
             </div>
             <button type="button" onClick={signOut} className="secondary-button px-4 py-2">
               Sign out
@@ -320,30 +328,15 @@ export default function OnboardingPage() {
             <input placeholder="tags csv" value={tags} onChange={(e) => setTags(e.target.value)} />
             <input placeholder="open_to csv" value={openTo} onChange={(e) => setOpenTo(e.target.value)} />
           </div>
-          <button className="primary-button">Save profile</button>
-        </form>
-      )}
-
-      {userId && authChecked && hasProfile && (
-        <div className="shell-card p-6 space-y-4 md:p-8">
-          <div className="flex items-start justify-between gap-4">
-            <div>
-              <h2 className="text-2xl font-semibold tracking-tight text-slate-900">You’re signed in</h2>
-              <p className="soft-muted">Your profile exists. Continue to the feed or manage your visibility and profile details.</p>
-            </div>
-            <button type="button" onClick={signOut} className="secondary-button px-4 py-2">
-              Sign out
-            </button>
-          </div>
           <div className="flex flex-wrap gap-3">
-            <Link href="/feed" className="primary-button">
-              Go to feed
-            </Link>
-            <Link href="/profile" className="secondary-button">
-              Manage profile
-            </Link>
+            <button className="primary-button">{hasProfile ? "Save changes" : "Save profile"}</button>
+            {hasProfile && (
+              <Link href="/feed" className="secondary-button px-4 py-2">
+                Go to feed
+              </Link>
+            )}
           </div>
-        </div>
+        </form>
       )}
 
       {msg && (
