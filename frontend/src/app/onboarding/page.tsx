@@ -225,10 +225,9 @@ export default function OnboardingPage() {
       <section className="page-grid">
         <div className="shell-card-strong p-6 md:p-8">
           <p className="eyebrow">Join the network</p>
-          <h1 className="section-title mt-3">Create an account or continue where you left off.</h1>
+          <h1 className="section-title mt-3">Join the network.</h1>
           <p className="mt-3 max-w-2xl text-base leading-7 soft-muted">
-            The goal here is simple: make it easy to get into the network, complete a credible profile,
-            and move straight into the feed and directory.
+            Create an account, fill out your profile, and you are in. The whole process takes a few minutes.
           </p>
         </div>
         <div className="shell-card p-6">
@@ -262,7 +261,7 @@ export default function OnboardingPage() {
 
           <form onSubmit={mode === "login" ? signIn : signUp} className="space-y-4">
             <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
-              {mode === "login" ? "Sign in with email and password" : "Create your account"}
+              {mode === "login" ? "Sign in" : "Create your account"}
             </h2>
             <input
               type="email"
@@ -303,8 +302,8 @@ export default function OnboardingPage() {
               </h2>
               <p className="mt-1 text-sm soft-muted">
                 {hasProfile
-                  ? "Your existing profile details are loaded below. Update them or continue to the feed."
-                  : "Your login works. Now add the profile people can see if you choose to keep it public."}
+                  ? "Your profile is loaded below. Update anything and save, or head to the feed."
+                  : "Account created. Fill in your profile so others can find and connect with you."}
               </p>
             </div>
             <button type="button" onClick={signOut} className="secondary-button px-4 py-2">

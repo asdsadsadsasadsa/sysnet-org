@@ -2,7 +2,7 @@ export default function AboutPage() {
   return (
     <div className="shell-card-strong space-y-5 p-6 md:p-8">
       <p className="eyebrow">About the network</p>
-      <h1 className="section-title">A more serious place for systems engineers.</h1>
+      <h1 className="section-title">A professional home for systems engineers.</h1>
       <p className="max-w-3xl text-base leading-7 soft-muted">
         Sysnet is a professional community for systems engineers. The goal is practical knowledge sharing,
         standards-aware discussion, and trusted peer discovery — not another noisy social feed.

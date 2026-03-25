@@ -47,7 +47,7 @@ export default function RootLayout({
               <div className="flex items-center gap-4">
                 <Link href="/" className="flex items-center gap-3 text-slate-900">
                   <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-gradient-to-br from-slate-950 via-blue-700 to-indigo-500 text-sm font-bold text-white shadow-lg shadow-blue-500/20">
-                    A
+                    S
                   </div>
                   <div>
                     <div className="text-[11px] font-semibold uppercase tracking-[0.24em] text-blue-700">Systems Engineering Network</div>
@@ -67,7 +67,7 @@ export default function RootLayout({
                   </Link>
                 ))}
                 <Link href="/onboarding" className="primary-button ml-2 px-4 py-2.5">
-                  Join network
+                  Join the network
                 </Link>
               </div>
             </nav>

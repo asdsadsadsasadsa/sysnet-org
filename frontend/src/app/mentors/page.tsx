@@ -38,20 +38,19 @@ export default function MentorsPage() {
     <div className="space-y-6">
       <section className="page-grid">
         <div className="shell-card-strong p-6 md:p-8">
-          <p className="eyebrow">Professional Growth</p>
-          <h1 className="section-title mt-3">Mentorship Matcher</h1>
+          <p className="eyebrow">Mentorship</p>
+          <h1 className="section-title mt-3">Find a mentor</h1>
           <p className="mt-3 max-w-2xl text-base leading-7 soft-muted">
-            Find senior practitioners willing to provide guidance. This is a dedicated space to match with
-            engineers who have explicitly indicated they are open to mentoring.
+            Engineers listed here have indicated they are open to mentoring. Search by domain or tooling to find someone relevant to your work.
           </p>
         </div>
         <div className="shell-card p-6">
-          <p className="eyebrow">Find your match</p>
+          <p className="eyebrow">Search</p>
           <div className="mt-4 space-y-3">
             <input placeholder="Search domains (e.g. aerospace) or tags (e.g. sysml)" value={q} onChange={(e) => setQ(e.target.value)} />
           </div>
           <div className="mt-5 space-y-3 text-sm leading-6 soft-muted">
-            <p>Mentors here are volunteers. Be respectful of their time and reach out with specific, actionable questions rather than generic "can you mentor me" requests.</p>
+            <p>Reach out with a specific question or context about what you are working on — not a generic request for mentorship.</p>
           </div>
         </div>
       </section>

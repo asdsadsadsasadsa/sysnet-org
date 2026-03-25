@@ -19,8 +19,8 @@ const pillars = [
 const reasonsToJoin = [
   ["Mentorship & consulting", "Make it obvious who is open to advising, collaborating, or taking on short-term systems work."],
   ["Domain-specific discovery", "Find people working in safety-critical, embedded, MBSE, verification, and adjacent disciplines."],
-  ["Useful professional discussion", "Surface implementation questions, hard-won patterns, and practical artifacts from real projects."],
-  ["Long-term network building", "Create the kind of trusted graph that leads to referrals, working groups, and durable collaboration."],
+  ["Useful professional discussion", "Post implementation questions, hard-won patterns, and practical lessons from real projects."],
+  ["Long-term network building", "Build the professional relationships that lead to referrals, working groups, and lasting collaboration."],
 ];
 
 const futureSlices = [
@@ -120,7 +120,7 @@ export default async function Home({
 
         <article className="shell-card p-6 md:p-8">
           <p className="eyebrow">Where the product is heading</p>
-          <h2 className="section-title mt-3 text-2xl md:text-3xl">More institution, less empty app.</h2>
+          <h2 className="section-title mt-3 text-2xl md:text-3xl">Growing toward a full professional institution.</h2>
           <div className="mt-6 space-y-5">
             {futureSlices.map(([title, body]) => (
               <div key={title} className="rounded-[22px] border border-slate-200/70 bg-white/78 p-5">

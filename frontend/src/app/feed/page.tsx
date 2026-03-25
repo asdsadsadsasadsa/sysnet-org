@@ -242,15 +242,14 @@ export default function FeedPage() {
     <div className="space-y-6">
       <section className="page-grid">
         <div className="shell-card-strong p-6 md:p-8">
-          <p className="eyebrow">Community signal</p>
-          <h1 className="section-title mt-3">Global feed</h1>
+          <p className="eyebrow">Discussion</p>
+          <h1 className="section-title mt-3">Feed</h1>
           <p className="mt-3 max-w-2xl text-base leading-7 soft-muted">
-            A place for implementation notes, systems thinking, verification lessons, architecture tradeoffs,
-            and field-tested patterns — not generic status noise.
+            Implementation notes, verification lessons, architecture tradeoffs, and field-tested patterns from systems engineers.
           </p>
         </div>
         <aside className="shell-card p-6">
-          <p className="eyebrow">Posting intent</p>
+          <p className="eyebrow">What to post</p>
           <div className="mt-4 space-y-3 text-sm leading-6 soft-muted">
             <p>Share what you have learned in practice — implementation notes, failure modes, methods that worked.</p>
           </div>
@@ -307,10 +306,9 @@ export default function FeedPage() {
       <section className="space-y-4">
         {posts.length === 0 ? (
           <div className="shell-card p-12 text-center">
-            <h2 className="text-xl font-semibold text-slate-900">The feed is waiting for your signal.</h2>
+            <h2 className="text-xl font-semibold text-slate-900">Nothing here yet.</h2>
             <p className="mx-auto mt-3 max-w-xl text-base leading-7 soft-muted">
-              Systems engineers value concrete lessons and patterns over generic status updates. 
-              Be the first to share an implementation note, a verification lesson, or a tradeoff analysis.
+              Be the first to post — share an implementation note, a verification lesson, or a tradeoff you have worked through.
             </p>
             <div className="mt-6">
               <Link href="/onboarding" className="primary-button">
@@ -325,7 +323,7 @@ export default function FeedPage() {
             return (
               <article key={post.id} className="shell-card p-5 md:p-6">
                 <div className="flex flex-wrap items-center gap-2">
-                  <span className="pill">Systems note</span>
+                  <span className="pill">Post</span>
                   {post.author && (
                     <Link href={`/u/${post.author.handle}`} className="text-xs font-medium text-slate-700 hover:text-blue-700">
                       {post.author.display_name} · @{post.author.handle}

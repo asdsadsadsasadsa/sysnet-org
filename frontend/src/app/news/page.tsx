@@ -17,10 +17,10 @@ export default function NewsPage() {
     <div className="space-y-6">
       <section className="page-grid">
         <div className="shell-card-strong p-6 md:p-8">
-          <p className="eyebrow">Industry Intelligence</p>
-          <h1 className="section-title mt-3">Systems Engineering News</h1>
+          <p className="eyebrow">News</p>
+          <h1 className="section-title mt-3">Systems engineering news</h1>
           <p className="mt-3 max-w-2xl text-base leading-7 soft-muted">
-            Curated updates on standards, MBSE, aerospace, defense, and the evolving landscape of complex systems engineering.
+            Updates on standards, MBSE, aerospace, defense, and the broader systems engineering community.
           </p>
         </div>
         <aside className="shell-card p-6">
