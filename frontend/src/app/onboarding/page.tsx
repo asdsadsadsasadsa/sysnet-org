@@ -259,10 +259,40 @@ export default function OnboardingPage() {
             </button>
           </div>
 
-          <form onSubmit={mode === "login" ? signIn : signUp} className="space-y-4">
+          <div className="space-y-4">
             <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
               {mode === "login" ? "Sign in" : "Create your account"}
             </h2>
+
+            <button
+              type="button"
+              disabled={sending}
+              onClick={async () => {
+                setSending(true);
+                await supabase.auth.signInWithOAuth({
+                  provider: "google",
+                  options: { redirectTo: `${window.location.origin}/auth/callback` },
+                });
+                setSending(false);
+              }}
+              className="flex w-full items-center justify-center gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-medium text-slate-700 shadow-sm transition hover:bg-slate-50 disabled:opacity-60"
+            >
+              <svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true">
+                <path fill="#4285F4" d="M47.52 24.56c0-1.56-.14-3.06-.4-4.5H24v8.51h13.18c-.57 2.97-2.29 5.48-4.88 7.17v5.96h7.9c4.63-4.27 7.3-10.56 7.3-17.14z" />
+                <path fill="#34A853" d="M24 48c6.48 0 11.92-2.15 15.9-5.82l-7.9-5.96c-2.15 1.44-4.9 2.29-8 2.29-6.15 0-11.36-4.15-13.22-9.73H2.58v6.16C6.55 42.53 14.72 48 24 48z" />
+                <path fill="#FBBC05" d="M10.78 28.78A14.97 14.97 0 0 1 9.88 24c0-1.65.28-3.26.9-4.78v-6.16H2.58A23.99 23.99 0 0 0 0 24c0 3.88.93 7.54 2.58 10.94l8.2-6.16z" />
+                <path fill="#EA4335" d="M24 9.54c3.47 0 6.58 1.19 9.03 3.53l6.77-6.77C35.9 2.38 30.48 0 24 0 14.72 0 6.55 5.47 2.58 13.06l8.2 6.16C12.64 13.69 17.85 9.54 24 9.54z" />
+              </svg>
+              Continue with Google
+            </button>
+
+            <div className="relative flex items-center gap-3 text-sm text-slate-400">
+              <div className="h-px flex-1 bg-slate-200" />
+              <span>or continue with email</span>
+              <div className="h-px flex-1 bg-slate-200" />
+            </div>
+
+            <form onSubmit={mode === "login" ? signIn : signUp} className="space-y-4">
             <input
               type="email"
               required
@@ -290,6 +320,7 @@ export default function OnboardingPage() {
               {sending ? "Working..." : mode === "login" ? "Sign in" : "Create account"}
             </button>
           </form>
+          </div>
         </div>
       )}
 
