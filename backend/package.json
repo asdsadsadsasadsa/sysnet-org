@@ -1,0 +1,13 @@
+{
+  "name": "sylen-backend-scripts",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "generate-news": "node scripts/generate-news.mjs",
+    "generate-news:dry": "node scripts/generate-news.mjs --dry-run"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.51.0",
+    "@supabase/supabase-js": "^2.49.4"
+  }
+}
