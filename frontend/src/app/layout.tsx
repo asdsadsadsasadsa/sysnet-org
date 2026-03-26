@@ -60,6 +60,7 @@ export default function RootLayout({
                 </Link>
               </div>
 
+              {/* Desktop nav */}
               <div className="hidden items-center gap-2 md:flex">
                 {nav.map((item) => (
                   <Link
@@ -71,6 +72,11 @@ export default function RootLayout({
                   </Link>
                 ))}
                 <NavAuthActions />
+              </div>
+
+              {/* Mobile nav — auth actions only */}
+              <div className="flex items-center md:hidden">
+                <NavAuthActions mobile />
               </div>
             </nav>
           </header>

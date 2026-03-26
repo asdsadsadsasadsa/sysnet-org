@@ -81,6 +81,12 @@ export default async function Home({
     redirect(profile ? "/feed" : "/onboarding?auth=ok");
   }
 
+  // Redirect already-logged-in users straight to the feed
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (user) redirect("/feed");
+
   return (
     <div className="overflow-x-clip">
 

@@ -35,6 +35,7 @@ export default function FeedPage() {
   const [busyPostId, setBusyPostId] = useState("");
   const [msg, setMsg] = useState("");
   const [msgTone, setMsgTone] = useState<"info" | "success" | "error">("info");
+  const [showProfilePrompt, setShowProfilePrompt] = useState(false);
 
   async function load() {
     const {
@@ -42,6 +43,18 @@ export default function FeedPage() {
     } = await supabase.auth.getUser();
     const currentViewerId = user?.id || "";
     setViewerId(currentViewerId);
+
+    // Check if the logged-in user has an incomplete profile
+    if (currentViewerId) {
+      const { data: prof } = await supabase
+        .from("profiles")
+        .select("headline, location")
+        .eq("id", currentViewerId)
+        .maybeSingle();
+      if (prof && (!prof.headline || !prof.location)) {
+        setShowProfilePrompt(true);
+      }
+    }
 
     const { data, error: loadError } = await supabase
       .from("posts")
@@ -270,6 +283,25 @@ export default function FeedPage() {
           Visit News
         </Link>
       </div>
+
+      {showProfilePrompt && (
+        <div className="rounded-2xl border border-amber-200 bg-amber-50 px-5 py-4 text-sm text-amber-800 flex items-center justify-between gap-4">
+          <p>Your profile looks incomplete — add a headline and location so peers can find you.</p>
+          <div className="flex items-center gap-3 shrink-0">
+            <Link href="/profile" className="font-semibold underline underline-offset-2 hover:text-amber-900">
+              Complete your profile →
+            </Link>
+            <button
+              type="button"
+              onClick={() => setShowProfilePrompt(false)}
+              className="text-amber-600 hover:text-amber-900"
+              aria-label="Dismiss"
+            >
+              ✕
+            </button>
+          </div>
+        </div>
+      )}
 
       <form onSubmit={createPost} className="shell-card space-y-4 p-5 md:p-6">
         <div className="flex items-center justify-between gap-4">
