@@ -1,54 +1,16 @@
 import Link from "next/link";
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
+import { GROUPS } from "@/data/groups";
+import { ARTIFACTS } from "@/data/artifacts";
 
 export const dynamic = "force-dynamic";
 
-const features = [
-  {
-    num: "01",
-    title: "Find credible peers",
-    body: "Search by domain, tooling, and availability to connect with engineers who actually work in your space.",
-  },
-  {
-    num: "02",
-    title: "Trade practical knowledge",
-    body: "Share implementation notes, field-tested patterns, and hard-won lessons with engineers who care about the same problems.",
-  },
-  {
-    num: "03",
-    title: "Build professional trust",
-    body: "Make it easier to discover mentors, consultants, collaborators, and hiring leads inside a systems-focused network.",
-  },
-];
-
-const pillars = [
-  {
-    title: "Directory by expertise",
-    body: "Filter by aerospace, automotive, medical, defense, MBSE, SysML, DOORS, Cameo, verification, and more.",
-  },
-  {
-    title: "Signal over noise",
-    body: "Focused on genuine professional exchange — not resume spam, vendor pitches, or algorithm-bait.",
-  },
-  {
-    title: "Institutional feel",
-    body: "Designed to grow toward events, resources, working groups, and a durable systems-engineering knowledge base.",
-  },
-];
-
 const reasonsToJoin = [
-  ["Mentorship & consulting", "Make it obvious who is open to advising, collaborating, or taking on short-term systems work."],
-  ["Domain-specific discovery", "Find people working in safety-critical, embedded, MBSE, verification, and adjacent disciplines."],
-  ["Useful professional discussion", "Post implementation questions, hard-won patterns, and practical lessons from real projects."],
-  ["Long-term network building", "Build the professional relationships that lead to referrals, working groups, and lasting collaboration."],
-];
-
-const futureSlices = [
-  ["Mentorship & growth", "A dedicated matcher for junior and senior practitioners to connect on career growth and technical skill-building."],
-  ["Events & meetups", "A place to surface webinars, chapter events, and conferences relevant to systems engineers."],
-  ["Resources & patterns", "Shared templates, references, and practical artifacts that make the network useful between conversations."],
-  ["Working groups", "Smaller communities around domains, methods, and tools — not one giant undifferentiated feed."],
+  ["Find credible peers", "Search by domain, tooling, and availability to reach engineers who actually work in your space."],
+  ["Trade practical knowledge", "Share implementation notes, field-tested patterns, and hard-won lessons with engineers who care about the same problems."],
+  ["Build professional trust", "Discover mentors, consultants, collaborators, and hiring leads inside a systems-focused network."],
+  ["Signal over noise", "A focused professional exchange — not resume spam, vendor pitches, or algorithm-bait."],
 ];
 
 const bleed = {
@@ -87,6 +49,9 @@ export default async function Home({
   } = await supabase.auth.getUser();
   if (user) redirect("/feed");
 
+  const groupCount = GROUPS.length;
+  const artifactCount = ARTIFACTS.length;
+
   return (
     <div className="overflow-x-clip">
 
@@ -115,8 +80,7 @@ export default async function Home({
             and build professional trust — without the noise of generic social networks.
           </p>
 
-          {/* CTAs */}
-          <div className="mb-8 flex flex-wrap gap-3">
+          <div className="flex flex-wrap gap-3">
             <Link href="/onboarding" className="primary-button">
               Join the network
             </Link>
@@ -133,72 +97,73 @@ export default async function Home({
               Explore feed
             </Link>
           </div>
-
-          {/* Explore links */}
-          <div className="flex flex-wrap gap-2">
-            {(
-              [
-                ["/g", "Groups"],
-                ["/events", "Events"],
-                ["/submissions", "Papers"],
-                ["/library", "Library"],
-              ] as [string, string][]
-            ).map(([href, label]) => (
-              <Link
-                key={href}
-                href={href}
-                className="inline-flex items-center rounded-full border border-white/12 bg-white/6 px-3 py-1.5 text-xs font-medium text-slate-300 transition-colors hover:bg-white/12"
-              >
-                {label}
-              </Link>
-            ))}
-          </div>
         </div>
       </section>
 
-      {/* ── Features — 3-column grid ── */}
+      {/* ── What's available — 3 feature cards ── */}
       <section className="py-20 md:py-28">
         <div className="mb-12">
-          <p className="eyebrow mb-3">What it's for</p>
+          <p className="eyebrow mb-3">What&apos;s here</p>
           <h2 className="text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
-            Built for how systems engineers actually work.
+            A network built around the work itself.
           </h2>
         </div>
         <div className="grid gap-6 md:grid-cols-3">
-          {features.map((f) => (
-            <div key={f.title} className="shell-card p-7">
-              <span className="mb-4 block font-mono text-xs font-semibold text-blue-600">
-                {f.num}
-              </span>
-              <h3 className="mb-3 text-base font-semibold text-slate-900">{f.title}</h3>
-              <p className="text-sm leading-6 soft-muted">{f.body}</p>
-            </div>
-          ))}
+          <Link href="/people" className="shell-card p-7 block group hover:border-blue-300 transition-colors">
+            <span className="mb-4 block font-mono text-xs font-semibold text-blue-600">Directory</span>
+            <h3 className="mb-3 text-base font-semibold text-slate-900 group-hover:text-blue-700 transition-colors">Member Directory</h3>
+            <p className="text-sm leading-6 soft-muted">
+              Find engineers by domain, tooling, and availability. Filter by aerospace, automotive, medical, embedded, MBSE, and more.
+            </p>
+          </Link>
+          <Link href="/g" className="shell-card p-7 block group hover:border-blue-300 transition-colors">
+            <span className="mb-4 block font-mono text-xs font-semibold text-blue-600">{groupCount} domains</span>
+            <h3 className="mb-3 text-base font-semibold text-slate-900 group-hover:text-blue-700 transition-colors">Working Groups</h3>
+            <p className="text-sm leading-6 soft-muted">
+              Focused communities organised around specific engineering disciplines — from MBSE and functional safety to robotics and space systems.
+            </p>
+          </Link>
+          <Link href="/artifacts" className="shell-card p-7 block group hover:border-blue-300 transition-colors">
+            <span className="mb-4 block font-mono text-xs font-semibold text-blue-600">{artifactCount} resources</span>
+            <h3 className="mb-3 text-base font-semibold text-slate-900 group-hover:text-blue-700 transition-colors">Artifact Library</h3>
+            <p className="text-sm leading-6 soft-muted">
+              Curated templates, patterns, case studies, and standard references from practising systems engineers — ready to adapt.
+            </p>
+          </Link>
         </div>
       </section>
 
-      {/* ── Pillars — full-width muted band ── */}
+      {/* ── Domain coverage strip — full-width muted band ── */}
       <section
-        className="border-y border-slate-200/60 bg-white/50 py-16 md:py-20"
+        className="border-y border-slate-200/60 bg-white/50 py-14 md:py-16"
         style={bleed}
       >
         <div className="mx-auto max-w-6xl px-6 md:px-10">
-          <div className="grid gap-10 md:grid-cols-3">
-            {pillars.map((p) => (
-              <div key={p.title}>
-                <div className="mb-4 h-0.5 w-8 bg-blue-600" />
-                <h3 className="mb-2 text-base font-semibold text-slate-900">{p.title}</h3>
-                <p className="text-sm leading-6 soft-muted">{p.body}</p>
-              </div>
-            ))}
+          <div className="flex flex-col gap-6 md:flex-row md:items-start">
+            <div className="shrink-0 md:w-56">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500 mb-2">Domains covered</p>
+              <p className="text-sm leading-6 text-slate-600">
+                Working groups exist for all major systems engineering disciplines.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {GROUPS.map((g) => (
+                <Link
+                  key={g.slug}
+                  href={`/g/${g.slug}`}
+                  className="rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-medium text-slate-600 transition-colors hover:border-blue-300 hover:text-blue-700"
+                >
+                  {g.name}
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      {/* ── Why join + Roadmap ── */}
-      <section className="grid gap-16 py-20 md:py-28 lg:grid-cols-2">
-        {/* Why join */}
-        <div>
+      {/* ── Why join ── */}
+      <section className="py-20 md:py-28">
+        <div className="max-w-2xl">
           <p className="eyebrow mb-3">What you get out of it</p>
           <h2 className="mb-10 text-2xl font-bold tracking-tight text-slate-900 md:text-3xl">
             Made for engineers who take their craft seriously.
@@ -207,25 +172,6 @@ export default async function Home({
             {reasonsToJoin.map(([title, body]) => (
               <div key={title} className="flex gap-4">
                 <div className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-blue-600" />
-                <div>
-                  <h3 className="mb-1 text-sm font-semibold text-slate-900">{title}</h3>
-                  <p className="text-sm leading-6 soft-muted">{body}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Roadmap */}
-        <div>
-          <p className="eyebrow mb-3">Where the product is heading</p>
-          <h2 className="mb-10 text-2xl font-bold tracking-tight text-slate-900 md:text-3xl">
-            Growing toward a full professional institution.
-          </h2>
-          <div className="space-y-6">
-            {futureSlices.map(([title, body]) => (
-              <div key={title} className="flex gap-4">
-                <div className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-indigo-400" />
                 <div>
                   <h3 className="mb-1 text-sm font-semibold text-slate-900">{title}</h3>
                   <p className="text-sm leading-6 soft-muted">{body}</p>
