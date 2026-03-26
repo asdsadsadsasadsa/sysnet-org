@@ -167,11 +167,7 @@ export default async function Home({
           {/* Left 8 cols: headline */}
           <div className="lg:col-span-8">
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-slate-100 text-brand-navy text-[10px] font-label uppercase tracking-[0.2em] mb-6 border border-outline-variant/50">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-navy opacity-40"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-navy"></span>
-              </span>
-              System Status: Nominal
+              SYLEN — SYstems Leadership &amp; Engineering Network
             </div>
             <h1 className="text-5xl md:text-7xl font-headline font-bold tracking-tighter text-brand-navy leading-[0.9] mb-8">
               The Future of <span className="text-brand-accent italic">Autonomous</span> Systems Engineering.
