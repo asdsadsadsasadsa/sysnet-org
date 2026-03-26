@@ -260,21 +260,13 @@ function OnboardingInner() {
 
   return (
     <div className="space-y-6">
-      <section className="page-grid">
+      <section>
         <div className="shell-card-strong p-6 md:p-8">
           <p className="eyebrow">Join the network</p>
           <h1 className="section-title mt-3">Join the network.</h1>
           <p className="mt-3 max-w-2xl text-base leading-7 soft-muted">
             Create an account, fill out your profile, and you are in. The whole process takes a few minutes.
           </p>
-        </div>
-        <div className="shell-card p-6">
-          <p className="eyebrow">What to include</p>
-          <div className="mt-4 space-y-3 text-sm leading-6 soft-muted">
-            <p>Pick a handle you use professionally.</p>
-            <p>Add a headline that describes what you actually do — domains, tools, industry.</p>
-            <p>Set your availability so others know if you are open to mentoring, consulting, or connecting.</p>
-          </div>
         </div>
       </section>
 
