@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Space_Grotesk, Inter } from "next/font/google";
 import Link from "next/link";
 import NavAuthActions from "@/components/NavAuthActions";
+import NavLogoLink from "@/components/NavLogoLink";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -30,11 +31,9 @@ export const metadata: Metadata = {
 };
 
 const nav = [
-  { href: "/feed", label: "Feed" },
-  { href: "/people", label: "Directory" },
-  { href: "/g", label: "Groups" },
-  { href: "/submissions", label: "Papers" },
-  { href: "/library", label: "Library" },
+  { href: "/news", label: "News" },
+  { href: "/feed", label: "Journal" },
+  { href: "/profile", label: "Profile" },
 ];
 
 export default function RootLayout({
@@ -49,12 +48,7 @@ export default function RootLayout({
           {/* Fixed editorial nav */}
           <header className="fixed top-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-white/90 backdrop-blur-lg border-b border-outline-variant/30">
             <div className="flex items-center gap-8">
-              <Link
-                href="/"
-                className="text-2xl font-bold tracking-tighter text-brand-navy font-headline"
-              >
-                SYLEN
-              </Link>
+              <NavLogoLink />
               <nav className="hidden md:flex items-center gap-6">
                 {nav.map((item) => (
                   <Link
