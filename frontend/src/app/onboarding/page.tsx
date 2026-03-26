@@ -1,9 +1,9 @@
 "use client";
 export const dynamic = "force-dynamic";
 
-import { FormEvent, useEffect, useState } from "react";
+import { FormEvent, Suspense, useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 import { normalizeHandle, parseCsvList } from "@/lib/profile-utils";
 import { sanitizeOpenTo } from "@/lib/open-to";
@@ -11,8 +11,9 @@ import type { ProfileVisibility } from "@/lib/types";
 
 const DEFAULT_VISIBILITY: ProfileVisibility = "public";
 
-export default function OnboardingPage() {
+function OnboardingInner() {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const supabase = createClient();
   const [mode, setMode] = useState<"login" | "signup">("login");
   const [email, setEmail] = useState("");
@@ -23,6 +24,8 @@ export default function OnboardingPage() {
   const [sending, setSending] = useState(false);
   const [userId, setUserId] = useState<string>("");
   const [handle, setHandle] = useState("");
+  const [handleStatus, setHandleStatus] = useState<"idle" | "checking" | "taken" | "available">("idle");
+  const handleDebounceRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [displayName, setDisplayName] = useState("");
   const [visibility, setVisibility] = useState<ProfileVisibility>(DEFAULT_VISIBILITY);
   const [headline, setHeadline] = useState("");
@@ -73,6 +76,37 @@ export default function OnboardingPage() {
   useEffect(() => {
     refreshUser();
   }, []);
+
+  // Surface auth errors from OAuth redirect (?auth=failed&reason=...)
+  useEffect(() => {
+    const authParam = searchParams.get("auth");
+    const reason = searchParams.get("reason");
+    if (authParam === "failed") {
+      setMsgTone("error");
+      setMsg(reason ? `Sign-in failed: ${decodeURIComponent(reason)}` : "Sign-in failed. Please try again.");
+    }
+  }, [searchParams]);
+
+  // Real-time handle uniqueness check
+  function onHandleChange(val: string) {
+    setHandle(val);
+    const normalized = normalizeHandle(val);
+    if (!normalized) {
+      setHandleStatus("idle");
+      return;
+    }
+    setHandleStatus("checking");
+    if (handleDebounceRef.current) clearTimeout(handleDebounceRef.current);
+    handleDebounceRef.current = setTimeout(async () => {
+      const { data } = await supabase
+        .from("profiles")
+        .select("id")
+        .eq("handle", normalized)
+        .neq("id", userId || "00000000-0000-0000-0000-000000000000")
+        .maybeSingle();
+      setHandleStatus(data ? "taken" : "available");
+    }, 400);
+  }
 
   async function signIn(e: FormEvent) {
     e.preventDefault();
@@ -183,6 +217,10 @@ export default function OnboardingPage() {
     if (!normalizedHandle) {
       setMsgTone("error");
       return setMsg("Handle is invalid. Use letters, numbers, underscore, and dashes.");
+    }
+    if (handleStatus === "taken") {
+      setMsgTone("error");
+      return setMsg("That handle is already taken. Pick a different one.");
     }
 
     const payload = {
@@ -342,7 +380,23 @@ export default function OnboardingPage() {
             </button>
           </div>
           <div className="grid gap-4 md:grid-cols-2">
-            <input placeholder="Handle (e.g. jsmith)" value={handle} onChange={(e) => setHandle(e.target.value)} />
+            <div className="relative">
+              <input
+                placeholder="Handle (e.g. jsmith)"
+                value={handle}
+                onChange={(e) => onHandleChange(e.target.value)}
+                className={handleStatus === "taken" ? "border-rose-300 focus:ring-rose-300" : handleStatus === "available" ? "border-emerald-300" : ""}
+              />
+              {handleStatus === "checking" && (
+                <p className="mt-1 text-xs text-slate-400">Checking...</p>
+              )}
+              {handleStatus === "taken" && (
+                <p className="mt-1 text-xs text-rose-600">Handle already taken. Try another.</p>
+              )}
+              {handleStatus === "available" && (
+                <p className="mt-1 text-xs text-emerald-600">@{normalizeHandle(handle)} is available</p>
+              )}
+            </div>
             <input placeholder="Full name" value={displayName} onChange={(e) => setDisplayName(e.target.value)} />
             <label className="md:col-span-2 rounded-2xl border border-slate-200/80 bg-white/80 p-4 text-sm text-slate-700">
               <span className="block text-sm font-semibold text-slate-900">Profile visibility</span>
@@ -383,5 +437,13 @@ export default function OnboardingPage() {
         </div>
       )}
     </div>
+  );
+}
+
+export default function OnboardingPage() {
+  return (
+    <Suspense fallback={<div className="shell-card p-8"><p className="text-slate-500 text-sm">Loading...</p></div>}>
+      <OnboardingInner />
+    </Suspense>
   );
 }

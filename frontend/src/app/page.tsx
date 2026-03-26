@@ -188,6 +188,52 @@ export default async function Home({
         </div>
       </section>
 
+      {/* ── Featured working groups ── */}
+      <section className="py-20 md:py-24">
+        <div className="mb-10 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+          <div>
+            <p className="eyebrow mb-3">Community</p>
+            <h2 className="text-2xl font-bold tracking-tight text-slate-900 md:text-3xl">
+              Find your working group.
+            </h2>
+            <p className="mt-3 max-w-xl text-sm leading-7 soft-muted">
+              Each group has a focused discussion feed, curated resources, and a directory of members in that domain.
+            </p>
+          </div>
+          <Link href="/g" className="secondary-button shrink-0 self-start md:self-auto">
+            All groups →
+          </Link>
+        </div>
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {["mbse", "embedded", "safety", "aerospace", "architecture", "robotics"].map((slug) => {
+            const g = GROUPS.find((x) => x.slug === slug);
+            if (!g) return null;
+            return (
+              <Link
+                key={slug}
+                href={`/g/${slug}`}
+                className="shell-card p-6 block hover:border-blue-300 transition-colors group"
+              >
+                <h3 className="text-base font-semibold text-slate-900 group-hover:text-blue-700 transition-colors">
+                  {g.name}
+                </h3>
+                <p className="mt-2 text-sm leading-6 soft-muted line-clamp-2">{g.description}</p>
+                <div className="mt-4 flex flex-wrap gap-1.5">
+                  {g.tags.slice(0, 3).map((tag) => (
+                    <span
+                      key={tag}
+                      className="px-2 py-0.5 bg-slate-100 text-[10px] font-bold uppercase tracking-wider text-slate-500 rounded border border-slate-200"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </Link>
+            );
+          })}
+        </div>
+      </section>
+
       {/* ── Why join ── */}
       <section className="py-20 md:py-28">
         <div className="max-w-2xl">
