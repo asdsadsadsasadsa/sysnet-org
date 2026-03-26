@@ -14,13 +14,14 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Sysnet — Systems Engineering Network",
+  title: "SYLEN — SYstems Leadership & Engineering Network",
   description:
-    "Professional network for systems engineers. Find peers by domain, tooling, and MBSE practice.",
+    "A professional network for systems engineers. Find peers by domain, tooling, and MBSE practice.",
   openGraph: {
-    title: "Sysnet — Systems Engineering Network",
+    title: "SYLEN — SYstems Leadership & Engineering Network",
     description:
-      "Find peers, share systems engineering knowledge, and build trusted professional connections.",
+      "SYLEN connects systems engineers to find serious peers, share practical knowledge, and build professional trust.",
+    siteName: "SYLEN",
     type: "website",
   },
 };
@@ -52,8 +53,8 @@ export default function RootLayout({
                     S
                   </div>
                   <div>
-                    <div className="text-[11px] font-semibold uppercase tracking-[0.24em] text-blue-700">Systems Engineering Network</div>
-                    <div className="text-sm font-semibold tracking-[0.16em] text-slate-900">Sysnet</div>
+                    <div className="text-[11px] font-semibold uppercase tracking-[0.24em] text-blue-700">SYstems Leadership & Engineering Network</div>
+                    <div className="text-sm font-semibold tracking-[0.16em] text-slate-900">SYLEN</div>
                   </div>
                 </Link>
               </div>

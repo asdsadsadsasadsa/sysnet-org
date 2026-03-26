@@ -99,13 +99,13 @@ export default async function Home({
         />
         <div className="relative mx-auto max-w-6xl px-6 pt-24 pb-28 md:px-10 md:pt-32 md:pb-36">
           <p className="mb-5 text-xs font-semibold uppercase tracking-[0.28em] text-blue-400">
-            Systems Engineering Network
+            SYLEN — SYstems Leadership & Engineering Network
           </p>
           <h1 className="mb-6 max-w-3xl text-5xl font-bold leading-[1.07] tracking-tight text-white md:text-7xl">
             A professional home for systems engineering.
           </h1>
           <p className="mb-10 max-w-2xl text-lg leading-8 text-slate-300 md:text-xl">
-            Sysnet helps systems engineers find serious peers, share practical knowledge,
+            SYLEN connects systems engineers to find serious peers, share practical knowledge,
             and build professional trust — without the noise of generic social networks.
           </p>
 

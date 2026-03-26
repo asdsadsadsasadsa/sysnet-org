@@ -207,7 +207,7 @@ export default function SubmissionsPage() {
           <p className="eyebrow">Papers</p>
           <h1 className="section-title mt-3">Paper submissions</h1>
           <p className="mt-3 max-w-2xl text-base leading-7 soft-muted">
-            Preprints, conference papers, and journal articles from the Sysnet community. Submit your own work for peer visibility.
+            Preprints, conference papers, and journal articles from the SYLEN community. Submit your own work for peer visibility.
           </p>
         </div>
         <aside className="shell-card p-6">
@@ -469,7 +469,7 @@ export default function SubmissionsPage() {
             <p className="eyebrow">Submit your work</p>
             <h2 className="section-title mt-2 text-2xl">Share your research</h2>
             <p className="mt-3 text-sm soft-muted max-w-md mx-auto">
-              Sign in to submit papers, preprints, and conference articles to the Sysnet community library.
+              Sign in to submit papers, preprints, and conference articles to the SYLEN community library.
             </p>
             <Link href="/onboarding" className="primary-button inline-flex mt-5 px-5 py-2.5">
               Sign in to submit your work

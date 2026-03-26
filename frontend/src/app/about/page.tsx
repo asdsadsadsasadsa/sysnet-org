@@ -4,7 +4,7 @@ export default function AboutPage() {
       <p className="eyebrow">About the network</p>
       <h1 className="section-title">A professional home for systems engineers.</h1>
       <p className="max-w-3xl text-base leading-7 soft-muted">
-        Sysnet is a professional community for systems engineers. The goal is practical knowledge sharing,
+        SYLEN is a professional community for systems engineers. The goal is practical knowledge sharing,
         standards-aware discussion, and trusted peer discovery — not another noisy social feed.
       </p>
       <div className="grid gap-4 md:grid-cols-3">
