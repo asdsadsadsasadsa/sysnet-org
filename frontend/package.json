@@ -31,6 +31,10 @@
     "tailwind-merge": "^3.5.0",
     "zod": "^4.3.6"
   },
+  "optionalDependencies": {
+    "@next/swc-linux-x64-gnu": "16.1.6",
+    "@next/swc-linux-x64-musl": "16.1.6"
+  },
   "devDependencies": {
     "@playwright/test": "^1.58.2",
     "@tailwindcss/oxide-linux-x64-gnu": "^4.2.1",
