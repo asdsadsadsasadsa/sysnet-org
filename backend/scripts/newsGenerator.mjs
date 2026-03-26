@@ -164,7 +164,6 @@ Write a 1-2 page article about this for systems engineers:
 
 Story: "${story.title}"
 URL: ${story.url}
-HN thread: https://news.ycombinator.com/item?id=${story.objectID}
 Comments: ${story.num_comments} | Points: ${story.points}
 Topic: ${topic}
 
@@ -180,7 +179,7 @@ Write:
    - Lead with why this matters to systems engineers specifically
    - Technical substance, concrete details
    - Connect to SE practices (reliability, V&V, architecture, safety, etc.)
-   - Final paragraph: "Read the original article and HN discussion [here](${story.url}) and [on Hacker News](https://news.ycombinator.com/item?id=${story.objectID})."
+   - Final paragraph: End with a clear attribution link to the original article: "Read the original article at [source domain](${story.url})."
 
 Format:
 HEADLINE: [headline]

@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "generate-news": "node scripts/generate-news.mjs",
-    "generate-news:dry": "node scripts/generate-news.mjs --dry-run"
+    "newsGenerator": "node scripts/newsGenerator.mjs",
+    "newsGenerator:dry": "node scripts/newsGenerator.mjs --dry-run"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.51.0",
