@@ -9,7 +9,8 @@ test('fresh signup now reaches signed-in state', async ({ page }) => {
   await page.getByPlaceholder('Password', { exact: true }).fill(password);
   await page.getByPlaceholder('Confirm password', { exact: true }).fill(password);
   await page.getByRole('button', { name: 'Create account' }).nth(1).click();
-  await expect(page.getByText(/Account created\. Complete your profile\.|Complete your profile|You’re signed in/i)).toBeVisible({ timeout: 15000 });
+  // Match the success toast specifically (not the heading that also contains "Complete your profile")
+  await expect(page.getByText(/Account created\. Complete your profile\./i)).toBeVisible({ timeout: 15000 });
   console.log('EMAIL', email);
   console.log('URL', page.url());
 });
