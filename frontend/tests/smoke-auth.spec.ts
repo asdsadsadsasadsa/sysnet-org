@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test('homepage loads', async ({ page }) => {
   await page.goto('/');
-  await expect(page.getByRole('heading', { name: /A professional home for systems engineering\./i })).toBeVisible();
+  await expect(page.getByRole('heading', { name: /professional home for systems engineer/i })).toBeVisible();
   await expect(page.getByRole('link', { name: /Join the network/i }).first()).toBeVisible();
 });
 

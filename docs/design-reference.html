@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SYLEN | Systems Engineering Authority</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-fixed": "#2a1700",
+              "surface-container-high": "#f1f3f9",
+              "on-tertiary-container": "#b77400",
+              "on-primary": "#ffffff",
+              "on-secondary-fixed-variant": "#3c475a",
+              "tertiary": "#f59e0b",
+              "surface-container-lowest": "#ffffff",
+              "surface-container-highest": "#e2e8f0",
+              "primary": "#0f172a",
+              "inverse-surface": "#1e293b",
+              "on-primary-fixed-variant": "#334155",
+              "primary-container": "#f1f5f9",
+              "secondary-container": "#e2e8f0",
+              "surface-bright": "#ffffff",
+              "primary-fixed-dim": "#475569",
+              "outline": "#94a3b8",
+              "error-container": "#fee2e2",
+              "on-error": "#ffffff",
+              "surface-variant": "#f8fafc",
+              "on-tertiary": "#ffffff",
+              "outline-variant": "#cbd5e1",
+              "on-surface-variant": "#475569",
+              "tertiary-fixed": "#fef3c7",
+              "surface-dim": "#f1f5f9",
+              "on-primary-container": "#0f172a",
+              "surface": "#ffffff",
+              "surface-container": "#f8fafc",
+              "tertiary-fixed-dim": "#fbbf24",
+              "on-primary-fixed": "#0f172a",
+              "on-tertiary-fixed-variant": "#92400e",
+              "on-secondary-container": "#334155",
+              "on-background": "#0f172a",
+              "secondary-fixed": "#e2e8f0",
+              "on-surface": "#0f172a",
+              "on-secondary": "#ffffff",
+              "error": "#ef4444",
+              "inverse-primary": "#cbd5e1",
+              "background": "#ffffff",
+              "on-secondary-fixed": "#0f172a",
+              "inverse-on-surface": "#f8fafc",
+              "surface-tint": "#0f172a",
+              "surface-container-low": "#f8fafc",
+              "primary-fixed": "#e2e8f0",
+              "tertiary-container": "#fef3c7",
+              "secondary-fixed-dim": "#cbd5e1",
+              "secondary": "#475569",
+              "on-error-container": "#991b1b",
+              "brand-navy": "#0f172a",
+              "brand-accent": "#0ea5e9"
+            },
+            fontFamily: {
+              "headline": ["Space Grotesk"],
+              "body": ["Inter"],
+              "label": ["Space Grotesk"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .blueprint-grid {
+            background-image: linear-gradient(to right, rgba(15, 23, 42, 0.03) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(15, 23, 42, 0.03) 1px, transparent 1px);
+            background-size: 2.25rem 2.25rem;
+        }
+        .circuit-blur {
+            background: radial-gradient(circle at 50% 50%, rgba(15, 23, 42, 0.03) 0%, transparent 70%);
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-brand-accent/20">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-white/90 backdrop-blur-lg border-b border-outline-variant/30">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-bold tracking-tighter text-brand-navy font-headline">SYLEN</span>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-brand-navy font-bold border-b-2 border-brand-navy font-headline tracking-tight text-sm uppercase" href="#">News Feed</a>
+<a class="text-on-surface-variant font-medium hover:text-brand-navy hover:bg-slate-100 transition-colors font-headline tracking-tight text-sm uppercase" href="#">Network</a>
+<a class="text-on-surface-variant font-medium hover:text-brand-navy hover:bg-slate-100 transition-colors font-headline tracking-tight text-sm uppercase" href="#">Technical Monographs</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="px-4 py-1.5 text-xs font-label uppercase tracking-widest text-brand-navy border border-outline-variant hover:bg-slate-50 transition-all">Sign In</button>
+<button class="px-4 py-1.5 text-xs font-label uppercase tracking-widest bg-brand-navy text-white hover:bg-brand-navy/90 transition-all">Join</button>
+<div class="h-6 w-[1px] bg-outline-variant/50 mx-2"></div>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-brand-navy transition-colors" data-icon="notifications">notifications</button>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-brand-navy transition-colors" data-icon="settings">settings</button>
+</div>
+</header>
+<main class="pt-16 min-h-screen blueprint-grid">
+<!-- Hero Editorial Section -->
+<section class="relative px-6 py-12 md:py-24 overflow-hidden">
+<div class="absolute inset-0 circuit-blur -z-10"></div>
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
+<div class="lg:col-span-8">
+<div class="inline-flex items-center gap-2 px-3 py-1 bg-slate-100 text-brand-navy text-[10px] font-label uppercase tracking-[0.2em] mb-6 border border-outline-variant/50">
+<span class="relative flex h-2 w-2">
+<span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-navy opacity-40"></span>
+<span class="relative inline-flex rounded-full h-2 w-2 bg-brand-navy"></span>
+</span>
+                    System Status: Nominal
+                </div>
+<h1 class="text-5xl md:text-7xl font-headline font-bold tracking-tighter text-brand-navy leading-[0.9] mb-8">
+                    The Future of <span class="text-brand-accent italic">Autonomous</span> Systems Engineering.
+                </h1>
+<p class="text-on-surface-variant text-lg max-w-2xl leading-relaxed font-light">
+                    SYLEN is the premier authority for rigorous technical monographs and peer-reviewed breakthroughs in systems architecture. We bridge the gap between abstract theory and industrial execution.
+                </p>
+</div>
+<div class="lg:col-span-4 flex flex-col gap-6">
+<div class="p-6 bg-white border border-outline-variant shadow-sm relative overflow-hidden group">
+<div class="absolute top-0 right-0 w-32 h-32 bg-slate-100 -mr-16 -mt-16 rounded-full blur-3xl group-hover:bg-brand-accent/5 transition-colors"></div>
+<h3 class="font-headline font-bold text-xl mb-2 text-brand-navy">Fund Global Research</h3>
+<p class="text-sm text-on-surface-variant mb-6 leading-snug">Support our mission to provide open-access engineering intelligence for the next generation of builders.</p>
+<div class="flex gap-3">
+<button class="flex-1 py-3 bg-brand-navy text-white font-label text-xs uppercase tracking-widest font-bold hover:bg-slate-800 transition-all">Donate</button>
+<button class="flex-1 py-3 border border-outline-variant text-brand-navy font-label text-xs uppercase tracking-widest hover:bg-slate-50 transition-all">Impact Report</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Asymmetric Content Grid -->
+<section class="px-6 pb-24 max-w-7xl mx-auto">
+<div class="flex items-center justify-between mb-12 border-b border-outline-variant/30 pb-6">
+<h2 class="font-headline text-2xl font-bold tracking-tight uppercase flex items-center gap-3 text-brand-navy">
+<span class="w-8 h-[2px] bg-brand-navy"></span>
+                Trending Monographs
+            </h2>
+<div class="hidden md:flex gap-6 text-xs font-label uppercase tracking-widest text-on-surface-variant">
+<button class="text-brand-navy font-bold border-b border-brand-navy">Recent</button>
+<button class="hover:text-brand-navy transition-colors">Most Cited</button>
+<button class="hover:text-brand-navy transition-colors">Peer Review</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Large Featured Monograph -->
+<article class="md:col-span-2 bg-white border border-outline-variant/60 p-8 flex flex-col md:flex-row gap-8 relative hover:border-brand-navy/30 hover:shadow-lg transition-all group">
+<div class="w-full md:w-1/2 aspect-[4/5] overflow-hidden bg-slate-100 shrink-0">
+<img alt="Technical Blueprint" class="w-full h-full object-cover grayscale opacity-80 group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCaMvY56YA89U4wTAZ9XGXTP7VfFHa9JC5SjEJYYiXaEvp1GmZwbvGQXPwlTMEBuypXfSBJVR2XGxWyJg952Kvp7-nvoQ9Gt2D4SCphFNSFnhOwNbqxg8824tKB44Vx962_HncUQuk665mkBiGKgaFh51ntcKL1kuKu66l7ocXsnwHlrPsKtt-U1ZklULw6Wg3zgOpPh1EHHGJA53e2TXLGhf2xR4ojhNa9Y-4loLQW5lKp7pd1jdtsJ92ovJB_9biwLrS-atOIz83g"/>
+</div>
+<div class="flex flex-col justify-between">
+<div>
+<div class="flex items-center gap-4 mb-6">
+<span class="text-[10px] font-label text-brand-navy font-bold uppercase tracking-widest px-2 py-1 border border-brand-navy/20 bg-slate-50">Ref. #SY-2024-08</span>
+<span class="text-[10px] font-label text-on-surface-variant uppercase tracking-widest">12 min read</span>
+</div>
+<h3 class="text-3xl font-headline font-bold leading-tight mb-4 group-hover:text-brand-navy transition-colors text-brand-navy">Neural Mesh Architectures: Scaling Latency-Sensitive Control Planes</h3>
+<p class="text-on-surface-variant font-light leading-relaxed mb-6">An exhaustive study on the implementation of decentralized control loops within hyper-scale data centers using asynchronous mesh protocols.</p>
+</div>
+<div class="flex items-center justify-between pt-6 border-t border-outline-variant/30">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-slate-200 border border-outline-variant/30 flex items-center justify-center text-[10px] font-bold text-brand-navy">DR</div>
+<span class="text-xs font-label uppercase tracking-wider text-brand-navy">Dr. Elena Rossetti</span>
+</div>
+<button class="material-symbols-outlined text-on-surface-variant hover:text-brand-navy" data-icon="bookmark">bookmark</button>
+</div>
+</div>
+</article>
+<!-- Sidebar Secondary Items -->
+<div class="flex flex-col gap-8">
+<article class="bg-white border border-outline-variant/60 p-6 hover:border-brand-navy/30 hover:shadow-sm transition-all group">
+<span class="text-[10px] font-label text-brand-accent font-bold uppercase tracking-[0.2em] mb-4 block">Editorial Impact</span>
+<h4 class="font-headline font-bold text-lg mb-3 leading-tight group-hover:text-brand-navy text-brand-navy">Thermodynamics of Decentralized Consensus Systems</h4>
+<p class="text-sm text-on-surface-variant line-clamp-2 mb-4">Analyzing energy dissipation in proof-of-work versus directed acyclic graph structures.</p>
+<div class="flex items-center justify-between">
+<span class="text-[10px] font-label uppercase text-on-surface-variant">April 14, 2024</span>
+<span class="material-symbols-outlined text-sm text-brand-navy" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</article>
+<article class="bg-white border border-outline-variant/60 p-6 hover:border-brand-navy/30 hover:shadow-sm transition-all group">
+<span class="text-[10px] font-label text-brand-navy font-bold uppercase tracking-[0.2em] mb-4 block">New Monograph</span>
+<h4 class="font-headline font-bold text-lg mb-3 leading-tight group-hover:text-brand-navy text-brand-navy">Optical Interconnects in Low-Orbit Satellite Arrays</h4>
+<p class="text-sm text-on-surface-variant line-clamp-2 mb-4">Practical constraints of high-frequency laser communication in varying atmospheric conditions.</p>
+<div class="flex items-center justify-between">
+<span class="text-[10px] font-label uppercase text-on-surface-variant">April 12, 2024</span>
+<span class="material-symbols-outlined text-sm text-brand-navy" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</article>
+<div class="mt-auto p-[1px] bg-outline-variant/30">
+<div class="bg-slate-50 p-6">
+<h5 class="font-headline font-bold text-sm uppercase tracking-widest mb-2 text-brand-navy">Join the Registry</h5>
+<p class="text-xs text-on-surface-variant mb-4">Submit your research to be peer-reviewed by the SYLEN council.</p>
+<button class="w-full py-2 bg-white text-brand-navy font-label text-[10px] uppercase tracking-[0.2em] border border-outline-variant hover:bg-slate-100 transition-all">Submit Manuscript</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Horizontal News Strip -->
+<div class="mt-16 grid grid-cols-1 md:grid-cols-4 gap-6 pt-12 border-t border-outline-variant/30">
+<div class="md:col-span-1 border-r border-outline-variant/30 pr-6">
+<h3 class="font-headline font-bold text-sm uppercase tracking-widest mb-4 text-brand-navy">Industry Dispatch</h3>
+<p class="text-xs text-on-surface-variant leading-relaxed">Daily technical updates from our global field engineers and research labs.</p>
+</div>
+<div class="md:col-span-3 flex overflow-x-auto gap-8 no-scrollbar pb-4">
+<div class="min-w-[280px] group cursor-pointer">
+<span class="text-[10px] font-label text-on-surface-variant uppercase tracking-widest mb-2 block">08:00 UTC</span>
+<h4 class="font-headline font-bold text-base group-hover:text-brand-navy transition-colors text-brand-navy/80">CERN Announces Collaboration for Quantum Simulation Mesh</h4>
+</div>
+<div class="min-w-[280px] group cursor-pointer">
+<span class="text-[10px] font-label text-on-surface-variant uppercase tracking-widest mb-2 block">06:45 UTC</span>
+<h4 class="font-headline font-bold text-base group-hover:text-brand-navy transition-colors text-brand-navy/80">Standardization of Rust-based Kernel Modules in Avionics</h4>
+</div>
+<div class="min-w-[280px] group cursor-pointer">
+<span class="text-[10px] font-label text-on-surface-variant uppercase tracking-widest mb-2 block">04:20 UTC</span>
+<h4 class="font-headline font-bold text-base group-hover:text-brand-navy transition-colors text-brand-navy/80">New Monograph: Passive Cooling for Undersea Server Pods</h4>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Stats / Social Proof -->
+<section class="bg-slate-50 py-16 px-6 border-y border-outline-variant/30">
+<div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-12 text-center">
+<div>
+<div class="text-4xl font-headline font-bold text-brand-navy mb-2">1.2k+</div>
+<div class="text-[10px] font-label uppercase tracking-[0.2em] text-on-surface-variant">Monographs Published</div>
+</div>
+<div>
+<div class="text-4xl font-headline font-bold text-brand-navy mb-2">45k</div>
+<div class="text-[10px] font-label uppercase tracking-[0.2em] text-on-surface-variant">Active Engineers</div>
+</div>
+<div>
+<div class="text-4xl font-headline font-bold text-brand-navy mb-2">12ms</div>
+<div class="text-[10px] font-label uppercase tracking-[0.2em] text-on-surface-variant">Avg. Search Latency</div>
+</div>
+<div>
+<div class="text-4xl font-headline font-bold text-brand-navy mb-2">99.9%</div>
+<div class="text-[10px] font-label uppercase tracking-[0.2em] text-on-surface-variant">Verification Index</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile) -->
+<nav class="lg:hidden fixed bottom-0 w-full z-50 flex justify-around items-center h-16 px-4 pb-safe bg-white/90 backdrop-blur-2xl border-t border-outline-variant/30 shadow-lg">
+<a class="flex flex-col items-center gap-1 text-brand-navy font-label text-[10px] uppercase tracking-widest scale-110 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="feed">feed</span>
+<span>News</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant font-label text-[10px] uppercase tracking-widest active:bg-slate-100 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="insights">insights</span>
+<span>Impact</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant font-label text-[10px] uppercase tracking-widest active:bg-slate-100 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="edit_note">edit_note</span>
+<span>Journal</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-on-surface-variant font-label text-[10px] uppercase tracking-widest active:bg-slate-100 transition-all" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span>Me</span>
+</a>
+</nav>
+<footer class="bg-white pt-24 pb-12 px-6 border-t border-outline-variant/30">
+<div class="max-w-7xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+<div class="col-span-1 md:col-span-2">
+<span class="text-2xl font-bold tracking-tighter text-brand-navy font-headline mb-6 block">SYLEN</span>
+<p class="text-on-surface-variant max-w-sm mb-8 leading-relaxed font-light">
+                    The definitive repository for high-fidelity systems engineering research. We maintain the syntactic standards of modern technical journalism.
+                </p>
+<div class="flex gap-6">
+<a class="text-on-surface-variant hover:text-brand-navy transition-colors font-label text-xs uppercase tracking-widest" href="#">Twitter</a>
+<a class="text-on-surface-variant hover:text-brand-navy transition-colors font-label text-xs uppercase tracking-widest" href="#">GitHub</a>
+<a class="text-on-surface-variant hover:text-brand-navy transition-colors font-label text-xs uppercase tracking-widest" href="#">LinkedIn</a>
+</div>
+</div>
+<div>
+<h5 class="font-headline font-bold text-xs uppercase tracking-widest mb-6 text-brand-navy">Explore</h5>
+<ul class="flex flex-col gap-4 text-sm text-on-surface-variant">
+<li><a class="hover:text-brand-navy transition-all" href="#">Technical Monographs</a></li>
+<li><a class="hover:text-brand-navy transition-all" href="#">Reviewer Portal</a></li>
+<li><a class="hover:text-brand-navy transition-all" href="#">Systems Impact</a></li>
+<li><a class="hover:text-brand-navy transition-all" href="#">Open Standards</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-headline font-bold text-xs uppercase tracking-widest mb-6 text-brand-navy">Legal</h5>
+<ul class="flex flex-col gap-4 text-sm text-on-surface-variant">
+<li><a class="hover:text-brand-navy transition-all" href="#">Privacy Policy</a></li>
+<li><a class="hover:text-brand-navy transition-all" href="#">Terms of Service</a></li>
+<li><a class="hover:text-brand-navy transition-all" href="#">License Registry</a></li>
+</ul>
+</div>
+</div>
+<div class="pt-12 border-t border-outline-variant/30 flex flex-col md:flex-row justify-between items-center gap-6">
+<span class="text-[10px] font-label text-on-surface-variant uppercase tracking-widest">© 2024 SYLEN.org Systems Engineering Authority</span>
+<span class="text-[10px] font-label text-on-surface-variant uppercase tracking-widest flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-brand-navy"></span>
+                Version 4.2.0-Alpha Build
+            </span>
+</div>
+</div>
+</footer>
+</body></html>
