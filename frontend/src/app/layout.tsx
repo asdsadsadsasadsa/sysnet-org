@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
+import NavAuthActions from "@/components/NavAuthActions";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -69,9 +70,7 @@ export default function RootLayout({
                     {item.label}
                   </Link>
                 ))}
-                <Link href="/onboarding" className="primary-button ml-2 px-4 py-2.5">
-                  Join the network
-                </Link>
+                <NavAuthActions />
               </div>
             </nav>
           </header>
