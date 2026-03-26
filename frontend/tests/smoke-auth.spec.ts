@@ -3,7 +3,7 @@ import { test, expect } from '@playwright/test';
 test('homepage loads', async ({ page }) => {
   await page.goto('/');
   await expect(page.getByRole('heading', { name: /Future of.*Systems Engineering/i })).toBeVisible();
-  await expect(page.getByRole('link', { name: /Join the network/i }).first()).toBeVisible();
+  await expect(page.getByRole('link', { name: /Join SYLEN|Join the network/i }).first()).toBeVisible();
 });
 
 test('callback route redirects when logged out', async ({ page }) => {
