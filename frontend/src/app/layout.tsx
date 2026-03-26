@@ -1,17 +1,19 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Space_Grotesk, Inter } from "next/font/google";
 import Link from "next/link";
 import NavAuthActions from "@/components/NavAuthActions";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const spaceGrotesk = Space_Grotesk({
+  variable: "--font-space-grotesk",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
 });
 
 export const metadata: Metadata = {
@@ -28,13 +30,11 @@ export const metadata: Metadata = {
 };
 
 const nav = [
+  { href: "/feed", label: "Feed" },
   { href: "/people", label: "Directory" },
   { href: "/g", label: "Groups" },
   { href: "/submissions", label: "Papers" },
-  { href: "/events", label: "Events" },
   { href: "/library", label: "Library" },
-  { href: "/feed", label: "Feed" },
-  { href: "/profile", label: "Profile" },
 ];
 
 export default function RootLayout({
@@ -43,45 +43,38 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+    <html lang="en" className={`${spaceGrotesk.variable} ${inter.variable}`}>
+      <body className="font-body antialiased bg-white text-on-surface blueprint-grid">
         <div className="min-h-screen">
-          <header className="sticky top-0 z-50 px-3 pt-3 md:px-5">
-            <nav className="shell-card-strong mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:px-6">
-              <div className="flex items-center gap-4">
-                <Link href="/" className="flex items-center gap-3 text-slate-900">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-gradient-to-br from-slate-950 via-blue-700 to-indigo-500 text-sm font-bold text-white shadow-lg shadow-blue-500/20">
-                    S
-                  </div>
-                  <div>
-                    <div className="text-[11px] font-semibold uppercase tracking-[0.24em] text-blue-700">SYstems Leadership & Engineering Network</div>
-                    <div className="text-sm font-semibold tracking-[0.16em] text-slate-900">SYLEN</div>
-                  </div>
-                </Link>
-              </div>
-
-              {/* Desktop nav */}
-              <div className="hidden items-center gap-2 md:flex">
+          {/* Fixed editorial nav */}
+          <header className="fixed top-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-white/90 backdrop-blur-lg border-b border-outline-variant/30">
+            <div className="flex items-center gap-8">
+              <Link
+                href="/"
+                className="text-2xl font-bold tracking-tighter text-brand-navy font-headline"
+              >
+                SYLEN
+              </Link>
+              <nav className="hidden md:flex items-center gap-6">
                 {nav.map((item) => (
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="rounded-full px-4 py-2 text-sm font-medium text-slate-600 hover:bg-white/80 hover:text-slate-900"
+                    className="text-on-surface-variant font-medium hover:text-brand-navy transition-colors font-headline tracking-tight text-sm uppercase"
                   >
                     {item.label}
                   </Link>
                 ))}
-                <NavAuthActions />
-              </div>
-
-              {/* Mobile nav — auth actions only */}
-              <div className="flex items-center md:hidden">
-                <NavAuthActions mobile />
-              </div>
-            </nav>
+              </nav>
+            </div>
+            <div className="flex items-center gap-3">
+              <NavAuthActions />
+            </div>
           </header>
 
-          <main className="mx-auto max-w-6xl px-4 py-8 md:px-5 md:py-10">{children}</main>
+          <main className="pt-16 mx-auto max-w-6xl px-4 pb-8 md:px-5 md:pb-10">
+            {children}
+          </main>
         </div>
       </body>
     </html>

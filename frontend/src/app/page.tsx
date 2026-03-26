@@ -2,16 +2,8 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
 import { GROUPS } from "@/data/groups";
-import { ARTIFACTS } from "@/data/artifacts";
 
 export const dynamic = "force-dynamic";
-
-const reasonsToJoin = [
-  ["Find credible peers", "Search by domain, tooling, and availability to reach engineers who actually work in your space."],
-  ["Trade practical knowledge", "Share implementation notes, field-tested patterns, and hard-won lessons with engineers who care about the same problems."],
-  ["Build professional trust", "Discover mentors, consultants, collaborators, and hiring leads inside a systems-focused network."],
-  ["Signal over noise", "A focused professional exchange — not resume spam, vendor pitches, or algorithm-bait."],
-];
 
 const bleed = {
   marginLeft: "calc(50% - 50vw)",
@@ -50,7 +42,24 @@ export default async function Home({
   if (user) redirect("/feed");
 
   const groupCount = GROUPS.length;
-  const artifactCount = ARTIFACTS.length;
+
+  // Fetch stats
+  let memberCount: number | null = null;
+  let postCount: number | null = null;
+  try {
+    const { count: mc } = await supabase
+      .from("profiles")
+      .select("*", { count: "exact", head: true })
+      .eq("visibility", "public");
+    memberCount = mc;
+
+    const { count: pc } = await supabase
+      .from("posts")
+      .select("*", { count: "exact", head: true });
+    postCount = pc;
+  } catch (_) {
+    // Non-fatal
+  }
 
   // Fetch recent public posts for homepage preview
   type RecentPost = { id: string; title: string; body: string; author: string | null; handle: string | null };
@@ -60,7 +69,7 @@ export default async function Home({
       .from("posts")
       .select("id,title,body,author_id")
       .order("created_at", { ascending: false })
-      .limit(5);
+      .limit(6);
     if (postRows && postRows.length > 0) {
       const authorIds = [...new Set(postRows.map((p: { author_id: string }) => p.author_id))];
       const { data: authorRows } = await supabase
@@ -76,254 +85,239 @@ export default async function Home({
       });
     }
   } catch (_) {
-    // Non-fatal — homepage works fine without recent posts
+    // Non-fatal
   }
+
+  const fmt = (n: number | null) => (n == null ? "—" : n >= 1000 ? `${(n / 1000).toFixed(1)}k` : String(n));
 
   return (
     <div className="overflow-x-clip">
 
-      {/* ── Hero ── full-width dark gradient */}
+      {/* ── Hero — asymmetric 2-col editorial grid ── */}
       <section
-        className="-mt-8 md:-mt-10 relative overflow-hidden"
+        className="relative py-12 md:py-24 overflow-hidden"
         style={bleed}
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-blue-950" />
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              "radial-gradient(ellipse 80% 60% at 15% 55%, rgba(37,99,235,0.18) 0%, transparent 60%), radial-gradient(ellipse 60% 50% at 85% 20%, rgba(99,102,241,0.14) 0%, transparent 55%)",
-          }}
-        />
-        <div className="relative mx-auto max-w-6xl px-6 pt-24 pb-28 md:px-10 md:pt-32 md:pb-36">
-          <p className="mb-5 text-xs font-semibold uppercase tracking-[0.28em] text-blue-400">
-            SYLEN — SYstems Leadership & Engineering Network
-          </p>
-          <h1 className="mb-6 max-w-3xl text-5xl font-bold leading-[1.07] tracking-tight text-white md:text-7xl">
-            A professional home for systems engineering.
-          </h1>
-          <p className="mb-10 max-w-2xl text-lg leading-8 text-slate-300 md:text-xl">
-            SYLEN connects systems engineers to find serious peers, share practical knowledge,
-            and build professional trust — without the noise of generic social networks.
-          </p>
+        <div className="mx-auto max-w-7xl px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
 
-          <div className="flex flex-wrap gap-3">
-            <Link href="/onboarding" className="primary-button">
-              Join the network
-            </Link>
-            <Link
-              href="/people"
-              className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/16"
-            >
-              Browse people
-            </Link>
-            <Link
-              href="/feed"
-              className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/16"
-            >
-              Explore feed
-            </Link>
+          {/* Left 8 cols: headline */}
+          <div className="lg:col-span-8">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-slate-100 text-brand-navy text-[10px] font-label uppercase tracking-[0.2em] mb-6 border border-outline-variant/50">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-navy opacity-40"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-navy"></span>
+              </span>
+              Network Active
+            </div>
+            <h1 className="text-5xl md:text-7xl font-headline font-bold tracking-tighter text-brand-navy leading-[0.9] mb-8">
+              The professional home for <span className="text-brand-accent italic">systems</span> engineers.
+            </h1>
+            <p className="text-on-surface-variant text-lg max-w-2xl leading-relaxed font-light">
+              SYLEN connects engineers who design, build, and verify complex systems. Find credible peers,
+              share implementation knowledge, and build professional trust — without the noise.
+            </p>
           </div>
-        </div>
-      </section>
 
-      {/* ── What's available — 3 feature cards ── */}
-      <section className="py-20 md:py-28">
-        <div className="mb-12">
-          <p className="eyebrow mb-3">What&apos;s here</p>
-          <h2 className="text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">
-            A network built around the work itself.
-          </h2>
-        </div>
-        <div className="grid gap-6 md:grid-cols-3">
-          <Link href="/people" className="shell-card p-7 block group hover:border-blue-300 transition-colors">
-            <span className="mb-4 block font-mono text-xs font-semibold text-blue-600">Directory</span>
-            <h3 className="mb-3 text-base font-semibold text-slate-900 group-hover:text-blue-700 transition-colors">Member Directory</h3>
-            <p className="text-sm leading-6 soft-muted">
-              Find engineers by domain, tooling, and availability. Filter by aerospace, automotive, medical, embedded, MBSE, and more.
-            </p>
-          </Link>
-          <Link href="/g" className="shell-card p-7 block group hover:border-blue-300 transition-colors">
-            <span className="mb-4 block font-mono text-xs font-semibold text-blue-600">{groupCount} domains</span>
-            <h3 className="mb-3 text-base font-semibold text-slate-900 group-hover:text-blue-700 transition-colors">Working Groups</h3>
-            <p className="text-sm leading-6 soft-muted">
-              Focused communities organised around specific engineering disciplines — from MBSE and functional safety to robotics and space systems.
-            </p>
-          </Link>
-          <Link href="/artifacts" className="shell-card p-7 block group hover:border-blue-300 transition-colors">
-            <span className="mb-4 block font-mono text-xs font-semibold text-blue-600">{artifactCount} resources</span>
-            <h3 className="mb-3 text-base font-semibold text-slate-900 group-hover:text-blue-700 transition-colors">Artifact Library</h3>
-            <p className="text-sm leading-6 soft-muted">
-              Curated templates, patterns, case studies, and standard references from practising systems engineers — ready to adapt.
-            </p>
-          </Link>
-        </div>
-      </section>
-
-      {/* ── Domain coverage strip — full-width muted band ── */}
-      <section
-        className="border-y border-slate-200/60 bg-white/50 py-14 md:py-16"
-        style={bleed}
-      >
-        <div className="mx-auto max-w-6xl px-6 md:px-10">
-          <div className="flex flex-col gap-6 md:flex-row md:items-start">
-            <div className="shrink-0 md:w-56">
-              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-500 mb-2">Domains covered</p>
-              <p className="text-sm leading-6 text-slate-600">
-                Working groups exist for all major systems engineering disciplines.
+          {/* Right 4 cols: CTA card */}
+          <div className="lg:col-span-4 flex flex-col gap-6">
+            <div className="p-6 bg-white border border-outline-variant shadow-sm relative overflow-hidden">
+              <h3 className="font-headline font-bold text-xl mb-2 text-brand-navy">Join the Network</h3>
+              <p className="text-sm text-on-surface-variant mb-6 leading-snug">
+                Connect with systems engineers worldwide. Share knowledge, find collaborators, and grow your practice.
               </p>
-            </div>
-            <div className="flex flex-wrap gap-2">
-              {GROUPS.map((g) => (
-                <Link
-                  key={g.slug}
-                  href={`/g/${g.slug}`}
-                  className="rounded-full border border-slate-200 bg-white px-3 py-1.5 text-xs font-medium text-slate-600 transition-colors hover:border-blue-300 hover:text-blue-700"
-                >
-                  {g.name}
+              <div className="flex gap-3">
+                <Link href="/onboarding" className="primary-button flex-1 justify-center py-3">
+                  Join SYLEN
                 </Link>
-              ))}
+                <Link href="/people" className="secondary-button flex-1 justify-center py-3">
+                  Browse people
+                </Link>
+              </div>
             </div>
           </div>
+
         </div>
       </section>
 
-      {/* ── Featured working groups ── */}
-      <section className="py-20 md:py-24">
-        <div className="mb-10 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+      {/* ── Stats strip ── */}
+      <section
+        className="bg-slate-50 py-16 px-6 border-y border-outline-variant/30"
+        style={bleed}
+      >
+        <div className="max-w-7xl mx-auto grid grid-cols-3 gap-12 text-center">
           <div>
-            <p className="eyebrow mb-3">Community</p>
-            <h2 className="text-2xl font-bold tracking-tight text-slate-900 md:text-3xl">
-              Find your working group.
-            </h2>
-            <p className="mt-3 max-w-xl text-sm leading-7 soft-muted">
-              Each group has a focused discussion feed, curated resources, and a directory of members in that domain.
-            </p>
+            <div className="text-4xl font-headline font-bold text-brand-navy mb-2">{fmt(memberCount)}</div>
+            <div className="text-[10px] font-label uppercase tracking-[0.2em] text-on-surface-variant">Network Members</div>
           </div>
-          <Link href="/g" className="secondary-button shrink-0 self-start md:self-auto">
-            All groups →
-          </Link>
-        </div>
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {["mbse", "embedded", "safety", "aerospace", "architecture", "robotics"].map((slug) => {
-            const g = GROUPS.find((x) => x.slug === slug);
-            if (!g) return null;
-            return (
-              <Link
-                key={slug}
-                href={`/g/${slug}`}
-                className="shell-card p-6 block hover:border-blue-300 transition-colors group"
-              >
-                <h3 className="text-base font-semibold text-slate-900 group-hover:text-blue-700 transition-colors">
-                  {g.name}
-                </h3>
-                <p className="mt-2 text-sm leading-6 soft-muted line-clamp-2">{g.description}</p>
-                <div className="mt-4 flex flex-wrap gap-1.5">
-                  {g.tags.slice(0, 3).map((tag) => (
-                    <span
-                      key={tag}
-                      className="px-2 py-0.5 bg-slate-100 text-[10px] font-bold uppercase tracking-wider text-slate-500 rounded border border-slate-200"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </Link>
-            );
-          })}
-        </div>
-      </section>
-
-      {/* ── Why join ── */}
-      <section className="py-20 md:py-28">
-        <div className="max-w-2xl">
-          <p className="eyebrow mb-3">What you get out of it</p>
-          <h2 className="mb-10 text-2xl font-bold tracking-tight text-slate-900 md:text-3xl">
-            Made for engineers who take their craft seriously.
-          </h2>
-          <div className="space-y-6">
-            {reasonsToJoin.map(([title, body]) => (
-              <div key={title} className="flex gap-4">
-                <div className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-blue-600" />
-                <div>
-                  <h3 className="mb-1 text-sm font-semibold text-slate-900">{title}</h3>
-                  <p className="text-sm leading-6 soft-muted">{body}</p>
-                </div>
-              </div>
-            ))}
+          <div>
+            <div className="text-4xl font-headline font-bold text-brand-navy mb-2">{fmt(postCount)}</div>
+            <div className="text-[10px] font-label uppercase tracking-[0.2em] text-on-surface-variant">Discussions Posted</div>
+          </div>
+          <div>
+            <div className="text-4xl font-headline font-bold text-brand-navy mb-2">{groupCount}</div>
+            <div className="text-[10px] font-label uppercase tracking-[0.2em] text-on-surface-variant">Working Groups</div>
           </div>
         </div>
       </section>
 
-      {/* ── Recent posts preview ── */}
+      {/* ── Trending Discussions ── */}
       {recentPosts.length > 0 && (
-        <section className="py-20 md:py-28 border-t border-slate-100">
-          <div className="mb-10">
-            <p className="eyebrow mb-3">Recent discussions</p>
-            <h2 className="text-2xl font-bold tracking-tight text-slate-900 md:text-3xl">
-              See what&apos;s being discussed right now.
+        <section className="py-16 md:py-24">
+          <div className="flex items-center justify-between mb-12 border-b border-outline-variant/30 pb-6">
+            <h2 className="font-headline text-2xl font-bold tracking-tight uppercase flex items-center gap-3 text-brand-navy">
+              <span className="w-8 h-[2px] bg-brand-navy inline-block"></span>
+              Trending Discussions
             </h2>
-            <p className="mt-3 max-w-2xl text-sm leading-7 soft-muted">
-              Systems engineers on SYLEN share implementation notes, verification lessons, and architecture tradeoffs.
-              Join the network to read more and contribute.
-            </p>
+            <div className="hidden md:flex gap-6 text-xs font-label uppercase tracking-widest text-on-surface-variant">
+              <Link href="/feed" className="text-brand-navy font-bold border-b border-brand-navy">Recent</Link>
+              <Link href="/onboarding" className="hover:text-brand-navy transition-colors">Join to see more</Link>
+            </div>
           </div>
-          <div className="space-y-4">
-            {recentPosts.map((post) => (
-              <div key={post.id} className="shell-card p-5 md:p-6">
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="pill">Post</span>
-                  {post.author && post.handle && (
-                    <span className="text-xs font-medium text-slate-500">
-                      {post.author} · @{post.handle}
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {/* Featured post */}
+            <article className="md:col-span-2 bg-white border border-outline-variant/60 p-8 flex flex-col justify-between relative hover:border-brand-navy/30 hover:shadow-lg transition-all group">
+              <div>
+                <div className="flex items-center gap-4 mb-6">
+                  <span className="pill">Discussion</span>
+                  {recentPosts[0].author && (
+                    <span className="text-[10px] font-label uppercase tracking-widest text-on-surface-variant">
+                      {recentPosts[0].author}
                     </span>
                   )}
                 </div>
-                <h3 className="text-lg font-semibold tracking-tight text-slate-900">{post.title}</h3>
-                <p className="mt-2 text-sm leading-6 text-slate-600 line-clamp-2">{post.body}</p>
-                <div className="mt-4">
-                  <Link href="/onboarding" className="text-sm font-medium text-blue-600 hover:underline">
-                    Join to read &amp; reply →
-                  </Link>
-                </div>
+                <h3 className="text-2xl font-headline font-bold leading-tight mb-4 text-brand-navy">
+                  {recentPosts[0].title}
+                </h3>
+                <p className="text-on-surface-variant font-light leading-relaxed mb-6 line-clamp-4">
+                  {recentPosts[0].body}
+                </p>
               </div>
-            ))}
+              <div className="flex items-center justify-between pt-6 border-t border-outline-variant/30">
+                <Link href="/onboarding" className="text-xs font-label uppercase tracking-widest text-brand-accent hover:underline">
+                  Join to read &amp; reply →
+                </Link>
+              </div>
+            </article>
+
+            {/* Sidebar: smaller posts + join nudge */}
+            <div className="flex flex-col gap-6">
+              {recentPosts.slice(1, 3).map((post) => (
+                <article key={post.id} className="bg-white border border-outline-variant/60 p-6 hover:border-brand-navy/30 hover:shadow-sm transition-all">
+                  <span className="text-[10px] font-label text-brand-accent font-bold uppercase tracking-[0.2em] mb-3 block">Discussion</span>
+                  <h4 className="font-headline font-bold text-base mb-2 text-brand-navy leading-tight line-clamp-2">
+                    {post.title}
+                  </h4>
+                  <p className="text-sm text-on-surface-variant line-clamp-2 mb-3">{post.body}</p>
+                  {post.author && (
+                    <span className="text-[10px] font-label uppercase text-on-surface-variant">{post.author}</span>
+                  )}
+                </article>
+              ))}
+
+              <div className="p-6 bg-slate-50 border border-outline-variant/30">
+                <h5 className="font-headline font-bold text-sm uppercase tracking-widest mb-2 text-brand-navy">Join the Network</h5>
+                <p className="text-xs text-on-surface-variant mb-4">
+                  Access all discussions, post questions, and connect with peers.
+                </p>
+                <Link href="/onboarding" className="secondary-button w-full justify-center py-2 text-[10px]">
+                  Get access
+                </Link>
+              </div>
+            </div>
           </div>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Link href="/onboarding" className="primary-button">Join the network</Link>
-            <Link href="/feed" className="secondary-button">Browse the feed</Link>
+
+          {/* Industry Dispatch — horizontal ticker */}
+          <div className="mt-16 grid grid-cols-1 md:grid-cols-4 gap-6 pt-12 border-t border-outline-variant/30">
+            <div className="md:col-span-1 md:border-r border-outline-variant/30 md:pr-6">
+              <h3 className="font-headline font-bold text-sm uppercase tracking-widest mb-4 text-brand-navy">
+                Industry Dispatch
+              </h3>
+              <p className="text-xs text-on-surface-variant leading-relaxed">
+                Latest discussions from systems engineers worldwide.
+              </p>
+            </div>
+            <div className="md:col-span-3 flex overflow-x-auto gap-8 no-scrollbar pb-4">
+              {recentPosts.map((post) => (
+                <div key={post.id} className="min-w-[280px] group cursor-pointer shrink-0">
+                  {post.author && (
+                    <span className="text-[10px] font-label text-on-surface-variant uppercase tracking-widest mb-2 block">
+                      {post.author}
+                    </span>
+                  )}
+                  <h4 className="font-headline font-bold text-base group-hover:text-brand-navy transition-colors text-brand-navy/80 line-clamp-2">
+                    {post.title}
+                  </h4>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
       )}
 
-      {/* ── Bottom CTA — full-width dark ── */}
+      {/* ── Working groups ── */}
       <section
-        className="-mb-8 md:-mb-10 relative overflow-hidden"
+        className="border-t border-outline-variant/30 bg-slate-50 py-16 px-6"
         style={bleed}
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-blue-950 to-indigo-950" />
-        <div
-          className="absolute inset-0 pointer-events-none"
-          style={{
-            background:
-              "radial-gradient(ellipse 70% 80% at 50% 110%, rgba(37,99,235,0.22) 0%, transparent 60%)",
-          }}
-        />
-        <div className="relative mx-auto max-w-6xl px-6 py-20 text-center md:px-10 md:py-28">
-          <h2 className="mb-4 text-3xl font-bold tracking-tight text-white md:text-4xl">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-10 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+            <div>
+              <p className="eyebrow mb-3">Community</p>
+              <h2 className="text-2xl font-headline font-bold tracking-tight text-brand-navy md:text-3xl">
+                Find your working group.
+              </h2>
+              <p className="mt-3 max-w-xl text-sm leading-7 soft-muted">
+                Each group has a focused discussion feed, curated resources, and a directory of members in that domain.
+              </p>
+            </div>
+            <Link href="/g" className="secondary-button shrink-0 self-start md:self-auto">
+              All {groupCount} groups →
+            </Link>
+          </div>
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {["mbse", "embedded", "safety", "aerospace", "architecture", "robotics"].map((slug) => {
+              const g = GROUPS.find((x) => x.slug === slug);
+              if (!g) return null;
+              return (
+                <Link
+                  key={slug}
+                  href={`/g/${slug}`}
+                  className="shell-card p-6 block hover:border-brand-navy/30 transition-colors group bg-white"
+                >
+                  <h3 className="text-base font-headline font-semibold text-brand-navy group-hover:text-brand-accent transition-colors">
+                    {g.name}
+                  </h3>
+                  <p className="mt-2 text-sm leading-6 soft-muted line-clamp-2">{g.description}</p>
+                  <div className="mt-4 flex flex-wrap gap-1.5">
+                    {g.tags.slice(0, 3).map((tag) => (
+                      <span key={tag} className="pill">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Bottom CTA ── */}
+      <section className="py-20 md:py-28 border-t border-outline-variant/30">
+        <div className="max-w-2xl">
+          <p className="eyebrow mb-3">Get started</p>
+          <h2 className="mb-4 text-3xl font-headline font-bold tracking-tight text-brand-navy md:text-4xl">
             Ready to find your people?
           </h2>
-          <p className="mx-auto mb-10 max-w-xl text-lg text-slate-300">
+          <p className="mb-10 max-w-xl text-lg text-on-surface-variant font-light">
             Join a growing network of systems engineers who prefer depth over noise.
           </p>
-          <div className="flex flex-wrap justify-center gap-3">
+          <div className="flex flex-wrap gap-3">
             <Link href="/onboarding" className="primary-button">
               Join the network
             </Link>
-            <Link
-              href="/people"
-              className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/10 px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/16"
-            >
+            <Link href="/people" className="secondary-button">
               Browse people
             </Link>
           </div>

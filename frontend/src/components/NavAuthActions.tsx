@@ -24,17 +24,17 @@ export default function NavAuthActions({ mobile = false }: { mobile?: boolean })
   }, []);
 
   if (state === "loading") {
-    return <div className={`animate-pulse rounded-full bg-slate-100 ${mobile ? "h-8 w-16" : "h-9 w-24"}`} />;
+    return <div className={`bg-slate-100 ${mobile ? "h-7 w-16" : "h-7 w-24"}`} />;
   }
 
   if (state === "authed") {
     if (mobile) {
       return (
-        <div className="flex items-center gap-1">
-          <Link href="/feed" className="rounded-full px-3 py-1.5 text-sm font-medium text-slate-600 hover:bg-white/80 hover:text-slate-900">
+        <div className="flex items-center gap-2">
+          <Link href="/feed" className="text-xs font-label uppercase tracking-widest text-on-surface-variant hover:text-brand-navy transition-colors px-2 py-1">
             Feed
           </Link>
-          <Link href={handle ? `/u/${handle}` : "/profile"} className="rounded-full px-3 py-1.5 text-sm font-medium text-slate-600 hover:bg-white/80 hover:text-slate-900">
+          <Link href={handle ? `/u/${handle}` : "/profile"} className="text-xs font-label uppercase tracking-widest text-on-surface-variant hover:text-brand-navy transition-colors px-2 py-1">
             {handle ? `@${handle}` : "Profile"}
           </Link>
           <button
@@ -43,7 +43,7 @@ export default function NavAuthActions({ mobile = false }: { mobile?: boolean })
               await supabase.auth.signOut();
               window.location.assign("/");
             }}
-            className="rounded-full px-3 py-1.5 text-sm font-medium text-slate-500 hover:bg-white/80 hover:text-slate-900"
+            className="text-xs font-label uppercase tracking-widest text-on-surface-variant hover:text-brand-navy transition-colors px-2 py-1"
           >
             Sign out
           </button>
@@ -51,11 +51,11 @@ export default function NavAuthActions({ mobile = false }: { mobile?: boolean })
       );
     }
     return (
-      <div className="flex items-center gap-2">
-        <Link href="/feed" className="rounded-full px-4 py-2 text-sm font-medium text-slate-600 hover:bg-white/80 hover:text-slate-900">
+      <div className="flex items-center gap-4">
+        <Link href="/feed" className="text-xs font-label uppercase tracking-widest text-on-surface-variant hover:text-brand-navy transition-colors">
           Feed
         </Link>
-        <Link href={handle ? `/u/${handle}` : "/profile"} className="rounded-full px-4 py-2 text-sm font-medium text-slate-600 hover:bg-white/80 hover:text-slate-900">
+        <Link href={handle ? `/u/${handle}` : "/profile"} className="text-xs font-label uppercase tracking-widest text-on-surface-variant hover:text-brand-navy transition-colors">
           {handle ? `@${handle}` : "Profile"}
         </Link>
         <button
@@ -64,7 +64,7 @@ export default function NavAuthActions({ mobile = false }: { mobile?: boolean })
             await supabase.auth.signOut();
             window.location.assign("/");
           }}
-          className="rounded-full px-4 py-2 text-sm font-medium text-slate-500 hover:bg-white/80 hover:text-slate-900"
+          className="px-4 py-1.5 text-xs font-label uppercase tracking-widest text-on-surface-variant border border-outline-variant hover:bg-slate-50 transition-all"
         >
           Sign out
         </button>
@@ -74,24 +74,27 @@ export default function NavAuthActions({ mobile = false }: { mobile?: boolean })
 
   if (mobile) {
     return (
-      <div className="flex items-center gap-1">
-        <Link href="/onboarding" className="rounded-full px-3 py-1.5 text-sm font-medium text-slate-600 hover:bg-white/80 hover:text-slate-900">
+      <div className="flex items-center gap-2">
+        <Link href="/onboarding" className="text-xs font-label uppercase tracking-widest text-on-surface-variant hover:text-brand-navy transition-colors px-2 py-1">
           Sign in
         </Link>
-        <Link href="/onboarding" className="primary-button px-3 py-2 text-xs">
-          Join SYLEN
+        <Link href="/onboarding" className="primary-button px-3 py-1.5 text-[10px]">
+          Join
         </Link>
       </div>
     );
   }
 
   return (
-    <div className="flex items-center gap-2">
-      <Link href="/onboarding" className="rounded-full px-4 py-2 text-sm font-medium text-slate-600 hover:bg-white/80 hover:text-slate-900">
-        Sign in
+    <div className="flex items-center gap-3">
+      <Link
+        href="/onboarding"
+        className="px-4 py-1.5 text-xs font-label uppercase tracking-widest text-brand-navy border border-outline-variant hover:bg-slate-50 transition-all"
+      >
+        Sign In
       </Link>
-      <Link href="/onboarding" className="primary-button ml-1 px-4 py-2.5">
-        Join SYLEN
+      <Link href="/onboarding" className="primary-button px-4 py-1.5">
+        Join
       </Link>
     </div>
   );
