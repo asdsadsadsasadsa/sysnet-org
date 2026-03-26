@@ -52,6 +52,33 @@ export default async function Home({
   const groupCount = GROUPS.length;
   const artifactCount = ARTIFACTS.length;
 
+  // Fetch recent public posts for homepage preview
+  type RecentPost = { id: string; title: string; body: string; author: string | null; handle: string | null };
+  let recentPosts: RecentPost[] = [];
+  try {
+    const { data: postRows } = await supabase
+      .from("posts")
+      .select("id,title,body,author_id")
+      .order("created_at", { ascending: false })
+      .limit(5);
+    if (postRows && postRows.length > 0) {
+      const authorIds = [...new Set(postRows.map((p: { author_id: string }) => p.author_id))];
+      const { data: authorRows } = await supabase
+        .from("profile_identities")
+        .select("id,display_name,handle")
+        .in("id", authorIds);
+      const authorsById = new Map(
+        (authorRows || []).map((a: { id: string; display_name: string; handle: string }) => [a.id, a])
+      );
+      recentPosts = postRows.map((p: { id: string; title: string; body: string; author_id: string }) => {
+        const author = authorsById.get(p.author_id) as { display_name: string; handle: string } | undefined;
+        return { id: p.id, title: p.title, body: p.body, author: author?.display_name ?? null, handle: author?.handle ?? null };
+      });
+    }
+  } catch (_) {
+    // Non-fatal — homepage works fine without recent posts
+  }
+
   return (
     <div className="overflow-x-clip">
 
@@ -181,6 +208,47 @@ export default async function Home({
           </div>
         </div>
       </section>
+
+      {/* ── Recent posts preview ── */}
+      {recentPosts.length > 0 && (
+        <section className="py-20 md:py-28 border-t border-slate-100">
+          <div className="mb-10">
+            <p className="eyebrow mb-3">Recent discussions</p>
+            <h2 className="text-2xl font-bold tracking-tight text-slate-900 md:text-3xl">
+              See what&apos;s being discussed right now.
+            </h2>
+            <p className="mt-3 max-w-2xl text-sm leading-7 soft-muted">
+              Systems engineers on SYLEN share implementation notes, verification lessons, and architecture tradeoffs.
+              Join the network to read more and contribute.
+            </p>
+          </div>
+          <div className="space-y-4">
+            {recentPosts.map((post) => (
+              <div key={post.id} className="shell-card p-5 md:p-6">
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="pill">Post</span>
+                  {post.author && post.handle && (
+                    <span className="text-xs font-medium text-slate-500">
+                      {post.author} · @{post.handle}
+                    </span>
+                  )}
+                </div>
+                <h3 className="text-lg font-semibold tracking-tight text-slate-900">{post.title}</h3>
+                <p className="mt-2 text-sm leading-6 text-slate-600 line-clamp-2">{post.body}</p>
+                <div className="mt-4">
+                  <Link href="/onboarding" className="text-sm font-medium text-blue-600 hover:underline">
+                    Join to read &amp; reply →
+                  </Link>
+                </div>
+              </div>
+            ))}
+          </div>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Link href="/onboarding" className="primary-button">Join the network</Link>
+            <Link href="/feed" className="secondary-button">Browse the feed</Link>
+          </div>
+        </section>
+      )}
 
       {/* ── Bottom CTA — full-width dark ── */}
       <section

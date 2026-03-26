@@ -292,11 +292,16 @@ export default function GroupFeedPage() {
           posts.map((post) => (
             <article key={post.id} className="shell-card p-5 md:p-6 hover:border-slate-300 transition-colors">
               <div className="flex flex-wrap items-center gap-2">
-                {post.author && (
-                  <Link href={`/u/${post.author.handle}`} className="text-xs font-bold text-slate-800 hover:text-blue-700">
-                    {post.author.display_name}
+                {post.author ? (
+                  <Link href={`/u/${post.author.handle}`} className="flex items-center gap-2 group/author">
+                    <span className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-blue-100 text-[10px] font-bold text-blue-700">
+                      {post.author.display_name.slice(0, 2).toUpperCase()}
+                    </span>
+                    <span className="text-xs font-bold text-slate-800 group-hover/author:text-blue-700">
+                      {post.author.display_name}
+                    </span>
                   </Link>
-                )}
+                ) : null}
                 <span className="text-xs soft-muted">· {new Date(post.created_at).toLocaleDateString()}</span>
               </div>
               <Link

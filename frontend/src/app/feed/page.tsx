@@ -355,11 +355,17 @@ export default function FeedPage() {
             return (
               <article key={post.id} className="shell-card p-5 md:p-6">
                 <div className="flex flex-wrap items-center gap-2">
-                  <span className="pill">Post</span>
-                  {post.author && (
-                    <Link href={`/u/${post.author.handle}`} className="text-xs font-medium text-slate-700 hover:text-blue-700">
-                      {post.author.display_name} · @{post.author.handle}
+                  {post.author ? (
+                    <Link href={`/u/${post.author.handle}`} className="flex items-center gap-2 group/author">
+                      <span className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-blue-100 text-[10px] font-bold text-blue-700">
+                        {post.author.display_name.slice(0, 2).toUpperCase()}
+                      </span>
+                      <span className="text-xs font-medium text-slate-700 group-hover/author:text-blue-700">
+                        {post.author.display_name} · @{post.author.handle}
+                      </span>
                     </Link>
+                  ) : (
+                    <span className="pill">Post</span>
                   )}
                   <span className="text-xs soft-muted">{new Date(post.created_at).toLocaleString()}</span>
                   {post.updated_at !== post.created_at && <span className="text-xs soft-muted">edited</span>}
