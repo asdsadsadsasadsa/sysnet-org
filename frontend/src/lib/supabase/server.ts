@@ -39,9 +39,14 @@ export async function createClient() {
           return cookieStore.getAll();
         },
         setAll(cookiesToSet) {
-          cookiesToSet.forEach(({ name, value, options }) =>
-            cookieStore.set(name, value, options)
-          );
+          try {
+            cookiesToSet.forEach(({ name, value, options }) =>
+              cookieStore.set(name, value, options)
+            );
+          } catch {
+            // In Server Components / some render contexts, cookies may be read-only.
+            // Supabase can still proceed and middleware / later requests will reconcile session state.
+          }
         },
       },
     }
