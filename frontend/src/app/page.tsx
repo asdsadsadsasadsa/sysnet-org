@@ -157,7 +157,7 @@ export default async function Home({
     n == null ? "—" : n >= 1000 ? `${(n / 1000).toFixed(1)}k` : String(n);
 
   return (
-    <div className="overflow-x-clip">
+    <div>
 
       {/* ── Hero — asymmetric 2-col editorial grid ── */}
       <section className="relative py-12 md:py-24 overflow-hidden" style={bleed}>

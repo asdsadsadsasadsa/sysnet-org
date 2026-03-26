@@ -45,7 +45,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${spaceGrotesk.variable} ${inter.variable}`}>
       <body className="font-body antialiased bg-white text-on-surface blueprint-grid">
-        <div className="min-h-screen">
+        <div className="min-h-screen overflow-x-clip">
           {/* Fixed editorial nav */}
           <header className="fixed top-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-white/90 backdrop-blur-lg border-b border-outline-variant/30">
             <div className="flex items-center gap-8">
@@ -72,8 +72,10 @@ export default function RootLayout({
             </div>
           </header>
 
-          <main className="pt-16 mx-auto max-w-6xl px-4 pb-8 md:px-5 md:pb-10">
-            {children}
+          <main className="pt-16">
+            <div className="mx-auto max-w-6xl px-4 pb-8 md:px-5 md:pb-10">
+              {children}
+            </div>
           </main>
         </div>
       </body>
