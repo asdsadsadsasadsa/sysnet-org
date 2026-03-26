@@ -1,35 +1,36 @@
 import { test, expect } from '@playwright/test';
 
-const TEST_EMAIL = process.env.E2E_TEST_EMAIL || 'e2e.auth.user@nmbli.com';
-const TEST_PASSWORD = process.env.E2E_TEST_PASSWORD || 'TestAuth#12345';
-const HANDLE = `e2eauthuser${Date.now().toString().slice(-6)}`;
+const TS = Date.now();
+const EMAIL = `onboarding-profile-${TS}@example.com`;
+const PASSWORD = 'TestAuth#12345';
+const HANDLE = `e2eauthuser${TS.toString().slice(-6)}`;
 
-test('signed-in user can complete profile and reach feed', async ({ page, baseURL }) => {
+test('new user can complete profile and reach feed', async ({ page, baseURL }) => {
   test.skip(!baseURL, 'Missing baseURL');
 
   await page.goto('/onboarding');
-  await page.getByPlaceholder('you@company.com').fill(TEST_EMAIL);
-  await page.getByPlaceholder('Password').fill(TEST_PASSWORD);
-  await page.getByRole('button', { name: 'Sign in' }).click();
+  await page.getByRole('button', { name: 'Create account' }).click();
+  await page.getByPlaceholder('you@company.com').fill(EMAIL);
+  await page.getByPlaceholder('Password').first().fill(PASSWORD);
+  await page.getByPlaceholder('Confirm password').fill(PASSWORD);
+  await page.getByRole('button', { name: 'Create account' }).last().click();
 
-  await expect(page.getByRole('heading', { name: /Complete your profile|You’re signed in/i })).toBeVisible();
+  await expect(page.getByRole('heading', { name: /Complete your profile/i })).toBeVisible({ timeout: 20_000 });
 
-  const alreadySignedIn = await page.getByRole('heading', { name: /You’re signed in/i }).isVisible().catch(() => false);
-  if (alreadySignedIn) {
-    await page.getByRole('link', { name: /Go to feed/i }).click();
-    await expect(page).toHaveURL(/\/feed/);
-    return;
-  }
-
-  await page.getByPlaceholder('handle').fill(HANDLE);
-  await page.getByPlaceholder('display name').fill('E2E Auth User');
-  await page.getByPlaceholder('headline').fill('Systems engineer validating onboarding flow');
-  await page.getByPlaceholder('location').fill('San Francisco CA');
-  await page.getByPlaceholder('domains csv').fill('Systems engineering, MBSE, verification');
-  await page.getByPlaceholder('tags csv').fill('SysML, Cameo, requirements');
-  await page.getByPlaceholder('open_to csv').fill('mentoring, consulting');
+  await page.getByPlaceholder('Handle (e.g. jsmith)').fill(HANDLE);
+  await page.getByPlaceholder('Full name').fill('E2E Auth User');
+  await page.getByPlaceholder(/Headline \(e\.g\./i).fill('Systems engineer validating onboarding flow');
+  await page.getByPlaceholder(/Location \(e\.g\./i).fill('San Francisco CA');
+  await page.getByPlaceholder(/Domains, comma-separated/i).fill('Systems engineering, MBSE, verification');
+  await page.getByPlaceholder(/Tags, comma-separated/i).fill('SysML, Cameo, requirements');
+  await page.getByPlaceholder(/Open to \(e\.g\./i).fill('mentoring, consulting');
   await page.getByRole('button', { name: 'Save profile' }).click();
 
-  await expect(page.getByText(/Profile saved\./i)).toBeVisible();
+  await Promise.race([
+    page.waitForURL(/\/feed/, { timeout: 20_000 }),
+    expect(page.getByText(/Profile saved\./i)).toBeVisible({ timeout: 20_000 }).then(() =>
+      page.waitForURL(/\/feed/, { timeout: 20_000 })
+    ),
+  ]);
   await expect(page).toHaveURL(/\/feed/);
 });

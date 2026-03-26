@@ -47,8 +47,9 @@ test('UI session from password token reaches app (no auth bounce)', async ({ pag
   await page.goto('/');
   await page.waitForLoadState('networkidle');
 
-  // App should route authenticated user away from dead-end homepage.
+  // App should route authenticated user away from the marketing homepage.
   await expect(page).not.toHaveURL(/\/\?code=/);
   await expect(page).not.toHaveURL(/auth=failed/);
-  await expect(page.locator('body')).toContainText(/ABRAKADABRA|Go to feed|Step 1: Sign in|feed/i);
+  await expect(page).toHaveURL(/\/feed|\/onboarding/);
+  await expect(page.locator('body')).toContainText(/Go to feed|Complete your profile|Join the network\.|feed/i);
 });

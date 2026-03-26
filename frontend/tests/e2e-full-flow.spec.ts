@@ -53,9 +53,13 @@ test('full E2E flow: signup → profile → feed → group → paper', async ({ 
 
     await page.getByRole('button', { name: 'Save profile' }).click();
 
-    // New user: should show "Profile saved. Redirecting to feed..." and then navigate to /feed
-    await expect(page.getByText(/Profile saved\./i)).toBeVisible({ timeout: 20_000 });
-    await page.waitForURL((url) => url.pathname === '/feed', { timeout: 20_000 });
+    // New user should land on /feed; the success flash may disappear quickly during redirect.
+    await Promise.race([
+      page.waitForURL((url) => url.pathname === '/feed', { timeout: 20_000 }),
+      expect(page.getByText(/Profile saved\./i)).toBeVisible({ timeout: 20_000 }).then(() =>
+        page.waitForURL((url) => url.pathname === '/feed', { timeout: 20_000 })
+      ),
+    ]);
   });
 
   // ── Step 3: Post to feed ─────────────────────────────────────────────────
