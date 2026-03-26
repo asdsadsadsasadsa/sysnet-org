@@ -1,0 +1,83 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#F8F8F8" />
+  
+  <!-- Subtle Grid -->
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#E5E5E5" stroke-width="1"/>
+    </pattern>
+    <clipPath id="centerClip">
+       <rect x="0" y="0" width="1200" height="630" />
+    </clipPath>
+  </defs>
+  <rect width="1200" height="630" fill="url(#grid)" />
+
+  <!-- Abstract Schematic Layer -->
+  <g stroke="#1A1A1A" stroke-width="2" fill="none">
+    <!-- Horizontal and Vertical Main Traces -->
+    <path d="M 100,315 L 1100,315" stroke-opacity="0.2" />
+    <path d="M 600,50 L 600,580" stroke-opacity="0.2" />
+    
+    <!-- Geometric Blocks (MCU Components) -->
+    <!-- Central Processor Block -->
+    <rect x="480" y="195" width="240" height="240" stroke-width="4" />
+    <rect x="500" y="215" width="200" height="200" fill="#1A1A1A" />
+    
+    <!-- Memory / Subsystems -->
+    <rect x="760" y="195" width="80" height="100" />
+    <rect x="760" y="315" width="80" height="120" />
+    <rect x="360" y="195" width="80" height="100" />
+    <rect x="360" y="315" width="80" height="120" />
+    
+    <!-- IO Ports -->
+    <rect x="480" y="100" width="60" height="40" />
+    <rect x="570" y="100" width="60" height="40" />
+    <rect x="660" y="100" width="60" height="40" />
+    
+    <rect x="480" y="490" width="60" height="40" />
+    <rect x="570" y="490" width="60" height="40" />
+    <rect x="660" y="490" width="60" height="40" />
+  </g>
+
+  <!-- Sapphire Blue Accents (Data Paths) -->
+  <g stroke="#0F52BA" stroke-width="3" fill="none">
+    <!-- Active Traces -->
+    <path d="M 500,240 L 360,240" />
+    <path d="M 700,240 L 840,240" />
+    <path d="M 500,390 L 360,390" />
+    <path d="M 700,390 L 840,390" />
+    
+    <path d="M 600,215 L 600,140" />
+    <path d="M 600,415 L 600,490" />
+    
+    <!-- Highlight Nodes -->
+    <rect x="350" y="230" width="20" height="20" fill="#0F52BA" stroke="none" />
+    <rect x="830" y="230" width="20" height="20" fill="#0F52BA" stroke="none" />
+    <rect x="350" y="380" width="20" height="20" fill="#0F52BA" stroke="none" />
+    <rect x="830" y="380" width="20" height="20" fill="#0F52BA" stroke="none" />
+    <rect x="590" y="130" width="20" height="20" fill="#0F52BA" stroke="none" />
+    <rect x="590" y="480" width="20" height="20" fill="#0F52BA" stroke="none" />
+    
+    <!-- Technical Patterns -->
+    <path d="M 100,100 L 150,100 L 150,150" />
+    <path d="M 1100,530 L 1050,530 L 1050,480" />
+  </g>
+
+  <!-- Abstract "Code/Data" Pulse -->
+  <g fill="#1A1A1A">
+    <rect x="520" y="235" width="40" height="5" />
+    <rect x="570" y="235" width="20" height="5" />
+    <rect x="610" y="235" width="60" height="5" />
+    
+    <rect x="520" y="255" width="100" height="5" />
+    <rect x="630" y="255" width="40" height="5" />
+    
+    <rect x="520" y="275" width="20" height="5" />
+    <rect x="550" y="275" width="80" height="5" />
+    <rect x="640" y="275" width="30" height="5" />
+  </g>
+  
+  <!-- Finishing Frame -->
+  <rect x="40" y="40" width="1120" height="550" stroke="#1A1A1A" stroke-width="1" fill="none" stroke-opacity="0.1" />
+</svg>

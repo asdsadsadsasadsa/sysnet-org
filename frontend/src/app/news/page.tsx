@@ -37,22 +37,77 @@ async function getArticles(): Promise<NewsArticle[]> {
   }
 }
 
-function renderMarkdown(body: string) {
-  return body
-    .split(/\n\n+/)
-    .map((paragraph) => paragraph.trim())
-    .filter(Boolean)
-    .map((paragraph, index) => {
-      const html = paragraph
-        .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
-        .replace(/\*(.+?)\*/g, "<em>$1</em>")
-        .replace(
-          /\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g,
-          '<a href="$2" target="_blank" rel="noopener noreferrer" class="underline underline-offset-4">$1</a>',
-        );
+function formatInlineMarkdown(text: string) {
+  return text
+    .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
+    .replace(/\*(.+?)\*/g, "<em>$1</em>")
+    .replace(
+      /\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g,
+      '<a href="$2" target="_blank" rel="noopener noreferrer" class="underline underline-offset-4">$1</a>',
+    );
+}
 
-      return <p key={index} className="text-base leading-8 text-slate-700" dangerouslySetInnerHTML={{ __html: html }} />;
-    });
+function renderMarkdown(body: string) {
+  const blocks = body
+    .split(/\n\n+/)
+    .map((block) => block.trim())
+    .filter(Boolean);
+
+  return blocks.map((block, index) => {
+    if (/^###\s+/.test(block)) {
+      return (
+        <h3
+          key={index}
+          className="text-2xl font-semibold tracking-[-0.03em] text-slate-950"
+          dangerouslySetInnerHTML={{ __html: formatInlineMarkdown(block.replace(/^###\s+/, "")) }}
+        />
+      );
+    }
+
+    if (/^##\s+/.test(block)) {
+      return (
+        <h2
+          key={index}
+          className="text-3xl font-semibold tracking-[-0.03em] text-slate-950"
+          dangerouslySetInnerHTML={{ __html: formatInlineMarkdown(block.replace(/^##\s+/, "")) }}
+        />
+      );
+    }
+
+    if (/^#\s+/.test(block)) {
+      return (
+        <h1
+          key={index}
+          className="text-4xl font-semibold tracking-[-0.04em] text-slate-950"
+          dangerouslySetInnerHTML={{ __html: formatInlineMarkdown(block.replace(/^#\s+/, "")) }}
+        />
+      );
+    }
+
+    if (/^(?:- |\* )/m.test(block)) {
+      const items = block
+        .split("\n")
+        .map((line) => line.trim())
+        .filter((line) => /^(?:- |\* )/.test(line))
+        .map((line) => line.replace(/^(?:- |\* )/, ""));
+
+      return (
+        <ul key={index} className="list-disc space-y-3 pl-6 text-base leading-8 text-slate-700">
+          {items.map((item, itemIndex) => (
+            <li key={itemIndex} dangerouslySetInnerHTML={{ __html: formatInlineMarkdown(item) }} />
+          ))}
+        </ul>
+      );
+    }
+
+    return (
+      <p
+        key={index}
+        className="text-base leading-8 text-slate-700"
+        dangerouslySetInnerHTML={{ __html: formatInlineMarkdown(block) }}
+      />
+    );
+  });
 }
 
 export default async function NewsPage({
@@ -102,7 +157,7 @@ export default async function NewsPage({
 
           <article className="mt-6 space-y-8 bg-white p-8 md:p-12">
             {article.image_url && (
-              <div className="overflow-hidden bg-slate-100">
+              <div className="space-y-2 overflow-hidden bg-slate-100">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={article.image_url}
@@ -110,6 +165,11 @@ export default async function NewsPage({
                   className="h-auto w-full object-cover"
                   loading="lazy"
                 />
+                <p className="px-1 pb-1 text-[11px] uppercase tracking-[0.18em] text-slate-500">
+                  {article.image_url.includes("pollinations.ai")
+                    ? "Illustration: generated for SYLEN"
+                    : `Image courtesy of ${article.source_domain ?? "the original source"}`}
+                </p>
               </div>
             )}
 
@@ -233,7 +293,6 @@ export default async function NewsPage({
                       day: "numeric",
                     })}
                   </time>
-                  {articles[0].source_domain && <span>Source: {articles[0].source_domain}</span>}
                 </div>
               </div>
             </article>
@@ -256,7 +315,6 @@ export default async function NewsPage({
                         day: "numeric",
                       })}
                     </time>
-                    {article.source_domain && <span>{article.source_domain}</span>}
                   </div>
                 </div>
               </article>

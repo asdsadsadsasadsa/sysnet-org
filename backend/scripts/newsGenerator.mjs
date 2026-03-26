@@ -68,6 +68,28 @@ function stripHtml(html) {
     .replace(/\s+/g, ' ').trim().slice(0, 10000);
 }
 
+function extractLeadImage(html, pageUrl) {
+  const patterns = [
+    /<meta[^>]+property=["']og:image["'][^>]+content=["']([^"']+)["'][^>]*>/i,
+    /<meta[^>]+content=["']([^"']+)["'][^>]+property=["']og:image["'][^>]*>/i,
+    /<meta[^>]+name=["']twitter:image["'][^>]+content=["']([^"']+)["'][^>]*>/i,
+    /<meta[^>]+content=["']([^"']+)["'][^>]+name=["']twitter:image["'][^>]*>/i,
+  ];
+
+  for (const pattern of patterns) {
+    const match = html.match(pattern);
+    const candidate = match?.[1]?.trim();
+    if (!candidate) continue;
+    try {
+      return new URL(candidate, pageUrl).toString();
+    } catch {
+      continue;
+    }
+  }
+
+  return null;
+}
+
 function claudeAsk(prompt) {
   // Use the local Claude CLI which already has auth
   const claudeBin = `${process.env.HOME}/.claude/local/claude`;
@@ -145,12 +167,17 @@ REASON: [one sentence]`
   console.log(`Selected: "${story.title}"`);
   console.log(`Topic: ${topic}`);
 
-  // Fetch original content
+  // Fetch original content + lead image
   let originalContent = '';
+  let sourceImageUrl = null;
   try {
     const html = await fetchText(story.url);
     originalContent = stripHtml(html);
+    sourceImageUrl = extractLeadImage(html, story.url);
     console.log(`Original content: ${originalContent.length} chars`);
+    if (sourceImageUrl) {
+      console.log(`Source image: ${sourceImageUrl}`);
+    }
   } catch (e) {
     console.warn('Could not fetch original:', e.message);
     originalContent = story.title;
@@ -173,12 +200,12 @@ ${originalContent.slice(0, 6000)}
 ---
 
 Write:
-1. A HEADLINE — flashy, clickbaity, technically accurate, specific to why SE practitioners should care
+1. A HEADLINE — sharp, natural, technically accurate, and human-sounding. Do NOT force the phrase "systems engineers" or "systems engineering" into the title unless it genuinely improves it.
 2. A SUMMARY — 2-3 sentences for the article card preview
 3. BODY — 800-1000 words in markdown:
-   - Lead with why this matters to systems engineers specifically
+   - Lead with why this matters in practice
    - Technical substance, concrete details
-   - Connect to SE practices (reliability, V&V, architecture, safety, etc.)
+   - Connect to engineering practices (reliability, V&V, architecture, safety, operations, etc.)
    - Final paragraph: End with a clear attribution link to the original article: "Read the original article at [source domain](${story.url})."
 
 Format:
@@ -198,11 +225,12 @@ BODY:
 
   console.log(`Headline: ${headline}`);
 
-  // Pollinations.ai free image
+  // Prefer the original article's lead image; only fall back to AI if needed
   const imagePrompt = encodeURIComponent(
-    `Professional technical illustration for systems engineering article: ${headline.slice(0, 80)}. Dark blue, white, clean architectural diagram style, modern, no text`
+    `Professional technical illustration for editorial technology article: ${headline.slice(0, 80)}. Dark blue, white, clean architectural diagram style, modern, no text`
   );
-  const imageUrl = `https://image.pollinations.ai/prompt/${imagePrompt}?width=1200&height=630&nologo=true&seed=${Date.now()}`;
+  const fallbackImageUrl = `https://image.pollinations.ai/prompt/${imagePrompt}?width=1200&height=630&nologo=true&seed=${Date.now()}`;
+  const imageUrl = sourceImageUrl || fallbackImageUrl;
 
   if (DRY_RUN) {
     console.log('\n--- DRY RUN ---');
