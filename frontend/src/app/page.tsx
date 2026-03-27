@@ -80,11 +80,11 @@ export default async function Home({
     redirect(profile ? "/feed" : "/onboarding?auth=ok");
   }
 
-  // Redirect already-logged-in users straight to the feed
+  // Redirect already-logged-in users straight to news
   const {
     data: { user },
   } = await supabase.auth.getUser();
-  if (user) redirect("/feed");
+  if (user) redirect("/news");
 
   const groupCount = GROUPS.length;
 

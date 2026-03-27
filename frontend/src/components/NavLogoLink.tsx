@@ -10,7 +10,7 @@ export default function NavLogoLink() {
 
   useEffect(() => {
     supabase.auth.getUser().then(({ data: { user } }) => {
-      if (user) setHref("/feed");
+      if (user) setHref("/news");
     });
   }, []);
 

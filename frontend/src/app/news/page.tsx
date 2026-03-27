@@ -216,28 +216,6 @@ export default async function NewsPage({
 
   return (
     <div className="mx-auto max-w-7xl px-6 py-8 md:px-10">
-      <section className="grid gap-8 bg-white p-8 md:grid-cols-[minmax(0,1.5fr)_320px] md:p-12">
-        <div className="space-y-5">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.28em] text-slate-500">SYLEN News Desk</p>
-          <h1 className="max-w-4xl text-4xl font-semibold tracking-[-0.04em] text-slate-950 md:text-6xl">
-            Synthesized articles for systems engineers.
-          </h1>
-          <p className="max-w-3xl text-lg leading-8 text-slate-600">
-            Technical analysis on reliability, architecture, safety-critical systems, defense, embedded platforms,
-            software delivery, and engineering practice — written for the people building real systems.
-          </p>
-        </div>
-
-        <div className="space-y-4 bg-slate-50 p-6">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-slate-500">Coverage</p>
-          <div className="space-y-3 text-sm text-slate-700">
-            <p>New articles are sourced from strong technical discussions and rewritten as editorial analysis for SYLEN.</p>
-            <p>We credit the original source directly — not the aggregator.</p>
-            <p>{articles.length} article{articles.length === 1 ? "" : "s"} available now.</p>
-          </div>
-        </div>
-      </section>
-
       {topics.length > 0 && (
         <div className="mt-8 flex flex-wrap gap-3">
           <Link
@@ -260,7 +238,7 @@ export default async function NewsPage({
 
       {articles.length === 0 ? (
         <div className="mt-10 bg-white p-10 text-slate-600">
-          No articles published yet. The newsGenerator pipeline is ready and will populate this page automatically.
+          No articles yet.
         </div>
       ) : (
         <div className="mt-10 grid gap-8 lg:grid-cols-[minmax(0,1.45fr)_minmax(320px,0.9fr)]">
