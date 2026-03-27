@@ -171,122 +171,62 @@ export default function ProfileManagementPage() {
   }
 
   if (loading) {
-    return (
-      <div className="shell-card p-8">
-        <p className="eyebrow">Profile management</p>
-        <h1 className="section-title mt-3 text-2xl md:text-3xl">Loading your profile...</h1>
-      </div>
-    );
+    return <div className="max-w-md mx-auto py-12 text-sm text-on-surface-variant">Loading…</div>;
   }
 
   if (!userId) {
     return (
-      <div className="space-y-6">
-        <section className="shell-card-strong p-6 md:p-8">
-          <p className="eyebrow">Profile management</p>
-          <h1 className="section-title mt-3">Sign in to manage your professional profile.</h1>
-          <p className="mt-3 max-w-2xl text-base leading-7 soft-muted">
-            This is where members should be able to edit their public identity instead of getting trapped in one-time onboarding.
-          </p>
-          <div className="mt-6 flex flex-wrap gap-3">
-            <Link href="/onboarding" className="primary-button">
-              Sign in
-            </Link>
-            <Link href="/people" className="secondary-button">
-              Browse directory
-            </Link>
-          </div>
-        </section>
+      <div className="max-w-md mx-auto py-12 space-y-4">
+        <p className="text-sm text-on-surface-variant">Sign in to manage your profile.</p>
+        <Link href="/onboarding" className="primary-button inline-block">Sign in</Link>
       </div>
     );
   }
 
   return (
-    <div className="space-y-6">
-      <section className="page-grid">
-        <div className="shell-card-strong p-6 md:p-8">
-          <p className="eyebrow">Profile management</p>
-          <h1 className="section-title mt-3">Manage the member profile people can discover.</h1>
-          <p className="mt-3 max-w-2xl text-base leading-7 soft-muted">
-            This should function like a professional member record: credible headline, useful expertise tags, clear availability,
-            and enough context that another systems engineer can tell why they should care.
-          </p>
-          {userEmail && <p className="mt-4 text-sm soft-muted">Signed in as {userEmail}</p>}
-        </div>
-
-        <aside className="shell-card p-6">
-          <p className="eyebrow">Quick actions</p>
-          <div className="mt-4 flex flex-col gap-3">
+    <div className="max-w-md mx-auto py-12 space-y-6">
+      <form onSubmit={saveProfile} className="shell-card p-6 space-y-4">
+        <div className="flex items-center justify-between">
+          <h2 className="text-sm font-label uppercase tracking-widest text-brand-navy">
+            {profileExists ? "Edit profile" : "Create profile"}
+          </h2>
+          <div className="flex items-center gap-4">
             {publicProfileHref && (
-              <Link href={publicProfileHref} className="secondary-button">
-                {visibility === "public" ? "View public profile" : "Preview profile route"}
+              <Link href={publicProfileHref} className="text-xs font-label uppercase tracking-widest text-on-surface-variant hover:text-brand-navy transition-colors">
+                View
               </Link>
             )}
-            <Link href="/feed" className="secondary-button">
-              Go to feed
-            </Link>
-            <Link href="/people" className="secondary-button">
-              Browse directory
-            </Link>
-            <button type="button" onClick={signOut} className="secondary-button">
+            <button type="button" onClick={signOut} className="text-xs font-label uppercase tracking-widest text-on-surface-variant hover:text-brand-navy transition-colors">
               Sign out
             </button>
+            <button disabled={saving} className="px-4 py-1.5 text-xs font-label uppercase tracking-widest bg-brand-navy text-white hover:bg-slate-800 transition-all disabled:opacity-60">
+              {saving ? "Saving…" : "Save"}
+            </button>
           </div>
-          <div className="mt-5 space-y-2 text-sm leading-6 soft-muted">
-            <p>Keep the handle stable if other people may already be linking to it.</p>
-            <p>Private profiles stay accessible to you, but disappear from the public directory and direct profile page.</p>
-            <p>Use domains for big buckets and tags for specific methods, tools, or topics.</p>
-            <p>Availability only accepts: mentoring, consulting, hiring.</p>
-          </div>
-        </aside>
-      </section>
-
-      <form onSubmit={saveProfile} className="shell-card p-6 space-y-4 md:p-8">
-        <div className="flex items-center justify-between gap-4">
-          <div>
-            <h2 className="text-xl font-semibold text-slate-900">{profileExists ? "Edit your profile" : "Create your profile"}</h2>
-            <p className="mt-1 text-sm soft-muted">
-              {profileExists
-                ? "Update your profile details and choose whether it is public or private."
-                : "You’re signed in. Create the profile that will show up across the network if you keep it public."}
-            </p>
-          </div>
-          <button disabled={saving} className="primary-button px-4 py-2.5 disabled:opacity-60">
-            {saving ? "Saving..." : profileExists ? "Save changes" : "Create profile"}
-          </button>
         </div>
 
-        <div className="grid gap-4 md:grid-cols-2">
-          <input placeholder="handle" value={handle} onChange={(e) => setHandle(e.target.value)} />
-          <input placeholder="public name" value={displayName} onChange={(e) => setDisplayName(e.target.value)} />
-          <label className="md:col-span-2 rounded-2xl border border-slate-200/80 bg-white/80 p-4 text-sm text-slate-700">
-            <span className="block text-sm font-semibold text-slate-900">Directory visibility</span>
-            <span className="mt-1 block soft-muted">Listed profiles appear in the member directory and can be viewed at your handle link.</span>
-            <select className="mt-3" value={visibility} onChange={(e) => setVisibility(e.target.value as ProfileVisibility)}>
-              <option value="public">Listed in member directory</option>
-              <option value="private">Only visible to you</option>
-            </select>
-          </label>
-          <input className="md:col-span-2" placeholder="headline" value={headline} onChange={(e) => setHeadline(e.target.value)} />
-          <textarea className="md:col-span-2" placeholder="bio" value={bio} onChange={(e) => setBio(e.target.value)} />
-          <input placeholder="location" value={location} onChange={(e) => setLocation(e.target.value)} />
-          <input placeholder="timezone" value={timezone} onChange={(e) => setTimezone(e.target.value)} />
-          <input placeholder="domains csv" value={domains} onChange={(e) => setDomains(e.target.value)} />
-          <input placeholder="tags csv" value={tags} onChange={(e) => setTags(e.target.value)} />
-          <input className="md:col-span-2" placeholder="open_to csv" value={openTo} onChange={(e) => setOpenTo(e.target.value)} />
+        <div className="grid gap-3 md:grid-cols-2">
+          <input placeholder="Handle" value={handle} onChange={(e) => setHandle(e.target.value)} />
+          <input placeholder="Name" value={displayName} onChange={(e) => setDisplayName(e.target.value)} />
+          <input className="md:col-span-2" placeholder="Headline" value={headline} onChange={(e) => setHeadline(e.target.value)} />
+          <textarea className="md:col-span-2" placeholder="Bio" value={bio} onChange={(e) => setBio(e.target.value)} />
+          <input placeholder="Location" value={location} onChange={(e) => setLocation(e.target.value)} />
+          <input placeholder="Timezone" value={timezone} onChange={(e) => setTimezone(e.target.value)} />
+          <input placeholder="Domains (comma-separated)" value={domains} onChange={(e) => setDomains(e.target.value)} />
+          <input placeholder="Tags (comma-separated)" value={tags} onChange={(e) => setTags(e.target.value)} />
+          <select className="md:col-span-2" value={visibility} onChange={(e) => setVisibility(e.target.value as ProfileVisibility)}>
+            <option value="public">Public</option>
+            <option value="private">Private</option>
+          </select>
         </div>
       </form>
 
       {msg && (
-        <div
-          className={`rounded-2xl border px-4 py-3 text-sm ${
-            msgTone === "error"
-              ? "border-rose-200 bg-rose-50 text-rose-700"
-              : msgTone === "success"
-                ? "border-emerald-200 bg-emerald-50 text-emerald-700"
-                : "border-blue-200 bg-blue-50 text-blue-700"
-          }`}
-        >
+        <div className={`border px-4 py-3 text-sm ${
+          msgTone === "error" ? "border-rose-300 bg-rose-50 text-rose-700"
+          : msgTone === "success" ? "border-emerald-300 bg-emerald-50 text-emerald-700"
+          : "border-blue-200 bg-blue-50 text-blue-700"
+        }`}>
           {msg}
         </div>
       )}
