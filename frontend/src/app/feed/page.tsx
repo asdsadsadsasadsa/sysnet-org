@@ -4,6 +4,7 @@ export const dynamic = "force-dynamic";
 import { FormEvent, useEffect, useState } from "react";
 import Link from "next/link";
 import { createClient } from "@/lib/supabase/client";
+import { Avatar } from "@/components/Avatar";
 import type { Post, PublicProfileSummary } from "@/lib/types";
 
 type FeedPost = Post & {
@@ -23,9 +24,35 @@ type CommentRow = {
   post_id: string;
 };
 
+function FeedSkeleton() {
+  return (
+    <div className="space-y-4 animate-pulse">
+      {[1, 2, 3].map((i) => (
+        <div key={i} className="shell-card p-5 md:p-6 space-y-3">
+          <div className="flex items-center gap-2">
+            <div className="h-7 w-7 rounded-full bg-slate-200" />
+            <div className="h-3 w-36 rounded bg-slate-200" />
+          </div>
+          <div className="h-5 w-3/4 rounded bg-slate-200" />
+          <div className="space-y-2">
+            <div className="h-3 w-full rounded bg-slate-200" />
+            <div className="h-3 w-5/6 rounded bg-slate-200" />
+            <div className="h-3 w-4/6 rounded bg-slate-200" />
+          </div>
+          <div className="flex gap-3 pt-2">
+            <div className="h-8 w-20 rounded bg-slate-200" />
+            <div className="h-8 w-24 rounded bg-slate-200" />
+          </div>
+        </div>
+      ))}
+    </div>
+  );
+}
+
 export default function FeedPage() {
   const supabase = createClient();
   const [posts, setPosts] = useState<FeedPost[]>([]);
+  const [feedLoading, setFeedLoading] = useState(true);
   const [viewerId, setViewerId] = useState("");
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
@@ -38,6 +65,8 @@ export default function FeedPage() {
   const [showProfilePrompt, setShowProfilePrompt] = useState(false);
 
   async function load() {
+    setFeedLoading(true);
+
     const {
       data: { user },
     } = await supabase.auth.getUser();
@@ -65,6 +94,7 @@ export default function FeedPage() {
     if (loadError) {
       setMsg(loadError.message);
       setMsgTone("error");
+      setFeedLoading(false);
       return;
     }
 
@@ -72,21 +102,32 @@ export default function FeedPage() {
     const authorIds = [...new Set(postRows.map((post) => post.author_id))];
     const postIds = postRows.map((post) => post.id);
 
-    const [{ data: authorRows }, { data: likeRows }, { data: commentRows }] = await Promise.all([
-      authorIds.length
-        ? supabase.from("profile_identities").select("id,handle,display_name").in("id", authorIds)
-        : Promise.resolve({ data: [] as PublicProfileSummary[] }),
-      postIds.length
-        ? supabase.from("likes").select("post_id,user_id").in("post_id", postIds)
-        : Promise.resolve({ data: [] as LikeRow[] }),
-      postIds.length
-        ? supabase.from("comments").select("post_id").in("post_id", postIds)
-        : Promise.resolve({ data: [] as CommentRow[] }),
-    ]);
+    const [{ data: authorRows }, { data: avatarRows }, { data: likeRows }, { data: commentRows }] =
+      await Promise.all([
+        authorIds.length
+          ? supabase.from("profile_identities").select("id,handle,display_name").in("id", authorIds)
+          : Promise.resolve({ data: [] as Pick<PublicProfileSummary, "id" | "handle" | "display_name">[] }),
+        authorIds.length
+          ? supabase.from("profiles").select("id,avatar_url").in("id", authorIds)
+          : Promise.resolve({ data: [] as { id: string; avatar_url: string | null }[] }),
+        postIds.length
+          ? supabase.from("likes").select("post_id,user_id").in("post_id", postIds)
+          : Promise.resolve({ data: [] as LikeRow[] }),
+        postIds.length
+          ? supabase.from("comments").select("post_id").in("post_id", postIds)
+          : Promise.resolve({ data: [] as CommentRow[] }),
+      ]);
 
-    const authorsById = new Map(
-      ((authorRows || []) as PublicProfileSummary[]).map((author) => [author.id, author]),
+    const avatarById = new Map(
+      ((avatarRows || []) as { id: string; avatar_url: string | null }[]).map((r) => [r.id, r.avatar_url])
     );
+    const authorsById = new Map(
+      ((authorRows || []) as Pick<PublicProfileSummary, "id" | "handle" | "display_name">[]).map((a) => [
+        a.id,
+        { ...a, avatar_url: avatarById.get(a.id) ?? null } as PublicProfileSummary,
+      ])
+    );
+
     const likeCountByPostId = new Map<string, number>();
     const likedPostIds = new Set<string>();
     const commentCountByPostId = new Map<string, number>();
@@ -109,6 +150,7 @@ export default function FeedPage() {
         commentCount: commentCountByPostId.get(post.id) || 0,
       })),
     );
+    setFeedLoading(false);
   }
 
   useEffect(() => {
@@ -284,9 +326,13 @@ export default function FeedPage() {
       )}
 
       <section className="space-y-4">
-        {posts.length === 0 ? (
-          <div className="shell-card p-8 text-center">
-            <p className="text-sm text-on-surface-variant">No posts yet.</p>
+        {feedLoading ? (
+          <FeedSkeleton />
+        ) : posts.length === 0 ? (
+          <div className="shell-card p-10 text-center space-y-3">
+            <div className="text-2xl text-slate-300 select-none">✦</div>
+            <p className="text-sm font-medium text-slate-700">Nothing here yet.</p>
+            <p className="text-sm text-on-surface-variant">Be the first to share an insight.</p>
           </div>
         ) : (
           posts.map((post) => {
@@ -297,9 +343,7 @@ export default function FeedPage() {
                 <div className="flex flex-wrap items-center gap-2">
                   {post.author ? (
                     <Link href={`/u/${post.author.handle}`} className="flex items-center gap-2 group/author">
-                      <span className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-blue-100 text-[10px] font-bold text-blue-700">
-                        {post.author.display_name.slice(0, 2).toUpperCase()}
-                      </span>
+                      <Avatar url={post.author.avatar_url} name={post.author.display_name} size="sm" />
                       <span className="text-xs font-medium text-slate-700 group-hover/author:text-blue-700">
                         {post.author.display_name} · @{post.author.handle}
                       </span>

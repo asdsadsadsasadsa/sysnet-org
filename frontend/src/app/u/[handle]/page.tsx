@@ -5,7 +5,33 @@ import { FormEvent, useEffect, useState } from "react";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
+import { Avatar } from "@/components/Avatar";
 import type { Profile, Post } from "@/lib/types";
+
+function ProfileSkeleton() {
+  return (
+    <div className="space-y-6 animate-pulse">
+      <section className="page-grid">
+        <div className="shell-card-strong p-6 md:p-8 space-y-4">
+          <div className="flex items-center gap-4">
+            <div className="h-16 w-16 rounded-full bg-slate-200" />
+            <div className="space-y-2">
+              <div className="h-6 w-48 rounded bg-slate-200" />
+              <div className="h-4 w-32 rounded bg-slate-200" />
+            </div>
+          </div>
+          <div className="h-4 w-3/4 rounded bg-slate-200" />
+          <div className="h-4 w-1/2 rounded bg-slate-200" />
+        </div>
+        <aside className="shell-card p-6 space-y-3">
+          <div className="h-3 w-16 rounded bg-slate-200" />
+          <div className="h-9 w-full rounded bg-slate-200" />
+          <div className="h-9 w-full rounded bg-slate-200" />
+        </aside>
+      </section>
+    </div>
+  );
+}
 
 export default function ProfilePage() {
   const { handle } = useParams<{ handle: string }>();
@@ -25,7 +51,7 @@ export default function ProfilePage() {
 
     const { data: profileData } = await supabase
       .from("profiles")
-      .select("id,handle,display_name,visibility,headline,bio,location,timezone,domains,tags,open_to")
+      .select("id,handle,display_name,visibility,headline,bio,location,timezone,domains,tags,open_to,avatar_url")
       .eq("handle", handle)
       .maybeSingle();
 
@@ -38,7 +64,7 @@ export default function ProfilePage() {
         .select("id,author_id,group_slug,title,body,created_at,updated_at")
         .eq("author_id", p.id)
         .order("created_at", { ascending: false });
-      
+
       setPosts((postData as Post[]) || []);
     }
 
@@ -64,11 +90,7 @@ export default function ProfilePage() {
   }
 
   if (loading) {
-    return (
-      <div className="shell-card p-8">
-        <h1 className="text-2xl font-semibold text-slate-900">Loading profile...</h1>
-      </div>
-    );
+    return <ProfileSkeleton />;
   }
 
   if (!profile) {
@@ -95,8 +117,13 @@ export default function ProfilePage() {
               </span>
             ))}
           </div>
-          <h1 className="section-title mt-4">{profile.display_name}</h1>
-          <p className="mt-2 text-lg text-slate-700">@{profile.handle}</p>
+          <div className="mt-4 flex items-center gap-4">
+            <Avatar url={profile.avatar_url} name={profile.display_name} size="lg" />
+            <div>
+              <h1 className="section-title">{profile.display_name}</h1>
+              <p className="mt-1 text-base text-slate-700">@{profile.handle}</p>
+            </div>
+          </div>
           {profile.headline && <p className="mt-4 max-w-3xl text-base leading-7 soft-muted">{profile.headline}</p>}
           {(profile.location || profile.timezone) && (
             <p className="mt-4 text-sm soft-muted">
@@ -140,7 +167,7 @@ export default function ProfilePage() {
               )}
             </div>
           </article>
-          
+
           <article className="shell-card p-6 md:p-8">
             <p className="eyebrow">Posts & field notes</p>
             <div className="mt-4 space-y-6">
@@ -155,7 +182,10 @@ export default function ProfilePage() {
                   </div>
                 ))
               ) : (
-                <p className="text-[15px] leading-7 soft-muted">No posts yet.</p>
+                <div className="py-6 text-center space-y-2">
+                  <div className="text-xl text-slate-300 select-none">✦</div>
+                  <p className="text-sm text-on-surface-variant">No posts yet.</p>
+                </div>
               )}
             </div>
           </article>

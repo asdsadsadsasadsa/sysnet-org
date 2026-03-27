@@ -8,6 +8,7 @@ import { createClient } from "@/lib/supabase/client";
 import type { Post, PublicProfileSummary } from "@/lib/types";
 import { GROUP_META } from "@/data/groups";
 import { ARTIFACTS, TYPE_LABELS, TYPE_COLORS } from "@/data/artifacts";
+import { Avatar } from "@/components/Avatar";
 
 type GroupPost = Post & {
   author?: PublicProfileSummary | null;
@@ -106,13 +107,17 @@ export default function GroupFeedPage() {
       const authorIds = [...new Set(postRows.map(p => p.author_id))];
       const postIds = postRows.map(p => p.id);
 
-      const [{ data: authors }, { data: comments }, { data: likes }] = await Promise.all([
+      const [{ data: authors }, { data: avatarRows }, { data: comments }, { data: likes }] = await Promise.all([
         supabase.from("profile_identities").select("id,handle,display_name").in("id", authorIds),
+        supabase.from("profiles").select("id,avatar_url").in("id", authorIds),
         supabase.from("comments").select("post_id").in("post_id", postIds),
         supabase.from("likes").select("post_id").in("post_id", postIds)
       ]);
 
-      const authorMap = new Map((authors as PublicProfileSummary[] || []).map(a => [a.id, a]));
+      const avatarById = new Map(((avatarRows || []) as { id: string; avatar_url: string | null }[]).map(r => [r.id, r.avatar_url]));
+      const authorMap = new Map(
+        ((authors as PublicProfileSummary[] || [])).map(a => [a.id, { ...a, avatar_url: avatarById.get(a.id) ?? null }])
+      );
       const commentCounts = new Map<string, number>();
       (comments || []).forEach(c => commentCounts.set(c.post_id, (commentCounts.get(c.post_id) || 0) + 1));
       const likeCounts = new Map<string, number>();
@@ -170,12 +175,14 @@ export default function GroupFeedPage() {
     if (postRows.length === 0) { setPosts([]); return; }
     const authorIds = [...new Set(postRows.map(p => p.author_id))];
     const postIds = postRows.map(p => p.id);
-    const [{ data: authors }, { data: comments }, { data: likes }] = await Promise.all([
+    const [{ data: authors }, { data: avatarRows2 }, { data: comments }, { data: likes }] = await Promise.all([
       supabase.from("profile_identities").select("id,handle,display_name").in("id", authorIds),
+      supabase.from("profiles").select("id,avatar_url").in("id", authorIds),
       supabase.from("comments").select("post_id").in("post_id", postIds),
       supabase.from("likes").select("post_id").in("post_id", postIds)
     ]);
-    const authorMap = new Map(((authors as PublicProfileSummary[]) || []).map(a => [a.id, a]));
+    const avatarById2 = new Map(((avatarRows2 || []) as { id: string; avatar_url: string | null }[]).map(r => [r.id, r.avatar_url]));
+    const authorMap = new Map(((authors as PublicProfileSummary[]) || []).map(a => [a.id, { ...a, avatar_url: avatarById2.get(a.id) ?? null }]));
     const commentCounts = new Map<string, number>();
     (comments || []).forEach((c: { post_id: string }) => commentCounts.set(c.post_id, (commentCounts.get(c.post_id) || 0) + 1));
     const likeCounts = new Map<string, number>();
@@ -280,9 +287,7 @@ export default function GroupFeedPage() {
               <div className="flex flex-wrap items-center gap-2">
                 {post.author ? (
                   <Link href={`/u/${post.author.handle}`} className="flex items-center gap-2 group/author">
-                    <span className="inline-flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-blue-100 text-[10px] font-bold text-blue-700">
-                      {post.author.display_name.slice(0, 2).toUpperCase()}
-                    </span>
+                    <Avatar url={post.author.avatar_url} name={post.author.display_name} size="sm" />
                     <span className="text-xs font-bold text-slate-800 group-hover/author:text-blue-700">
                       {post.author.display_name}
                     </span>

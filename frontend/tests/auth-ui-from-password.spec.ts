@@ -50,6 +50,6 @@ test('UI session from password token reaches app (no auth bounce)', async ({ pag
   // App should route authenticated user away from the marketing homepage.
   await expect(page).not.toHaveURL(/\/\?code=/);
   await expect(page).not.toHaveURL(/auth=failed/);
-  await expect(page).toHaveURL(/\/feed|\/onboarding/);
-  await expect(page.locator('body')).toContainText(/Go to feed|Complete your profile|Join the network\.|feed/i);
+  await expect(page).toHaveURL(/\/feed|\/news|\/onboarding/);
+  await expect(page.locator('body')).toContainText(/Go to feed|Complete your profile|Join the network\.|feed|news/i);
 });

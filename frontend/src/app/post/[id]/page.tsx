@@ -5,6 +5,7 @@ import { FormEvent, useEffect, useState } from "react";
 import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
+import { Avatar } from "@/components/Avatar";
 import type { PublicProfileSummary } from "@/lib/types";
 
 type CommentRecord = {
@@ -82,12 +83,21 @@ export default function PostPage() {
 
     const commentRows = (commentData || []) as CommentRecord[];
     const identityIds = [...new Set([postRow.author_id, ...commentRows.map((comment) => comment.author_id)])];
-    const { data: identityRows } = identityIds.length
-      ? await supabase.from("profile_identities").select("id,handle,display_name").in("id", identityIds)
-      : { data: [] as PublicProfileSummary[] };
+    const [{ data: identityRows }, { data: avatarRows }] = identityIds.length
+      ? await Promise.all([
+          supabase.from("profile_identities").select("id,handle,display_name").in("id", identityIds),
+          supabase.from("profiles").select("id,avatar_url").in("id", identityIds),
+        ])
+      : [{ data: [] as PublicProfileSummary[] }, { data: [] as { id: string; avatar_url: string | null }[] }];
 
+    const avatarById = new Map(
+      ((avatarRows || []) as { id: string; avatar_url: string | null }[]).map((r) => [r.id, r.avatar_url])
+    );
     const identities = new Map(
-      ((identityRows || []) as PublicProfileSummary[]).map((identity) => [identity.id, identity]),
+      ((identityRows || []) as PublicProfileSummary[]).map((identity) => [
+        identity.id,
+        { ...identity, avatar_url: avatarById.get(identity.id) ?? null },
+      ]),
     );
     const likes = (likeRows || []) as LikeRow[];
 

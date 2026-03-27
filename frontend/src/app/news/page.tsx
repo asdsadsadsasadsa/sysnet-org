@@ -237,8 +237,10 @@ export default async function NewsPage({
       )}
 
       {articles.length === 0 ? (
-        <div className="mt-10 bg-white p-10 text-slate-600">
-          No articles yet.
+        <div className="mt-10 bg-white p-10 text-center space-y-3">
+          <div className="text-2xl text-slate-300 select-none">✦</div>
+          <p className="text-sm font-medium text-slate-700">Nothing here yet.</p>
+          <p className="text-sm text-slate-500">Check back soon — curated systems engineering news lands here.</p>
         </div>
       ) : (
         <div className="mt-10 grid gap-8 lg:grid-cols-[minmax(0,1.45fr)_minmax(320px,0.9fr)]">

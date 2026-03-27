@@ -1,12 +1,13 @@
 "use client";
 export const dynamic = "force-dynamic";
 
-import { FormEvent, useEffect, useMemo, useState } from "react";
+import { ChangeEvent, FormEvent, useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { createClient } from "@/lib/supabase/client";
 import { parseCsvList, normalizeHandle } from "@/lib/profile-utils";
 import { sanitizeOpenTo } from "@/lib/open-to";
+import { Avatar } from "@/components/Avatar";
 import type { Profile, ProfileVisibility } from "@/lib/types";
 
 type MessageTone = "info" | "success" | "error";
@@ -19,6 +20,7 @@ const DEFAULT_VISIBILITY: ProfileVisibility = "public";
 export default function ProfileManagementPage() {
   const router = useRouter();
   const supabase = createClient();
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
@@ -36,6 +38,10 @@ export default function ProfileManagementPage() {
   const [domains, setDomains] = useState(DEFAULT_DOMAINS);
   const [tags, setTags] = useState(DEFAULT_TAGS);
   const [openTo, setOpenTo] = useState(DEFAULT_OPEN_TO);
+
+  const [avatarUrl, setAvatarUrl] = useState<string | null>(null);
+  const [avatarPreview, setAvatarPreview] = useState<string | null>(null);
+  const [avatarFile, setAvatarFile] = useState<File | null>(null);
 
   const [msg, setMsg] = useState("");
   const [msgTone, setMsgTone] = useState<MessageTone>("info");
@@ -62,7 +68,7 @@ export default function ProfileManagementPage() {
 
     const { data } = await supabase
       .from("profiles")
-      .select("id,handle,display_name,visibility,headline,bio,location,timezone,domains,tags,open_to")
+      .select("id,handle,display_name,visibility,headline,bio,location,timezone,domains,tags,open_to,avatar_url")
       .eq("id", user.id)
       .maybeSingle();
 
@@ -79,6 +85,7 @@ export default function ProfileManagementPage() {
       setDomains((profile.domains || []).join(", "));
       setTags((profile.tags || []).join(", "));
       setOpenTo((profile.open_to || []).join(", "));
+      setAvatarUrl(profile.avatar_url || null);
     } else {
       const guessedHandle = normalizeHandle((user.email || "").split("@")[0] || "member");
       const guessedName = (user.email || "").split("@")[0]?.replace(/[._-]+/g, " ") || "";
@@ -99,6 +106,7 @@ export default function ProfileManagementPage() {
       setDomains(DEFAULT_DOMAINS);
       setTags(DEFAULT_TAGS);
       setOpenTo(DEFAULT_OPEN_TO);
+      setAvatarUrl(null);
     }
 
     setLoading(false);
@@ -107,6 +115,19 @@ export default function ProfileManagementPage() {
   useEffect(() => {
     void loadProfile();
   }, []);
+
+  function handleAvatarChange(e: ChangeEvent<HTMLInputElement>) {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    if (file.size > 2 * 1024 * 1024) {
+      setMsgTone("error");
+      setMsg("Image must be under 2 MB.");
+      return;
+    }
+    setAvatarFile(file);
+    setAvatarPreview(URL.createObjectURL(file));
+    setMsg("");
+  }
 
   async function saveProfile(e: FormEvent) {
     e.preventDefault();
@@ -133,6 +154,25 @@ export default function ProfileManagementPage() {
     setMsgTone("info");
     setMsg(profileExists ? "Saving profile changes..." : "Creating your profile...");
 
+    let newAvatarUrl = avatarUrl;
+    if (avatarFile) {
+      const ext = avatarFile.name.split(".").pop()?.toLowerCase() || "jpg";
+      const path = `${userId}/avatar.${ext}`;
+      const { error: uploadError } = await supabase.storage
+        .from("avatars")
+        .upload(path, avatarFile, { upsert: true });
+      if (uploadError) {
+        setMsgTone("error");
+        setMsg(`Avatar upload failed: ${uploadError.message}`);
+        setSaving(false);
+        return;
+      }
+      const { data: { publicUrl } } = supabase.storage.from("avatars").getPublicUrl(path);
+      newAvatarUrl = publicUrl;
+      setAvatarUrl(newAvatarUrl);
+      setAvatarFile(null);
+    }
+
     const payload = {
       id: userId,
       handle: normalizedHandle,
@@ -145,6 +185,7 @@ export default function ProfileManagementPage() {
       domains: parseCsvList(domains),
       tags: parseCsvList(tags),
       open_to: sanitizeOpenTo(parseCsvList(openTo, { maxItems: 6, maxLen: 24 })),
+      avatar_url: newAvatarUrl,
       updated_at: new Date().toISOString(),
     };
 
@@ -171,7 +212,24 @@ export default function ProfileManagementPage() {
   }
 
   if (loading) {
-    return <div className="max-w-md mx-auto py-12 text-sm text-on-surface-variant">Loading…</div>;
+    return (
+      <div className="max-w-md mx-auto py-12 animate-pulse space-y-4">
+        <div className="shell-card p-6 space-y-4">
+          <div className="flex items-center justify-between">
+            <div className="h-3 w-24 rounded bg-slate-200" />
+            <div className="h-7 w-16 rounded bg-slate-200" />
+          </div>
+          <div className="flex justify-center">
+            <div className="h-20 w-20 rounded-full bg-slate-200" />
+          </div>
+          <div className="grid gap-3 md:grid-cols-2">
+            {[...Array(8)].map((_, i) => (
+              <div key={i} className="h-10 rounded bg-slate-200" />
+            ))}
+          </div>
+        </div>
+      </div>
+    );
   }
 
   if (!userId) {
@@ -182,6 +240,8 @@ export default function ProfileManagementPage() {
       </div>
     );
   }
+
+  const previewSrc = avatarPreview || avatarUrl;
 
   return (
     <div className="max-w-md mx-auto py-12 space-y-6">
@@ -203,6 +263,29 @@ export default function ProfileManagementPage() {
               {saving ? "Saving…" : "Save"}
             </button>
           </div>
+        </div>
+
+        {/* Avatar upload */}
+        <div className="flex flex-col items-center gap-2 py-2">
+          <button
+            type="button"
+            onClick={() => fileInputRef.current?.click()}
+            className="relative group"
+            title="Change profile photo"
+          >
+            <Avatar url={previewSrc} name={displayName || userEmail} size="lg" />
+            <span className="absolute inset-0 flex items-center justify-center rounded-full bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity text-white text-xs font-medium">
+              Change
+            </span>
+          </button>
+          <p className="text-[11px] text-on-surface-variant">JPG · PNG · WebP · max 2 MB</p>
+          <input
+            ref={fileInputRef}
+            type="file"
+            accept="image/jpeg,image/png,image/webp"
+            className="hidden"
+            onChange={handleAvatarChange}
+          />
         </div>
 
         <div className="grid gap-3 md:grid-cols-2">
