@@ -252,63 +252,11 @@ export default function FeedPage() {
   }
 
   return (
-    <div className="space-y-6">
-      <section className="page-grid">
-        <div className="shell-card-strong p-6 md:p-8">
-          <p className="eyebrow">Discussion</p>
-          <h1 className="section-title mt-3">Feed</h1>
-          <p className="mt-3 max-w-2xl text-base leading-7 soft-muted">
-            Implementation notes, verification lessons, architecture tradeoffs, and field-tested patterns from systems engineers.
-          </p>
-        </div>
-        <aside className="shell-card p-6">
-          <p className="eyebrow">What to post</p>
-          <div className="mt-4 space-y-3 text-sm leading-6 soft-muted">
-            <p>Share what you have learned in practice — implementation notes, failure modes, methods that worked.</p>
-          </div>
-          <div className="mt-5 flex flex-wrap gap-3">
-            <Link href="/profile" className="secondary-button px-4 py-2 text-sm">
-              Manage profile
-            </Link>
-            <Link href="/people" className="secondary-button px-4 py-2 text-sm">
-              Browse directory
-            </Link>
-          </div>
-        </aside>
-      </section>
-
-      <div className="rounded-2xl border border-blue-200 bg-blue-50 px-5 py-4 text-sm text-blue-800 flex items-center justify-between gap-4">
-        <p>New here? See what is happening in systems engineering — <a href="/news" className="text-blue-700 hover:underline">read the latest news</a>.</p>
-        <Link href="/news" className="shrink-0 font-medium underline underline-offset-2 hover:text-blue-900">
-          Visit News
-        </Link>
-      </div>
-
-      {showProfilePrompt && (
-        <div className="rounded-2xl border border-amber-200 bg-amber-50 px-5 py-4 text-sm text-amber-800 flex items-center justify-between gap-4">
-          <p>Your profile looks incomplete — add a headline and location so peers can find you.</p>
-          <div className="flex items-center gap-3 shrink-0">
-            <Link href="/profile" className="font-semibold underline underline-offset-2 hover:text-amber-900">
-              Complete your profile →
-            </Link>
-            <button
-              type="button"
-              onClick={() => setShowProfilePrompt(false)}
-              className="text-amber-600 hover:text-amber-900"
-              aria-label="Dismiss"
-            >
-              ✕
-            </button>
-          </div>
-        </div>
-      )}
+    <div className="max-w-2xl mx-auto py-10 space-y-6">
 
       <form onSubmit={createPost} className="shell-card space-y-4 p-5 md:p-6">
         <div className="flex items-center justify-between gap-4">
-          <div>
-            <h2 className="text-lg font-semibold text-slate-900">Start a discussion</h2>
-            <p className="mt-1 text-sm soft-muted">Post a concrete systems engineering insight, question, or pattern.</p>
-          </div>
+          <h2 className="text-sm font-label uppercase tracking-widest text-brand-navy">New post</h2>
           <button disabled={busyPostId === "new"} className="primary-button px-4 py-2.5 disabled:opacity-60">
             {busyPostId === "new" ? "Publishing..." : "Publish"}
           </button>
@@ -337,16 +285,8 @@ export default function FeedPage() {
 
       <section className="space-y-4">
         {posts.length === 0 ? (
-          <div className="shell-card p-12 text-center">
-            <h2 className="text-xl font-semibold text-slate-900">Nothing here yet.</h2>
-            <p className="mx-auto mt-3 max-w-xl text-base leading-7 soft-muted">
-              Be the first to post — share an implementation note, a verification lesson, or a tradeoff you have worked through.
-            </p>
-            <div className="mt-6">
-              <Link href="/onboarding" className="primary-button">
-                Complete your profile to post
-              </Link>
-            </div>
+          <div className="shell-card p-8 text-center">
+            <p className="text-sm text-on-surface-variant">No posts yet.</p>
           </div>
         ) : (
           posts.map((post) => {
@@ -380,11 +320,11 @@ export default function FeedPage() {
                   <>
                     <Link
                       href={`/post/${post.id}`}
-                      className="mt-4 block text-xl font-semibold tracking-tight text-slate-900 hover:text-blue-700"
+                      className="mt-4 block text-lg font-headline font-semibold tracking-tight text-brand-navy hover:text-brand-accent transition-colors"
                     >
                       {post.title}
                     </Link>
-                    <p className="mt-3 whitespace-pre-wrap text-[15px] leading-7 text-slate-700">{post.body}</p>
+                    <p className="mt-3 whitespace-pre-wrap text-sm leading-7 text-on-surface-variant">{post.body}</p>
                   </>
                 )}
 
