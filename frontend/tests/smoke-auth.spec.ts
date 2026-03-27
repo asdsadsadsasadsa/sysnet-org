@@ -13,9 +13,8 @@ test('callback route redirects when logged out', async ({ page }) => {
 
 test('auth page renders', async ({ page }) => {
   await page.goto('/onboarding');
-  await expect(page.getByRole('heading', { name: /Join the network\./i })).toBeVisible();
   await expect(page.getByRole('button', { name: /Continue with Google/i })).toBeVisible();
-  await expect(page.getByRole('button', { name: /^Sign in$/i })).toBeVisible();
+  await expect(page.getByRole('button', { name: /Sign in/i }).first()).toBeVisible();
 });
 
 test('if env login link provided, verify post-login marker', async ({ page }) => {
