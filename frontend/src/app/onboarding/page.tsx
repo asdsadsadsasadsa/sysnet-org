@@ -259,16 +259,7 @@ function OnboardingInner() {
   }
 
   return (
-    <div className="space-y-6">
-      <section>
-        <div className="shell-card-strong p-6 md:p-8">
-          <p className="eyebrow">Join the network</p>
-          <h1 className="section-title mt-3">Join the network.</h1>
-          <p className="mt-3 max-w-2xl text-base leading-7 soft-muted">
-            Create an account, fill out your profile, and you are in. The whole process takes a few minutes.
-          </p>
-        </div>
-      </section>
+    <div className="max-w-md mx-auto py-12 space-y-6">
 
       {!userId && (
         <div className="shell-card p-6 space-y-5 md:p-8">
@@ -290,9 +281,6 @@ function OnboardingInner() {
           </div>
 
           <div className="space-y-4">
-            <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
-              {mode === "login" ? "Sign in" : "Create your account"}
-            </h2>
 
             <button
               type="button"
@@ -356,18 +344,11 @@ function OnboardingInner() {
 
       {userId && authChecked && (
         <form onSubmit={saveProfile} className="shell-card p-6 space-y-4 md:p-8">
-          <div className="flex items-start justify-between gap-4">
-            <div>
-              <h2 className="text-2xl font-semibold tracking-tight text-slate-900">
-                {hasProfile ? "Your profile" : "Complete your profile"}
-              </h2>
-              <p className="mt-1 text-sm soft-muted">
-                {hasProfile
-                  ? "Your profile is loaded below. Update anything and save, or head to the feed."
-                  : "Account created. Fill in your profile so others can find and connect with you."}
-              </p>
-            </div>
-            <button type="button" onClick={signOut} className="secondary-button px-4 py-2">
+          <div className="flex items-center justify-between gap-4">
+            <h2 className="text-lg font-headline font-semibold text-brand-navy">
+              {hasProfile ? "Your profile" : "Complete your profile"}
+            </h2>
+            <button type="button" onClick={signOut} className="text-xs font-label uppercase tracking-widest text-on-surface-variant hover:text-brand-navy transition-colors">
               Sign out
             </button>
           </div>
