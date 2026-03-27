@@ -26,29 +26,6 @@ export default function ArtifactsPage() {
 
   return (
     <div className="space-y-6">
-      <section className="page-grid">
-        <div className="shell-card-strong p-6 md:p-8">
-          <p className="eyebrow">Artifact Library</p>
-          <h1 className="section-title mt-3">Artifact Library</h1>
-          <p className="mt-3 max-w-2xl text-base leading-7 soft-muted">
-            Templates, patterns, and reference materials from the systems engineering community.
-          </p>
-        </div>
-        <aside className="shell-card p-6">
-          <p className="eyebrow">What&apos;s here</p>
-          <div className="mt-4 space-y-2 text-sm leading-6 soft-muted">
-            <p>Reusable artefacts curated by practising systems engineers — ready to adapt for your programme.</p>
-          </div>
-          <div className="mt-5 grid grid-cols-2 gap-2 text-xs">
-            {ARTIFACT_TYPES.slice(1).map((t) => (
-              <div key={t.value} className={`rounded-lg border px-2.5 py-1.5 font-medium ${TYPE_COLORS[t.value as ArtifactType]}`}>
-                {t.label}
-              </div>
-            ))}
-          </div>
-        </aside>
-      </section>
-
       <div className="shell-card p-4 flex flex-wrap gap-3 items-center">
         <input
           type="search"

@@ -228,38 +228,24 @@ export default function GroupFeedPage() {
       {/* Main: feed + compose */}
       <section className="space-y-4">
         {/* Group header */}
-        <div className="shell-card-strong p-6">
-          <div className="flex gap-2 mb-4">
-            <Link href="/g" className="pill hover:bg-slate-200">← All Groups</Link>
-            <span className="pill bg-blue-50 text-blue-700">{meta.name}</span>
+        <div className="flex items-center justify-between mb-2 border-b border-outline-variant/30 pb-4">
+          <div>
+            <Link href="/g" className="text-[10px] font-label uppercase tracking-widest text-on-surface-variant hover:text-brand-navy transition-colors">← Groups</Link>
+            <h1 className="mt-1 text-xl font-headline font-bold text-brand-navy tracking-tight">{meta.name}</h1>
           </div>
-          <h1 className="text-2xl font-bold text-slate-900 tracking-tight">{meta.name}</h1>
-          <p className="mt-3 text-base leading-relaxed text-slate-600">{meta.description}</p>
-          <p className="mt-2 text-xs soft-muted">
-            {postCount} discussion{postCount !== 1 ? "s" : ""}
-          </p>
-          <div className="mt-4 flex flex-wrap gap-1.5">
-            {meta.tags.map(tag => (
-              <span key={tag} className="px-2 py-0.5 bg-slate-100 text-[10px] font-bold uppercase tracking-wider text-slate-500 rounded border border-slate-200">
-                {tag}
-              </span>
-            ))}
-          </div>
+          <span className="text-[10px] font-label uppercase tracking-widest text-on-surface-variant">{postCount} discussion{postCount !== 1 ? "s" : ""}</span>
         </div>
 
         {viewerId && (
-          <form onSubmit={createPost} className="shell-card space-y-4 p-5 md:p-6">
-            <div className="flex items-center justify-between gap-4">
-              <div>
-                <h3 className="text-lg font-semibold text-slate-900">Start a discussion</h3>
-                <p className="mt-1 text-sm soft-muted">Post a question, insight, or challenge for this group.</p>
-              </div>
-              <button disabled={busy} className="primary-button px-4 py-2.5 disabled:opacity-60">
-                {busy ? "Publishing..." : "Publish"}
+          <form onSubmit={createPost} className="shell-card space-y-3 p-5">
+            <div className="flex items-center justify-between">
+              <h3 className="text-[10px] font-label uppercase tracking-widest text-brand-navy">New post</h3>
+              <button disabled={busy} className="px-4 py-1.5 text-xs font-label uppercase tracking-widest bg-brand-navy text-white hover:bg-slate-800 transition-all disabled:opacity-60">
+                {busy ? "Publishing…" : "Publish"}
               </button>
             </div>
-            <input placeholder="Discussion title" value={title} onChange={(e) => setTitle(e.target.value)} />
-            <textarea placeholder="Share a systems engineering insight relevant to this group..." value={body} onChange={(e) => setBody(e.target.value)} />
+            <input placeholder="Title" value={title} onChange={(e) => setTitle(e.target.value)} />
+            <textarea placeholder="Your insight…" value={body} onChange={(e) => setBody(e.target.value)} />
           </form>
         )}
 

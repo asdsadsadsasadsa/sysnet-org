@@ -44,24 +44,7 @@ export default function GroupsIndexPage() {
   }, []);
 
   return (
-    <div className="space-y-8">
-      <section className="page-grid">
-        <div className="shell-card-strong p-6 md:p-8">
-          <p className="eyebrow">Working Groups</p>
-          <h1 className="section-title mt-3">Working Groups</h1>
-          <p className="mt-3 max-w-2xl text-base leading-7 soft-muted">
-            Domain-focused communities for deep technical exchange. Each group has a dedicated feed, curated resources, and a member directory filtered to that discipline.
-          </p>
-        </div>
-        <aside className="shell-card p-6">
-          <p className="eyebrow mb-4">How groups work</p>
-          <div className="space-y-3 text-sm leading-6 soft-muted">
-            <p>Each working group has a discussion feed specific to that domain. Post questions, share insights, or ask for peer review on architecture decisions.</p>
-            <p>Groups surface relevant artifacts from the library and members who list that domain in their profile.</p>
-          </div>
-        </aside>
-      </section>
-
+    <div className="space-y-6">
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         {GROUPS.map((g) => {
           const liveCount = postCounts[g.slug];

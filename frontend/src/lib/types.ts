@@ -4,6 +4,7 @@ export type PublicProfileSummary = {
   id: string;
   handle: string;
   display_name: string;
+  avatar_url: string | null;
 };
 
 export type Profile = {
@@ -18,6 +19,7 @@ export type Profile = {
   domains: string[];
   tags: string[];
   open_to: string[];
+  avatar_url: string | null;
 };
 
 export type Post = {
